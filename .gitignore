@@ -21,8 +21,12 @@ dist/
 Thumbs.db
 .DS_Store
 
-# Debug
+# Debug / Logs
 npm-debug.log*
+*.log
+
+# Coverage
+coverage/
 
 # Playwright
 test-results/
