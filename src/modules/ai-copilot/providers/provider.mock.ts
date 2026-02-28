@@ -1,0 +1,116 @@
+// V2.4 AI Copilot — Mock Provider
+// Returns deterministic, schema-compliant JSON for each module.
+// Used when AI_PROVIDER=mock (default).
+
+import type { AIProvider, AIProviderRequest, AIProviderResponse } from "./provider.interface";
+import type { BriefResult, OutlineResult, DraftResult, QAResult, ModuleType, ModuleResult } from "../types";
+
+const MOCK_BRIEF: BriefResult = {
+    summary: "Dự án yêu cầu thiết kế lại landing page nhằm tăng tỷ lệ chuyển đổi (CVR) 15%. Khách hàng cần phong cách hiện đại, hỗ trợ mobile-first và dark mode.",
+    missing_questions: [
+        "Đối tượng mục tiêu cụ thể là ai (B2B/B2C)?",
+        "Có brand guidelines hoặc design system sẵn không?",
+        "Budget cho photography/illustration là bao nhiêu?",
+        "Deadline bàn giao final là khi nào?",
+    ],
+    assumptions: [
+        "Sử dụng tech stack hiện tại (React/Next.js)",
+        "Nội dung copy sẽ do khách hàng cung cấp",
+        "Không cần tích hợp CMS trong phase này",
+    ],
+    recommended_kpis: [
+        "Conversion Rate tăng từ 2.1% lên 3.5%",
+        "Bounce Rate giảm dưới 40%",
+        "Page Load Time < 2.5s",
+        "Mobile Usability Score > 90",
+    ],
+    risks: [
+        "Scope creep nếu không lock content sớm",
+        "Dark mode có thể cần thêm 30% effort cho QA",
+        "SEO ranking có thể tạm giảm khi chuyển URL structure",
+    ],
+    next_actions: [
+        "Thu thập brand assets từ khách hàng",
+        "Setup analytics baseline trước khi redesign",
+        "Tạo 3 concept wireframes để khách chọn",
+    ],
+};
+
+const MOCK_OUTLINE: OutlineResult = {
+    title: "TechFlow — Nền tảng SaaS quản lý dự án hàng đầu",
+    meta_title: "TechFlow | Quản lý dự án thông minh cho team hiện đại",
+    meta_description: "TechFlow giúp team bạn quản lý dự án hiệu quả hơn 40%. Dùng thử miễn phí 14 ngày, không cần thẻ tín dụng.",
+    h2_h3_outline: [
+        { h2: "Tính năng nổi bật", h3: ["Kanban Board", "Time Tracking", "AI Assistant"] },
+        { h2: "Tại sao chọn TechFlow?", h3: ["Tốc độ", "Bảo mật", "Tích hợp"] },
+        { h2: "Bảng giá", h3: ["Gói Free", "Gói Pro", "Gói Enterprise"] },
+        { h2: "Khách hàng nói gì", h3: ["Testimonials", "Case Studies"] },
+    ],
+    keyword_plan: [
+        { keyword: "quản lý dự án", intent: "transactional", placement: "H1, meta title" },
+        { keyword: "project management tool", intent: "informational", placement: "H2, body text" },
+        { keyword: "kanban board online", intent: "transactional", placement: "Feature section" },
+    ],
+    cta_suggestions: [
+        "Dùng thử miễn phí 14 ngày",
+        "Đăng ký ngay — không cần thẻ tín dụng",
+        "Xem demo trực tiếp",
+    ],
+};
+
+const MOCK_DRAFT: DraftResult = {
+    improved_text: "TechFlow giúp đội ngũ của bạn hoàn thành dự án nhanh hơn 40% với bộ công cụ quản lý thông minh. Từ Kanban board trực quan đến AI assistant hỗ trợ 24/7 — mọi thứ bạn cần đều có trong một nền tảng duy nhất.\n\nHơn 10,000 team đã tin dùng TechFlow để biến ý tưởng thành sản phẩm thực tế. Dùng thử miễn phí 14 ngày.",
+    changes: [
+        "Thêm số liệu cụ thể (40%, 10,000+) để tăng uy tín",
+        "Rút gọn câu dài thành bullet points ngắn gọn",
+        "Thêm CTA rõ ràng cuối paragraph",
+        "Sử dụng ngôn ngữ hướng lợi ích thay vì tính năng",
+    ],
+    tone: "Professional yet approachable — thân thiện nhưng chuyên nghiệp",
+    seo_notes: [
+        "Đã tích hợp keyword 'quản lý dự án' tự nhiên trong text",
+        "Thêm số liệu social proof để cải thiện E-E-A-T",
+        "CTA chứa keyword 'dùng thử miễn phí' — high intent",
+    ],
+};
+
+const MOCK_QA: QAResult = {
+    score: 82,
+    passed: true,
+    checks: [
+        { name: "Brief Alignment", passed: true, details: "Nội dung phù hợp 85% với yêu cầu brief" },
+        { name: "SEO Compliance", passed: true, details: "Meta title và description đạt chuẩn" },
+        { name: "Mobile Responsive", passed: true, details: "Layout responsive trên tất cả breakpoints" },
+        { name: "CTA Presence", passed: true, details: "Có ít nhất 2 CTA rõ ràng" },
+        { name: "Content Quality", passed: false, details: "Một số đoạn text cần proof-read kỹ hơn" },
+    ],
+    blocking_issues: [],
+    fix_suggestions: [
+        "Kiểm tra lại lỗi chính tả ở section 'Tính năng'",
+        "Cân nhắc thêm testimonial thực tế",
+        "Optimize hình ảnh hero section cho mobile",
+    ],
+};
+
+const MOCK_RESULTS: Record<ModuleType, ModuleResult> = {
+    brief: MOCK_BRIEF,
+    outline: MOCK_OUTLINE,
+    draft: MOCK_DRAFT,
+    qa: MOCK_QA,
+};
+
+export class MockProvider implements AIProvider {
+    name = "mock";
+
+    async generate(request: AIProviderRequest): Promise<AIProviderResponse> {
+        // Simulate network delay (300-800ms)
+        await new Promise((resolve) => setTimeout(resolve, 300 + Math.random() * 500));
+
+        const result = MOCK_RESULTS[request.moduleType];
+        return {
+            raw: JSON.stringify(result),
+            parsed: result,
+            tokenUsage: { prompt: 500, completion: 800, total: 1300 },
+        };
+    }
+}

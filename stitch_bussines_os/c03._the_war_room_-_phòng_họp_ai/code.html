@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>C03. Phòng Hội Chẩn AI - Phiên bản Trắng đồng bộ</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2563EB", // Electric Blue
+                        "primary-light": "#EFF6FF", 
+                        "secondary": "#8b5cf6",
+                        "background-light": "#FFFFFF",
+                        "surface-glass": "rgba(255, 255, 255, 0.7)",
+                        "border-light": "rgba(226, 232, 240, 0.8)",
+                        "text-main": "#1e293b",
+                        "text-muted": "#64748b",
+                        "chat-gray": "#F3F4F6",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'neumorph-light': '4px 4px 10px #e2e8f0, -4px -4px 10px #ffffff',
+                        'neumorph-light-pressed': 'inset 3px 3px 6px #e2e8f0, inset -3px -3px 6px #ffffff',
+                        'glow-blue': '0 0 15px rgba(37, 99, 235, 0.3)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .scrollbar-thin::-webkit-scrollbar {
+            width: 4px;
+        }
+        .scrollbar-thin::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+        .glass-panel-light {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+        }
+        .visualizer-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            border: 1px solid;
+            opacity: 0;
+            z-index: -1;
+        }
+        .visualizer-active .ring-1 {
+            width: 110%;
+            height: 110%;
+            border-color: rgba(37, 99, 235, 0.3);
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        .visualizer-active .ring-2 {
+            width: 130%;
+            height: 130%;
+            border-color: rgba(37, 99, 235, 0.1);
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+            animation-delay: 0.3s;
+        }
+        @keyframes pulse-ring {
+            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+        }
+        .btn-neumorph {
+            background: #ffffff;
+            box-shadow: 4px 4px 10px #e2e8f0, -4px -4px 10px #ffffff;
+            border: 1px solid #f1f5f9;
+            transition: all 0.2s ease;
+            color: #64748b;
+        }
+        .btn-neumorph:hover {
+            transform: translateY(-2px);
+            box-shadow: 6px 6px 15px #cbd5e1, -6px -6px 15px #ffffff;
+            color: #2563EB;
+        }
+        .btn-neumorph:active {
+            box-shadow: inset 3px 3px 6px #e2e8f0, inset -3px -3px 6px #ffffff;
+            transform: translateY(0);
+        }
+        .bg-mesh-light {
+            background-color: #ffffff;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(37, 99, 235, 0.05) 0px, transparent 50%);
+        }
+        .border-electric-blue {
+            border-color: #2563EB;
+        }
+        .rounded-card {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-text-main font-display h-screen flex flex-col overflow-hidden selection:bg-primary/20 selection:text-primary">
+<div class="absolute inset-0 z-0 bg-mesh-light pointer-events-none"></div>
+<header class="relative z-50 flex items-center justify-between px-6 py-4 border-b border-slate-100 bg-white/80 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-card bg-primary-light border border-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">hub</span>
+</div>
+<div>
+<h1 class="text-sm font-bold tracking-wide text-text-main">BusinessOS <span class="text-slate-300 mx-1">/</span> <span class="text-primary">Phòng Hội Chẩn AI</span></h1>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-2 px-4 py-1.5 rounded-card bg-slate-50 border border-slate-100">
+<div class="flex space-x-1">
+<div class="size-1.5 rounded-full bg-green-500 animate-[bounce_1s_infinite]"></div>
+<div class="size-1.5 rounded-full bg-green-500 animate-[bounce_1s_infinite_0.2s]"></div>
+<div class="size-1.5 rounded-full bg-green-500 animate-[bounce_1s_infinite_0.4s]"></div>
+</div>
+<span class="text-[10px] font-semibold text-text-muted tracking-widest uppercase ml-1">Trực tuyến • 00:14:23</span>
+</div>
+<button class="flex items-center justify-center size-10 rounded-card btn-neumorph text-slate-400">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+</button>
+<div class="size-10 rounded-card ring-1 ring-slate-200 p-0.5" data-alt="User Avatar">
+<div class="w-full h-full rounded-card bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDp4WFWLNR_qKoMkj8U8Qz1RR9boA79buOBA2nDP4oPwkC4Wqf8EJDfecRTSvVdnIj_uHdmKNDW9lNcRji0Himb5gblceL6VyKX7QjiyB5IiAXaeJ55dZptZFQIAotmodqsUDaMpPOmnuRfdAzOuDAE3KWuMVzFEaBA8cb4tv7FEeLHg0ag1np7b2Pl0iI3oq5xW8a2uRrxwa2JeowyQuOeZMY6vcnFxYnxwhwR5h5STFmVFeXLnem9x6PYz4ReltnUrCEEuLwDIY4'); border-radius: 6px;"></div>
+</div>
+</div>
+</header>
+<main class="relative z-10 flex-1 flex items-center justify-center w-full h-full p-6 overflow-hidden">
+<div class="absolute top-12 left-12 hidden xl:flex flex-col items-center gap-3 group">
+<div class="relative visualizer-active">
+<div class="visualizer-ring ring-1"></div>
+<div class="visualizer-ring ring-2"></div>
+<div class="size-20 rounded-full border border-primary bg-white flex items-center justify-center overflow-hidden shadow-glow-blue z-10 relative">
+<img alt="Alex AI Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClcHNEtXAQ3HmaT1BAx6MhhwF73RbPjMtVosXsiclYCCj8VvdPla4fRNKvDcqE8Tg0YsIsZqY6T9LeNSwRD9oM-my3QxEECNDvCtJhmkfviKlRby5syL-oRS9CCrxWPrT4BvNNuqqvnUDVwG5E88-U5d39HHQbZJnywUCU8was636BdQJPvFQBqUChGSGzcf01TLwOkpqd6S8Cc4gVpKO39G7gaNNPXT50qdoeVsaJhTygr7aCrqhgx8On0qeLYcJe3a0y9UlKzQg"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-white rounded-full p-1 border border-primary shadow-sm z-20">
+<span class="material-symbols-outlined text-xs text-primary">bolt</span>
+</div>
+</div>
+<div class="text-center">
+<p class="text-sm font-bold text-text-main tracking-wider uppercase font-display">Alex</p>
+<p class="text-[10px] text-primary font-medium tracking-wide border border-primary/20 px-2 py-0.5 rounded-card bg-primary-light mt-1">CHIẾN LƯỢC</p>
+</div>
+</div>
+<div class="absolute top-12 right-12 hidden xl:flex flex-col items-center gap-3 group">
+<div class="relative visualizer-active">
+<div class="visualizer-ring ring-1" style="border-color: rgba(37, 99, 235, 0.3);"></div>
+<div class="visualizer-ring ring-2" style="border-color: rgba(37, 99, 235, 0.1);"></div>
+<div class="size-20 rounded-full border border-primary bg-white flex items-center justify-center overflow-hidden shadow-glow-blue z-10 relative">
+<img alt="Sarah AI Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVXFU95WCqJ_4935_OhxawJRp9V3MMnSsYoA6I8ft-AKFKTdtap8EPDEnUW_gUNIRni6NxVKXPoqlczBY6Udj8vK0CAVJBfG7-ggp5s-l9HsouGLDsJ5BFgNY6hcTqc0iB2HtCyxwBg-rVgVBwVdaPhwi5qsrNK1eKXSOjIuFAlOsXtl1lBZXp78qo0FQzJtcwWqkC15dxCiYgJxEkduFgJUA9qyJkmkJtfAtfAcVdN1JdXEPlcosFv8Dvm8js5XOAbsHk_2eqZKg"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-white rounded-full p-1 border border-primary shadow-sm z-20">
+<span class="material-symbols-outlined text-xs text-primary">account_balance</span>
+</div>
+</div>
+<div class="text-center">
+<p class="text-sm font-bold text-text-main tracking-wider uppercase font-display">Sarah</p>
+<div class="flex flex-col items-center mt-1">
+<p class="text-[10px] text-primary font-medium tracking-wide border border-primary/20 px-2 py-0.5 rounded-card bg-primary-light">TÀI CHÍNH</p>
+<p class="text-[10px] text-primary/70 animate-pulse mt-1">Đang nói...</p>
+</div>
+</div>
+</div>
+<div class="absolute bottom-12 left-12 hidden xl:flex flex-col-reverse items-center gap-3 group">
+<div class="relative">
+<div class="size-20 rounded-full border border-primary bg-white flex items-center justify-center overflow-hidden transition-all duration-300 shadow-md group-hover:shadow-glow-blue relative">
+<img alt="Max AI Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4btv7z2FGlJ0xmWGbs5MJrZ5tc0XYaasIPAm5ennP8KXnutyXDM1SGSGHbbf385M4zJ8yFp0TelMI9ie7uMXNCvitS-6rwpGsNgzH00kU1Lr6EKmpNxJXSvqLUoGIV0Yer6wpFzwmWOHR2u07Jp-Sa2axE7-OjCa4QRmVA7Z_6zH0I8cb7Hv5eNIPDc4RqiCxxQiOjnnsTuoQtyncKNYqOdbT2_F6EbzBzxmf3fbJFWwUUmUCDfM73WZpFY9JcG7DKWxZ5_ZBm94"/>
+</div>
+<div class="absolute -top-1 -right-1 bg-white rounded-full p-1 border border-primary shadow-sm">
+<span class="material-symbols-outlined text-xs text-primary">groups</span>
+</div>
+</div>
+<div class="text-center">
+<p class="text-sm font-bold text-text-main tracking-wider uppercase font-display">Max</p>
+<p class="text-[10px] text-primary font-medium tracking-wide border border-primary/20 px-2 py-0.5 rounded-card bg-primary-light mt-1">NHÂN SỰ</p>
+</div>
+</div>
+<div class="absolute bottom-12 right-12 hidden xl:flex flex-col-reverse items-center gap-3 group">
+<div class="relative">
+<div class="size-20 rounded-full border border-primary bg-white flex items-center justify-center overflow-hidden shadow-md relative">
+<img alt="Leo AI Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNglPLMppBNxTkFyyB078eW9i0iJt5M_rFFDl3zfO0AzRDeh3vraZIk09UnSo3QNhOHu_sigWVH7U88N1lkHweX1dsvBk6w8qt3zDV4qkKIIFx06Stoz6G384KRQlIGx-iI-vViFNe4TwOIuzxJR3DDaxXCTiXTm1DqP-Wf2S8o24_3FLyOFlogRU0m2Vc7UXunB6u0zUYlaacTtebrOgkmOBUmKS4CxSlQky6CFznnWQcpqS6aszB-nU4XyLEbk4YNt1zij8u37A"/>
+</div>
+<div class="absolute -top-1 -right-1 bg-white rounded-full p-1 border border-primary shadow-sm">
+<span class="material-symbols-outlined text-xs text-primary">public</span>
+</div>
+</div>
+<div class="text-center">
+<p class="text-sm font-bold text-text-main tracking-wider uppercase font-display">Leo</p>
+<p class="text-[10px] text-primary font-medium tracking-wide border border-primary/20 px-2 py-0.5 rounded-card bg-primary-light mt-1">THỊ TRƯỜNG</p>
+</div>
+</div>
+<div class="glass-panel-light w-full max-w-4xl h-full max-h-[85vh] rounded-card flex flex-col relative z-20">
+<div class="p-6 border-b border-slate-200 flex flex-col items-center justify-center shrink-0 bg-white/50 rounded-t-card">
+<h2 class="text-lg font-bold text-text-main tracking-wide uppercase">Trung Tâm Điều Hành</h2>
+<div class="flex items-center gap-2 mt-1">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+</span>
+<p class="text-slate-500 text-xs font-mono">Hệ thống đang đồng bộ...</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-8 space-y-8 scrollbar-thin bg-white/30">
+<div class="flex justify-center my-4">
+<div class="bg-white border border-slate-200 rounded-card px-4 py-1.5 flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-sm text-green-600">verified</span>
+<span class="text-[11px] font-semibold text-slate-600 uppercase tracking-wide">Phòng hội chẩn đã sẵn sàng</span>
+</div>
+</div>
+<div class="flex flex-row-reverse items-end gap-3 group">
+<div class="size-9 rounded-card bg-cover bg-center shadow-sm" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwHvDczI0YTv2G-75AjmlRSbhe_4xh9H0mqe8Si_a03WSkC3JdjZ_KTwmmX428h4XWrRJPhEPXi-BnPJcQ8b24eQ-kKulirmQ2Ej2kP6NuVpfaY2bZJRpBLY_Q23n3p5Rw7LLlybBDJB3t5KARr_SUkoQs-ogTzUEj8l0IFNVe6hAEGhdzTunMyBD55MSYlWJnxxgo9l_DpxdyVaq3uHY7RT0ai_4RcaMXK8N4KvXF7LgSnQ5w-P5dxmGgoLI75t9s8YnM8WFXXco'); border-radius: 6px;"></div>
+<div class="flex flex-col items-end gap-1 max-w-[80%]">
+<div class="flex items-center gap-2">
+<span class="text-[10px] text-slate-400 font-mono">10:02 AM</span>
+<span class="text-xs font-bold text-slate-700">Bạn (CEO)</span>
+</div>
+<div class="bg-chat-gray border border-slate-200 p-4 rounded-card rounded-tr-none text-slate-700 shadow-sm">
+<p class="text-sm leading-relaxed">Hãy xem xét dự báo Quý 3. Tôi cần biết liệu chúng ta có thể duyệt ngân sách tuyển dụng mới mà không ảnh hưởng đến dòng tiền không.</p>
+</div>
+</div>
+</div>
+<div class="flex items-end gap-3">
+<div class="size-9 rounded-full border border-primary/30 p-0.5 bg-white shadow-sm shrink-0 overflow-hidden">
+<img class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClcHNEtXAQ3HmaT1BAx6MhhwF73RbPjMtVosXsiclYCCj8VvdPla4fRNKvDcqE8Tg0YsIsZqY6T9LeNSwRD9oM-my3QxEECNDvCtJhmkfviKlRby5syL-oRS9CCrxWPrT4BvNNuqqvnUDVwG5E88-U5d39HHQbZJnywUCU8was636BdQJPvFQBqUChGSGzcf01TLwOkpqd6S8Cc4gVpKO39G7gaNNPXT50qdoeVsaJhTygr7aCrqhgx8On0qeLYcJe3a0y9UlKzQg"/>
+</div>
+<div class="flex flex-col items-start gap-1 max-w-[80%]">
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold text-primary tracking-wide">Alex (Chiến Lược)</span>
+<span class="text-[10px] text-slate-400 font-mono">10:02 AM</span>
+</div>
+<div class="bg-white border border-slate-100 p-4 rounded-card rounded-tl-none text-slate-600 shadow-sm border-l-4 border-l-primary">
+<p class="text-sm leading-relaxed">Quỹ đạo tăng trưởng hiện tại ủng hộ việc mở rộng. Tuy nhiên, tỉ lệ đốt tiền (burn rate) đang cao hơn ngưỡng an toàn một chút.</p>
+</div>
+</div>
+</div>
+<div class="flex items-end gap-3">
+<div class="size-9 rounded-full border border-primary/30 p-0.5 bg-white shadow-sm shrink-0 overflow-hidden">
+<img class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVXFU95WCqJ_4935_OhxawJRp9V3MMnSsYoA6I8ft-AKFKTdtap8EPDEnUW_gUNIRni6NxVKXPoqlczBY6Udj8vK0CAVJBfG7-ggp5s-l9HsouGLDsJ5BFgNY6hcTqc0iB2HtCyxwBg-rVgVBwVdaPhwi5qsrNK1eKXSOjIuFAlOsXtl1lBZXp78qo0FQzJtcwWqkC15dxCiYgJxEkduFgJUA9qyJkmkJtfAtfAcVdN1JdXEPlcosFv8Dvm8js5XOAbsHk_2eqZKg"/>
+</div>
+<div class="flex flex-col items-start gap-1 max-w-[85%]">
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold text-primary tracking-wide">Sarah (Tài Chính)</span>
+<span class="text-[10px] text-slate-400 font-mono">10:03 AM</span>
+</div>
+<div class="bg-white border border-slate-100 p-5 rounded-card rounded-tl-none text-slate-600 shadow-sm border-l-4 border-l-primary">
+<p class="text-sm leading-relaxed mb-4">Tôi đã phân tích các kịch bản dòng tiền. Dưới đây là chi tiết:</p>
+<div class="grid grid-cols-2 gap-3 mb-4">
+<div class="bg-slate-50 p-3 rounded-card border border-slate-200">
+<p class="text-[10px] uppercase tracking-widest text-slate-400 mb-1">Runway Hiện tại</p>
+<p class="text-lg font-bold text-slate-800 font-mono">18 Tháng</p>
+</div>
+<div class="bg-red-50 p-3 rounded-card border border-red-100">
+<p class="text-[10px] uppercase tracking-widest text-red-400 mb-1">Tác động</p>
+<p class="text-lg font-bold text-red-500 font-mono">-1.2 Tháng</p>
+</div>
+</div>
+<p class="text-sm leading-relaxed">Chúng ta có khoản dư 15% trong quỹ vận hành có thể tái phân bổ. Tôi đề xuất tạo yêu cầu tuyển dụng ngay bây giờ nhưng dời ngày bắt đầu sang tháng sau.</p>
+</div>
+</div>
+</div>
+<div class="flex items-end gap-3 opacity-80">
+<div class="size-9 rounded-full border border-slate-200 shrink-0 flex items-center justify-center bg-white">
+<div class="flex space-x-1">
+<div class="size-1 rounded-full bg-slate-400 animate-bounce"></div>
+<div class="size-1 rounded-full bg-slate-400 animate-bounce delay-75"></div>
+<div class="size-1 rounded-full bg-slate-400 animate-bounce delay-150"></div>
+</div>
+</div>
+<div class="text-xs text-slate-400 pb-2 font-mono tracking-wide">Leo đang phân tích dữ liệu thị trường...</div>
+</div>
+</div>
+<div class="p-5 bg-white border-t border-slate-200 shrink-0 z-30 rounded-b-card">
+<div class="relative mb-5 group">
+<div class="relative flex items-center bg-slate-50 border border-slate-200 rounded-card focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/20 transition-all shadow-inner">
+<button class="p-4 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">mic</span>
+</button>
+<input class="w-full bg-transparent border-none text-slate-700 placeholder-slate-400 focus:ring-0 text-sm py-4 px-2" placeholder="Hỏi các trợ lý AI về dữ liệu, chiến lược hoặc phê duyệt..." type="text"/>
+<button class="p-2 mr-2 bg-primary hover:bg-blue-600 text-white rounded-card transition-all flex items-center justify-center shadow-lg shadow-blue-200">
+<span class="material-symbols-outlined text-xl">arrow_upward</span>
+</button>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-4">
+<button class="btn-neumorph flex items-center gap-2 px-6 py-3 rounded-card text-xs font-bold uppercase tracking-wide group">
+<span class="material-symbols-outlined text-xl text-primary group-hover:scale-110 transition-transform">add_circle</span>
+                        Tạo việc làm
+                    </button>
+<button class="btn-neumorph flex items-center gap-2 px-6 py-3 rounded-card text-xs font-bold uppercase tracking-wide group">
+<span class="material-symbols-outlined text-xl text-green-500 group-hover:scale-110 transition-transform">check_circle</span>
+                        Duyệt ngân sách
+                    </button>
+<button class="btn-neumorph flex items-center gap-2 px-6 py-3 rounded-card text-xs font-bold uppercase tracking-wide group">
+<span class="material-symbols-outlined text-xl text-purple-500 group-hover:scale-110 transition-transform">description</span>
+                        Xem báo cáo
+                    </button>
+</div>
+</div>
+</div>
+</main>
+
+</body></html>

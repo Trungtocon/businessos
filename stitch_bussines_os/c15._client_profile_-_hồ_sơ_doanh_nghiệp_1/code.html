@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>C15. Hồ sơ doanh nghiệp - BusinessOS</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c83f6",
+                        "deep-ocean": "#0d131c",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#101722",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-display text-deep-ocean bg-background-light dark:bg-background-dark;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+<header class="bg-white dark:bg-[#1a2636] border-b border-[#e7ecf4] dark:border-[#2d3b4e] sticky top-0 z-50">
+<div class="px-6 md:px-10 py-3 flex items-center justify-between gap-4">
+<div class="flex items-center gap-8 flex-1">
+<div class="flex items-center gap-3 text-deep-ocean dark:text-white">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight">BusinessOS</h2>
+</div>
+<div class="hidden md:flex flex-1 max-w-sm">
+<label class="relative flex w-full items-center">
+<span class="absolute left-3 text-[#49699c] dark:text-[#8b9bb4]">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="w-full bg-[#f0f4f9] dark:bg-[#253243] border-none rounded-lg h-10 pl-10 pr-4 text-sm text-deep-ocean dark:text-white placeholder:text-[#49699c] focus:ring-2 focus:ring-primary/20" placeholder="Tìm kiếm nhanh..." type="text"/>
+</label>
+</div>
+</div>
+<div class="flex items-center gap-4 lg:gap-8">
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-[#49699c] dark:text-[#a1b3c9] hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Tổng quan</a>
+<a class="text-deep-ocean dark:text-white text-sm font-semibold" href="#">Hồ sơ</a>
+<a class="text-[#49699c] dark:text-[#a1b3c9] hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Thiết lập</a>
+<a class="text-[#49699c] dark:text-[#a1b3c9] hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Báo cáo</a>
+</nav>
+<div class="bg-gray-200 dark:bg-gray-700 bg-center bg-no-repeat bg-cover rounded-full size-9 cursor-pointer ring-2 ring-transparent hover:ring-primary/20 transition-all shadow-sm" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAAG5xs68-hOi-Z6m6eAsXeHxgGonmxVTQJJEz6hBgbwFhizU1XzYIbxrVj9E0CZRCudT6mlvX8sjCwFgCc_zrTvwTS6jw4irp8WLxf1gxl4fL-L8mGyA8kDklS-psTqvRx3qQCVJc18yy3Rv3Bly2B3_OYuCAA-VnAY8vSu34yFtJfYBexlBDKmwVuc3JvHA2odh-XH2N1p24tisIIqvbeZGovG1_jOZIUFGagNJ-4apmNLpBGCwqgVDqx4hUwzGChkVDsrj3_ojA");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1 w-full max-w-[1200px] mx-auto px-4 md:px-8 py-6">
+<div class="flex items-center flex-wrap gap-2 text-sm font-medium text-[#49699c] dark:text-[#8b9bb4] mb-6">
+<a class="hover:text-primary transition-colors" href="#">Trang chủ</a>
+<span class="material-symbols-outlined text-[16px] leading-none">chevron_right</span>
+<span class="text-deep-ocean dark:text-white">Hồ sơ doanh nghiệp</span>
+</div>
+<div class="relative mb-8">
+<div class="h-48 md:h-64 w-full rounded-2xl overflow-hidden bg-gradient-to-r from-blue-500 to-indigo-600 relative">
+<img alt="Cover" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKlP1CJrZ3szmnfj1wzwJe5BDuIlm8WATMGIHDn1r2ULCNcFDA-kBoUVRbq6HHx69sd3wwUES2roVATFONDeGagQYLhS0lScW-oAn7Lx2cseTLbROZJSGAtfzRz1quf_cWLz2EGAkyzXh8yLaBYxxo7RzY0wAhWvc4xIXh9hxz-S4DbnnYxYxaWUOxgIVq0edeKTbu0RKofsZciUE8jHKTh8_DskYzE_JTYBeGtt9l2JE5iOXUt3aNF3eiYSAnh0Az4lALEb6Wsgw"/>
+<button class="absolute top-4 right-4 bg-white/20 backdrop-blur-md hover:bg-white/30 text-white p-2 rounded-lg transition-all">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+</button>
+</div>
+<div class="bg-white dark:bg-[#1a2636] rounded-2xl shadow-sm border border-[#e7ecf4] dark:border-[#2d3b4e] mt-[-40px] mx-6 relative z-10 p-6 md:p-8">
+<div class="flex flex-col md:flex-row items-start md:items-end gap-6">
+<div class="relative mt-[-80px] md:mt-[-100px]">
+<div class="size-32 md:size-40 bg-white dark:bg-[#1a2636] p-1 rounded-[12px] shadow-lg border border-[#e7ecf4] dark:border-[#2d3b4e]">
+<div class="w-full h-full bg-[#f8f9fc] dark:bg-[#253243] rounded-[8px] flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-gray-300 text-5xl">business</span>
+</div>
+</div>
+<button class="absolute bottom-2 right-2 size-8 bg-primary text-white rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-2">
+<h1 class="text-2xl md:text-3xl font-extrabold text-deep-ocean dark:text-white truncate">Công ty Cổ phần Công nghệ BusinessOS</h1>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
+                            Đã xác thực
+                        </span>
+</div>
+<div class="flex flex-wrap gap-x-6 gap-y-2 text-[#49699c] dark:text-[#a1b3c9] text-sm md:text-base">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+<span>MST: 0101234567</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">category</span>
+<span>Lĩnh vực: Phần mềm doanh nghiệp &amp; SaaS</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto">
+<button class="flex-1 md:flex-none inline-flex items-center justify-center px-5 h-10 bg-white dark:bg-[#253243] border border-[#ced8e8] dark:border-[#405268] rounded-lg text-sm font-semibold text-deep-ocean dark:text-white hover:bg-gray-50 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px] mr-2">receipt_long</span>
+                        Thiết lập hóa đơn
+                    </button>
+<button class="flex-1 md:flex-none inline-flex items-center justify-center px-5 h-10 bg-primary hover:bg-blue-600 text-white rounded-lg text-sm font-bold shadow-md shadow-blue-500/20 transition-all">
+<span class="material-symbols-outlined text-[18px] mr-2">edit</span>
+                        Chỉnh sửa thông tin
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 space-y-6">
+<div class="bg-white dark:bg-[#1a2636] rounded-2xl shadow-sm border border-[#e7ecf4] dark:border-[#2d3b4e] overflow-hidden">
+<div class="p-6 md:p-8 border-b border-[#e7ecf4] dark:border-[#2d3b4e]">
+<h2 class="text-lg font-bold text-deep-ocean dark:text-white">Thông tin định danh</h2>
+<p class="text-sm text-[#49699c] dark:text-[#8b9bb4]">Cập nhật thông tin pháp lý của doanh nghiệp để đồng bộ hóa các chứng từ.</p>
+</div>
+<div class="p-6 md:p-8 space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="col-span-full">
+<label class="block text-sm font-semibold text-deep-ocean dark:text-gray-200 mb-2">
+                                Tên chính thức (Tiếng Việt) <span class="text-red-500">*</span>
+</label>
+<input class="w-full h-11 px-4 rounded-lg bg-[#f8f9fc] dark:bg-[#253243] border border-[#ced8e8] dark:border-[#405268] text-deep-ocean dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" type="text" value="Công ty Cổ phần Công nghệ BusinessOS"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-deep-ocean dark:text-gray-200 mb-2">Mã số thuế</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-[#49699c]">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-lg bg-[#f8f9fc] dark:bg-[#253243] border border-[#ced8e8] dark:border-[#405268] text-deep-ocean dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" type="text" value="0101234567"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-deep-ocean dark:text-gray-200 mb-2">Lĩnh vực hoạt động</label>
+<select class="w-full h-11 px-4 rounded-lg bg-[#f8f9fc] dark:bg-[#253243] border border-[#ced8e8] dark:border-[#405268] text-deep-ocean dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all">
+<option>Công nghệ &amp; Phần mềm</option>
+<option>Sản xuất</option>
+<option>Thương mại &amp; Dịch vụ</option>
+<option>Xây dựng</option>
+</select>
+</div>
+<div class="col-span-full">
+<label class="block text-sm font-semibold text-deep-ocean dark:text-gray-200 mb-2">Địa chỉ trụ sở</label>
+<textarea class="w-full p-4 rounded-lg bg-[#f8f9fc] dark:bg-[#253243] border border-[#ced8e8] dark:border-[#405268] text-deep-ocean dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all resize-none" rows="3">Tầng 12, Tòa nhà Innovation, 123 Đường Công Nghệ, Quận 1, TP. Hồ Chí Minh</textarea>
+</div>
+</div>
+</div>
+<div class="px-6 md:px-8 py-4 bg-gray-50 dark:bg-[#151f2b] border-t border-[#e7ecf4] dark:border-[#2d3b4e] flex justify-end gap-3">
+<button class="px-4 h-9 rounded-lg text-sm font-semibold text-[#49699c] hover:bg-gray-100 transition-colors">Hủy</button>
+<button class="px-6 h-9 bg-primary text-white rounded-lg text-sm font-bold shadow-sm shadow-blue-500/10">Lưu thay đổi</button>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="bg-white dark:bg-[#1a2636] rounded-2xl shadow-sm border border-[#e7ecf4] dark:border-[#2d3b4e] p-6">
+<h2 class="text-base font-bold text-deep-ocean dark:text-white mb-4">Thông tin liên hệ hóa đơn</h2>
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-bold text-[#49699c] uppercase mb-1.5">Email nhận hóa đơn</label>
+<div class="flex items-center gap-2 p-3 bg-[#f8f9fc] dark:bg-[#253243] rounded-lg border border-[#ced8e8] dark:border-[#405268]">
+<span class="material-symbols-outlined text-primary text-[20px]">mail</span>
+<span class="text-sm font-medium text-deep-ocean dark:text-white">accounting@businessos.vn</span>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold text-[#49699c] uppercase mb-1.5">Người phụ trách</label>
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-blue-100 text-primary flex items-center justify-center font-bold">NH</div>
+<div>
+<p class="text-sm font-bold text-deep-ocean dark:text-white">Nguyễn Văn Hiếu</p>
+<p class="text-xs text-[#49699c]">Kế toán trưởng</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a2636] rounded-2xl shadow-sm border border-[#e7ecf4] dark:border-[#2d3b4e] p-6">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-base font-bold text-deep-ocean dark:text-white">Độ hoàn thiện</h2>
+<span class="text-primary font-bold">85%</span>
+</div>
+<div class="w-full bg-[#f0f4f9] dark:bg-[#253243] h-2 rounded-full mb-4">
+<div class="bg-primary h-full rounded-full" style="width: 85%"></div>
+</div>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 text-sm text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                        Thông tin pháp lý
+                    </li>
+<li class="flex items-center gap-2 text-sm text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                        Logo doanh nghiệp
+                    </li>
+<li class="flex items-center gap-2 text-sm text-[#49699c]">
+<span class="material-symbols-outlined text-[18px]">circle</span>
+                        Cấu hình thanh toán
+                    </li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-auto py-8 text-center border-t border-[#e7ecf4] dark:border-[#2d3b4e]">
+<p class="text-sm text-[#49699c]">© 2024 BusinessOS. Nền tảng quản trị doanh nghiệp toàn diện.</p>
+</footer>
+
+</body></html>

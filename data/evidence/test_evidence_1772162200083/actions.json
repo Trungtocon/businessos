@@ -1,0 +1,126 @@
+[
+  {
+    "packId": "test_evidence_1772162200083",
+    "packType": "lead",
+    "requiresApproval": true,
+    "status": "draft",
+    "createdAt": "2026-02-27T03:16:40.095Z",
+    "updatedAt": "2026-02-27T03:16:40.095Z",
+    "id": "act_1772162200095_idu531",
+    "type": "CREATE_FOLLOWUP_TASKS_7D",
+    "backend": "internal",
+    "riskLevel": "low",
+    "payload": {
+      "checklist": [
+        "Ngày 1: Gửi email chào mừng + lead magnet",
+        "Ngày 2: Gọi điện xác nhận + giới thiệu nhanh",
+        "Ngày 3: Gửi case study ngành tương tự",
+        "Ngày 4: Mời tham gia webinar/demo",
+        "Ngày 5: Follow up sau demo + gửi proposal",
+        "Ngày 6: Xử lý objections + negotiation",
+        "Ngày 7: Close deal hoặc schedule follow up tiếp"
+      ]
+    },
+    "evidence": {
+      "packId": "test_evidence_1772162200083",
+      "summary": "7-day follow-up checklist from Lead Sprint Pack"
+    }
+  },
+  {
+    "packId": "test_evidence_1772162200083",
+    "packType": "lead",
+    "requiresApproval": true,
+    "status": "draft",
+    "createdAt": "2026-02-27T03:16:40.095Z",
+    "updatedAt": "2026-02-27T03:16:40.095Z",
+    "id": "act_1772162200095_bwf44l",
+    "type": "CREATE_NURTURE_SEQUENCE_DRAFT",
+    "backend": "internal",
+    "riskLevel": "medium",
+    "payload": {
+      "sequences": {
+        "sequence1": [
+          {
+            "day": 1,
+            "message": "Chào [Tên], cảm ơn bạn đã quan tâm đến Premium Skincare",
+            "channel": "email",
+            "cta": "Xem case study"
+          },
+          {
+            "day": 3,
+            "message": "3 sai lầm phổ biến khi tìm khách hàng mới",
+            "channel": "email",
+            "cta": "Đọc bài viết"
+          },
+          {
+            "day": 5,
+            "message": "Cách doanh nghiệp Spa & Beauty tăng 50% lead",
+            "channel": "email",
+            "cta": "Xem video hướng dẫn"
+          },
+          {
+            "day": 7,
+            "message": "Bạn có muốn nhận bản phân tích miễn phí?",
+            "channel": "zalo",
+            "cta": "Đặt lịch tư vấn"
+          },
+          {
+            "day": 10,
+            "message": "Ưu đãi đặc biệt: Giảm 30% cho Sprint đầu tiên",
+            "channel": "email",
+            "cta": "Đăng ký ngay"
+          }
+        ],
+        "sequence2": [
+          {
+            "day": 1,
+            "message": "Follow up sau demo - Tổng kết nội dung đã thảo luận",
+            "channel": "email",
+            "cta": "Xem proposal"
+          },
+          {
+            "day": 3,
+            "message": "Chia sẻ thêm case study ngành tương tự",
+            "channel": "zalo",
+            "cta": "Đặt câu hỏi"
+          },
+          {
+            "day": 7,
+            "message": "Deadline ưu đãi: Còn 48h để đăng ký Sprint",
+            "channel": "email",
+            "cta": "Đăng ký Sprint"
+          }
+        ]
+      }
+    },
+    "evidence": {
+      "packId": "test_evidence_1772162200083",
+      "summary": "Email nurture sequences (2 sequences)"
+    }
+  },
+  {
+    "packId": "test_evidence_1772162200083",
+    "packType": "lead",
+    "requiresApproval": true,
+    "status": "draft",
+    "createdAt": "2026-02-27T03:16:40.095Z",
+    "updatedAt": "2026-02-27T03:16:40.095Z",
+    "id": "act_1772162200095_fftl09",
+    "type": "CREATE_PIPELINE_DRAFT",
+    "backend": "internal",
+    "riskLevel": "low",
+    "payload": {
+      "stages": [
+        "Mới (New Lead)",
+        "Đã liên hệ (Contacted)",
+        "Đã demo (Demo Done)",
+        "Đề xuất (Proposal)",
+        "Đã chốt (Won)"
+      ]
+    },
+    "evidence": {
+      "packId": "test_evidence_1772162200083",
+      "summary": "CRM Pipeline stages draft"
+    }
+  }
+]

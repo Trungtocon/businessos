@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BusinessOS - Marketplace</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c83f6",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101722",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for horizontal scrolling areas */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white overflow-hidden">
+<div class="flex h-screen w-full">
+<!-- Sidebar -->
+<aside class="w-64 shrink-0 h-full bg-white dark:bg-[#1a202c] border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between overflow-y-auto hidden md:flex">
+<div class="flex flex-col p-4 gap-6">
+<!-- Logo -->
+<div class="flex items-center gap-3 px-2">
+<div class="bg-primary aspect-square rounded-lg size-10 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[24px]">business_center</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-none">BusinessOS</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal mt-1">Enterprise Edition</p>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px] group-hover:text-slate-900 dark:group-hover:text-white">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:text-blue-400" href="#">
+<span class="material-symbols-outlined text-[24px] font-variation-settings-'FILL'1">storefront</span>
+<p class="text-sm font-bold">Marketplace</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px] group-hover:text-slate-900 dark:group-hover:text-white">briefcase_meal</span>
+<p class="text-sm font-medium">My Services</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px] group-hover:text-slate-900 dark:group-hover:text-white">shopping_cart</span>
+<p class="text-sm font-medium">Orders</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px] group-hover:text-slate-900 dark:group-hover:text-white">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</a>
+</nav>
+</div>
+<!-- User Profile Bottom -->
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-cover rounded-full size-10 bg-slate-200" data-alt="User avatar profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDz08Exza8rE6t5smn85VJd4AFQG2EcN5_Wcq2voRo-7oODKV8vLI2hnLddL9y4GOiNvGqrn80YrmfjM_drto_M4iqFSJIvI1C4ALAl27LgipYc8WGauNoZ69mrkb63C9IVMoYIBTjRHkGIx7EpOK-_RGPCexfbUZvNDRs594D3tj6mhn0IUpbNA-_V2sO6V_2D3SOOeb5W5cMwbaeQVed4MsQu5-AGVv_okPBVoZrqrtCwrgIPBkUaaxqJmQoCHGMt5F_wqJOiPy8");'></div>
+<div class="flex flex-col overflow-hidden">
+<p class="text-slate-900 dark:text-white text-sm font-medium truncate">Jane Doe</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs truncate">Admin</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full relative overflow-hidden">
+<!-- Top Navbar -->
+<header class="h-16 shrink-0 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#1a202c] px-6 flex items-center justify-between z-10">
+<!-- Search -->
+<div class="flex items-center gap-4 flex-1 max-w-xl">
+<button class="md:hidden text-slate-500 hover:text-slate-700">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 border-none rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/50 sm:text-sm" placeholder="Search services, SOPs, or authors..." type="text"/>
+</div>
+</div>
+<!-- Right Actions -->
+<div class="flex items-center gap-4 ml-4">
+<button class="relative p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-[#1a202c]"></span>
+</button>
+<button class="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-200 dark:bg-slate-700 mx-1"></div>
+<button class="flex items-center gap-2 text-sm font-medium text-primary bg-primary/10 px-3 py-1.5 rounded-lg hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Request Service</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-6 md:p-8">
+<div class="max-w-7xl mx-auto flex flex-col gap-8">
+<!-- Hero Banner -->
+<div class="relative w-full rounded-xl overflow-hidden shadow-lg group">
+<div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-transparent z-10"></div>
+<div class="bg-cover bg-center h-[280px] w-full transition-transform duration-700 group-hover:scale-105" data-alt="Abstract business growth chart visualization with blue tones" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDctbBU_KGCse1NNJULmPUwa4c5ZSzwF9KwXn3GpnWkl5XqUDFvo3liHMOLF2ZYNtuaHSkG_AnqwgcrshEMJnorsYMr-rdoBeUZjZRthsud2BcbrhxK0oe2oSIIcMCfXSWQBmbpZJAcniQLYhw44ZoNalLYBbgd1oaVF8RXZEBzQgUdXZAYc7ZJu-PnvhM5oMaGMZRSX6e2V9cS_TCnOVjrpYkFFBzjluVT3KjwBi86OY6E8e6rjbAxEZ_OGfazBlIMq9K5aBVQmRw");'></div>
+<div class="absolute inset-0 z-20 flex flex-col justify-center px-8 md:px-12 max-w-2xl">
+<span class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-wider text-blue-200 uppercase bg-blue-900/50 rounded-full w-fit backdrop-blur-sm">Promoted</span>
+<h2 class="text-3xl md:text-4xl font-bold text-white leading-tight mb-2">Scale Your Sales Operations</h2>
+<p class="text-blue-100 text-lg mb-6 max-w-lg">Get 20% off the Standard Sales SOP bundle. Includes templates, scripts, and automation workflows.</p>
+<button class="bg-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg w-fit transition-colors shadow-lg shadow-blue-900/20 flex items-center gap-2">
+<span>Get Offer Now</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Filter Categories -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Browse Categories</h3>
+<a class="text-sm font-medium text-primary hover:text-blue-600 flex items-center gap-1" href="#">
+                                View all
+                                <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<div class="flex gap-3 overflow-x-auto pb-2 no-scrollbar">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full text-sm font-medium whitespace-nowrap shadow-md">
+<span class="material-symbols-outlined text-[18px]">apps</span>
+                                All Services
+                            </button>
+<button class="flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium whitespace-nowrap hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[18px]">search</span>
+                                SEO &amp; Marketing
+                            </button>
+<button class="flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium whitespace-nowrap hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+                                Content Writing
+                            </button>
+<button class="flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium whitespace-nowrap hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[18px]">palette</span>
+                                Design
+                            </button>
+<button class="flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium whitespace-nowrap hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[18px]">code</span>
+                                Web Dev
+                            </button>
+<button class="flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium whitespace-nowrap hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[18px]">group</span>
+                                HR &amp; People
+                            </button>
+<button class="flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium whitespace-nowrap hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+                                Finance
+                            </button>
+</div>
+</div>
+<!-- Service Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-10">
+<!-- Card 1 -->
+<div class="group flex flex-col bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+<div class="relative h-40 overflow-hidden">
+<div class="bg-cover bg-center h-full w-full group-hover:scale-110 transition-transform duration-500" data-alt="SEO analytics dashboard on a laptop screen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2aJ26tS6nfzgX3qvD47nms0b8Gnh7r2C38ur8SVU3ByANKeBZbHjXK3aJ9bOkFLx-_bmr9H1bMdlqQEK9jijYFi138LLYhA8PjQDHa2Fj50kC9vuIHrmYsiVM5M52vJhw60XhM1ag_x3a923WRymEHuzX5njVhzcnvugxMVi9ZMRAdxek2IjAjyvrjjaFHZWDKRoXpL6NIIt5SMGj5-eHHM658-598tBuBhkqYqhLXrCU6Rp36YishzXD7JOXiFt3ZTwVTCTp6Co");'></div>
+<div class="absolute top-3 right-3 bg-white dark:bg-slate-900 rounded-md px-2 py-1 text-xs font-bold shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-400 text-[14px] font-variation-settings-'FILL'1">star</span>
+                                    4.8
+                                </div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 text-[10px] font-bold uppercase tracking-wide">Marketing</span>
+</div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white leading-tight mb-1 group-hover:text-primary transition-colors">Comprehensive SEO Audit</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2">Complete website analysis including technical SEO, backlinks, and keyword opportunities.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400">Starting at</span>
+<span class="text-lg font-bold text-slate-900 dark:text-white">5,000,000 ₫</span>
+</div>
+<button class="size-9 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+<div class="relative h-40 overflow-hidden">
+<div class="bg-cover bg-center h-full w-full group-hover:scale-110 transition-transform duration-500" data-alt="Social media content plan calendar on a desk" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC1O3S1_4mN2AqCMcAM3LCyHwr0c6VszQsVwd6Pvjg6hncd9Won4IzVV-zzgnZ6RRDc7QyTv8jeslK9HnN1eBXM6zmbhOxxOasGtqqFLE9vjbZQaoFqfCs7IvybZhAWR-AbumdWelWNXnvvCIy8ZEZtd_gPiOtcW5p8ihs9fd1cAfrgta1d_tv3A-xJS7-MQXiS3gRYJugrGngJnj9FQC7Cb4nZjeoCy8edUPsa5w40UJn1kHYfoz-n4_R07WPDArl_3OVrPUAddbc");'></div>
+<div class="absolute top-3 right-3 bg-white dark:bg-slate-900 rounded-md px-2 py-1 text-xs font-bold shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-400 text-[14px] font-variation-settings-'FILL'1">star</span>
+                                    4.5
+                                </div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 text-[10px] font-bold uppercase tracking-wide">Social Media</span>
+</div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white leading-tight mb-1 group-hover:text-primary transition-colors">Social Media Content Pack</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2">30 days of posts, captions, and hashtag research for FB, IG, and LinkedIn.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400">Starting at</span>
+<span class="text-lg font-bold text-slate-900 dark:text-white">2,500,000 ₫</span>
+</div>
+<button class="size-9 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+<div class="relative h-40 overflow-hidden">
+<div class="bg-cover bg-center h-full w-full group-hover:scale-110 transition-transform duration-500" data-alt="HR documents and handshake concept" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDCm3HS09msQ3EjF-KZIDcrDO955MXb7yLm1FRSYrDH6DjFARQ94FpsduUvr9twtIpcoyostjBJ2s0DhxGSaNcn8R4O7iWXDzFAx6PWcyMp3FLpUTOA_qzDLLLmkG_pnvosNizd7wU0Q3rwqFGZlCg49gDyKGUfF69Xff_91rM70EFZC_j7JA8kX6SryH776XrvZzY8S5rGYPea4RA5Iy8m6cy8KBhqb20FL86dNcX5Fe8MMUjcaMu4vaDgXPIld_iGTiICf9V7dOk");'></div>
+<div class="absolute top-3 right-3 bg-white dark:bg-slate-900 rounded-md px-2 py-1 text-xs font-bold shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-400 text-[14px] font-variation-settings-'FILL'1">star</span>
+                                    4.9
+                                </div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-300 text-[10px] font-bold uppercase tracking-wide">HR</span>
+</div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white leading-tight mb-1 group-hover:text-primary transition-colors">Employee Onboarding Kit</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2">Standardized SOPs for new hires, including contracts, checklists, and training plans.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400">Fixed Price</span>
+<span class="text-lg font-bold text-slate-900 dark:text-white">1,200,000 ₫</span>
+</div>
+<button class="size-9 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group flex flex-col bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+<div class="relative h-40 overflow-hidden">
+<div class="bg-cover bg-center h-full w-full group-hover:scale-110 transition-transform duration-500" data-alt="Minimalist modern website design mockup" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBpGp1noLOt_Nw5GLN4kIkQ4YDBXSrNtZfEC5o9dtcA9PT5Px-FDBCwWYhUspE5BDA5yDX3v8kjtcDXeAxtShjcch4s4hAo_4JGN1A32UtWFshg9TK3-utAHlMas-UcAvNI0LqhtFxEyVp6t6jX_Pyd5uq587dB8kJJ19aG6qmBTTEqJO-eS5rCp7vS96CB-sO0ES9GqKSGnbivNydUkCmz6GuKljTxdH4Uunc18R6BZQutXBayA2gK47HIPKlWJzgHjE-LtFR9p1c");'></div>
+<div class="absolute top-3 right-3 bg-white dark:bg-slate-900 rounded-md px-2 py-1 text-xs font-bold shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-400 text-[14px] font-variation-settings-'FILL'1">star</span>
+                                    4.7
+                                </div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300 text-[10px] font-bold uppercase tracking-wide">Web Design</span>
+</div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white leading-tight mb-1 group-hover:text-primary transition-colors">Landing Page Optimization</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2">UX/UI review and redesign suggestions to improve conversion rates.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400">Starting at</span>
+<span class="text-lg font-bold text-slate-900 dark:text-white">3,800,000 ₫</span>
+</div>
+<button class="size-9 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group flex flex-col bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+<div class="relative h-40 overflow-hidden">
+<div class="bg-cover bg-center h-full w-full group-hover:scale-110 transition-transform duration-500" data-alt="Financial charts and calculator" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVCYaDZGq26e3GCET1bfhL_-V0Desqo4wwVAiIwY7vwLJ7HLZSYswyfTAh1Vy7eo8I4sDh5HxoAXBNQBOWoKrKdzuJ4INZW6llplK1OnnC9nZs4o-fp1rBJDqUgXC2ZCAuFXwdIspTVS2pE34WC99sgu2sAGml4_HJsTomUb5b6NODgFjws6efeSKb08Dz0I-NvXYF3l8g7_7ZAylWD-pnWC1-E9XFKbE7-KdQ7dpLFsW9xVeP0RVZKXcebZ048ug56dUAgAWSCoc");'></div>
+<div class="absolute top-3 right-3 bg-white dark:bg-slate-900 rounded-md px-2 py-1 text-xs font-bold shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-400 text-[14px] font-variation-settings-'FILL'1">star</span>
+                                    5.0
+                                </div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-300 text-[10px] font-bold uppercase tracking-wide">Finance</span>
+</div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white leading-tight mb-1 group-hover:text-primary transition-colors">Tax Compliance Check</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2">Quarterly review of your financial statements to ensure tax compliance.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400">Consultation</span>
+<span class="text-lg font-bold text-slate-900 dark:text-white">1,500,000 ₫</span>
+</div>
+<button class="size-9 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group flex flex-col bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+<div class="relative h-40 overflow-hidden">
+<div class="bg-cover bg-center h-full w-full group-hover:scale-110 transition-transform duration-500" data-alt="Cybersecurity code on screen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBduhhR_vy-XPiN9r22xAUsnzM1A3zEIkSaFCreSkiU2WjykgsuKnRBh84-JpzuCeYmvkH625kVXrP8122-NrTqWwAZGo9buYJNSyDPCG41qdKYYJkWZSPJnYiF7Qn_9jkGjKI3FTe6_XP9zTI9FFOFNhElntwb9YiKD2BuK7Iagv5FdP8I2YcQ8A2RUGA0Q0fRz_7BYca_oqd7KuwbiNuzJG5IBWbHojYAeN4apFZfucvpstIrtQfSnugGU50U7gFh55yk03seZtg");'></div>
+<div class="absolute top-3 right-3 bg-white dark:bg-slate-900 rounded-md px-2 py-1 text-xs font-bold shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-400 text-[14px] font-variation-settings-'FILL'1">star</span>
+                                    4.6
+                                </div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-300 text-[10px] font-bold uppercase tracking-wide">IT / Dev</span>
+</div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white leading-tight mb-1 group-hover:text-primary transition-colors">Security Vulnerability Scan</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2">Automated scan of your server and application for common security holes.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400">One-time</span>
+<span class="text-lg font-bold text-slate-900 dark:text-white">900,000 ₫</span>
+</div>
+<button class="size-9 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom CTA / Pagination placeholder -->
+<div class="flex justify-center pb-8">
+<button class="px-6 py-2 border border-slate-300 dark:border-slate-600 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 transition-colors">
+                            Load More Services
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

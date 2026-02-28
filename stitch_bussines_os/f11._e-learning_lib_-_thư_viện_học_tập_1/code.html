@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BusinessOS - E-Learning Library</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0657f9",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0f1623",
+                        "card-light": "#ffffff",
+                        "card-dark": "#1a2332",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for better look */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white transition-colors duration-200">
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<aside class="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-card-dark hidden lg:flex flex-col z-20">
+<div class="flex h-full flex-col justify-between p-4">
+<div class="flex flex-col gap-6">
+<!-- Brand -->
+<div class="flex items-center gap-3 px-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg size-10 bg-primary flex items-center justify-center text-white" data-alt="BusinessOS Logo">
+<span class="material-symbols-outlined">grid_view</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-normal">BusinessOS</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal">Freelancer Workspace</p>
+</div>
+</div>
+<!-- Navigation -->
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">home</span>
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal group-hover:text-primary">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">work</span>
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal group-hover:text-primary">Dự án</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">payments</span>
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal group-hover:text-primary">Tài chính</p>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary" href="#">
+<span class="material-symbols-outlined fill">school</span>
+<p class="text-primary text-sm font-semibold leading-normal">E-Learning</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">settings</span>
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal group-hover:text-primary">Cài đặt</p>
+</a>
+</div>
+</div>
+<!-- Profile -->
+<div class="flex items-center gap-3 px-3 py-3 border-t border-slate-200 dark:border-slate-800 mt-auto">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 ring-2 ring-white dark:ring-slate-700" data-alt="User Avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCvqg3yB-YL2uTaY5EEI62ZlcbnLu-HrZ4Q1MvwbvULAZzHhufwxHO7QXXm6vWmGvCHBHbDLnJufxBSvx5Or_Daevm-6PpmZMmZTPdyNHpSwF6wp3hn6jaYjGJj90NNR-31F17_p3k81tzzG51TI7HpMLuZrcDTIa7YVtCpGfYtbRJXTyZFmoVlS4_dpXaPF55HrlO8F1QQ7ySJSki7s5_AbsuU-GwyoZdfsHcHbuxDVmllON3nBaq161vsnjVz7M90pikfaufTpws");'></div>
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-white text-sm font-medium">Minh Hoang</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Pro Freelancer</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-hidden bg-background-light dark:bg-background-dark relative">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-card-dark px-6 py-3 z-10 flex-shrink-0">
+<div class="flex items-center gap-8 lg:hidden">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<button class="size-10 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<div class="hidden lg:flex flex-col">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 text-sm">
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">Trang chủ</a>
+<span class="text-slate-300">/</span>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">Freelancer</a>
+<span class="text-slate-300">/</span>
+<span class="text-slate-900 dark:text-white font-medium">Thư viện học tập</span>
+</div>
+</div>
+<div class="flex items-center gap-4 ml-auto">
+<div class="relative hidden sm:block">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined" style="font-size: 20px;">search</span>
+<input class="pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-full text-sm w-64 focus:ring-2 focus:ring-primary/50 text-slate-900 dark:text-white placeholder-slate-500" placeholder="Tìm kiếm chung..." type="text"/>
+</div>
+<button class="size-10 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-card-dark"></span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-6 md:p-10 scroll-smooth">
+<div class="max-w-7xl mx-auto flex flex-col gap-8">
+<!-- PageHeading -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+<div class="flex flex-col gap-2">
+<h2 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-tight">Thư viện học tập</h2>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal">Nâng cao kỹ năng chuyên môn và chuẩn hóa quy trình làm việc.</p>
+</div>
+<button class="flex items-center gap-2 bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors shadow-lg shadow-blue-500/20">
+<span class="material-symbols-outlined" style="font-size: 20px;">history</span>
+                             Lịch sử học tập
+                        </button>
+</div>
+<!-- Stats -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="flex flex-col gap-1 rounded-xl p-5 bg-white dark:bg-card-dark border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 mb-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">play_circle</span>
+<p class="text-sm font-medium uppercase tracking-wider">Đang học</p>
+</div>
+<p class="text-slate-900 dark:text-white text-3xl font-bold">3 <span class="text-lg text-slate-400 font-normal">khóa</span></p>
+</div>
+<div class="flex flex-col gap-1 rounded-xl p-5 bg-white dark:bg-card-dark border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 mb-1">
+<span class="material-symbols-outlined text-green-500" style="font-size: 20px;">check_circle</span>
+<p class="text-sm font-medium uppercase tracking-wider">Đã hoàn thành</p>
+</div>
+<p class="text-slate-900 dark:text-white text-3xl font-bold">12 <span class="text-lg text-slate-400 font-normal">khóa</span></p>
+</div>
+<div class="flex flex-col gap-1 rounded-xl p-5 bg-white dark:bg-card-dark border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 mb-1">
+<span class="material-symbols-outlined text-orange-500" style="font-size: 20px;">schedule</span>
+<p class="text-sm font-medium uppercase tracking-wider">Giờ tích lũy</p>
+</div>
+<p class="text-slate-900 dark:text-white text-3xl font-bold">45 <span class="text-lg text-slate-400 font-normal">giờ</span></p>
+</div>
+</div>
+<!-- Filter Toolbar -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-4 sticky top-0 bg-background-light dark:bg-background-dark z-10 py-2">
+<!-- Categories -->
+<div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 no-scrollbar">
+<button class="px-4 py-2 rounded-full bg-primary text-white text-sm font-medium whitespace-nowrap shadow-md shadow-primary/25">Tất cả</button>
+<button class="px-4 py-2 rounded-full bg-white dark:bg-card-dark border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-medium whitespace-nowrap transition-colors">Onboarding</button>
+<button class="px-4 py-2 rounded-full bg-white dark:bg-card-dark border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-medium whitespace-nowrap transition-colors">Chuyên môn</button>
+<button class="px-4 py-2 rounded-full bg-white dark:bg-card-dark border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-medium whitespace-nowrap transition-colors">Quy trình &amp; Tool</button>
+<button class="px-4 py-2 rounded-full bg-white dark:bg-card-dark border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-medium whitespace-nowrap transition-colors">Kỹ năng mềm</button>
+</div>
+<!-- Search Local -->
+<div class="relative w-full md:w-72 group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors material-symbols-outlined">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-white dark:bg-card-dark border border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all dark:text-white placeholder-slate-400" placeholder="Tìm khóa học..." type="text"/>
+</div>
+</div>
+<!-- Course Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-10">
+<!-- Card 1: Completed Video -->
+<div class="group flex flex-col bg-white dark:bg-card-dark rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+<div class="relative aspect-video bg-slate-100 overflow-hidden">
+<img alt="Team meeting discussion" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="People discussing in a meeting room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8difZEHMnX8HlFW8-P93pSxPAZ9LqJhtlRGjvfGAMVv0XekYGL7QepNKMpjEzGBtfEcppKVk5cjECAkRwy1gY2JRDwkgs81aVKCKXNfv-DpsRsDknWNH95DkM2PZV9P1IU9GLazq-bUwBqKwLl7H8KW3nC5Ngz7ER1BVNWvv3RF_gd5mnu2uWEraSCv91Itm9J0hc70AQfeus2OeyzLLqOdK1N-NOzl10hcUKTeYZTPn9tEA-WCPrKfrXOzeAuaNrrkrQYa64ewY"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+<span class="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-xs font-bold px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 14px;">videocam</span> Video
+                                </span>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="bg-white/90 text-primary rounded-full p-3 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform">
+<span class="material-symbols-outlined fill">play_arrow</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col flex-1 p-4 gap-3">
+<div class="flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded">Onboarding</span>
+<span class="text-green-600 flex items-center gap-1 text-xs font-medium bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded-full border border-green-100 dark:border-green-900">
+<span class="material-symbols-outlined" style="font-size: 14px;">check</span> Xong
+                                        </span>
+</div>
+<h3 class="text-slate-900 dark:text-white font-bold text-lg leading-tight line-clamp-2 mb-1 group-hover:text-primary transition-colors">Quy trình làm việc tại BusinessOS</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm line-clamp-2">Hiểu rõ về văn hóa, quy định và các bước bắt đầu công việc.</p>
+</div>
+<div class="mt-auto">
+<div class="flex justify-between text-xs text-slate-500 dark:text-slate-400 mb-1.5">
+<span>Tiến độ: 100%</span>
+<span>45 phút</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-1.5 overflow-hidden">
+<div class="bg-green-500 h-1.5 rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: In Progress Video -->
+<div class="group flex flex-col bg-white dark:bg-card-dark rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+<div class="relative aspect-video bg-slate-100 overflow-hidden">
+<img alt="Client communication concept" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Abstract communication bubbles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP5e4U26MEPEPk8xVArkFai5exqFK4uK7q8c70Enb8t68DojM8aLQDLLRLGKYpRv9YS3yoPDVwG-cvrOyIoy8nHkdus72PZSwcwJQ5EE6_y_ECHdhPfjiRUztzyOgNrnhovWIlJA4CjPSayj6Cpesw8AfAmt01UAadmyaZR4ZinqpJMuj0TMfeZ5RO378-vAJnyQk1oPZr1nGaaSxPSXdzsT0GhcPRkRzHddW3iLBEeUi_aIV8JKpM1chfK-C9xeUyzJyVgHEnMVA"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+<span class="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-xs font-bold px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 14px;">videocam</span> Video
+                                </span>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="bg-white/90 text-primary rounded-full p-3 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform">
+<span class="material-symbols-outlined fill">play_arrow</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col flex-1 p-4 gap-3">
+<div class="flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-semibold text-orange-500 bg-orange-50 dark:bg-orange-900/20 px-2 py-0.5 rounded">Kỹ năng mềm</span>
+</div>
+<h3 class="text-slate-900 dark:text-white font-bold text-lg leading-tight line-clamp-2 mb-1 group-hover:text-primary transition-colors">Kỹ năng giao tiếp khách hàng</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm line-clamp-2">Nghệ thuật đàm phán và xử lý tình huống khó.</p>
+</div>
+<div class="mt-auto">
+<div class="flex justify-between text-xs text-slate-500 dark:text-slate-400 mb-1.5">
+<span>Tiến độ: 45%</span>
+<span>1h 20p</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full relative overflow-hidden" style="width: 45%">
+<div class="absolute inset-0 bg-white/20 w-full h-full animate-pulse"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: New Document -->
+<div class="group flex flex-col bg-white dark:bg-card-dark rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+<div class="relative aspect-video bg-slate-100 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600" data-alt="Gradient background for document"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white/50" style="font-size: 64px;">description</span>
+</div>
+<span class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded shadow-sm">MỚI</span>
+<span class="absolute top-3 right-3 bg-black/40 backdrop-blur-md text-white text-xs font-bold px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 14px;">picture_as_pdf</span> PDF
+                                </span>
+</div>
+<div class="flex flex-col flex-1 p-4 gap-3">
+<div class="flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-semibold text-indigo-500 bg-indigo-50 dark:bg-indigo-900/20 px-2 py-0.5 rounded">Tài chính</span>
+</div>
+<h3 class="text-slate-900 dark:text-white font-bold text-lg leading-tight line-clamp-2 mb-1 group-hover:text-primary transition-colors">Hướng dẫn xuất hóa đơn VAT</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm line-clamp-2">Quy định mới nhất về hóa đơn điện tử 2024.</p>
+</div>
+<div class="mt-auto">
+<div class="flex justify-between text-xs text-slate-500 dark:text-slate-400 mb-1.5">
+<span>Chưa bắt đầu</span>
+<span>15 trang</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-1.5 overflow-hidden">
+<div class="bg-slate-300 dark:bg-slate-600 h-1.5 rounded-full" style="width: 0%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4: Started Video -->
+<div class="group flex flex-col bg-white dark:bg-card-dark rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+<div class="relative aspect-video bg-slate-100 overflow-hidden">
+<img alt="Cyber security lock concept" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Digital lock on screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnwiMtSEmnQGllN5rrwJ7YpFIgudTeHCztyFjudCaKT5eqBlsS2rY2WbJxxM8D7oAGslDOqtmy1go3dMiJpiWrYvd2Rlh3Rfs2vsZu-jEoi0GColhilYN6SOYph7vBL26iGX-5lBsqNj_k-Sr98u6MiUsQpSmkmVmqnBx9N_cPFfZ5m5rIzKF0cXXR83-vdMma3iksKX4GPiqlLxjA6MeDRAZWX1SYWuKstv0G45jyeE-76qxvjbuYv6znODObLS-hotBCHGtZ8lU"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+<span class="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-xs font-bold px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 14px;">videocam</span> Video
+                                </span>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="bg-white/90 text-primary rounded-full p-3 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform">
+<span class="material-symbols-outlined fill">play_arrow</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col flex-1 p-4 gap-3">
+<div class="flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-semibold text-red-500 bg-red-50 dark:bg-red-900/20 px-2 py-0.5 rounded">Tuân thủ</span>
+</div>
+<h3 class="text-slate-900 dark:text-white font-bold text-lg leading-tight line-clamp-2 mb-1 group-hover:text-primary transition-colors">An toàn bảo mật thông tin</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm line-clamp-2">Bảo vệ dữ liệu khách hàng và tránh rủi ro pháp lý.</p>
+</div>
+<div class="mt-auto">
+<div class="flex justify-between text-xs text-slate-500 dark:text-slate-400 mb-1.5">
+<span>Tiến độ: 10%</span>
+<span>30 phút</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full" style="width: 10%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 5: Design System -->
+<div class="group flex flex-col bg-white dark:bg-card-dark rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+<div class="relative aspect-video bg-slate-100 overflow-hidden">
+<img alt="Design tools on screen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Laptop with design software" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkU3RweEXnqhFf9wwEwsJkssuZf0vqOd3_Fh4RKCXTOtv9_c2Fommcs_WdAZJRZiZ5vkNPfd7BXEFkA-12rKxFGQfYMeIl-gB9yVr2B-nbVDqRjR2O-f-XNUzo4oQFSIPG1OsH95VHodIUxkci_p2VkhiuM2Q_pcw7CIy9CasJslYlKo7IthLw35L7Mas01xA4tLUCXLbLyyOFa7FisJCG2MAziMbAfwhvPikv1Crb39hbhLnVQHFy2BxFipCFg-P_HlXfLNLwWBU"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+<span class="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-xs font-bold px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 14px;">videocam</span> Video
+                                </span>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="bg-white/90 text-primary rounded-full p-3 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform">
+<span class="material-symbols-outlined fill">play_arrow</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col flex-1 p-4 gap-3">
+<div class="flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-semibold text-purple-500 bg-purple-50 dark:bg-purple-900/20 px-2 py-0.5 rounded">Design</span>
+</div>
+<h3 class="text-slate-900 dark:text-white font-bold text-lg leading-tight line-clamp-2 mb-1 group-hover:text-primary transition-colors">Tư duy thiết kế cơ bản</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm line-clamp-2">Nguyên lý màu sắc, bố cục và typography.</p>
+</div>
+<div class="mt-auto">
+<div class="flex justify-between text-xs text-slate-500 dark:text-slate-400 mb-1.5">
+<span>Tiến độ: 75%</span>
+<span>2h 15p</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 6: Locked/Coming Soon -->
+<div class="group flex flex-col bg-white dark:bg-card-dark rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm opacity-75 hover:opacity-100 transition-opacity">
+<div class="relative aspect-video bg-slate-200 dark:bg-slate-800 overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center flex-col gap-2">
+<span class="material-symbols-outlined text-slate-400" style="font-size: 48px;">lock</span>
+<span class="text-xs font-bold text-slate-500 uppercase tracking-wide">Sắp ra mắt</span>
+</div>
+<div class="absolute inset-0 bg-slate-500/10" data-alt="Gray placeholder for locked content"></div>
+</div>
+<div class="flex flex-col flex-1 p-4 gap-3">
+<div class="flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-semibold text-slate-500 bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded">Quản lý dự án</span>
+</div>
+<h3 class="text-slate-700 dark:text-slate-300 font-bold text-lg leading-tight line-clamp-2 mb-1">Quản lý dự án nâng cao</h3>
+<p class="text-slate-400 dark:text-slate-500 text-sm line-clamp-2">Dành cho Senior Freelancer.</p>
+</div>
+<div class="mt-auto pt-2 border-t border-slate-100 dark:border-slate-700">
+<button class="w-full py-1.5 text-sm font-medium text-slate-500 hover:text-primary transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 18px;">notifications_active</span>
+                                        Nhận thông báo
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-center gap-2 pb-10">
+<button class="size-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors disabled:opacity-50">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-lg bg-primary text-white font-medium shadow-lg shadow-primary/30">1</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">2</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">3</button>
+<span class="text-slate-400">...</span>
+<button class="size-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

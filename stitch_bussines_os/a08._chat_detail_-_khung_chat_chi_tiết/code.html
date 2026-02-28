@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BusinessOS - Chat Detail</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#3B82F6",
+              "background-light": "#f5f6f8",
+              "background-dark": "#0f1623",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }.no-scrollbar {
+            -ms-overflow-style: none;scrollbar-width: none;}
+        .voice-wave span {
+            display: inline-block;
+            width: 3px;
+            background-color: currentColor;
+            border-radius: 9999px;
+            animation: wave 1s infinite ease-in-out;
+        }
+        @keyframes wave {
+            0%, 100% { height: 40%; }
+            50% { height: 100%; }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d121c] h-screen flex flex-col overflow-hidden">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e6ebf4] bg-white px-6 py-3 shrink-0 z-20">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#0d121c]">
+<div class="size-8 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#0d121c] text-lg font-bold leading-tight tracking-[-0.015em]">BusinessOS</h2>
+</div>
+<label class="flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#47649e] flex border-none bg-[#e6ebf4] items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d121c] focus:outline-0 focus:ring-0 border-none bg-[#e6ebf4] focus:border-none h-full placeholder:text-[#47649e] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Tìm kiếm" value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="flex gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#e6ebf4] text-[#0d121c] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 hover:bg-[#dbe2ef] transition-colors">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#e6ebf4] text-[#0d121c] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 hover:bg-[#dbe2ef] transition-colors">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-white cursor-pointer" data-alt="User profile picture showing a professional man in a suit" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDwm6DW6VqgUqbVfXnx-FGKN4DZsKOSk-QopHvSEaeWy2n06VelXg8d9A2fJZPCO6QMoR_WBUN-BEzuJFNB7xK6RwiWuGNwcsJgbtPWRbjz79DpRjM9FsBsiBaaXYDR8hu5nPnbgdQ_FOeclT1o-hRUERnzQR7sS3BDo-_YerVxL3MbnfZFloJzUXB2ehDvdo8Wm7H8PW1hAA0ZvINu5FkCD3cdWm1GUJ77vUBfio9wHcTcqLAJ7ZXt2KVAlUKdH6R2rtqRZLRHc0k");'></div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<nav class="w-64 bg-white border-r border-[#e6ebf4] flex flex-col justify-between hidden md:flex shrink-0">
+<div class="flex flex-col gap-2 p-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f0f4f9] group transition-colors" href="#">
+<span class="material-symbols-outlined text-[#47649e] group-hover:text-[#0d121c]">dashboard</span>
+<p class="text-[#0d121c] text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f0f4f9] group transition-colors" href="#">
+<span class="material-symbols-outlined text-[#47649e] group-hover:text-[#0d121c]">work</span>
+<p class="text-[#0d121c] text-sm font-medium leading-normal">Dự án</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#e6ebf4] text-primary" href="#">
+<span class="material-symbols-outlined fill-current">chat</span>
+<p class="text-[#0d121c] text-sm font-bold leading-normal">Tin nhắn</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f0f4f9] group transition-colors" href="#">
+<span class="material-symbols-outlined text-[#47649e] group-hover:text-[#0d121c]">description</span>
+<p class="text-[#0d121c] text-sm font-medium leading-normal">Tài liệu</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f0f4f9] group transition-colors" href="#">
+<span class="material-symbols-outlined text-[#47649e] group-hover:text-[#0d121c]">bar_chart</span>
+<p class="text-[#0d121c] text-sm font-medium leading-normal">Báo cáo</p>
+</a>
+</div>
+<div class="p-4 border-t border-[#e6ebf4]">
+<div class="flex items-center gap-3 px-3 py-2">
+<span class="material-symbols-outlined text-[#47649e]">help</span>
+<p class="text-[#0d121c] text-sm font-medium">Trợ giúp</p>
+</div>
+</div>
+</nav>
+<div class="flex flex-1 overflow-hidden bg-background-light dark:bg-background-dark">
+<div class="w-80 flex flex-col border-r border-[#e6ebf4] bg-white hidden lg:flex">
+<div class="p-4 border-b border-[#e6ebf4]">
+<h3 class="text-xl font-bold text-[#0d121c] mb-4">Đoạn chat</h3>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-[#47649e]">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="w-full py-2 pl-10 pr-4 text-sm bg-[#f5f6f8] border-none rounded-lg focus:ring-1 focus:ring-primary placeholder:text-[#9aa2b1]" placeholder="Tìm kiếm đoạn chat..." type="text"/>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto no-scrollbar">
+<div class="flex items-center gap-3 px-4 py-3 bg-[#e6ebf4] border-l-4 border-primary cursor-pointer hover:bg-[#e6ebf4] transition-colors">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="Portrait of Nguyen Van A" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC4VjLJcx0zjGvEp8yybNQ6GyMxtiqbUqihmj6oTkcZbzAbJWS6F4UBCmo2rxURqBizVYym5fiK3435OSdOSJuzkKBZCQkxUmHr3t7rTx0LH8-9kvg0JtTW_bhmDttWg02PBpOyy8sTK9sd9PDroewX7DDiX9KFXtJ6AvCRXdaXpzmGGeEqOEHC_zBdQryXBzCaqZ-Qyi_V8_DGgRADYkN3AHXMUZwmnxroOMVnY99gWndLrdPK_SnT2Y1PjR_drPOHkM0bCBiISbo");'></div>
+<div class="absolute bottom-0 right-0 size-3 bg-green-500 rounded-full border-2 border-white"></div>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<p class="text-[#0d121c] text-sm font-bold truncate">Nguyễn Văn A</p>
+<span class="text-xs text-[#47649e] font-medium">10:30 AM</span>
+</div>
+<p class="text-[#47649e] text-xs truncate">OK, để mình xem.</p>
+</div>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 border-l-4 border-transparent hover:bg-[#f8f9fc] cursor-pointer transition-colors">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="Portrait of Tran Thi B" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjHBRHecYQ6DZTvwCuv3KlfvRpBk4LLJHAczlJUugmMPwZoyiudpCPjwUyDlZo56E8sUO4ajkAYETxJvqIuu-jusMyvjY48-pk4liiR2bJTuR14PY19zoVT5pdIkwuEGYiO8Nd5FakaDVkxfEn4Csp7wJBQJZbi7LISbD_90VjPX_Fw-CENTDEs_xVHYhjIlV8NGSMEDeHuFeHrgbAV-R_KkpfuAFDo1c9KGOr-jPzifre8Z3fGDdUxPm3BpKLWqIaaLb25BQlPmA");'></div>
+<div class="absolute bottom-0 right-0 size-3 bg-gray-300 rounded-full border-2 border-white"></div>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<p class="text-[#0d121c] text-sm font-medium truncate">Trần Thị B</p>
+<span class="text-xs text-[#9aa2b1]">09:15 AM</span>
+</div>
+<p class="text-[#5e6d82] text-xs truncate font-medium">Gửi mình file nhé</p>
+</div>
+<div class="shrink-0 size-2 bg-primary rounded-full ml-2"></div>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 border-l-4 border-transparent hover:bg-[#f8f9fc] cursor-pointer transition-colors">
+<div class="relative shrink-0">
+<div class="flex items-center justify-center bg-purple-100 text-purple-600 rounded-full size-12 font-bold text-lg">
+                            KT
+                        </div>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<p class="text-[#0d121c] text-sm font-medium truncate">Phòng Kế Toán</p>
+<span class="text-xs text-[#9aa2b1]">Thứ 2</span>
+</div>
+<p class="text-[#5e6d82] text-xs truncate">Lịch họp thay đổi sang 2h chiều...</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col flex-1 min-w-0 bg-white relative">
+<div class="h-16 border-b border-[#e6ebf4] bg-white flex items-center justify-between px-6 shrink-0 z-10 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="lg:hidden cursor-pointer mr-2">
+<span class="material-symbols-outlined text-[#0d121c]">arrow_back</span>
+</div>
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Active chat user profile image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1Z_2QTL8_cQh33wqs4aZBv3UjeQBBopP9q8QDyih9DFU_4kR11ubMv9LzOYdd8sz-_M-7Nb5-Yrd-WYO2lO5zkYPJza-ltoKYQPFjQpw0vpAgvEVEuT1v7eSG2fRNsrOJopfaeNF9DNT84V18dmnTTdMpbFyXRa-htTWiTTyoH-5bDqGIC8lY1tEfe01IksSbTA4tXIwmzEnzczZXuOPalLWEfnAmP2gBVYHbMYfgA-k0_s1_fTN4u2oMGhISTRwuperQ-A227RE");'></div>
+<div class="absolute bottom-0 right-0 size-2.5 bg-green-500 rounded-full border-2 border-white"></div>
+</div>
+<div>
+<h3 class="text-[#0d121c] text-base font-bold leading-tight">Nguyễn Văn A</h3>
+<p class="text-green-600 text-xs font-medium">Đang hoạt động</p>
+</div>
+</div>
+<div class="flex items-center gap-1 md:gap-3">
+<button class="p-2 text-[#47649e] hover:bg-[#f0f4f9] rounded-full transition-colors" title="Gọi thoại">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</button>
+<button class="p-2 text-[#47649e] hover:bg-[#f0f4f9] rounded-full transition-colors" title="Gọi video">
+<span class="material-symbols-outlined text-[20px]">videocam</span>
+</button>
+<button class="p-2 text-[#47649e] hover:bg-[#f0f4f9] rounded-full transition-colors" title="Tìm kiếm trong tin nhắn">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</button>
+<div class="h-6 w-px bg-[#e6ebf4] mx-1"></div>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg transition-colors ml-1">
+<span class="material-symbols-outlined text-[18px]">add_task</span>
+<span class="text-sm font-bold hidden sm:inline">Tạo Task nhanh</span>
+</button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-6 flex flex-col gap-6">
+<div class="flex justify-center">
+<span class="bg-[#f3f4f6] text-[#6b7280] text-xs px-3 py-1 rounded-full font-medium">Hôm nay, 10:30 AM</span>
+</div>
+<div class="flex gap-3 max-w-[85%] sm:max-w-[70%]">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 shrink-0 mt-1" data-alt="Counterparty avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBdp46RDuQ1vKrvr0dlLWIuSPR8v0mENaNZUtjBznO0Ix7CpuoZy-AnGu8cBiB7iQc5OCKtaOFaoA5vJ0roXoF-5bmcnC7X9DtCuCmEWMwPY81PUFTLWd-GdJeL_vb22Rq1mWuMw56y0p3bW25WbVEWhNlDKPhXf8tXrzxSF6scx3tAYNE8gFd_FWmqNzMPENhuMHxfihK26W3PQXgRlEfbA65xcRVDBHarJp0EhF7d8mGIDSrTcJ9rOYdUj0lGQXNMGkz4evWQrmg");'></div>
+<div class="flex flex-col gap-1">
+<div class="bg-[#F3F4F6] p-3.5 rounded-2xl rounded-tl-none text-black text-[15px] leading-relaxed">
+<p>Chào bạn, báo cáo tài chính tháng này đã xong chưa?</p>
+</div>
+<span class="text-[11px] text-[#9aa2b1] ml-1">10:31 AM</span>
+</div>
+</div>
+<div class="flex flex-row-reverse gap-3 max-w-[85%] sm:max-w-[70%] self-end">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 shrink-0 mt-1" data-alt="My user avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAz1HqqYSg5Yh8hb7cFD7hmcGYm8EQYBMZliTJ7C1XFEsnEERKGL939dy9JpVw_v59J90KjdTjahwpJ2jhySgYjhK3lQ6yooPt1VIQ1zOKKtnAnLosP37djGMnmEdPrk-NVEe4eN9AB42qjkRTyrG4o5AgAs6ZWndn_59vhvr6fTsWfsQjw2w8n-dSfw3XPi9NPDdSPWx6-wg8VSL1cENA_3VQMOhwxKiSkILgm7uVkGdRIOUR8KcCN3rRSK8R5bz7_zXByqVx1-mA");'></div>
+<div class="flex flex-col gap-2 items-end">
+<div class="bg-primary text-white p-3.5 rounded-2xl rounded-tr-none text-[15px] leading-relaxed">
+<p>Mình đang hoàn thiện, gửi bạn bản nháp nhé.</p>
+</div>
+<div class="flex items-center gap-3 bg-white border border-[#e6ebf4] rounded-xl p-3 w-64 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+<div class="bg-red-50 p-2 rounded-lg">
+<span class="material-symbols-outlined text-red-500">picture_as_pdf</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<p class="text-[#0d121c] text-sm font-semibold truncate">Bao_cao_TC_Draft.pdf</p>
+<p class="text-[#9aa2b1] text-xs">2.4 MB</p>
+</div>
+<span class="material-symbols-outlined text-[#47649e] text-lg">download</span>
+</div>
+<span class="text-[11px] text-[#9aa2b1] mr-1">10:32 AM</span>
+</div>
+</div>
+<div class="flex flex-row-reverse gap-3 max-w-[85%] sm:max-w-[70%] self-end">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 shrink-0 mt-1" data-alt="My user avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC3rOO9kkfouhClrg6nMXQgXJZFWGifYVcHxc4hdw-c8n5aId8e-wQcH640k97e8exP61M1FXxfgH1QfCP-d1Jy0dNux6GcUPm9u8gSGeIRNsfNib6bS415ajsp8RZOoTkw1npvyl4V5dyJ-KrfFvlg3d7gkXYE6VX0xDT5HCfi6QM-UrSNO3fYQSt5mHzeO7fDsUTMLvEK4MGOboJdO-f4ex7KLTnhZ2PiUzvedZNZSqjygpKg9yIgT2cnTkod8kRB8VtMF1m6VOU");'></div>
+<div class="flex flex-col gap-2 items-end">
+<div class="flex items-center gap-3 bg-primary text-white p-3 rounded-2xl rounded-tr-none min-w-[240px]">
+<button class="size-8 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-white text-lg">play_arrow</span>
+</button>
+<div class="flex gap-0.5 items-end h-6 voice-wave text-white/80">
+<span class="h-2"></span><span class="h-4"></span><span class="h-3"></span><span class="h-5"></span>
+<span class="h-2"></span><span class="h-6"></span><span class="h-3"></span><span class="h-4"></span>
+<span class="h-2"></span><span class="h-3"></span><span class="h-2"></span><span class="h-4"></span>
+<span class="h-2"></span><span class="h-4"></span><span class="h-3"></span><span class="h-5"></span>
+</div>
+<span class="text-xs font-medium ml-auto">0:45</span>
+</div>
+<div class="bg-primary text-white p-3.5 rounded-2xl rounded-tr-none text-[15px] leading-relaxed">
+<p>Check giúp mình phần chi phí marketing.</p>
+</div>
+<span class="text-[11px] text-[#9aa2b1] mr-1">10:35 AM</span>
+</div>
+</div>
+<div class="flex gap-3 max-w-[85%] sm:max-w-[70%]">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 shrink-0 mt-1" data-alt="Counterparty avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQ8wreP1puFUmsR6DwXqVeE0DFhW1bbIF8_Lfx1daDTSbaWhznl8l3EsyNzc3T0V9q8HiY2IxeeEgHDawASr6a9b8UWs_spHWrA_RyjuyQf3aH6ldKkl0imwWpaBHKF5mazEOKrg_EuBt5tc_RzFZcAMxlFQOWCxAAOfFSwRc5uDckpD3amHmfx8uth6WGxKsVbZxNbiXP0C2TocVG_AKfRNzZqsq5IHTuWQL6-GbjcOks0Dhm17HxRbgJ4iup2cT-x6sXHT4c_sQ");'></div>
+<div class="flex flex-col gap-1">
+<div class="bg-[#F3F4F6] p-3.5 rounded-2xl rounded-tl-none text-black text-[15px] leading-relaxed">
+<p>OK, để mình xem.</p>
+</div>
+<span class="text-[11px] text-[#9aa2b1] ml-1">Vừa xong</span>
+</div>
+</div>
+</div>
+<div class="bg-white p-4 border-t border-[#e6ebf4] shrink-0">
+<div class="flex flex-col gap-2">
+<div class="flex items-end gap-2 bg-[#f5f6f8] p-2 rounded-lg border border-transparent focus-within:border-[#e6ebf4] focus-within:bg-white focus-within:ring-1 focus-within:ring-primary/20 transition-all">
+<div class="flex gap-1 pb-1 px-1">
+<button class="p-2 text-[#47649e] hover:bg-[#e6ebf4] hover:text-[#0d121c] rounded-full transition-colors" title="Đính kèm file">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+<button class="p-2 text-[#47649e] hover:bg-[#e6ebf4] hover:text-[#0d121c] rounded-full transition-colors" title="Gửi ảnh">
+<span class="material-symbols-outlined text-[20px]">image</span>
+</button>
+<button class="p-2 text-[#47649e] hover:bg-[#e6ebf4] hover:text-[#0d121c] rounded-full transition-colors" title="Ghi âm giọng nói">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+</div>
+<textarea class="form-textarea w-full bg-transparent border-none p-2 text-[#0d121c] placeholder:text-[#9aa2b1] focus:ring-0 resize-none text-[15px] max-h-32 min-h-[44px]" placeholder="Nhập tin nhắn..." rows="1"></textarea>
+<button class="p-2.5 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors shadow-sm mb-0.5 mr-0.5" title="Gửi">
+<span class="material-symbols-outlined text-[20px] block">send</span>
+</button>
+</div>
+</div>
+<div class="text-center mt-2">
+<p class="text-[10px] text-[#9aa2b1]">Nhấn Enter để gửi, Shift + Enter để xuống dòng</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>S02. Role Selection - Chọn Vai trò</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c83f6",
+                        "background-light": "#f8f9fc",
+                        "background-dark": "#101722",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark min-h-screen flex flex-col text-[#0d131c] dark:text-white antialiased">
+<!-- Main Container -->
+<div class="layout-container flex h-full grow flex-col relative overflow-hidden">
+<!-- Background Decoration (Subtle Gradients) -->
+<div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+<div class="absolute -top-[10%] -left-[5%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute top-[20%] -right-[5%] w-[30%] h-[30%] bg-blue-400/5 rounded-full blur-[100px]"></div>
+</div>
+<!-- Content Wrapper -->
+<div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5 items-center">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1 w-full justify-center">
+<!-- Header Section -->
+<div class="flex flex-col items-center text-center gap-2 mb-10 md:mb-14 animate-fade-in-up">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[32px]">business_center</span>
+</div>
+<h1 class="text-[#0d131c] dark:text-white text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight">
+                        Chào mừng bạn đến với BusinessOS
+                    </h1>
+<p class="text-[#49699c] dark:text-gray-400 text-base md:text-lg font-normal leading-normal mt-2">
+                        Vui lòng chọn vai trò để tiếp tục trải nghiệm
+                    </p>
+</div>
+<!-- Cards Selection Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[800px] mx-auto">
+<!-- Business Card -->
+<button class="group relative flex flex-col gap-6 rounded-2xl border border-[#e5e7eb] dark:border-gray-700 bg-white dark:bg-[#1a2636] p-8 text-left transition-all duration-300 hover:shadow-xl hover:border-primary hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-[#101722]">
+<div class="flex items-center justify-between w-full">
+<div class="h-14 w-14 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-[32px]" data-icon="domain">domain</span>
+</div>
+<span class="opacity-0 group-hover:opacity-100 transition-opacity text-primary material-symbols-outlined">arrow_forward</span>
+</div>
+<div class="flex flex-col gap-2">
+<h2 class="text-[#0d131c] dark:text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">
+                                Tôi là Doanh nghiệp
+                            </h2>
+<p class="text-[#49699c] dark:text-gray-400 text-sm font-normal leading-relaxed">
+                                Tìm kiếm chuyên gia hàng đầu và công cụ quản lý dự án thông minh tối ưu hoá quy trình.
+                            </p>
+</div>
+<!-- Decorative glow on hover -->
+<div class="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+</button>
+<!-- Freelancer Card -->
+<button class="group relative flex flex-col gap-6 rounded-2xl border border-[#e5e7eb] dark:border-gray-700 bg-white dark:bg-[#1a2636] p-8 text-left transition-all duration-300 hover:shadow-xl hover:border-primary hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-[#101722]">
+<div class="flex items-center justify-between w-full">
+<div class="h-14 w-14 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-[32px]" data-icon="person_search">person_search</span>
+</div>
+<span class="opacity-0 group-hover:opacity-100 transition-opacity text-primary material-symbols-outlined">arrow_forward</span>
+</div>
+<div class="flex flex-col gap-2">
+<h2 class="text-[#0d131c] dark:text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">
+                                Tôi là Freelancer
+                            </h2>
+<p class="text-[#49699c] dark:text-gray-400 text-sm font-normal leading-relaxed">
+                                Tìm kiếm cơ hội việc làm hấp dẫn và phát triển sự nghiệp bền vững với cộng đồng uy tín.
+                            </p>
+</div>
+<!-- Decorative glow on hover -->
+<div class="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+</button>
+</div>
+<!-- Footer Links -->
+<div class="mt-16 flex flex-col items-center gap-4 text-center">
+<div class="flex items-center justify-center gap-6">
+<a class="text-[#49699c] dark:text-gray-500 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Hỗ trợ</a>
+<span class="h-1 w-1 rounded-full bg-[#cbd5e1] dark:bg-gray-700"></span>
+<a class="text-[#49699c] dark:text-gray-500 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Điều khoản sử dụng</a>
+</div>
+<p class="text-[#94a3b8] dark:text-gray-600 text-xs">© 2024 BusinessOS. All rights reserved.</p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

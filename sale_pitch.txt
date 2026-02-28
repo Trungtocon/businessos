@@ -1,0 +1,22 @@
+BUSINESS OS: HỆ ĐIỀU HÀNH DOANH NGHIỆP THẾ HỆ MỚI
+Slogan: "Kết nối trí tuệ - Vận hành thông minh"
+
+1. GIÁ TRỊ CỐT LÕI (VALUE PROPOSITIONS)
+Giao diện "Dual-View" Đột Phá: Giải quyết mâu thuẫn giữa nhu cầu chi tiết của bộ phận vận hành (Classic Mode) và sự tinh gọn của lãnh đạo (Virtual Mode).
+Trợ lý AI Toàn Diện: Không chỉ là phần mềm, AI tại BusinessOS đóng vai trò là cộng sự tư vấn chiến lược, duyệt tác vụ nhanh và xử lý lệnh giọng nói.
+Hệ Sinh Thái Khép Kín: Từ tìm kiếm chuyên gia (Marketplace), quản lý dự án (Kanban) đến thanh toán tài chính và hóa đơn VAT, tất cả trong một nền tảng duy nhất.
+2. TÍNH NĂNG ĐẮT GIÁ CHO DOANH NGHIỆP (CLIENT PORTAL)
+Cockpit Dashboard (Chế độ CEO): Theo dõi sức khỏe doanh nghiệp qua hệ thống "Đèn giao thông" (Tài chính - Vận hành - Tăng trưởng) trực quan hóa bằng 3D/Neon.
+Duyệt nhanh kiểu Tinder: CEO phê duyệt chi phí và kế hoạch chỉ bằng thao tác vuốt, tối ưu hóa thời gian lãnh đạo.
+Smart Briefing: AI tự động điền yêu cầu dự án dựa trên dữ liệu ngành, giúp doanh nghiệp bắt đầu dự án chỉ trong 3 phút.
+Ví tài chính & Hóa đơn tự động: Quản lý dòng tiền minh bạch, tự động xuất hóa đơn VAT chuẩn quy định.
+3. TÍNH NĂNG ƯU VIỆT CHO FREELANCER (TALENT HUB)
+Workspace Chuyên Biệt: Không gian làm việc 3 cột (Brief - Sản phẩm - AI Chat) giúp tăng 50% hiệu suất làm việc tập trung.
+Skill Test & Chứng chỉ số: Hệ thống thi lấy chứng chỉ tự động, giúp Freelancer nâng cao uy tín và dễ dàng nhận việc với mức thầu cao hơn.
+Ví thu nhập & Chấm công: Ghi nhận thời gian làm việc thời gian thực và rút tiền nhanh chóng về tài khoản ngân hàng liên kết.
+4. ĐỘ TIN CẬY & AN TOÀN (SUPER ADMIN)
+Dispute Center (Xử lý tranh chấp): Admin đóng vai trò trọng tài dựa trên bằng chứng log chat và file lưu vết, đảm bảo quyền lợi công bằng cho cả hai bên.
+Quy trình chuẩn hóa: Hệ thống Workflow Builder giúp doanh nghiệp mua các gói dịch vụ đã được quy trình hóa 100%, giảm thiểu rủi ro sai sót.
+5. TRẢI NGHIỆM THỊ GIÁC (DESIGN SYSTEM)
+Thiết kế Trắng tinh khôi & Hiện đại, font Inter sắc nét, bo góc 8px thân thiện. Giao diện sạch sẽ giúp người dùng sử dụng liên tục nhiều giờ mà không mỏi mắt.
+💡 Gợi ý cho Sales: Hãy tập trung nhấn mạnh vào tính năng "Duyệt nhanh" và "Phòng Hội Chẩn AI" khi gặp các CEO, và nhấn mạnh vào "Ví tài chính/Hóa đơn" khi gặp các bộ phận kế toán/vận hành.

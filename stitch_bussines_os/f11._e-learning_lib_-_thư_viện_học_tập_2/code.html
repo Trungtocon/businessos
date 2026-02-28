@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BusinessOS - Thư viện E-learning</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "deep-ocean": "#0F172A",
+                        "electric-blue": "#3B82F6",
+                        "gray-border": "#E5E7EB",
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "custom": "8px"
+                    },
+                    boxShadow: {
+                        "ultra-light": "0 1px 2px 0 rgba(0, 0, 0, 0.03)"
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-sans text-deep-ocean bg-white;
+            }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-white">
+<div class="flex h-screen overflow-hidden">
+<aside class="w-64 flex-shrink-0 border-r border-gray-border bg-white hidden lg:flex flex-col z-20">
+<div class="flex h-full flex-col justify-between p-4">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3 px-2 mt-2">
+<div class="bg-electric-blue rounded-custom size-9 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">grid_view</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-deep-ocean text-sm font-bold leading-none">BusinessOS</h1>
+<p class="text-slate-400 text-[10px] mt-1 uppercase tracking-wider font-semibold">Freelancer</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-custom hover:bg-slate-50 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-electric-blue">home</span>
+<p class="text-slate-600 text-sm font-medium group-hover:text-deep-ocean">Tổng quan</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-custom hover:bg-slate-50 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-electric-blue">work</span>
+<p class="text-slate-600 text-sm font-medium group-hover:text-deep-ocean">Dự án</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-custom bg-slate-50 text-electric-blue" href="#">
+<span class="material-symbols-outlined fill">school</span>
+<p class="text-sm font-semibold">Thư viện học tập</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-custom hover:bg-slate-50 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-electric-blue">payments</span>
+<p class="text-slate-600 text-sm font-medium group-hover:text-deep-ocean">Tài chính</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-custom hover:bg-slate-50 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-electric-blue">settings</span>
+<p class="text-slate-600 text-sm font-medium group-hover:text-deep-ocean">Cài đặt</p>
+</a>
+</nav>
+</div>
+<div class="flex items-center gap-3 px-2 py-4 border-t border-gray-border">
+<div class="size-9 rounded-full bg-slate-100 bg-cover bg-center border border-gray-border" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCvqg3yB-YL2uTaY5EEI62ZlcbnLu-HrZ4Q1MvwbvULAZzHhufwxHO7QXXm6vWmGvCHBHbDLnJufxBSvx5Or_Daevm-6PpmZMmZTPdyNHpSwF6wp3hn6jaYjGJj90NNR-31F17_p3k81tzzG51TI7HpMLuZrcDTIa7YVtCpGfYtbRJXTyZFmoVlS4_dpXaPF55HrlO8F1QQ7ySJSki7s5_AbsuU-GwyoZdfsHcHbuxDVmllON3nBaq161vsnjVz7M90pikfaufTpws");'></div>
+<div class="flex flex-col min-w-0">
+<p class="text-deep-ocean text-xs font-bold truncate">Minh Hoàng</p>
+<p class="text-slate-400 text-[10px] truncate">Pro Freelancer</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-full overflow-hidden bg-white">
+<header class="h-16 flex items-center justify-between px-6 border-b border-gray-border flex-shrink-0">
+<div class="flex items-center gap-4">
+<button class="lg:hidden p-2 -ml-2 text-slate-600">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="hidden sm:flex items-center gap-2 text-xs text-slate-400 uppercase tracking-widest font-semibold">
+<span>Hệ thống</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-deep-ocean">Thư viện học tập</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="size-9 flex items-center justify-center rounded-custom hover:bg-slate-50 text-slate-400 relative">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white"></span>
+</button>
+<button class="size-9 flex items-center justify-center rounded-custom hover:bg-slate-50 text-slate-400">
+<span class="material-symbols-outlined text-xl">help</span>
+</button>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-6 lg:p-10">
+<div class="max-w-6xl mx-auto flex flex-col gap-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="text-2xl font-bold text-deep-ocean">Thư viện học tập</h2>
+<p class="text-slate-500 text-sm mt-1">Khám phá các khóa học chuyên sâu dành riêng cho freelancer.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 border border-gray-border rounded-custom text-sm font-medium text-slate-600 hover:bg-slate-50 transition-colors">
+                            Khóa học của tôi
+                        </button>
+<button class="px-4 py-2 bg-deep-ocean text-white rounded-custom text-sm font-medium hover:opacity-90 transition-opacity">
+                            Tham gia cộng đồng
+                        </button>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-4 py-1">
+<div class="relative w-full md:w-80">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined text-xl">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-white border border-gray-border rounded-custom text-sm focus:ring-1 focus:ring-electric-blue focus:border-electric-blue placeholder-slate-400" placeholder="Tìm kiếm bài giảng..." type="text"/>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto w-full no-scrollbar">
+<button class="px-4 py-2 rounded-custom bg-deep-ocean text-white text-xs font-semibold whitespace-nowrap">Tất cả</button>
+<button class="px-4 py-2 rounded-custom bg-white border border-gray-border text-slate-600 hover:bg-slate-50 text-xs font-semibold whitespace-nowrap transition-colors">Marketing</button>
+<button class="px-4 py-2 rounded-custom bg-white border border-gray-border text-slate-600 hover:bg-slate-50 text-xs font-semibold whitespace-nowrap transition-colors">Design</button>
+<button class="px-4 py-2 rounded-custom bg-white border border-gray-border text-slate-600 hover:bg-slate-50 text-xs font-semibold whitespace-nowrap transition-colors">Development</button>
+<button class="px-4 py-2 rounded-custom bg-white border border-gray-border text-slate-600 hover:bg-slate-50 text-xs font-semibold whitespace-nowrap transition-colors">Management</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+<div class="bg-white rounded-custom border border-gray-border shadow-ultra-light overflow-hidden group">
+<div class="relative aspect-video overflow-hidden">
+<img alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8difZEHMnX8HlFW8-P93pSxPAZ9LqJhtlRGjvfGAMVv0XekYGL7QepNKMpjEzGBtfEcppKVk5cjECAkRwy1gY2JRDwkgs81aVKCKXNfv-DpsRsDknWNH95DkM2PZV9P1IU9GLazq-bUwBqKwLl7H8KW3nC5Ngz7ER1BVNWvv3RF_gd5mnu2uWEraSCv91Itm9J0hc70AQfeus2OeyzLLqOdK1N-NOzl10hcUKTeYZTPn9tEA-WCPrKfrXOzeAuaNrrkrQYa64ewY"/>
+<div class="absolute top-3 left-3">
+<span class="bg-white/90 backdrop-blur px-2 py-1 rounded text-[10px] font-bold text-deep-ocean uppercase border border-white">Cơ bản</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<h3 class="text-deep-ocean font-bold text-base leading-snug line-clamp-2 min-h-[2.75rem]">Quy trình làm việc chuyên nghiệp tại BusinessOS</h3>
+<div class="flex items-center justify-between text-xs text-slate-400 font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 45 phút</span>
+<span>Tiến độ: 100%</span>
+</div>
+<div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+<div class="bg-electric-blue h-full" style="width: 100%"></div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-custom border border-gray-border shadow-ultra-light overflow-hidden group">
+<div class="relative aspect-video overflow-hidden">
+<img alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP5e4U26MEPEPk8xVArkFai5exqFK4uK7q8c70Enb8t68DojM8aLQDLLRLGKYpRv9YS3yoPDVwG-cvrOyIoy8nHkdus72PZSwcwJQ5EE6_y_ECHdhPfjiRUztzyOgNrnhovWIlJA4CjPSayj6Cpesw8AfAmt01UAadmyaZR4ZinqpJMuj0TMfeZ5RO378-vAJnyQk1oPZr1nGaaSxPSXdzsT0GhcPRkRzHddW3iLBEeUi_aIV8JKpM1chfK-C9xeUyzJyVgHEnMVA"/>
+<div class="absolute top-3 left-3">
+<span class="bg-white/90 backdrop-blur px-2 py-1 rounded text-[10px] font-bold text-deep-ocean uppercase border border-white">Kỹ năng</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<h3 class="text-deep-ocean font-bold text-base leading-snug line-clamp-2 min-h-[2.75rem]">Kỹ năng giao tiếp và Đàm phán với khách hàng</h3>
+<div class="flex items-center justify-between text-xs text-slate-400 font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 1h 20p</span>
+<span>Tiến độ: 45%</span>
+</div>
+<div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+<div class="bg-electric-blue h-full" style="width: 45%"></div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-custom border border-gray-border shadow-ultra-light overflow-hidden group">
+<div class="relative aspect-video overflow-hidden bg-slate-50 flex items-center justify-center">
+<img alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkU3RweEXnqhFf9wwEwsJkssuZf0vqOd3_Fh4RKCXTOtv9_c2Fommcs_WdAZJRZiZ5vkNPfd7BXEFkA-12rKxFGQfYMeIl-gB9yVr2B-nbVDqRjR2O-f-XNUzo4oQFSIPG1OsH95VHodIUxkci_p2VkhiuM2Q_pcw7CIy9CasJslYlKo7IthLw35L7Mas01xA4tLUCXLbLyyOFa7FisJCG2MAziMbAfwhvPikv1Crb39hbhLnVQHFy2BxFipCFg-P_HlXfLNLwWBU"/>
+<div class="absolute top-3 left-3">
+<span class="bg-white/90 backdrop-blur px-2 py-1 rounded text-[10px] font-bold text-deep-ocean uppercase border border-white">Thiết kế</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<h3 class="text-deep-ocean font-bold text-base leading-snug line-clamp-2 min-h-[2.75rem]">Tư duy thiết kế cơ bản cho UI/UX Designer</h3>
+<div class="flex items-center justify-between text-xs text-slate-400 font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 2h 15p</span>
+<span>Tiến độ: 75%</span>
+</div>
+<div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+<div class="bg-electric-blue h-full" style="width: 75%"></div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-custom border border-gray-border shadow-ultra-light overflow-hidden group">
+<div class="relative aspect-video overflow-hidden">
+<img alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnwiMtSEmnQGllN5rrwJ7YpFIgudTeHCztyFjudCaKT5eqBlsS2rY2WbJxxM8D7oAGslDOqtmy1go3dMiJpiWrYvd2Rlh3Rfs2vsZu-jEoi0GColhilYN6SOYph7vBL26iGX-5lBsqNj_k-Sr98u6MiUsQpSmkmVmqnBx9N_cPFfZ5m5rIzKF0cXXR83-vdMma3iksKX4GPiqlLxjA6MeDRAZWX1SYWuKstv0G45jyeE-76qxvjbuYv6znODObLS-hotBCHGtZ8lU"/>
+<div class="absolute top-3 left-3">
+<span class="bg-white/90 backdrop-blur px-2 py-1 rounded text-[10px] font-bold text-deep-ocean uppercase border border-white">Bảo mật</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<h3 class="text-deep-ocean font-bold text-base leading-snug line-clamp-2 min-h-[2.75rem]">An toàn bảo mật thông tin trong dự án</h3>
+<div class="flex items-center justify-between text-xs text-slate-400 font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 30 phút</span>
+<span>Tiến độ: 10%</span>
+</div>
+<div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+<div class="bg-electric-blue h-full" style="width: 10%"></div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-custom border border-gray-border shadow-ultra-light overflow-hidden group">
+<div class="relative aspect-video overflow-hidden bg-slate-50 flex flex-col items-center justify-center p-6 text-center">
+<span class="material-symbols-outlined text-slate-200 text-6xl">picture_as_pdf</span>
+<span class="absolute top-3 right-3 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded">MỚI</span>
+<div class="absolute top-3 left-3">
+<span class="bg-white/90 backdrop-blur px-2 py-1 rounded text-[10px] font-bold text-deep-ocean uppercase border border-white">Tài liệu</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<h3 class="text-deep-ocean font-bold text-base leading-snug line-clamp-2 min-h-[2.75rem]">Hướng dẫn xuất hóa đơn điện tử VAT 2024</h3>
+<div class="flex items-center justify-between text-xs text-slate-400 font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">description</span> 15 trang</span>
+<span>Chưa bắt đầu</span>
+</div>
+<div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+<div class="bg-electric-blue h-full" style="width: 0%"></div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-custom border border-gray-border shadow-ultra-light overflow-hidden opacity-60">
+<div class="relative aspect-video overflow-hidden bg-slate-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-300 text-4xl">lock</span>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<h3 class="text-deep-ocean font-bold text-base leading-snug line-clamp-2 min-h-[2.75rem]">Quản lý dự án nâng cao &amp; Senior Level</h3>
+<div class="flex items-center justify-between text-xs text-slate-400 font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">event</span> Sắp ra mắt</span>
+<span>Yêu cầu Level 3</span>
+</div>
+<div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+<div class="bg-slate-300 h-full" style="width: 0%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-center gap-2 pb-10">
+<button class="size-9 flex items-center justify-center rounded-custom border border-gray-border text-slate-400 hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="size-9 flex items-center justify-center rounded-custom bg-deep-ocean text-white text-sm font-bold">1</button>
+<button class="size-9 flex items-center justify-center rounded-custom border border-gray-border text-slate-600 text-sm font-medium hover:bg-slate-50 transition-colors">2</button>
+<button class="size-9 flex items-center justify-center rounded-custom border border-gray-border text-slate-600 text-sm font-medium hover:bg-slate-50 transition-colors">3</button>
+<span class="px-1 text-slate-300">...</span>
+<button class="size-9 flex items-center justify-center rounded-custom border border-gray-border text-slate-400 hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

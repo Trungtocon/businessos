@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>C09. Project List - Classic Mode</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c83f6",
+                        "primary-dark": "#2563eb",
+                        "sidebar": "#0F172A",
+                        "sidebar-hover": "#1E293B",
+                        "background-light": "#f3f4f6",
+                        "background-dark": "#101722",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom scrollbar for table if needed */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 6px;
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white h-screen overflow-hidden flex font-display">
+<!-- Sidebar -->
+<aside class="w-[260px] h-full bg-[#0F172A] flex flex-col shrink-0 transition-all duration-300 z-20">
+<!-- Logo Area -->
+<div class="h-[72px] flex items-center px-6 border-b border-slate-700/50">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+</div>
+<div>
+<h1 class="text-white text-base font-bold leading-tight">BusinessOS</h1>
+<p class="text-slate-400 text-xs font-normal">Classic Mode</p>
+</div>
+</div>
+</div>
+<!-- Navigation -->
+<div class="flex-1 overflow-y-auto py-6 px-3 flex flex-col gap-1 custom-scrollbar">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-sidebar-hover hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-white">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-white transition-colors group relative" href="#">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-primary rounded-r-full"></div>
+<span class="material-symbols-outlined text-[20px] text-primary filled">folder_open</span>
+<span class="text-sm font-medium">Dự án</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-sidebar-hover hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-white">payments</span>
+<span class="text-sm font-medium">Tài chính</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-sidebar-hover hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-white">group</span>
+<span class="text-sm font-medium">Nhân sự</span>
+</a>
+<div class="my-4 border-t border-slate-700/50"></div>
+<p class="px-3 text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Quản lý</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-sidebar-hover hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-white">description</span>
+<span class="text-sm font-medium">Hóa đơn</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-sidebar-hover hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-white">analytics</span>
+<span class="text-sm font-medium">Báo cáo</span>
+</a>
+</div>
+<!-- Footer Settings -->
+<div class="p-4 border-t border-slate-700/50">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:bg-sidebar-hover hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm font-medium">Cài đặt</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<div class="flex-1 flex flex-col h-full min-w-0 bg-[#f3f4f6] dark:bg-black">
+<!-- Top Header -->
+<header class="h-[72px] bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between px-8 shrink-0 z-10 sticky top-0">
+<!-- Search -->
+<div class="flex-1 max-w-md">
+<div class="relative group">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-2.5 rounded-lg border-none bg-slate-100 dark:bg-gray-800 text-sm text-slate-900 dark:text-white placeholder-slate-500 focus:ring-2 focus:ring-primary focus:bg-white dark:focus:bg-gray-800 transition-all" placeholder="Tìm kiếm dự án, freelancer..." type="text"/>
+</div>
+</div>
+<!-- Right Actions -->
+<div class="flex items-center gap-6 ml-4">
+<button class="relative text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 transition-colors">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+<span class="absolute top-0 right-0 size-2 bg-red-500 rounded-full border-2 border-white dark:border-gray-900"></span>
+</button>
+<div class="h-8 w-px bg-gray-200 dark:bg-gray-700"></div>
+<div class="flex items-center gap-3 cursor-pointer">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-medium text-slate-900 dark:text-white">Admin User</p>
+<p class="text-xs text-slate-500">Quản lý cấp cao</p>
+</div>
+<div class="size-10 rounded-full bg-cover bg-center border border-gray-200 dark:border-gray-700" data-alt="User profile avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA_5dBdmUPm9xVBW_kpk70zORrc4M5yuVyAV8husZF9I2-FOIwgfCswyuA3IQhsyB9mpPWCcEu34qhiDFdFHuOwL-caYAaF2AM-sgHH69mw-5WQte0df_FZVHoxbc-SI6QKws5zhpDMhzf3D8OWnDFsdHLxqnyvH-rij5g4hAAJqrjnr4V_9alLE9S6ZvItuOZuk2IxFjh8cA-6_R8SEQd3VcjJVWhfyFoiAdlFl9uTo9KHm83Jr1q2OtFwfVxWKBPjYMqe-P1DL74');"></div>
+</div>
+</div>
+</header>
+<!-- Main Scrollable Area -->
+<main class="flex-1 overflow-y-auto p-8 custom-scrollbar">
+<div class="max-w-[1400px] mx-auto flex flex-col gap-6">
+<!-- Breadcrumb -->
+<nav class="flex text-sm text-slate-500">
+<a class="hover:text-primary transition-colors" href="#">Dashboard</a>
+<span class="mx-2">/</span>
+<span class="text-slate-900 dark:text-white font-medium">Dự án</span>
+</nav>
+<!-- Page Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Danh sách dự án</h2>
+<div class="flex gap-3">
+<button class="flex items-center justify-center gap-2 px-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span class="hidden sm:inline">Export</span>
+</button>
+<button class="flex items-center justify-center gap-2 px-5 py-2.5 bg-primary hover:bg-primary-dark rounded-lg text-sm font-bold text-white shadow-sm transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                            Tạo dự án mới
+                        </button>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap items-center gap-3 pb-2">
+<div class="relative group">
+<button class="flex items-center gap-2 px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[18px] text-slate-400">filter_list</span>
+<span>Trạng thái: Tất cả</span>
+<span class="material-symbols-outlined text-[18px] text-slate-400">expand_more</span>
+</button>
+</div>
+<div class="relative group">
+<button class="flex items-center gap-2 px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[18px] text-slate-400">calendar_today</span>
+<span>Thời gian</span>
+<span class="material-symbols-outlined text-[18px] text-slate-400">expand_more</span>
+</button>
+</div>
+<div class="relative group">
+<button class="flex items-center gap-2 px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[18px] text-slate-400">attach_money</span>
+<span>Ngân sách</span>
+<span class="material-symbols-outlined text-[18px] text-slate-400">expand_more</span>
+</button>
+</div>
+<div class="ml-auto flex items-center gap-2 text-sm text-slate-500">
+<span>Hiển thị 1-10 trên 142</span>
+<div class="flex gap-1 ml-2">
+<button class="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded disabled:opacity-50">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded disabled:opacity-50">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Table Card -->
+<div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm whitespace-nowrap">
+<thead class="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 text-slate-500 font-semibold uppercase tracking-wider text-xs">
+<tr>
+<th class="px-6 py-4" scope="col">
+<div class="flex items-center gap-1 cursor-pointer hover:text-primary">
+                                            Tên dự án
+                                            <span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+</div>
+</th>
+<th class="px-6 py-4" scope="col">Freelancer</th>
+<th class="px-6 py-4" scope="col">Trạng thái</th>
+<th class="px-6 py-4 min-w-[160px]" scope="col">Tiến độ</th>
+<th class="px-6 py-4 text-right" scope="col">Ngân sách</th>
+<th class="px-6 py-4 w-10" scope="col"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100 dark:divide-gray-700 text-slate-700 dark:text-slate-300">
+<!-- Row 1 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors group">
+<td class="px-6 py-4">
+<a class="font-semibold text-slate-900 dark:text-white hover:text-primary" href="#">Website Redesign cho Client X</a>
+<p class="text-xs text-slate-500 mt-0.5">ID: #PROJ-2023-001</p>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-cover bg-center ring-2 ring-white dark:ring-gray-800" data-alt="Freelancer Avatar Nguyen Van A" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfucClcy6kX8ku5VIdp42M2F-THH7G6eDazq5dWLdzfDBIDxo0G_RunzwG--2nmoy6X9qfogA9exTFjl8AUSoOvQeVj76yXHdUTnyCCcs6lhiwlEq3bKMa6Fb0YUry1KLrxdUvuGNCjFCLMBDr1GePzcpT42je8clo6HwweEf2N4AGKn_TU8-oy-aiRKYoTMAixrpIQjx7tnGHxXMBeHdsq5Z3g3j1ZM1w9OBn6ftofb9T3-XRppzPYCnL0_UFNwuazMD6cFd6fW8');"></div>
+<div>
+<p class="font-medium text-slate-900 dark:text-white">Nguyễn Văn A</p>
+<p class="text-xs text-slate-500">UI/UX Designer</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-100 dark:border-blue-800">
+<span class="size-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+                                            Đang chạy
+                                        </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 45%"></div>
+</div>
+<span class="text-xs font-medium w-8 text-right">45%</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right font-medium text-slate-900 dark:text-white font-mono">
+                                        15.000.000 ₫
+                                    </td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors group">
+<td class="px-6 py-4">
+<a class="font-semibold text-slate-900 dark:text-white hover:text-primary" href="#">Phát triển Mobile App MVP</a>
+<p class="text-xs text-slate-500 mt-0.5">ID: #PROJ-2023-042</p>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-cover bg-center ring-2 ring-white dark:ring-gray-800" data-alt="Freelancer Avatar Tran Huong" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBW-uWaRYMNlh8OR7-BUCiF0fcquzVTlOqic6rPVg7_i_ovnasQt6DQNJ0t_4uPy0DO6-eyHIXVaGMYlj4aqhYeOdTUsaE2qrNkR_H_bp-nHRgVMXbZhiIIlFOlzGT1ZFk2DJ80vYPE482bmopCMM7WGNN-X_beSYbEvdOGYhm9IdCiSDgRYz6msCp6ipHyP4_ooCVhdLo_NV3w3TCzE2GeOrgXjpzvwSirBLuF2UlfsNJQ8Tlf1KbiH_rjnyDikRRjlImHW3j9hLc');"></div>
+<div>
+<p class="font-medium text-slate-900 dark:text-white">Trần Thị Hương</p>
+<p class="text-xs text-slate-500">Mobile Developer</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-green-50 text-green-700 dark:bg-green-900/30 dark:text-green-300 border border-green-100 dark:border-green-800">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                            Hoàn thành
+                                        </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2">
+<div class="bg-green-500 h-2 rounded-full" style="width: 100%"></div>
+</div>
+<span class="text-xs font-medium w-8 text-right">100%</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right font-medium text-slate-900 dark:text-white font-mono">
+                                        45.000.000 ₫
+                                    </td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors group">
+<td class="px-6 py-4">
+<a class="font-semibold text-slate-900 dark:text-white hover:text-primary" href="#">Content Marketing Q4</a>
+<p class="text-xs text-slate-500 mt-0.5">ID: #PROJ-2023-089</p>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-cover bg-center ring-2 ring-white dark:ring-gray-800" data-alt="Freelancer Avatar Le Minh" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAsN5SshR_K44oWphe3VkLT7g4N_VlY22Idw2ZxozCT6abS2TFs2uvumJiRv22gycxzWZ1aJoLSd98VQXJ_VSOZgSdSV9PdaeTZx2squvcEcWuSLnsEZGUE1bGNoDoa301r0LplMNmCZHbDtBPj8iWmoXMtOlqt0w7VxFzY1H-5Q7ELjvD6GYqnNR4VIfa4LowLU6MSeqiSgxLgtDRM3jY-d3VTS6_1oUaV9-WA4BPXd_Gp1cmuKs-4gcfoTKUN_YHYtpK36mQfJr8');"></div>
+<div>
+<p class="font-medium text-slate-900 dark:text-white">Lê Minh</p>
+<p class="text-xs text-slate-500">Copywriter</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-100 dark:border-blue-800">
+<span class="size-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+                                            Đang chạy
+                                        </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 25%"></div>
+</div>
+<span class="text-xs font-medium w-8 text-right">25%</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right font-medium text-slate-900 dark:text-white font-mono">
+                                        8.000.000 ₫
+                                    </td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors group">
+<td class="px-6 py-4">
+<a class="font-semibold text-slate-900 dark:text-white hover:text-primary" href="#">Hệ thống CRM Nội bộ</a>
+<p class="text-xs text-slate-500 mt-0.5">ID: #PROJ-2023-112</p>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-cover bg-center ring-2 ring-white dark:ring-gray-800" data-alt="Freelancer Avatar Pham Kien" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBdJGh71SRyda2Jqm30o9L8fWKHaL1nO51FKpmK9Sud62dzOte2OR4DArmCfEH2BBWQnyXCD4aqMJl0_y8pfSxVrhq9HXBM1EaaXfk_3rZNAFYvLT2f_2anVkCMbQIEmanQd2HW1eNwBnbscR_Uql6bZPUsCbqaBAx-JAIQPuZrfJCzTmCbPzS0R9zIS_W_j3Jn64QWAkdcXL-zm4Qrmlrq1jkzDy2h5O1gCmOPlx_XVISd0l3dh1-7QTKa6o3AtDsOomOzrZtIy00');"></div>
+<div>
+<p class="font-medium text-slate-900 dark:text-white">Phạm Kiên</p>
+<p class="text-xs text-slate-500">Backend Dev</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-orange-50 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300 border border-orange-100 dark:border-orange-800">
+<span class="material-symbols-outlined text-[14px]">pause_circle</span>
+                                            Tạm dừng
+                                        </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2">
+<div class="bg-orange-400 h-2 rounded-full" style="width: 15%"></div>
+</div>
+<span class="text-xs font-medium w-8 text-right">15%</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right font-medium text-slate-900 dark:text-white font-mono">
+                                        22.500.000 ₫
+                                    </td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors group">
+<td class="px-6 py-4">
+<a class="font-semibold text-slate-900 dark:text-white hover:text-primary" href="#">SEO Audit Q1 2024</a>
+<p class="text-xs text-slate-500 mt-0.5">ID: #PROJ-2024-002</p>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-cover bg-center ring-2 ring-white dark:ring-gray-800" data-alt="Freelancer Avatar Hoang Dung" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBcrxKJPwX3aGdb7fSIj1jPPPvdASETSIW_AVRe7WiScdrEgZs882dZYfBrhx2a7LcY3WudLf6e95JsrFh8H6-bO37hu_gWSXkPOy52F3m1BqhuD85PABDKpaYRF4r-93NJyRR0-yxDs5TcLiQuEQx98OmPZBK6Df7V08_iD2HaHj_KHWd6n6j5C7HOaslotyrUa8Po84L7KJ8quJfnzfp54GfiHD3sWSen0EME_TyuuZxbYN_Eht4qG26hI1TLbaGbLXyZpL4RFbs');"></div>
+<div>
+<p class="font-medium text-slate-900 dark:text-white">Hoàng Dũng</p>
+<p class="text-xs text-slate-500">SEO Specialist</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-100 dark:border-blue-800">
+<span class="size-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+                                            Đang chạy
+                                        </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 60%"></div>
+</div>
+<span class="text-xs font-medium w-8 text-right">60%</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right font-medium text-slate-900 dark:text-white font-mono">
+                                        5.500.000 ₫
+                                    </td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="px-6 py-4 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 flex items-center justify-between">
+<button class="px-4 py-2 text-sm font-medium text-slate-600 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
+                            Previous
+                        </button>
+<div class="hidden sm:flex items-center gap-1">
+<button class="px-3 py-1 text-sm font-medium text-white bg-primary rounded-md">1</button>
+<button class="px-3 py-1 text-sm font-medium text-slate-600 hover:bg-gray-200 rounded-md">2</button>
+<button class="px-3 py-1 text-sm font-medium text-slate-600 hover:bg-gray-200 rounded-md">3</button>
+<span class="px-2 text-slate-400">...</span>
+<button class="px-3 py-1 text-sm font-medium text-slate-600 hover:bg-gray-200 rounded-md">8</button>
+</div>
+<button class="px-4 py-2 text-sm font-medium text-slate-600 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
+                            Next
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

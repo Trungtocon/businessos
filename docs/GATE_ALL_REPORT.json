@@ -1,0 +1,99 @@
+{
+  "timestamp": "2026-02-27T04:33:42.864Z",
+  "mode": "FAST",
+  "baseUrl": "http://localhost:3000",
+  "steps": [
+    {
+      "name": "prod-gate",
+      "cmd": "node scripts/gates/prod-gate.mjs",
+      "status": "PASS",
+      "ms": 128,
+      "exitCode": 0,
+      "logTail": [
+        "═══════════════════════════════════════════",
+        "PRODUCTION GATE — Sprint 5+6",
+        "═══════════════════════════════════════════",
+        "[1/4] Secrets Leak Scan",
+        "✅ secrets_leak: No real secret patterns found in tracked files",
+        "[2/4] Evidence/Audit Schema Validation",
+        "✅ schema_actions: 36 actions validated",
+        "✅ schema_audit: 52 audit entries validated",
+        "[4/4] Packs Schema Validation",
+        "✅ schema_packs: 3 packs validated",
+        "[3/4] Route Drift Check",
+        "⏭  route_drift: NAV_CANONICAL_MAP_S1.json not found — cannot check drift",
+        "───────────────────────────────────────────",
+        "✅ PROD GATE PASS",
+        "───────────────────────────────────────────"
+      ],
+      "required": true
+    },
+    {
+      "name": "build",
+      "cmd": "npm run build",
+      "status": "PASS",
+      "ms": 30094,
+      "exitCode": 0,
+      "logTail": [
+        "├ ○ /freelancer/withdraw                         3.26 kB        \u001b[37m\u001b[1m98.3 kB\u001b[22m\u001b[39m",
+        "├ ○ /freelancer/workspace                        4.99 kB         \u001b[37m\u001b[1m100 kB\u001b[22m\u001b[39m",
+        "├ ○ /login                                       3.77 kB         \u001b[37m\u001b[1m108 kB\u001b[22m\u001b[39m",
+        "├ ○ /notifications                               4.47 kB        \u001b[37m\u001b[1m99.5 kB\u001b[22m\u001b[39m",
+        "├ ○ /onboarding                                  2.18 kB         \u001b[37m\u001b[1m104 kB\u001b[22m\u001b[39m",
+        "├ ○ /otp                                         2.23 kB         \u001b[37m\u001b[1m104 kB\u001b[22m\u001b[39m",
+        "├ ○ /pricing                                     3.39 kB        \u001b[37m\u001b[1m90.3 kB\u001b[22m\u001b[39m",
+        "├ ○ /role                                        1.56 kB        \u001b[37m\u001b[1m95.3 kB\u001b[22m\u001b[39m",
+        "├ ○ /search                                      2.28 kB        \u001b[37m\u001b[1m97.3 kB\u001b[22m\u001b[39m",
+        "├ ○ /settings                                    4.62 kB        \u001b[37m\u001b[1m99.7 kB\u001b[22m\u001b[39m",
+        "├ ○ /splash                                      1.09 kB          \u001b[37m\u001b[1m88 kB\u001b[22m\u001b[39m",
+        "├ ○ /team                                        3.61 kB        \u001b[37m\u001b[1m90.6 kB\u001b[22m\u001b[39m",
+        "├ ○ /users                                       682 B          \u001b[37m\u001b[1m87.6 kB\u001b[22m\u001b[39m",
+        "├ ○ /virtual                                     7.55 kB         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m",
+        "├ ○ /virtual/approval                            4.72 kB         \u001b[37m\u001b[1m158 kB\u001b[22m\u001b[39m",
+        "├ ○ /virtual/approvals                           2.58 kB        \u001b[37m\u001b[1m89.5 kB\u001b[22m\u001b[39m",
+        "├ ○ /virtual/onboarding                          2.04 kB          \u001b[37m\u001b[1m89 kB\u001b[22m\u001b[39m",
+        "├ ○ /virtual/packs                               1.88 kB        \u001b[37m\u001b[1m88.8 kB\u001b[22m\u001b[39m",
+        "├ ○ /virtual/sprint/content                      1.41 kB        \u001b[37m\u001b[1m92.5 kB\u001b[22m\u001b[39m",
+        "├ ○ /virtual/sprint/lead                         1.25 kB        \u001b[37m\u001b[1m92.3 kB\u001b[22m\u001b[39m",
+        "├ ○ /virtual/sprint/report                       1.27 kB        \u001b[37m\u001b[1m92.3 kB\u001b[22m\u001b[39m",
+        "├ ○ /virtual/voice                               5.48 kB         \u001b[37m\u001b[1m141 kB\u001b[22m\u001b[39m",
+        "├ ○ /virtual/war-room                            8.4 kB          \u001b[37m\u001b[1m144 kB\u001b[22m\u001b[39m",
+        "└ ○ /workflow                                    5.72 kB         \u001b[37m\u001b[1m153 kB\u001b[22m\u001b[39m",
+        "+ First Load JS shared by all                    \u001b[37m\u001b[1m86.9 kB\u001b[22m\u001b[39m",
+        "├ chunks/7023-06b4efcbc805b67e.js              31.3 kB",
+        "├ chunks/fd9d1056-8d24ff03c1db56a5.js          53.6 kB",
+        "└ other shared chunks (total)                  1.96 kB",
+        "○  (Static)   prerendered as static content",
+        "ƒ  (Dynamic)  server-rendered on demand"
+      ],
+      "required": true
+    },
+    {
+      "name": "nav:validate",
+      "cmd": "npm run nav:validate",
+      "status": "PASS",
+      "ms": 347,
+      "exitCode": 0,
+      "logTail": [
+        "> bussines_os@0.1.0 nav:validate",
+        "> node scripts/nav/nav-validate.mjs",
+        "NAV VALIDATION — Sprint 1",
+        "========================",
+        "Registry:   48 routes",
+        "Discovered: 56 routes",
+        "OK:         48",
+        "Broken:     0",
+        "Extra (FS): 3",
+        "✅ All ACTIVE registry routes have matching pages."
+      ],
+      "required": true
+    }
+  ],
+  "summary": {
+    "pass": 3,
+    "fail": 0,
+    "skipped": 0,
+    "total": 3
+  },
+  "verdict": "PASS"
+}

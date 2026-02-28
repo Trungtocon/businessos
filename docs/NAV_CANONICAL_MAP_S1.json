@@ -1,0 +1,430 @@
+{
+    "generatedAt": "2026-02-27T08:30:00+07:00",
+    "totalRoutes": 56,
+    "routes": [
+        {
+            "screenId": "s00",
+            "screenName": "Landing Page",
+            "route": "/",
+            "filePath": "src/app/page.tsx",
+            "status": "active",
+            "group": "public"
+        },
+        {
+            "screenId": "s01",
+            "screenName": "Splash",
+            "route": "/splash",
+            "filePath": "src/app/(auth)/splash/page.tsx",
+            "status": "active",
+            "group": "auth"
+        },
+        {
+            "screenId": "s02",
+            "screenName": "Role Selection",
+            "route": "/role",
+            "filePath": "src/app/(auth)/role/page.tsx",
+            "status": "active",
+            "group": "auth"
+        },
+        {
+            "screenId": "s03",
+            "screenName": "Login",
+            "route": "/login",
+            "filePath": "src/app/(auth)/login/page.tsx",
+            "status": "active",
+            "group": "auth"
+        },
+        {
+            "screenId": "s04",
+            "screenName": "OTP Verification",
+            "route": "/otp",
+            "filePath": "src/app/(auth)/otp/page.tsx",
+            "status": "active",
+            "group": "auth"
+        },
+        {
+            "screenId": "s05",
+            "screenName": "Onboarding Wizard",
+            "route": "/onboarding",
+            "filePath": "src/app/(auth)/onboarding/page.tsx",
+            "status": "active",
+            "group": "auth"
+        },
+        {
+            "screenId": "pub01",
+            "screenName": "Pricing",
+            "route": "/pricing",
+            "filePath": "src/app/pricing/page.tsx",
+            "status": "active",
+            "group": "public"
+        },
+        {
+            "screenId": "pub02",
+            "screenName": "Team Landing",
+            "route": "/team",
+            "filePath": "src/app/team/page.tsx",
+            "status": "active",
+            "group": "public"
+        },
+        {
+            "screenId": "a01",
+            "screenName": "Admin Dashboard",
+            "route": "/dashboard",
+            "filePath": "src/app/(admin)/dashboard/page.tsx",
+            "status": "active",
+            "group": "admin"
+        },
+        {
+            "screenId": "a02",
+            "screenName": "User Management",
+            "route": "/users",
+            "filePath": "src/app/(admin)/users/page.tsx",
+            "status": "active",
+            "group": "admin"
+        },
+        {
+            "screenId": "a03",
+            "screenName": "Dispute Center",
+            "route": "/disputes",
+            "filePath": "src/app/(admin)/disputes/page.tsx",
+            "status": "active",
+            "group": "admin"
+        },
+        {
+            "screenId": "a04",
+            "screenName": "Workflow Builder",
+            "route": "/workflow",
+            "filePath": "src/app/(admin)/workflow/page.tsx",
+            "status": "active",
+            "group": "admin"
+        },
+        {
+            "screenId": "a05",
+            "screenName": "Admin Finance",
+            "route": "/finance",
+            "filePath": "src/app/(admin)/finance/page.tsx",
+            "status": "active",
+            "group": "admin"
+        },
+        {
+            "screenId": "a06",
+            "screenName": "Notification Center",
+            "route": "/notifications",
+            "filePath": "src/app/(admin)/notifications/page.tsx",
+            "status": "active",
+            "group": "admin"
+        },
+        {
+            "screenId": "a07",
+            "screenName": "Chat List",
+            "route": "/chat",
+            "filePath": "src/app/(admin)/chat/page.tsx",
+            "status": "active",
+            "group": "admin"
+        },
+        {
+            "screenId": "a08",
+            "screenName": "Chat Detail",
+            "route": "/chat/[id]",
+            "filePath": "src/app/(admin)/chat/[id]/page.tsx",
+            "status": "active",
+            "group": "admin"
+        },
+        {
+            "screenId": "a10",
+            "screenName": "Settings",
+            "route": "/settings",
+            "filePath": "src/app/(admin)/settings/page.tsx",
+            "status": "active",
+            "group": "admin"
+        },
+        {
+            "screenId": "a11",
+            "screenName": "Error States",
+            "route": "/error-states",
+            "filePath": "src/app/(admin)/error-states/page.tsx",
+            "status": "active",
+            "group": "admin"
+        },
+        {
+            "screenId": "c01",
+            "screenName": "CEO Cockpit",
+            "route": "/virtual",
+            "filePath": "src/app/(portal)/virtual/page.tsx",
+            "status": "active",
+            "group": "virtual"
+        },
+        {
+            "screenId": "c02",
+            "screenName": "Swipe Approval",
+            "route": "/virtual/approval",
+            "filePath": "src/app/(portal)/virtual/approval/page.tsx",
+            "status": "active",
+            "group": "virtual"
+        },
+        {
+            "screenId": "c03",
+            "screenName": "War Room",
+            "route": "/virtual/war-room",
+            "filePath": "src/app/(portal)/virtual/war-room/page.tsx",
+            "status": "active",
+            "group": "virtual"
+        },
+        {
+            "screenId": "c04",
+            "screenName": "Voice Command",
+            "route": "/virtual/voice",
+            "filePath": "src/app/(portal)/virtual/voice/page.tsx",
+            "status": "active",
+            "group": "virtual"
+        },
+        {
+            "screenId": "sp01",
+            "screenName": "Lead Sprint Pack",
+            "route": "/virtual/sprint/lead",
+            "filePath": "src/app/(portal)/virtual/sprint/lead/page.tsx",
+            "status": "active",
+            "group": "virtual"
+        },
+        {
+            "screenId": "sp02",
+            "screenName": "Content Sprint Pack",
+            "route": "/virtual/sprint/content",
+            "filePath": "src/app/(portal)/virtual/sprint/content/page.tsx",
+            "status": "active",
+            "group": "virtual"
+        },
+        {
+            "screenId": "sp03",
+            "screenName": "Growth Report Pack",
+            "route": "/virtual/sprint/report",
+            "filePath": "src/app/(portal)/virtual/sprint/report/page.tsx",
+            "status": "active",
+            "group": "virtual"
+        },
+        {
+            "screenId": "c05",
+            "screenName": "Marketplace",
+            "route": "/classic/marketplace",
+            "filePath": "src/app/(portal)/classic/marketplace/page.tsx",
+            "status": "active",
+            "group": "classic"
+        },
+        {
+            "screenId": "c06",
+            "screenName": "Service Detail",
+            "route": "/classic/marketplace/[id]",
+            "filePath": "src/app/(portal)/classic/marketplace/[id]/page.tsx",
+            "status": "active",
+            "group": "classic"
+        },
+        {
+            "screenId": "c07",
+            "screenName": "Smart Briefing",
+            "route": "/classic/briefing",
+            "filePath": "src/app/(portal)/classic/briefing/page.tsx",
+            "status": "active",
+            "group": "classic"
+        },
+        {
+            "screenId": "c08",
+            "screenName": "Checkout",
+            "route": "/classic/checkout",
+            "filePath": "src/app/(portal)/classic/checkout/page.tsx",
+            "status": "active",
+            "group": "classic"
+        },
+        {
+            "screenId": "c09",
+            "screenName": "Project List",
+            "route": "/classic/projects",
+            "filePath": "src/app/(portal)/classic/projects/page.tsx",
+            "status": "active",
+            "group": "classic"
+        },
+        {
+            "screenId": "c10",
+            "screenName": "Kanban Board",
+            "route": "/classic/projects/[id]/kanban",
+            "filePath": "src/app/(portal)/classic/projects/[id]/kanban/page.tsx",
+            "status": "active",
+            "group": "classic"
+        },
+        {
+            "screenId": "c11",
+            "screenName": "Task Detail",
+            "route": "/classic/projects/[id]/task/[taskId]",
+            "filePath": "src/app/(portal)/classic/projects/[id]/task/[taskId]/page.tsx",
+            "status": "active",
+            "group": "classic"
+        },
+        {
+            "screenId": "c11b",
+            "screenName": "Task Submit",
+            "route": "/classic/projects/[id]/task/[taskId]/submit",
+            "filePath": "src/app/(portal)/classic/projects/[id]/task/[taskId]/submit/page.tsx",
+            "status": "active",
+            "group": "classic"
+        },
+        {
+            "screenId": "c12",
+            "screenName": "Team Management",
+            "route": "/classic/team",
+            "filePath": "src/app/(portal)/classic/team/page.tsx",
+            "status": "active",
+            "group": "classic"
+        },
+        {
+            "screenId": "c13",
+            "screenName": "Business Finance",
+            "route": "/classic/finance",
+            "filePath": "src/app/(portal)/classic/finance/page.tsx",
+            "status": "active",
+            "group": "classic"
+        },
+        {
+            "screenId": "c14",
+            "screenName": "Invoice Center",
+            "route": "/classic/invoices",
+            "filePath": "src/app/(portal)/classic/invoices/page.tsx",
+            "status": "active",
+            "group": "classic"
+        },
+        {
+            "screenId": "c15",
+            "screenName": "Business Profile",
+            "route": "/classic/profile",
+            "filePath": "src/app/(portal)/classic/profile/page.tsx",
+            "status": "active",
+            "group": "classic"
+        },
+        {
+            "screenId": "c16",
+            "screenName": "Reports",
+            "route": "/classic/reports",
+            "filePath": "src/app/(portal)/classic/reports/page.tsx",
+            "status": "active",
+            "group": "classic"
+        },
+        {
+            "screenId": "c17",
+            "screenName": "Project Feedback",
+            "route": "/classic/feedback",
+            "filePath": "src/app/(portal)/classic/feedback/page.tsx",
+            "status": "active",
+            "group": "classic"
+        },
+        {
+            "screenId": "f01",
+            "screenName": "Freelancer Dashboard",
+            "route": "/freelancer",
+            "filePath": "src/app/(portal)/freelancer/page.tsx",
+            "status": "active",
+            "group": "freelancer"
+        },
+        {
+            "screenId": "f02",
+            "screenName": "Job Market",
+            "route": "/freelancer/jobs",
+            "filePath": "src/app/(portal)/freelancer/jobs/page.tsx",
+            "status": "active",
+            "group": "freelancer"
+        },
+        {
+            "screenId": "f03",
+            "screenName": "Freelancer Workspace",
+            "route": "/freelancer/workspace",
+            "filePath": "src/app/(portal)/freelancer/workspace/page.tsx",
+            "status": "active",
+            "group": "freelancer"
+        },
+        {
+            "screenId": "f04",
+            "screenName": "Submit Work",
+            "route": "/freelancer/submit",
+            "filePath": "src/app/(portal)/freelancer/submit/page.tsx",
+            "status": "active",
+            "group": "freelancer"
+        },
+        {
+            "screenId": "f05",
+            "screenName": "Timesheet",
+            "route": "/freelancer/timesheet",
+            "filePath": "src/app/(portal)/freelancer/timesheet/page.tsx",
+            "status": "active",
+            "group": "freelancer"
+        },
+        {
+            "screenId": "f06",
+            "screenName": "Wallet",
+            "route": "/freelancer/wallet",
+            "filePath": "src/app/(portal)/freelancer/wallet/page.tsx",
+            "status": "active",
+            "group": "freelancer"
+        },
+        {
+            "screenId": "f07",
+            "screenName": "Withdraw",
+            "route": "/freelancer/withdraw",
+            "filePath": "src/app/(portal)/freelancer/withdraw/page.tsx",
+            "status": "active",
+            "group": "freelancer"
+        },
+        {
+            "screenId": "f08",
+            "screenName": "Freelancer Profile",
+            "route": "/freelancer/profile",
+            "filePath": "src/app/(portal)/freelancer/profile/page.tsx",
+            "status": "active",
+            "group": "freelancer"
+        },
+        {
+            "screenId": "f09",
+            "screenName": "Skill Test Center",
+            "route": "/freelancer/skills",
+            "filePath": "src/app/(portal)/freelancer/skills/page.tsx",
+            "status": "active",
+            "group": "freelancer"
+        },
+        {
+            "screenId": "f10",
+            "screenName": "Test UI",
+            "route": "/freelancer/test",
+            "filePath": "src/app/(portal)/freelancer/test/page.tsx",
+            "status": "active",
+            "group": "freelancer"
+        },
+        {
+            "screenId": "f10r",
+            "screenName": "Test Results",
+            "route": "/freelancer/test/results",
+            "filePath": "src/app/(portal)/freelancer/test/results/page.tsx",
+            "status": "active",
+            "group": "freelancer"
+        },
+        {
+            "screenId": "f11",
+            "screenName": "Learning Library",
+            "route": "/freelancer/learning",
+            "filePath": "src/app/(portal)/freelancer/learning/page.tsx",
+            "status": "active",
+            "group": "freelancer"
+        },
+        {
+            "screenId": "f12",
+            "screenName": "Bank Settings",
+            "route": "/freelancer/bank",
+            "filePath": "src/app/(portal)/freelancer/bank/page.tsx",
+            "status": "active",
+            "group": "freelancer"
+        },
+        {
+            "screenId": "search",
+            "screenName": "Global Search",
+            "route": "/search",
+            "filePath": "src/app/(portal)/search/page.tsx",
+            "status": "active",
+            "group": "portal"
+        }
+    ]
+}

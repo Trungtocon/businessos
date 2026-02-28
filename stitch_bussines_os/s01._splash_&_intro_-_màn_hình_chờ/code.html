@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BusinessOS - Splash Screen</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6", // Electric Blue
+                        "background-light": "#ffffff", // Pure White as requested
+                        "background-dark": "#101722",
+                        "deep-ocean": "#0F172A", // Text color
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Loading Animation */
+        @keyframes loading-progress {
+            0% { width: 0%; left: 0; }
+            50% { width: 70%; left: 0; }
+            100% { width: 100%; left: 0; }
+        }
+        
+        .animate-progress {
+            animation: loading-progress 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark min-h-screen flex flex-col items-center justify-center relative overflow-hidden transition-colors duration-300">
+<!-- Main Content Container -->
+<main class="flex flex-col items-center justify-center w-full max-w-md px-6 z-10 flex-grow">
+<!-- Logo Section -->
+<div class="mb-10 animate-fade-in opacity-100 transition-opacity duration-1000 ease-out">
+<div class="relative w-24 h-24 md:w-32 md:h-32 flex items-center justify-center">
+<!-- Abstract Logo Representation -->
+<div class="absolute inset-0 bg-primary/10 rounded-2xl rotate-45 transform scale-90"></div>
+<div class="absolute inset-0 bg-primary/20 rounded-2xl -rotate-12 transform scale-75"></div>
+<div class="relative z-10 p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-5xl md:text-6xl text-primary">
+                       grid_view
+                   </span>
+</div>
+</div>
+<!-- Logo Text (BusinessOS) -->
+<h1 class="mt-6 text-3xl md:text-4xl font-bold text-deep-ocean dark:text-white text-center tracking-tight">
+                BusinessOS
+            </h1>
+</div>
+<!-- Slogan -->
+<div class="mb-16 text-center max-w-xs md:max-w-sm">
+<h3 class="text-deep-ocean dark:text-slate-300 text-lg md:text-xl font-medium leading-relaxed tracking-normal">
+                Hệ điều hành cho doanh nghiệp tương lai
+            </h3>
+</div>
+<!-- Loading Indicator -->
+<div aria-label="Loading application" class="w-full max-w-[240px] flex flex-col gap-2" role="progressbar">
+<div class="h-1 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full animate-progress relative w-0"></div>
+</div>
+<div class="flex justify-center mt-2">
+<span class="text-slate-400 text-xs font-medium tracking-wide uppercase">Loading Resources</span>
+</div>
+</div>
+</main>
+<!-- Footer / Meta Info -->
+<footer class="absolute bottom-6 w-full text-center px-4">
+<p class="text-slate-400 dark:text-slate-500 text-xs font-normal">
+            v2.0.1 © 2024 BusinessOS Inc. All rights reserved.
+        </p>
+</footer>
+<!-- Background Elements (Subtle decoration) -->
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+<!-- Abstract blurred decorative circle -->
+<div class="fixed -bottom-32 -right-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="fixed -top-32 -left-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+</body></html>

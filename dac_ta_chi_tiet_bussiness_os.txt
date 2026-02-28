@@ -1,0 +1,47 @@
+TÀI LIỆU ĐẶC TẢ CHI TIẾT BUSINESS OS (FINAL)
+I. QUY CHUẨN KỸ THUẬT CHUNG (DESIGN SYSTEM)
+Hệ lưới (Grid): 8px Base Unit (Tất cả Margin/Padding là bội số của 8).
+Bo góc (Corner Radius): Đồng nhất 8px cho mọi Card, Button, Input.
+Bảng màu:
+Chính: Electric Blue (#3B82F6) - Dùng cho hành động chính (CTA).
+Nền: Trắng tinh khôi (#FFFFFF) & Xám cực nhạt (#F9FAFB).
+Văn bản: Deep Ocean (#0F172A) - Độ tương phản cao, dễ đọc.
+Font chữ: Inter (Sans-serif) - Tiếng Việt 100%.
+II. ĐẶC TẢ CHI TIẾT CÁC PHÂN HỆ
+1. Phân hệ Virtual Mode (Dành cho CEO)
+Triết lý: "Quản trị bằng đầu ngón tay".
+Màn hình tiêu biểu (C01 - C04): Sử dụng Glassmorphism (Kính mờ) trên nền trắng sáng.
+Logic:
+C01 (Cockpit): Hiển thị sức khỏe doanh nghiệp qua 3 vòng tròn Neon. Đỏ (Nguy hiểm), Vàng (Cần chú ý), Xanh (Tốt).
+C02 (Swipe Approval): Cơ chế "Vuốt để Duyệt". Vuốt phải (Approve API), Vuốt trái (Reject API).
+C03 (War Room): Chatbot AI đa đại diện (Alex, Sarah...). Tin nhắn AI được hiển thị với viền phát sáng khi Agent đang xử lý dữ liệu.
+2. Phân hệ Classic Mode (Dành cho Vận hành & Freelancer)
+Triết lý: "Mật độ dữ liệu cao - Hiệu suất tối đa".
+Bố cục: Sidebar trắng bên trái (260px), Nội dung chính bên phải.
+Thành phần Bảng (Data Tables):
+Hỗ trợ Row Hover (đổi màu nền nhạt khi di chuột).
+Tích hợp Progress Bar mini trong cột tiến độ.
+Badge trạng thái (Đang chạy, Hoàn thành) bo góc 8px.
+3. Hệ thống Freelancer Hub
+F03 (Workspace): Chia 3 cột cố định. Cột 1 (Yêu cầu), Cột 2 (Công cụ nộp bài), Cột 3 (AI Chat).
+F10 (Thi năng lực): Chế độ tập trung (Focus Mode), ẩn Sidebar để tránh gian lận. Đồng hồ đếm ngược chuyển đỏ khi còn dưới 5 phút.
+III. CÁC LUỒNG NGƯỜI DÙNG CHÍNH (KEY USER FLOWS)
+Luồng 1: CEO Phê duyệt chiến lược (High-Level Approval)
+Nhận thông báo: Push Notification báo có yêu cầu mới.
+Vào Virtual Mode (C01): Thấy đèn đỏ tại phần "Tăng trưởng".
+Mở War Room (C03): AI phân tích: "Cần thay đổi ảnh bìa chiến dịch Marketing để tăng tỷ lệ chuyển đổi".
+Duyệt nhanh (C02): CEO xem ảnh thầu mới -> Vuốt phải để đồng ý -> Hệ thống tự động cập nhật và trừ tiền trong ví.
+Luồng 2: Doanh nghiệp mua gói & Triển khai (SME Journey)
+Marketplace (C05): Chọn gói "SEO Tổng thể".
+Smart Brief (C07): Nhập URL website, AI tự động gợi ý bộ từ khóa và điền form brief.
+Thanh toán (C08): Trừ tiền từ Ví công ty (C13), hóa đơn VAT (C14) tự động xuất và gửi về email kế toán.
+Theo dõi (C10): Quan sát Freelancer làm việc qua bảng Kanban và biểu đồ tiến độ.
+Luồng 3: Freelancer Nhận việc & Nhận tiền (Freelancer Journey)
+Trung tâm kỹ năng (F09): Làm bài test lấy chứng chỉ "SEO Expert" để tăng uy tín.
+Job Market (F02): Nộp thầu dự án dựa trên chứng chỉ đã có.
+Workspace (F03): Thực hiện công việc, bật Timer (F05) để chấm công.
+Rút tiền (F07): Sau khi dự án hoàn thành, yêu cầu rút tiền về ngân hàng đã liên kết (F12).
+IV. ĐẶC TẢ TRẠNG THÁI (STATES SPECIFICATION)
+Loading: Sử dụng Skeleton Screen (Khung xương) màu xám nhạt để người dùng không cảm thấy thời gian chờ lâu.
+Empty State: Hình ảnh 3D tối giản kèm nút CTA "Bắt đầu ngay" để hướng dẫn người dùng hành động tiếp theo.
+Success/Error: Thông báo Toast hiện ở góc trên bên phải trong 3 giây rồi tự biến mất.

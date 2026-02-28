@@ -1,0 +1,71 @@
+[
+  {
+    "id": "act_1772186883512_3ids9u",
+    "workspaceId": "e2e_test_ws",
+    "packId": "pack_lead_sme_v1_1772186883512",
+    "packType": "lead",
+    "type": "CREATE_FOLLOWUP_TASKS_7D",
+    "backend": "internal",
+    "payload": {
+      "description": "Tạo checklist follow-up 7 ngày",
+      "packName": "Lead Sprint Pack — SME"
+    },
+    "riskLevel": "low",
+    "requiresApproval": true,
+    "evidence": {
+      "packId": "pack_lead_sme_v1_1772186883512",
+      "summary": "Tạo checklist follow-up 7 ngày"
+    },
+    "status": "executed",
+    "createdAt": "2026-02-27T10:08:03.512Z",
+    "updatedAt": "2026-02-27T10:08:03.557Z",
+    "idempotencyKey": "6946ca61d6581d92",
+    "result": {
+      "message": "Action CREATE_FOLLOWUP_TASKS_7D executed successfully",
+      "executedAt": "2026-02-27T10:08:03.555Z",
+      "provider": "internal"
+    }
+  },
+  {
+    "id": "act_1772186883512_a9qwu8",
+    "workspaceId": "e2e_test_ws",
+    "packId": "pack_lead_sme_v1_1772186883512",
+    "packType": "lead",
+    "type": "CREATE_NURTURE_SEQUENCE_DRAFT",
+    "backend": "internal",
+    "payload": {
+      "description": "Tạo chuỗi email nurture (2 sequences)",
+      "packName": "Lead Sprint Pack — SME"
+    },
+    "riskLevel": "medium",
+    "requiresApproval": true,
+    "evidence": {
+      "packId": "pack_lead_sme_v1_1772186883512",
+      "summary": "Tạo chuỗi email nurture (2 sequences)"
+    },
+    "status": "draft",
+    "createdAt": "2026-02-27T10:08:03.512Z",
+    "updatedAt": "2026-02-27T10:08:03.512Z"
+  },
+  {
+    "id": "act_1772186883512_nj6fc5",
+    "workspaceId": "e2e_test_ws",
+    "packId": "pack_lead_sme_v1_1772186883512",
+    "packType": "lead",
+    "type": "CREATE_PIPELINE_DRAFT",
+    "backend": "internal",
+    "payload": {
+      "description": "Tạo pipeline CRM cơ bản",
+      "packName": "Lead Sprint Pack — SME"
+    },
+    "riskLevel": "low",
+    "requiresApproval": true,
+    "evidence": {
+      "packId": "pack_lead_sme_v1_1772186883512",
+      "summary": "Tạo pipeline CRM cơ bản"
+    },
+    "status": "draft",
+    "createdAt": "2026-02-27T10:08:03.512Z",
+    "updatedAt": "2026-02-27T10:08:03.512Z"
+  }
+]

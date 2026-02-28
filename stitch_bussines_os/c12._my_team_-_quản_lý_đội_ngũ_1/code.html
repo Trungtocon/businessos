@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>F01. Bảng điều khiển công việc - Phong cách Trắng tinh tế</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6","background-light": "#f5f7f8",
+                        "background-dark": "#101722",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    borderColor: {
+                        DEFAULT: "#E5E7EB",}
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 font-display antialiased">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center">
+<div class="layout-content-container flex flex-col w-full max-w-[1200px] flex-1 px-4 sm:px-6 lg:px-8 py-6">
+<nav class="flex items-center gap-2 text-sm text-slate-500 mb-6">
+<a class="hover:text-primary transition-colors" href="#">Trang chủ</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Đội ngũ</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-slate-900 font-medium">Quản lý đội ngũ</span>
+</nav>
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 border-b border-gray-200 pb-6">
+<div class="flex flex-col gap-2">
+<h1 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">Đội ngũ của tôi</h1>
+<p class="text-slate-500 text-base max-w-2xl">
+                            Danh sách các Freelancer đang làm việc cho công ty. Quản lý quyền truy cập và trạng thái công việc.
+                        </p>
+</div>
+<button class="flex items-center justify-center gap-2 bg-primary hover:bg-blue-600 text-white rounded-lg px-5 py-2.5 font-bold transition-all shadow-lg shadow-blue-500/20 active:scale-95 whitespace-nowrap">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Mời thêm</span>
+</button>
+</header>
+<div class="flex flex-col lg:flex-row justify-between gap-4 mb-8">
+<div class="flex flex-1 gap-3">
+<div class="relative flex-1 max-w-md group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border-gray-200 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm font-medium placeholder:text-slate-400" placeholder="Tìm kiếm nhân sự..." type="text"/>
+</div>
+<button class="p-2.5 border border-gray-200 rounded-lg hover:bg-slate-50 text-slate-600 transition-colors" title="Lọc">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button class="p-2.5 border border-gray-200 rounded-lg hover:bg-slate-50 text-slate-600 transition-colors" title="Sắp xếp">
+<span class="material-symbols-outlined">sort</span>
+</button>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0 no-scrollbar">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 text-white text-sm font-medium whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-[18px]">check</span>
+                            Tất cả
+                        </button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 text-sm font-medium whitespace-nowrap transition-colors">
+                            SEO
+                        </button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 text-sm font-medium whitespace-nowrap transition-colors">
+                            Content
+                        </button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 text-sm font-medium whitespace-nowrap transition-colors">
+                            Design
+                        </button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 text-sm font-medium whitespace-nowrap transition-colors">
+                            Marketing
+                        </button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<div class="group relative flex flex-col bg-white border border-gray-200 rounded-xl p-5 hover:shadow-xl hover:shadow-slate-200/50 hover:border-primary/30 transition-all duration-300">
+<div class="absolute top-4 right-4">
+<button class="text-slate-400 hover:text-slate-600">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex flex-col items-center mb-4">
+<div class="relative mb-3">
+<div class="w-20 h-20 rounded-full bg-cover bg-center shadow-inner" data-alt="Portrait of Nguyen Van A" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC64TmE1yvZY1ghKndbY71-D8-7cVw6PSJVA1TuKvxRdpvShME79o2iDAtiXf3G8RwjzAzPWj154r8YXg3E9_bIM6efP3X7Kv_9imn8D8GZhzUL9L9s2_XWs564Yy-erjLMbHbeJHZkbOJ8ANxe9Ei_wNSpHumtYtcknOP3o5pOb3_a78oGhb-4vwzDMSFOLSDtbh6hhlY2j2Lk5WVPKIZzLmUWUYK7GGlbbjC5kk1yebKXuy0oqSL9Byd4FqGEmbBbj8tpIsLrLnA')"></div>
+<div class="absolute bottom-0 right-0 w-5 h-5 bg-green-500 border-2 border-white rounded-full flex items-center justify-center" title="Đang rảnh"></div>
+</div>
+<h3 class="text-lg font-bold text-slate-900">Nguyễn Văn A</h3>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="text-xs font-medium text-green-700 bg-green-50 px-2 py-0.5 rounded-full">Đang rảnh</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 justify-center mb-6">
+<span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium">SEO</span>
+<span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium">Marketing</span>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100 w-full">
+<div class="flex items-center justify-between gap-2">
+<span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Quyền hạn</span>
+<div class="relative">
+<select class="appearance-none bg-blue-50 hover:bg-blue-100 text-primary text-sm font-bold py-1.5 pl-3 pr-8 rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors">
+<option selected="" value="editor">Chỉnh sửa</option>
+<option value="viewer">Xem</option>
+</select>
+<span class="absolute right-2 top-1/2 -translate-y-1/2 text-primary pointer-events-none">
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col bg-white border border-gray-200 rounded-xl p-5 hover:shadow-xl hover:shadow-slate-200/50 hover:border-primary/30 transition-all duration-300">
+<div class="absolute top-4 right-4">
+<button class="text-slate-400 hover:text-slate-600">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex flex-col items-center mb-4">
+<div class="relative mb-3">
+<div class="w-20 h-20 rounded-full bg-cover bg-center shadow-inner" data-alt="Portrait of Tran Thi B" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCl_0GUZfqaQMxhJiSPE9bytLNIv8f1IYcK34br8m_14x3n0O1LwN9UbynB3_0I8FxdGgR6rPf5FF7ETp5GMp8ImNH6ikHvW19GaWS6mpHmc07I6dH8wCz0MgAcqchVBw71RQob2AqvhWB7RCSOO_QqCywm8p_2fh-ZRJhx5km4kvEPxXqXA4qb2wBK9d5zbNGBRALSAp9UOfy2PPeQNPYtrbUT-7FWJIRaS7TZa1uP-q8pqBE8KV0WzY_dypLGbYUsLMMjudN2c7U')"></div>
+<div class="absolute bottom-0 right-0 w-5 h-5 bg-amber-500 border-2 border-white rounded-full flex items-center justify-center" title="Đang làm"></div>
+</div>
+<h3 class="text-lg font-bold text-slate-900">Trần Thi B</h3>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+<span class="text-xs font-medium text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">Đang làm</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 justify-center mb-6">
+<span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium">Content Writer</span>
+<span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium">Copywriting</span>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100 w-full">
+<div class="flex items-center justify-between gap-2">
+<span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Quyền hạn</span>
+<div class="relative">
+<select class="appearance-none bg-slate-50 hover:bg-slate-100 text-slate-700 text-sm font-bold py-1.5 pl-3 pr-8 rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-200 transition-colors">
+<option value="editor">Chỉnh sửa</option>
+<option selected="" value="viewer">Xem</option>
+</select>
+<span class="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none">
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col bg-white border border-gray-200 rounded-xl p-5 hover:shadow-xl hover:shadow-slate-200/50 hover:border-primary/30 transition-all duration-300">
+<div class="absolute top-4 right-4">
+<button class="text-slate-400 hover:text-slate-600">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex flex-col items-center mb-4">
+<div class="relative mb-3">
+<div class="w-20 h-20 rounded-full bg-cover bg-center shadow-inner" data-alt="Portrait of Le Van C" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDAgQp_YCsoSjiEpm3ArHu1tBy_dVRlNenpzMseDaeD-ADzMJHz_3noCMD6qLMxpKm4W59pnBJx-QdW0JjtfLMcyXrEeYh1rA8uj69fzG6Ls_uSaDuiQ23KELt-RY_QCNJjrD5aW0SIqP5KDvwsaeUviG4-q1B1AKMBngQ00ShGdoZPVJqwmurZCv7KCjy9iIHq17EtIuO9KHyiZUL9Vofjsa0j7CTb0t-Pd2cA89bJbf5zm0bL8qKN-k2Sac2l-FI8yEFVRjITE-4')"></div>
+<div class="absolute bottom-0 right-0 w-5 h-5 bg-green-500 border-2 border-white rounded-full flex items-center justify-center" title="Đang rảnh"></div>
+</div>
+<h3 class="text-lg font-bold text-slate-900">Lê Văn C</h3>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="text-xs font-medium text-green-700 bg-green-50 px-2 py-0.5 rounded-full">Đang rảnh</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 justify-center mb-6">
+<span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium">UI/UX Design</span>
+<span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium">Figma</span>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100 w-full">
+<div class="flex items-center justify-between gap-2">
+<span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Quyền hạn</span>
+<div class="relative">
+<select class="appearance-none bg-blue-50 hover:bg-blue-100 text-primary text-sm font-bold py-1.5 pl-3 pr-8 rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors">
+<option selected="" value="editor">Chỉnh sửa</option>
+<option value="viewer">Xem</option>
+</select>
+<span class="absolute right-2 top-1/2 -translate-y-1/2 text-primary pointer-events-none">
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col bg-white border border-gray-200 rounded-xl p-5 hover:shadow-xl hover:shadow-slate-200/50 hover:border-primary/30 transition-all duration-300">
+<div class="absolute top-4 right-4">
+<button class="text-slate-400 hover:text-slate-600">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex flex-col items-center mb-4">
+<div class="relative mb-3">
+<div class="w-20 h-20 rounded-full bg-cover bg-center shadow-inner" data-alt="Portrait of Pham Thi D" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAutYvPQUMvRtZsyYvf0UW7_nFRQRjAmiJJwfAMMVqBr2aWCOgwDCSePm9w6ghVtww7B0OsuUaiCyrdlqpxr3Egz32x7wOCu5HXgfKmVIW6qmiAX9P4gYt0DgN9-bQR0CXgmeBjq364X01x8DPtdGN7tuJIFclKqT2GG4b4o7VvjZDAJsS2LWHQGeqzckTpWQl55WRrGpfhj45oAk3bSYu5mud4fvHP0RIzkmIZsbj5TOvv9FfsrKDkHHM7eg3soAbyojBgQBYAt2g')"></div>
+<div class="absolute bottom-0 right-0 w-5 h-5 bg-amber-500 border-2 border-white rounded-full flex items-center justify-center" title="Đang làm"></div>
+</div>
+<h3 class="text-lg font-bold text-slate-900">Phạm Thị D</h3>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+<span class="text-xs font-medium text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">Đang làm</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 justify-center mb-6">
+<span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium">Frontend</span>
+<span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium">ReactJS</span>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100 w-full">
+<div class="flex items-center justify-between gap-2">
+<span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Quyền hạn</span>
+<div class="relative">
+<select class="appearance-none bg-slate-50 hover:bg-slate-100 text-slate-700 text-sm font-bold py-1.5 pl-3 pr-8 rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-200 transition-colors">
+<option value="editor">Chỉnh sửa</option>
+<option selected="" value="viewer">Xem</option>
+</select>
+<span class="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none">
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col bg-white border border-gray-200 rounded-xl p-5 hover:shadow-xl hover:shadow-slate-200/50 hover:border-primary/30 transition-all duration-300">
+<div class="absolute top-4 right-4">
+<button class="text-slate-400 hover:text-slate-600">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex flex-col items-center mb-4">
+<div class="relative mb-3">
+<div class="w-20 h-20 rounded-full bg-cover bg-center shadow-inner" data-alt="Portrait of Hoang Van E" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBq5cvqr4ASa_sUwG0KIxEiqwj4LddaBYsesiHKhGvKEentvK-LmTUwy7CMD5gLTV-PyltxaGWhKY0EknvGGYM0gaYxXP4_e_kVMMcr3m7q89YdgAe1v88SxeCth_sz7vKGeluUA1FkfMUdW1SDqNPGN1dmFGGxOqx_Fp2TfniYIhBDtOtB185UejrzdMMrYDweNJL05ZcWPgVS-cqtnwh92RuNkjUH9CWofZ9HKaE2gQn605tVwTdSRztzHNNtTcTYHIwrvXKME-0')"></div>
+<div class="absolute bottom-0 right-0 w-5 h-5 bg-green-500 border-2 border-white rounded-full flex items-center justify-center" title="Đang rảnh"></div>
+</div>
+<h3 class="text-lg font-bold text-slate-900">Hoàng Văn E</h3>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="text-xs font-medium text-green-700 bg-green-50 px-2 py-0.5 rounded-full">Đang rảnh</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 justify-center mb-6">
+<span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium">Video Editor</span>
+<span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium">Animation</span>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100 w-full">
+<div class="flex items-center justify-between gap-2">
+<span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Quyền hạn</span>
+<div class="relative">
+<select class="appearance-none bg-slate-50 hover:bg-slate-100 text-slate-700 text-sm font-bold py-1.5 pl-3 pr-8 rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-200 transition-colors">
+<option value="editor">Chỉnh sửa</option>
+<option selected="" value="viewer">Xem</option>
+</select>
+<span class="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none">
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<button class="group flex flex-col items-center justify-center bg-slate-50 border-2 border-dashed border-gray-200 rounded-xl p-5 hover:bg-blue-50 hover:border-blue-200 transition-all duration-300 h-full min-h-[300px]">
+<div class="w-16 h-16 rounded-full bg-white flex items-center justify-center mb-4 shadow-sm group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-primary text-[32px]">person_add</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 group-hover:text-primary transition-colors">Mời thành viên mới</h3>
+<p class="text-sm text-slate-500 text-center mt-2 max-w-[200px]">Gửi email mời freelancer tham gia vào workspace của bạn.</p>
+</button>
+</div>
+<div class="flex items-center justify-center mt-12 gap-2">
+<button class="w-9 h-9 flex items-center justify-center rounded-lg border border-gray-200 text-slate-500 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg bg-primary text-white font-medium shadow-md shadow-primary/20">1</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg border border-gray-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">2</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg border border-gray-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">3</button>
+<span class="px-2 text-slate-400">...</span>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg border border-gray-200 text-slate-500 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

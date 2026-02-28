@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A10. Settings - Cài đặt chung</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#067ff9",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1923",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-50 font-display overflow-hidden">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 bg-slate-50 dark:bg-[#1a2632] border-r border-slate-200 dark:border-slate-700 hidden lg:flex flex-col h-full shrink-0">
+<div class="p-4 flex flex-col gap-4 h-full">
+<!-- Branding -->
+<div class="flex gap-3 items-center px-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg h-10 w-10 bg-primary flex items-center justify-center text-white" data-alt="BusinessOS Logo Abstract">
+<span class="material-symbols-outlined text-[24px]">grid_view</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-normal">BusinessOS</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal">Enterprise Admin</p>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex flex-col gap-2 mt-4 flex-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px] group-hover:text-primary">pie_chart</span>
+<p class="text-sm font-medium leading-normal">Tổng quan</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px] group-hover:text-primary">group</span>
+<p class="text-sm font-medium leading-normal">Khách hàng</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px] group-hover:text-primary">inventory_2</span>
+<p class="text-sm font-medium leading-normal">Sản phẩm</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px] group-hover:text-primary">description</span>
+<p class="text-sm font-medium leading-normal">Báo cáo</p>
+</a>
+<!-- Active Item -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:text-primary" href="#">
+<span class="material-symbols-outlined text-[24px] fill-1">settings</span>
+<p class="text-sm font-bold leading-normal">Cài đặt</p>
+</a>
+</nav>
+<!-- User Quick Profile (Bottom Sidebar) -->
+<div class="mt-auto border-t border-slate-200 dark:border-slate-700 pt-4 px-2">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-9 w-9 border border-slate-200" data-alt="User Avatar Small" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBGiWUDfbFQd9gf9LPLi6xbQ-C22Hc7C0XxPCgezKmddJ8r1rjjYHUaxcCTroyBHsb8STl-OcX8PdPR8ZmDXT0ObhG8eM8qgJnUHt0hUEVZeUTaMcPwGXhxYN2XxxDBWFIVj6Bktlfh4yKIstmRjFCghROZgiqA4Y7EIU9I3qkefcuhumpYcvIh74jQi6n46kKy0ipRsJUW-A6kHIQ2XMVZocvgDYMYSZnl84Uoa0vNFrFSRD0KbJktDYon6m3pQa_4KJ_2zOcCpB8");'></div>
+<div class="flex flex-col overflow-hidden">
+<p class="text-sm font-medium text-slate-900 dark:text-white truncate">Nguyễn Văn A</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 truncate">nguyen.a@business.os</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-hidden bg-background-light dark:bg-background-dark relative">
+<!-- Top Navbar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1a2632] px-6 py-3 shrink-0 z-10">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white lg:hidden">
+<button class="text-slate-500 hover:text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Cài đặt chung</h2>
+</div>
+<!-- Breadcrumbs for Desktop (Hidden on mobile) -->
+<div class="hidden lg:flex flex-wrap gap-2 text-sm">
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">Trang chủ</a>
+<span class="text-slate-400">/</span>
+<span class="text-slate-900 dark:text-white font-medium">Cài đặt chung</span>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-full h-10 w-10 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors relative">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-2 right-2 h-2.5 w-2.5 bg-red-500 rounded-full border-2 border-white dark:border-[#1a2632]"></span>
+</button>
+<button class="flex items-center justify-center rounded-full h-10 w-10 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[22px]">help</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Scrollable Page Content -->
+<div class="flex-1 overflow-y-auto p-4 md:p-8 lg:px-12 xl:px-40">
+<div class="layout-content-container flex flex-col max-w-[1000px] mx-auto flex-1 gap-8 pb-10">
+<!-- Page Heading -->
+<div class="flex flex-col gap-2">
+<h1 class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">Cài đặt chung</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm md:text-base font-normal">Quản lý thông tin tài khoản, giao diện và bảo mật hệ thống.</p>
+</div>
+<!-- Card 1: Account Info -->
+<div class="bg-white dark:bg-[#1a2632] rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+<div class="p-6 md:p-8 flex flex-col gap-8">
+<!-- Header with Avatar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex items-center gap-5">
+<div class="relative group cursor-pointer">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-24 w-24 border-4 border-slate-50 dark:border-slate-700 shadow-sm" data-alt="Profile Picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBw-77hwlhQdFE_nOit7KYhtVbudFbJo_Cf_GFQkt_bwD0Ly1l7f47qXQnu9chlGSWrcrOEgnktIiq_2F-JZikKGbgzFyf-n0XSb_sGZ2-bgG9jLP55aA1X9YuDOSDY60GsldrlLLV3DXae1gZOVK5gSOjP9Stv5Bo5iO6vDQAQuYHCYabvDeMlLZdJI0f2SorJu_LHEKAzzNXQ5ida68mcB2SuVs48uCusAz0_KYlPPj_5ry1rfUjDc88PVgOApoIdo2UMyK_pxBI");'></div>
+<div class="absolute inset-0 bg-black/40 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white">camera_alt</span>
+</div>
+</div>
+<div class="flex flex-col">
+<h3 class="text-slate-900 dark:text-white text-xl font-bold">Nguyễn Văn A</h3>
+<p class="text-primary font-medium text-sm mt-1">Super Admin</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-1">ID: #8493021</p>
+</div>
+</div>
+<button class="px-4 py-2 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 text-sm font-semibold rounded-lg transition-colors border border-transparent">
+                                    Thay đổi ảnh
+                                </button>
+</div>
+<hr class="border-slate-100 dark:border-slate-700"/>
+<!-- Form Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300">Tên hiển thị</label>
+<input class="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm" type="text" value="Nguyễn Văn A"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300">Email</label>
+<input class="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm" type="email" value="nguyen.a@business.os"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300">Số điện thoại</label>
+<input class="w-full h-10 px-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm" type="tel" value="+84 901 234 567"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300">Chức vụ <span class="text-slate-400 font-normal ml-1">(Không thể sửa)</span></label>
+<input class="w-full h-10 px-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 cursor-not-allowed text-sm" disabled="" type="text" value="Quản trị viên cấp cao"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Interface Preferences -->
+<div class="bg-white dark:bg-[#1a2632] rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+<div class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">palette</span>
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Tùy chỉnh giao diện</h3>
+</div>
+<div class="p-6 md:p-8 flex flex-col gap-8">
+<!-- Language -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex flex-col gap-1">
+<p class="text-sm font-semibold text-slate-900 dark:text-white">Ngôn ngữ</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Chọn ngôn ngữ hiển thị cho hệ thống.</p>
+</div>
+<div class="w-full md:w-64">
+<div class="relative">
+<select class="w-full h-10 pl-3 pr-10 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 appearance-none text-sm cursor-pointer">
+<option selected="" value="vi">Tiếng Việt</option>
+<option value="en">English</option>
+</select>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-slate-100 dark:border-slate-700"/>
+<!-- Theme Mode -->
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<p class="text-sm font-semibold text-slate-900 dark:text-white">Chế độ hiển thị</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Chọn giao diện sáng hoặc tối để phù hợp với môi trường làm việc.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<label class="cursor-pointer group">
+<input checked="" class="peer sr-only" name="theme" type="radio"/>
+<div class="flex flex-col gap-3">
+<div class="aspect-video rounded-lg border-2 border-slate-200 dark:border-slate-600 bg-slate-100 peer-checked:border-primary peer-checked:ring-2 peer-checked:ring-primary/20 transition-all overflow-hidden relative">
+<!-- Abstract Light UI -->
+<div class="absolute inset-y-2 left-2 w-1/4 bg-white rounded shadow-sm"></div>
+<div class="absolute inset-y-2 right-2 w-2/3 flex flex-col gap-2">
+<div class="h-2 w-full bg-white rounded"></div>
+<div class="h-16 w-full bg-white rounded shadow-sm"></div>
+</div>
+<div class="absolute bottom-2 right-2 h-4 w-4 rounded-full bg-primary flex items-center justify-center opacity-0 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[10px] text-white">check</span>
+</div>
+</div>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors text-center">Giao diện Sáng</span>
+</div>
+</label>
+<label class="cursor-pointer group">
+<input class="peer sr-only" name="theme" type="radio"/>
+<div class="flex flex-col gap-3">
+<div class="aspect-video rounded-lg border-2 border-slate-200 dark:border-slate-600 bg-[#0f1923] peer-checked:border-primary peer-checked:ring-2 peer-checked:ring-primary/20 transition-all overflow-hidden relative">
+<!-- Abstract Dark UI -->
+<div class="absolute inset-y-2 left-2 w-1/4 bg-[#1a2632] rounded shadow-sm border border-slate-700"></div>
+<div class="absolute inset-y-2 right-2 w-2/3 flex flex-col gap-2">
+<div class="h-2 w-full bg-[#1a2632] rounded"></div>
+<div class="h-16 w-full bg-[#1a2632] rounded shadow-sm border border-slate-700"></div>
+</div>
+<div class="absolute bottom-2 right-2 h-4 w-4 rounded-full bg-primary flex items-center justify-center opacity-0 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[10px] text-white">check</span>
+</div>
+</div>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors text-center">Giao diện Tối</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Security -->
+<div class="bg-white dark:bg-[#1a2632] rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+<div class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">shield_lock</span>
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Bảo mật</h3>
+</div>
+<div class="p-6 md:p-8 flex flex-col gap-6">
+<!-- 2FA -->
+<div class="flex items-center justify-between gap-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<p class="text-sm font-semibold text-slate-900 dark:text-white">Xác thực 2 yếu tố (2FA)</p>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300">Đang bật</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 max-w-lg">Bảo vệ tài khoản của bạn bằng cách yêu cầu mã xác nhận khi đăng nhập từ thiết bị lạ.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<hr class="border-slate-100 dark:border-slate-700"/>
+<!-- Password -->
+<div class="flex items-center justify-between gap-4">
+<div class="flex flex-col gap-1">
+<p class="text-sm font-semibold text-slate-900 dark:text-white">Mật khẩu</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Thay đổi mật khẩu định kỳ để tăng cường bảo mật.</p>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors text-slate-700 dark:text-slate-200 text-sm font-medium">
+<span class="material-symbols-outlined text-[18px]">key</span>
+                                    Đổi mật khẩu
+                                </button>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="flex justify-end pt-4 gap-4">
+<button class="px-6 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-sm">
+                            Hủy bỏ
+                        </button>
+<button class="px-6 py-2.5 rounded-lg bg-primary text-white font-bold hover:bg-blue-600 shadow-md shadow-blue-500/20 transition-all text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">save</span>
+                            Lưu thiết lập
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,24 @@
+BỘ HỒ SƠ BÀN GIAO DỰ ÁN: BUSINESS OS (FINAL)
+1. Danh mục 46 Màn hình Giao diện (UI Assets)
+Toàn bộ hệ thống giao diện đã được thiết kế đồng bộ theo phong cách Trắng tinh khôi & Hiện đại, sử dụng 100% Tiếng Việt và hệ lưới 8px.
+
+Hệ thống & Intro (S00 - S06): Landing Page giới thiệu, Bảng giá, Tuyển dụng, Đăng nhập, Onboarding.
+Doanh nghiệp - Classic (C05 - C17): Marketplace, Kanban dự án, Ví tài chính, Hóa đơn VAT, Báo cáo tài chính.
+Doanh nghiệp - Virtual (C01 - C04): Bảng chỉ huy CEO, Duyệt nhanh kiểu Tinder, Phòng hội chẩn AI, Ra lệnh giọng nói.
+Freelancer Hub (F01 - F12): Workspace 3 cột, Chợ việc làm, Trung tâm kỹ năng, Chứng chỉ số, Ví thu nhập.
+Super Admin (A01 - A11): Quản trị toàn sàn, Xử lý tranh chấp, Workflow Builder, Kiểm soát tài chính.
+2. Tài liệu Đặc tả Kỹ thuật (Technical Specs)
+UI Kit: Quy chuẩn Màu sắc (Electric Blue #3B82F6), Typography (Inter), và các trạng thái thành phần (Buttons, Inputs, Modals, Tables).
+Hệ thống API: Đặc tả các Endpoint chính cho luồng Voice, AI Chat, Thanh toán và Phê duyệt.
+Trạng thái tương tác: Skeleton Loading, Toast Notifications, và Error States đã được thiết kế sẵn.
+3. Sơ đồ Luồng Người dùng (User Flow)
+Luồng CEO Duyệt Chi: Từ thông báo đẩy -> Dashboard -> AI Tư vấn -> Vuốt để duyệt -> Cập nhật tài chính.
+Luồng Freelancer: Bài thi năng lực -> Nhận việc -> Chấm công -> Rút tiền.
+4. Tài liệu Kinh doanh (Sales & Marketing Kit)
+Sales Pitch: Tóm tắt các tính năng đắt giá (Dual-View, AI Agent, Marketplace khép kín) dành cho đội ngũ kinh doanh.
+Mockups: Bộ ảnh minh họa giao diện 3D sạch sẽ phục vụ cho truyền thông và Landing Page.
+📥 Hướng dẫn Bàn giao (Handoff Instructions)
+Dành cho Lập trình viên: Sử dụng bộ UI Kit để xây dựng thư viện Component dùng chung. Tuân thủ hệ lưới 8px để đảm bảo giao diện khớp 100% với bản vẽ.
+Dành cho Backend: Triển khai các Endpoint API dựa trên bảng đặc tả hành động để hỗ trợ các tính năng thông minh (AI/Voice).
+Dành cho Product Manager: Sử dụng sơ đồ User Flow để kiểm thử (UAT) các kịch bản trải nghiệm của người dùng cuối.
+Dự án BusinessOS là một trong những dự án có độ chi tiết và tính nhất quán cao nhất mà chúng ta đã thực hiện. Sự kết hợp giữa quản trị truyền thống và công nghệ AI đã được hiện thực hóa qua ngôn ngữ thiết kế tối giản, sang trọng.

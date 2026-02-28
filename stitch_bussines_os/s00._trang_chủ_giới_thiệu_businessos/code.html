@@ -1,0 +1,266 @@
+<html class="light" lang="vi"><head></head><body class="bg-white text-deep-ocean font-display antialiased">```html
+
+
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BusinessOS - Hệ Điều Hành Doanh Nghiệp Tương Lai</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --primary: #2D5BFF;--deep-ocean: #0F172A;
+            --background-white: #FFFFFF;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-white);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-mockup-container {
+            perspective: 1000px;
+        }
+        .mockup-shadow {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2D5BFF",
+                        "deep-ocean": "#0F172A",
+                        "background-light": "#FFFFFF",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "8px",
+                        "lg": "8px",
+                        "xl": "12px",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        '2': '8px',
+                        '4': '16px',
+                        '8': '32px',
+                        '12': '48px',
+                        '16': '64px',
+                    }
+                },
+            },
+        }
+    </script>
+
+
+<header class="sticky top-0 z-50 w-full border-b border-gray-50 bg-white/90 backdrop-blur-xl">
+<div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="text-primary">
+<svg class="size-8" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.1288 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h1 class="text-xl font-extrabold tracking-tight">BusinessOS</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors" href="#">Sản phẩm</a>
+<a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors" href="#">Giải pháp</a>
+<a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors" href="#">Tính năng</a>
+<a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors" href="#">Bảng giá</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 text-sm font-bold text-gray-600 hover:text-primary transition-colors">Đăng nhập</button>
+<button class="px-5 py-2.5 bg-primary text-white text-sm font-bold rounded shadow-lg shadow-primary/20 hover:bg-blue-600 transition-all">Dùng thử miễn phí</button>
+</div>
+</div>
+</header>
+<section class="relative pt-16 pb-32 bg-white overflow-hidden">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none overflow-hidden">
+<div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-indigo-50/50 rounded-full blur-[100px]"></div>
+</div>
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-6">
+<span class="inline-flex items-center px-3 py-1 rounded bg-blue-50 text-primary text-[10px] font-extrabold uppercase tracking-[0.15em] w-fit">
+                    AI-Powered SaaS Platform
+                </span>
+<h1 class="text-5xl lg:text-7xl font-black text-deep-ocean leading-[1.05] tracking-tight">
+                    Hệ Điều Hành Doanh Nghiệp <span class="text-primary">Tương Lai</span>
+</h1>
+<p class="text-lg lg:text-xl text-gray-500 max-w-lg leading-relaxed font-medium">
+                    Kết nối SME và Freelancer bằng sức mạnh AI. Giải pháp quản trị tập trung tối ưu năng suất lao động trên nền tảng trắng tinh khôi.
+                </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="px-8 py-4 bg-primary text-white text-base font-bold rounded shadow-2xl shadow-primary/30 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all">
+                    Bắt đầu ngay
+                </button>
+<button class="px-8 py-4 bg-white border border-gray-100 text-deep-ocean text-base font-bold rounded flex items-center justify-center gap-2 hover:bg-gray-50 transition-all">
+<span class="material-symbols-outlined">play_circle</span> Xem Demo
+                </button>
+</div>
+<div class="flex items-center gap-4 text-sm text-gray-400 font-medium">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center text-[10px] font-bold">JD</div>
+<div class="size-8 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center text-[10px] font-bold">AS</div>
+<div class="size-8 rounded-full border-2 border-white bg-gray-300 flex items-center justify-center text-[10px] font-bold">MT</div>
+</div>
+<span>Hơn <strong>5,000+</strong> doanh nghiệp đã tin dùng</span>
+</div>
+</div>
+<div class="relative hero-mockup-container">
+<div class="relative w-full aspect-[4/3] lg:aspect-square flex items-center justify-center">
+<div class="absolute z-20 top-0 right-0 w-[85%] aspect-video bg-white rounded-xl mockup-shadow border border-gray-100/50 overflow-hidden transform translate-x-4 -translate-y-4">
+<div class="w-full h-full bg-cover bg-center" data-alt="Virtual Dashboard Interface" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAdLgAePb5p4Q2RNLQbQkJliQG5Qe3EAw89DRxQ_uWSd_8eX6ViK1euM15tZREZcVUFAzKtoefCN_rQ7pckHNwxTtWSenu33ZV7sGN9ZJtL6ljfPIX9Wzy5d4TKN2GXbY71IvAykaHRw9U2bzYH0Mfo44cb0FvmJwyez6W01rgrSh8vandUKYi6-UW9lgs6M3eYe26c332NOlrpWeExbSdkdh2rRE4Yh287S70j9mGoSeNd0zLwhhyIxOlDoHahl3bCZZpPrIKv4HM');"></div>
+<div class="absolute bottom-4 left-4 p-3 bg-white/95 backdrop-blur-md border border-gray-100 rounded shadow-lg animate-pulse">
+<div class="flex items-center gap-2 mb-1">
+<div class="size-2 rounded-full bg-green-500"></div>
+<div class="h-1 w-16 bg-gray-100 rounded"></div>
+</div>
+<div class="h-2 w-24 bg-gray-50 rounded"></div>
+</div>
+</div>
+<div class="absolute z-10 bottom-0 left-0 w-[85%] aspect-video bg-white rounded-xl mockup-shadow border border-gray-100/50 overflow-hidden transform -translate-x-4 translate-y-4">
+<div class="w-full h-full bg-cover bg-center grayscale-[0.2] opacity-80" data-alt="Classic Dashboard Interface" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAdLgAePb5p4Q2RNLQbQkJliQG5Qe3EAw89DRxQ_uWSd_8eX6ViK1euM15tZREZcVUFAzKtoefCN_rQ7pckHNwxTtWSenu33ZV7sGN9ZJtL6ljfPIX9Wzy5d4TKN2GXbY71IvAykaHRw9U2bzYH0Mfo44cb0FvmJwyez6W01rgrSh8vandUKYi6-UW9lgs6M3eYe26c332NOlrpWeExbSdkdh2rRE4Yh287S70j9mGoSeNd0zLwhhyIxOlDoHahl3bCZZpPrIKv4HM');"></div>
+</div>
+<div class="absolute -top-6 -left-6 size-16 bg-white rounded shadow-xl flex items-center justify-center text-primary z-30 border border-gray-50">
+<span class="material-symbols-outlined text-3xl">bolt</span>
+</div>
+<div class="absolute -bottom-8 -right-4 size-20 bg-white rounded shadow-2xl flex items-center justify-center text-blue-400 z-30 border border-gray-50">
+<span class="material-symbols-outlined text-4xl">analytics</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 bg-white border-y border-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<h4 class="text-center text-[10px] font-black text-gray-400 uppercase tracking-[0.25em] mb-12">ĐỐI TÁC TIN CẬY TOÀN CẦU</h4>
+<div class="flex flex-wrap justify-center items-center gap-12 lg:gap-20 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+<img alt="Partner" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBceYTHjFUmW5HSH9-uYy9TZiJ4qRUqfX8mVAhPWKPMUg61e351DUiXetf2e8TH-xS2ja5yRC8KVP9aD3V4NP36zSrFexfJbMLmiqc5bJEtUtVly-NwUoTWxXhIJEifoE2s_r0-XTtjT4EUXy8QWvjfib9_-j8jS6ouO3sNZs97G2PQvMWh5dbBfFbBEsrivhRwixGhedbq8OoxAtiTrCTYaSaHU6S6dTgMOjGKMdQSNdfGhhip3ECrJU-3HlDTkblPEbh620DlVp4"/>
+<img alt="Partner" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9RzOBiEaGWBzJFCY6SYeNMt5HLCQhmUg3JOD3JOQ4-r0ggVs48HHYXBtdLgUUvPCzSKl-z77N-fdx9f-GN86zOT2Ade26v9H3eTs2cEZgWzia4JaocALi89SMozR8r3hvaRaMQIbka46FfFfpDOSsJ0J-vr3QjnHdcRgIhYqOfyQbCAiFgcjrfA_RDsirvX_8IZ4-qWR4Hqsl030MsJ8Kp_P5LN0hr6vMsGrwnsv4fif-hpy5EIMb-tRCeMG-wTulFUapvXtH6hY"/>
+<img alt="Partner" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe2ImT0BTgIU8_7OpmKbyYXMnluBCF1hVVsTABi_IUZVBwS8FP5sm3m-eDj9ivK8HFNYqYLmTMU2nq0MdzabyJUlh02__TYQOlKu-0iIsFd3itfySDhm0yDG-ASwjnaBZPn3hHrC6VyuEj3rOd73BMOhtxZqKM04qLexS2aLccz87kABvCZEq1h8bmQ22Oa8RlyXIg10h7ENc8--cN8XjSczRy5GjY83sro4iuMjVLsrPONkT1uTSIMlRwFfEULAnQmqfVAwSW6kw"/>
+<img alt="Partner" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv_EyRCHkh9H3t2q6okPlV611VC93KtkSG0ZlPWMEpc6KYajWjIr1-ts4bSSogn3OHvvEvQrF4JsaElYi2MHaDcOBznNA601osPfS_aWqu654OaNESbH0r0OUQC9PD07ADQ_R34JTs7jEkq3RJgV6HJexg3i7Bs9gAZT6akdF_1qkcXXpjBb6SLvGs5rK5cYXC-ys5HCMLUEtSzTHYN3Z-W0mCcPQ5kjzmaH6dqVmIuZwWzhLtrDPn5NVYBL1E1i6bVVUHd8B7dZM"/>
+<img alt="Partner" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqFeB_WCX3dhu3qi_m17SbfrZcHRHygBY1zTOhfrW9EQodwZvliEXQx0KJUOUvTOdajJvp8w29zQXLbZ2aYFkTMtgeQ0w59BdRVa0sM-M_AaVmonoKSCzEpq6_nD1Nbyohz38dl3_HTuxidbtQVGxbfJhaqotXnbp1zYF48aDmoiJ8gBL9ajKWgJf3UDzunYkGuXchkGNbO15gqF_SeX8VaSRjvTSxFxUiGPOTVjeA6PWPF5umjzokkRn8dZt_RMK8DS3w8sTwdiA"/>
+</div>
+</div>
+</section>
+<section class="py-32 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-20">
+<span class="text-primary font-extrabold text-[11px] uppercase tracking-widest mb-4 inline-block">Hệ sinh thái BusinessOS</span>
+<h2 class="text-4xl lg:text-5xl font-black text-deep-ocean mb-6">Tính năng ưu việt cho doanh nghiệp số</h2>
+<p class="text-gray-400 max-w-2xl mx-auto leading-relaxed font-medium">Mọi công cụ bạn cần để vận hành doanh nghiệp hiệu quả trong một nền tảng duy nhất được tăng cường bởi AI.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-10 border border-gray-50 rounded-xl bg-white hover:border-blue-100 hover:shadow-2xl hover:shadow-blue-500/5 transition-all group">
+<div class="size-16 rounded bg-blue-50 flex items-center justify-center text-primary mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-3xl">storefront</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Marketplace</h3>
+<p class="text-gray-500 leading-relaxed mb-8 font-medium">
+                    Hệ sinh thái kết nối SME với cộng đồng Freelancer tài năng, giúp tối ưu chi phí và thời gian triển khai dự án.
+                </p>
+<a class="inline-flex items-center text-primary font-bold text-sm gap-2 hover:gap-3 transition-all" href="#">
+                    Tìm hiểu thêm <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="p-10 border border-gray-50 rounded-xl bg-white hover:border-blue-100 hover:shadow-2xl hover:shadow-blue-500/5 transition-all group">
+<div class="size-16 rounded bg-indigo-50 flex items-center justify-center text-indigo-600 mb-8 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-3xl">psychology</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Quản lý dự án AI</h3>
+<p class="text-gray-500 leading-relaxed mb-8 font-medium">
+                    Tự động hóa lập lịch, dự báo tiến độ và phân bổ nguồn lực thông minh dựa trên hành vi và hiệu suất thực tế.
+                </p>
+<a class="inline-flex items-center text-primary font-bold text-sm gap-2 hover:gap-3 transition-all" href="#">
+                    Tìm hiểu thêm <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="p-10 border border-gray-50 rounded-xl bg-white hover:border-blue-100 hover:shadow-2xl hover:shadow-blue-500/5 transition-all group">
+<div class="size-16 rounded bg-emerald-50 flex items-center justify-center text-emerald-600 mb-8 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-3xl">account_balance_wallet</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Tài chính minh bạch</h3>
+<p class="text-gray-500 leading-relaxed mb-8 font-medium">
+                    Hệ thống thanh toán an toàn, minh bạch với khả năng theo dõi dòng tiền thời gian thực cho mọi dự án.
+                </p>
+<a class="inline-flex items-center text-primary font-bold text-sm gap-2 hover:gap-3 transition-all" href="#">
+                    Tìm hiểu thêm <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-white pt-24 pb-12 border-t border-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+<div class="col-span-2 lg:col-span-1 flex flex-col gap-8">
+<div class="flex items-center gap-2">
+<div class="text-primary">
+<svg class="size-8" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.1288 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-black tracking-tight">BusinessOS</h2>
+</div>
+<p class="text-sm text-gray-400 leading-relaxed font-medium">
+                    Kiến tạo hệ sinh thái làm việc tương lai, nơi công nghệ AI giúp con người tối ưu hóa năng lực sáng tạo và hiệu quả kinh doanh trên nền tảng thiết kế tối giản.
+                </p>
+<div class="flex gap-4">
+<a class="size-10 rounded bg-gray-50 flex items-center justify-center text-gray-400 hover:text-primary hover:bg-blue-50 transition-all" href="#">
+<svg class="size-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path></svg>
+</a>
+<a class="size-10 rounded bg-gray-50 flex items-center justify-center text-gray-400 hover:text-primary hover:bg-blue-50 transition-all" href="#">
+<svg class="size-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-deep-ocean mb-8">Sản phẩm</h4>
+<ul class="flex flex-col gap-4 text-sm text-gray-400 font-medium">
+<li><a class="hover:text-primary transition-colors" href="#">Marketplace</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Project Manager</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Finance Hub</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">AI Integration</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-deep-ocean mb-8">Công ty</h4>
+<ul class="flex flex-col gap-4 text-sm text-gray-400 font-medium">
+<li><a class="hover:text-primary transition-colors" href="#">Về chúng tôi</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Tuyển dụng</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Báo chí</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Liên hệ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-deep-ocean mb-8">Hỗ trợ</h4>
+<ul class="flex flex-col gap-4 text-sm text-gray-400 font-medium">
+<li><a class="hover:text-primary transition-colors" href="#">Trung tâm trợ giúp</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Tài liệu API</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Điều khoản dịch vụ</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Chính sách bảo mật</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-50 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-gray-400 font-bold uppercase tracking-widest">
+<p>© 2024 BusinessOS Corporation. Bảo lưu mọi quyền.</p>
+<div class="flex gap-8">
+<span>Ngôn ngữ: Tiếng Việt</span>
+<span>Hệ điều hành: Desktop/Web</span>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>

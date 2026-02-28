@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>F06. Ví thu nhập - BusinessOS</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6", // Electric Blue
+                        "border-light": "#E5E7EB",
+                        "soft-gray": "#F9FAFB"
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "card": "8px"
+                    },
+                    boxShadow: {
+                        "ultra-light": "0 1px 2px 0 rgba(0, 0, 0, 0.03)"
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #ffffff; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e2e8f0; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cbd5e1; 
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 antialiased overflow-hidden">
+<div class="flex h-screen w-full">
+<aside class="flex w-72 flex-col bg-white border-r border-border-light shrink-0 h-full overflow-y-auto">
+<div class="flex h-full flex-col justify-between p-6">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 ring-2 ring-slate-100" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDxroyaNOHoNo9HRTouTFwcpkF5mhwA5DJ0Zrt8ORW_paDl4JqlKdd86BJt3999-b6YajCIAiWquXlmqKBHhV1BmKboHevmOEVySxa2T8ihCw1vjH3oRp8cBL1r3ajAmyHw6VjBD_Pyx4RUMPVOhdt26ljDd_CAKHO9GiY1_c68W9FFcL_DCSpjp1UK9S3fgUGkaVqldps7AHbHqN3apOar3q3XS1RNswsJS-B6ps7WpiUWITJMgWypqA3aCh_LPqgnabVctXNs7wc");'></div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 text-base font-bold leading-tight">Alex Sterling</h1>
+<p class="text-slate-500 text-[10px] font-bold uppercase tracking-wider">Freelancer Cấp 2</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1.5">
+<a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 hover:text-primary hover:bg-blue-50 transition-all" href="#">
+<span class="material-symbols-outlined text-[22px]">dashboard</span>
+<span class="text-sm font-semibold">Tổng quan</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 hover:text-primary hover:bg-blue-50 transition-all" href="#">
+<span class="material-symbols-outlined text-[22px]">folder_open</span>
+<span class="text-sm font-semibold">Dự án</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg bg-blue-50 text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-[22px] fill-1">account_balance_wallet</span>
+<span class="text-sm font-bold">Ví thu nhập</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 hover:text-primary hover:bg-blue-50 transition-all" href="#">
+<span class="material-symbols-outlined text-[22px]">chat_bubble_outline</span>
+<span class="text-sm font-semibold">Tin nhắn</span>
+<span class="ml-auto flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white">3</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 hover:text-primary hover:bg-blue-50 transition-all" href="#">
+<span class="material-symbols-outlined text-[22px]">settings</span>
+<span class="text-sm font-semibold">Cài đặt</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 hover:text-primary hover:bg-blue-50 transition-all" href="#">
+<span class="material-symbols-outlined text-[22px]">help_outline</span>
+<span class="text-sm font-semibold">Hỗ trợ</span>
+</a>
+</nav>
+</div>
+<button class="flex w-full items-center gap-3 px-3 py-3 rounded-lg text-slate-400 hover:text-red-500 hover:bg-red-50 transition-all">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="text-sm font-semibold">Đăng xuất</span>
+</button>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto h-full p-8 lg:p-12 bg-white">
+<div class="mx-auto max-w-5xl flex flex-col gap-10">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<div class="flex flex-col gap-1.5">
+<h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Ví thu nhập</h1>
+<p class="text-slate-500 text-sm">Quản lý dòng tiền và yêu cầu thanh toán của bạn</p>
+</div>
+<button class="flex items-center gap-2 bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-bold text-sm shadow-lg shadow-blue-500/20 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+                    Yêu cầu rút tiền
+                </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white rounded-card p-6 border border-border-light shadow-ultra-light flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<span class="text-slate-500 text-xs font-bold uppercase tracking-wider">Số dư khả dụng</span>
+<span class="material-symbols-outlined text-primary text-xl">account_balance_wallet</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-extrabold text-slate-900">$1,250.00</span>
+<span class="text-slate-400 text-xs font-semibold uppercase">USD</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span class="text-xs font-medium text-slate-500">Sẵn sàng để rút</span>
+</div>
+</div>
+<div class="bg-white rounded-card p-6 border border-border-light shadow-ultra-light flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<span class="text-slate-500 text-xs font-bold uppercase tracking-wider">Đang treo</span>
+<span class="material-symbols-outlined text-amber-500 text-xl">hourglass_empty</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-extrabold text-slate-900">$840.00</span>
+<span class="text-slate-400 text-xs font-semibold uppercase">USD</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+<span class="text-xs font-medium text-slate-500">Dự kiến về trong 7 ngày</span>
+</div>
+</div>
+<div class="bg-white rounded-card p-6 border border-border-light shadow-ultra-light flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<span class="text-slate-500 text-xs font-bold uppercase tracking-wider">Tổng thu nhập</span>
+<span class="material-symbols-outlined text-emerald-500 text-xl">trending_up</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-extrabold text-slate-900">$15,400.00</span>
+<span class="text-slate-400 text-xs font-semibold uppercase">USD</span>
+</div>
+<div class="text-xs font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full self-start">
+                        +12% so với tháng trước
+                    </div>
+</div>
+</div>
+<div class="bg-white rounded-card p-8 border border-border-light shadow-ultra-light">
+<div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-10">
+<div>
+<h3 class="text-lg font-bold text-slate-900">Biểu đồ tăng trưởng</h3>
+<p class="text-slate-500 text-sm">Thống kê thu nhập 12 tháng gần nhất</p>
+</div>
+<div class="flex gap-2">
+<select class="bg-white border border-border-light text-slate-700 text-sm rounded-lg focus:ring-1 focus:ring-primary focus:border-primary py-1.5 pl-3 pr-8 cursor-pointer shadow-sm">
+<option>Năm 2023</option>
+<option>Năm 2022</option>
+</select>
+</div>
+</div>
+<div class="w-full h-72 flex items-end justify-between gap-3 px-2">
+<div class="flex flex-col items-center gap-3 flex-1 group cursor-pointer h-full justify-end">
+<div class="w-full bg-slate-50 rounded-t-md relative h-full flex items-end overflow-hidden">
+<div class="w-full bg-primary/20 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full bg-primary rounded-t-sm transition-all duration-500" style="height: 35%;"></div>
+</div>
+<span class="text-slate-400 text-[10px] font-bold">T1</span>
+</div>
+<div class="flex flex-col items-center gap-3 flex-1 group cursor-pointer h-full justify-end">
+<div class="w-full bg-slate-50 rounded-t-md relative h-full flex items-end overflow-hidden">
+<div class="w-full bg-primary/20 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full bg-primary rounded-t-sm transition-all duration-500" style="height: 45%;"></div>
+</div>
+<span class="text-slate-400 text-[10px] font-bold">T2</span>
+</div>
+<div class="flex flex-col items-center gap-3 flex-1 group cursor-pointer h-full justify-end">
+<div class="w-full bg-slate-50 rounded-t-md relative h-full flex items-end overflow-hidden">
+<div class="w-full bg-primary/20 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full bg-primary rounded-t-sm transition-all duration-500" style="height: 30%;"></div>
+</div>
+<span class="text-slate-400 text-[10px] font-bold">T3</span>
+</div>
+<div class="flex flex-col items-center gap-3 flex-1 group cursor-pointer h-full justify-end">
+<div class="w-full bg-slate-50 rounded-t-md relative h-full flex items-end overflow-hidden">
+<div class="w-full bg-primary/20 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full bg-primary rounded-t-sm transition-all duration-500" style="height: 65%;"></div>
+</div>
+<span class="text-slate-400 text-[10px] font-bold">T4</span>
+</div>
+<div class="flex flex-col items-center gap-3 flex-1 group cursor-pointer h-full justify-end">
+<div class="w-full bg-slate-50 rounded-t-md relative h-full flex items-end overflow-hidden">
+<div class="w-full bg-primary/20 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full bg-primary rounded-t-sm transition-all duration-500" style="height: 55%;"></div>
+</div>
+<span class="text-slate-400 text-[10px] font-bold">T5</span>
+</div>
+<div class="flex flex-col items-center gap-3 flex-1 group cursor-pointer h-full justify-end">
+<div class="w-full bg-slate-50 rounded-t-md relative h-full flex items-end overflow-hidden">
+<div class="w-full bg-primary/20 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full bg-primary rounded-t-sm transition-all duration-500" style="height: 48%;"></div>
+</div>
+<span class="text-slate-400 text-[10px] font-bold">T6</span>
+</div>
+<div class="flex flex-col items-center gap-3 flex-1 group cursor-pointer h-full justify-end">
+<div class="w-full bg-slate-50 rounded-t-md relative h-full flex items-end overflow-hidden">
+<div class="w-full bg-primary/20 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full bg-primary rounded-t-sm transition-all duration-500" style="height: 80%;"></div>
+</div>
+<span class="text-slate-400 text-[10px] font-bold text-primary">T7</span>
+</div>
+<div class="flex flex-col items-center gap-3 flex-1 group cursor-pointer h-full justify-end">
+<div class="w-full bg-slate-50 rounded-t-md relative h-full flex items-end overflow-hidden">
+<div class="w-full bg-primary/20 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full bg-primary rounded-t-sm transition-all duration-500" style="height: 70%;"></div>
+</div>
+<span class="text-slate-400 text-[10px] font-bold">T8</span>
+</div>
+<div class="flex flex-col items-center gap-3 flex-1 group cursor-pointer h-full justify-end">
+<div class="w-full bg-slate-50 rounded-t-md relative h-full flex items-end overflow-hidden">
+<div class="w-full bg-primary/20 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full bg-primary rounded-t-sm transition-all duration-500" style="height: 50%;"></div>
+</div>
+<span class="text-slate-400 text-[10px] font-bold">T9</span>
+</div>
+<div class="flex flex-col items-center gap-3 flex-1 group cursor-pointer h-full justify-end">
+<div class="w-full bg-slate-50 rounded-t-md relative h-full flex items-end overflow-hidden">
+<div class="w-full bg-primary/20 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full bg-primary rounded-t-sm transition-all duration-500" style="height: 60%;"></div>
+</div>
+<span class="text-slate-400 text-[10px] font-bold">T10</span>
+</div>
+<div class="flex flex-col items-center gap-3 flex-1 group cursor-pointer h-full justify-end">
+<div class="w-full bg-slate-50 rounded-t-md relative h-full flex items-end overflow-hidden">
+<div class="w-full bg-primary/20 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full bg-primary rounded-t-sm transition-all duration-500" style="height: 85%;"></div>
+</div>
+<span class="text-slate-400 text-[10px] font-bold">T11</span>
+</div>
+<div class="flex flex-col items-center gap-3 flex-1 group cursor-pointer h-full justify-end">
+<div class="w-full bg-slate-50 rounded-t-md relative h-full flex items-end overflow-hidden">
+<div class="w-full bg-primary/20 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full bg-primary/30 rounded-t-sm transition-all duration-500" style="height: 20%;"></div>
+</div>
+<span class="text-slate-400 text-[10px] font-bold italic">Dự kiến</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-6 mb-8">
+<div class="flex flex-col sm:flex-row justify-between sm:items-end gap-2 px-1">
+<h3 class="text-lg font-bold text-slate-900 leading-tight">Lịch sử nhận tiền</h3>
+<a class="text-primary text-xs font-bold hover:underline transition-all" href="#">Tải bảng sao kê (.csv)</a>
+</div>
+<div class="bg-white rounded-card border border-border-light overflow-hidden shadow-ultra-light">
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm text-slate-600">
+<thead class="bg-soft-gray text-[11px] uppercase font-bold tracking-wider text-slate-500 border-b border-border-light">
+<tr>
+<th class="px-6 py-4" scope="col">Ngày</th>
+<th class="px-6 py-4" scope="col">Dự án / Nguồn</th>
+<th class="px-6 py-4" scope="col">Phương thức</th>
+<th class="px-6 py-4 text-right" scope="col">Số tiền</th>
+<th class="px-6 py-4 text-center" scope="col">Trạng thái</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-light">
+<tr class="hover:bg-soft-gray/50 transition-colors">
+<td class="px-6 py-5 font-medium text-slate-900 whitespace-nowrap">01 Th10 2023</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-slate-900 font-semibold">Thiết kế Logo Thương hiệu</span>
+<span class="text-xs text-slate-400">TechFlow Inc.</span>
+</div>
+</td>
+<td class="px-6 py-5 text-xs">Chuyển khoản liên ngân hàng</td>
+<td class="px-6 py-5 text-right font-bold text-slate-900">+$500.00</td>
+<td class="px-6 py-5 text-center">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-600 border border-emerald-100 uppercase tracking-tighter">
+                                            Đã về ví
+                                        </span>
+</td>
+</tr>
+<tr class="hover:bg-soft-gray/50 transition-colors">
+<td class="px-6 py-5 font-medium text-slate-900 whitespace-nowrap">28 Th09 2023</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-slate-900 font-semibold">Tư vấn Chiến lược UX</span>
+<span class="text-xs text-slate-400">OmniGroup Ltd.</span>
+</div>
+</td>
+<td class="px-6 py-5 text-xs">Ví điện tử PayPal</td>
+<td class="px-6 py-5 text-right font-bold text-slate-900">+$1,200.00</td>
+<td class="px-6 py-5 text-center">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-50 text-amber-600 border border-amber-100 uppercase tracking-tighter">
+                                            Đang treo
+                                        </span>
+</td>
+</tr>
+<tr class="hover:bg-soft-gray/50 transition-colors">
+<td class="px-6 py-5 font-medium text-slate-900 whitespace-nowrap">15 Th09 2023</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-slate-900 font-semibold">Yêu cầu rút tiền mặt</span>
+<span class="text-xs text-slate-400">Rút về Techcombank</span>
+</div>
+</td>
+<td class="px-6 py-5 text-xs">Thẻ ghi nợ •••• 4289</td>
+<td class="px-6 py-5 text-right font-bold text-red-500">-$2,000.00</td>
+<td class="px-6 py-5 text-center">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold bg-slate-100 text-slate-500 uppercase tracking-tighter">
+                                            Đã hoàn tất
+                                        </span>
+</td>
+</tr>
+<tr class="hover:bg-soft-gray/50 transition-colors">
+<td class="px-6 py-5 font-medium text-slate-900 whitespace-nowrap">10 Th09 2023</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-slate-900 font-semibold">Gói thiết kế UI Ứng dụng</span>
+<span class="text-xs text-slate-400">StartUp Labs</span>
+</div>
+</td>
+<td class="px-6 py-5 text-xs">Thanh toán Stripe</td>
+<td class="px-6 py-5 text-right font-bold text-slate-900">+$3,500.00</td>
+<td class="px-6 py-5 text-center">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-600 border border-emerald-100 uppercase tracking-tighter">
+                                            Đã về ví
+                                        </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 bg-white flex justify-center border-t border-border-light">
+<button class="text-slate-500 hover:text-primary text-xs font-bold transition-colors flex items-center gap-1">
+                            Xem thêm lịch sử giao dịch
+                            <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

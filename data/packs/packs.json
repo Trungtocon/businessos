@@ -1,0 +1,213 @@
+[
+    {
+        "id": "pack_lead_sme_v1",
+        "name": "Lead Sprint Pack — SME",
+        "description": "Gói Lead hoàn chỉnh cho doanh nghiệp SME: tạo pipeline, chuỗi nurture email, và checklist follow-up 7 ngày.",
+        "packType": "lead",
+        "industry": [
+            "retail",
+            "f&b",
+            "education",
+            "beauty",
+            "fitness"
+        ],
+        "goal": "lead_generation",
+        "duration": "7d",
+        "priceTier": "free",
+        "version": "1.0.0",
+        "actions": [
+            {
+                "type": "CREATE_FOLLOWUP_TASKS_7D",
+                "backend": "internal",
+                "riskLevel": "low",
+                "description": "Tạo checklist follow-up 7 ngày"
+            },
+            {
+                "type": "CREATE_NURTURE_SEQUENCE_DRAFT",
+                "backend": "internal",
+                "riskLevel": "medium",
+                "description": "Tạo chuỗi email nurture (2 sequences)"
+            },
+            {
+                "type": "CREATE_PIPELINE_DRAFT",
+                "backend": "internal",
+                "riskLevel": "low",
+                "description": "Tạo pipeline CRM cơ bản"
+            }
+        ],
+        "inputs": [
+            {
+                "key": "industry",
+                "label": "Ngành hàng",
+                "type": "select",
+                "options": [
+                    "retail",
+                    "f&b",
+                    "education",
+                    "beauty",
+                    "fitness",
+                    "other"
+                ],
+                "required": true
+            },
+            {
+                "key": "offer",
+                "label": "Sản phẩm/Dịch vụ chính",
+                "type": "text",
+                "required": true
+            },
+            {
+                "key": "targetCustomer",
+                "label": "Khách hàng mục tiêu",
+                "type": "text",
+                "required": true
+            },
+            {
+                "key": "goal7d",
+                "label": "Mục tiêu 7 ngày",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "createdAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+        "id": "pack_content_14d_v1",
+        "name": "Content Sprint Pack — 14 Ngày",
+        "description": "Gói Content 14 ngày: lịch đăng bài, tạo nội dung 10 bài + 3 video, và lên lịch tự động.",
+        "packType": "content",
+        "industry": [
+            "retail",
+            "f&b",
+            "education",
+            "beauty",
+            "fitness",
+            "tech"
+        ],
+        "goal": "brand_awareness",
+        "duration": "14d",
+        "priceTier": "free",
+        "version": "1.0.0",
+        "actions": [
+            {
+                "type": "SCHEDULE_14D_CONTENT",
+                "backend": "internal",
+                "riskLevel": "medium",
+                "description": "Lên lịch content 14 ngày"
+            },
+            {
+                "type": "CREATE_CONTENT_TASKS",
+                "backend": "internal",
+                "riskLevel": "low",
+                "description": "Tạo tasks cho 10 bài + 3 video"
+            }
+        ],
+        "inputs": [
+            {
+                "key": "industry",
+                "label": "Ngành hàng",
+                "type": "select",
+                "options": [
+                    "retail",
+                    "f&b",
+                    "education",
+                    "beauty",
+                    "fitness",
+                    "tech",
+                    "other"
+                ],
+                "required": true
+            },
+            {
+                "key": "primaryChannel",
+                "label": "Kênh chính",
+                "type": "select",
+                "options": [
+                    "facebook",
+                    "instagram",
+                    "tiktok",
+                    "youtube",
+                    "linkedin"
+                ],
+                "required": true
+            },
+            {
+                "key": "tone",
+                "label": "Tone giọng",
+                "type": "select",
+                "options": [
+                    "friendly",
+                    "expert",
+                    "playful",
+                    "formal"
+                ],
+                "required": true
+            },
+            {
+                "key": "goal7d",
+                "label": "Mục tiêu nội dung",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "createdAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+        "id": "pack_report_weekly_v1",
+        "name": "Weekly Growth Report Pack",
+        "description": "Báo cáo tăng trưởng hàng tuần: phân tích KPIs, danh sách ưu tiên, và action items cho tuần tới.",
+        "packType": "report",
+        "industry": [
+            "retail",
+            "f&b",
+            "education",
+            "beauty",
+            "fitness",
+            "tech",
+            "saas"
+        ],
+        "goal": "performance_tracking",
+        "duration": "7d",
+        "priceTier": "free",
+        "version": "1.0.0",
+        "actions": [
+            {
+                "type": "CREATE_PRIORITIZED_TASKS",
+                "backend": "internal",
+                "riskLevel": "low",
+                "description": "Tạo danh sách ưu tiên từ báo cáo"
+            }
+        ],
+        "inputs": [
+            {
+                "key": "industry",
+                "label": "Ngành hàng",
+                "type": "select",
+                "options": [
+                    "retail",
+                    "f&b",
+                    "education",
+                    "beauty",
+                    "fitness",
+                    "tech",
+                    "saas",
+                    "other"
+                ],
+                "required": true
+            },
+            {
+                "key": "offer",
+                "label": "Sản phẩm/Dịch vụ chính",
+                "type": "text",
+                "required": true
+            },
+            {
+                "key": "goal7d",
+                "label": "Mục tiêu tuần này",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "createdAt": "2026-02-27T00:00:00.000Z"
+    }
+]

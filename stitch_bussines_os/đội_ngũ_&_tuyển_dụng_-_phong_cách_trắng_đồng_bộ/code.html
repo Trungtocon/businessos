@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c83f6",
+                        "background-light": "#ffffff",
+                        "background-dark": "#101722",
+                        "deep-ocean": "#0d131c",
+                        "slate-blue": "#49699c"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header Section -->
+<div class="w-full border-b border-solid border-slate-100 dark:border-slate-800">
+<div class="max-w-[1200px] mx-auto px-4 lg:px-10 py-4">
+<header class="flex items-center justify-between whitespace-nowrap">
+<div class="flex items-center gap-3 text-deep-ocean dark:text-white">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">BusinessOS</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-deep-ocean dark:text-white text-sm font-medium hover:text-primary transition-colors" href="#">Sản phẩm</a>
+<a class="text-deep-ocean dark:text-white text-sm font-medium hover:text-primary transition-colors" href="#">Giải pháp</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary pb-1" href="#">Đội ngũ</a>
+<a class="text-deep-ocean dark:text-white text-sm font-medium hover:text-primary transition-colors" href="#jobs">Tuyển dụng</a>
+<a class="text-deep-ocean dark:text-white text-sm font-medium hover:text-primary transition-colors" href="#">Liên hệ</a>
+</nav>
+<button class="flex min-w-[120px] items-center justify-center rounded-lg bg-primary h-10 px-4 text-white text-sm font-bold tracking-[0.015em] hover:opacity-90 transition-opacity">
+                            Dùng thử miễn phí
+                        </button>
+</div>
+</header>
+</div>
+</div>
+<main class="flex-1 max-w-[1200px] mx-auto w-full px-4 lg:px-10 py-12 space-y-24">
+<!-- Team Section -->
+<section>
+<div class="text-center max-w-2xl mx-auto mb-16">
+<h1 class="text-deep-ocean dark:text-white tracking-tight text-4xl lg:text-5xl font-bold leading-tight mb-4">Gặp gỡ những người kiến tạo</h1>
+<p class="text-slate-blue dark:text-slate-400 text-lg">Chúng tôi là tập hợp những chuyên gia đam mê công nghệ, cùng nhau xây dựng tương lai cho quản trị doanh nghiệp.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="flex flex-col gap-4 group">
+<div class="w-full bg-slate-100 dark:bg-slate-800 aspect-[3/4] bg-center bg-no-repeat bg-cover rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all duration-500" data-alt="Chân dung CEO Nguyễn Văn A mỉm cười chuyên nghiệp" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuATuPACiKwJlh58fM6LBNQ3b2kWruEF-EfDldwQCKwN74qY-le8s76Ryx8Oz60zzJwTSco3OIip2UpFhAoCrpsjGuaH80869qq_kQrE59pZ2wjneYBbQdGhaPa8AXS_z5RPjiG65yw7OKBq5QisaEWCTUCrDHJHTDRVJpExQCt_-d7Id_iNZXdcbdCDUKZ7hZ3epujrZUeEPNbSJ__lDqqACMudPnRUfaf2bYH6Xwua5aqsSaEvUz1N2m4baI4aWuDaJqOT4EEhCWg");'></div>
+<div class="text-center">
+<p class="text-deep-ocean dark:text-white text-lg font-bold">Nguyễn Văn A</p>
+<p class="text-slate-blue dark:text-slate-400 text-sm uppercase tracking-wider font-semibold">CEO &amp; Founder</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 group">
+<div class="w-full bg-slate-100 dark:bg-slate-800 aspect-[3/4] bg-center bg-no-repeat bg-cover rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all duration-500" data-alt="Chân dung CTO Trần Thị B phong cách hiện đại" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBAxVA2ZFDlIPpQwHF7g1CGYtiPg3Q9TP_XwNxs3n8pClvmW_Rcktfy2eoHm3TAmItepkcFFugtMvDiemGe2WhHufS6L7DsaVn2MLcn5sIMuG237IGm7ioq1v7oO6sEznQ1A2JaX2PUPYKCcFVHm3e61Kvirny1WCc7MrHkJdWg0khW768ZcMRzeiZqjCjK1af6X7IqbTdHYvaaKYEnlA8bImtwOFBV0Eqa0t3lgVeW_JboeivTHoySxSmIIETYefmPQst-kgMcBiI");'></div>
+<div class="text-center">
+<p class="text-deep-ocean dark:text-white text-lg font-bold">Trần Thị B</p>
+<p class="text-slate-blue dark:text-slate-400 text-sm uppercase tracking-wider font-semibold">CTO</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 group">
+<div class="w-full bg-slate-100 dark:bg-slate-800 aspect-[3/4] bg-center bg-no-repeat bg-cover rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all duration-500" data-alt="Chân dung Head of Design Lê Văn C đầy sáng tạo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1R9GhepGA0q-8hV3nNZDSf88ENAdFnxhomR6HXI1PqpC5sPd9jip_Y-HlShUA66WzhE-mN8oO078Qf6lrrJzTDE9zHfWy_LBqi1-kkq1m5iCYml0OEIt3T6uBpnaLusgqAcubNHCO0JjkST3WucX9Vtyj0jE1uBkR5RiSYSlx6vasQ61RjX-k86T6_Cju6zJFee8q6eYZDG0WMjyUcXwwNqhlm-fkuksFO2To9GaYTjZtZTZp9eNyaAVSYnIUkBNWXdTikRMXeTk");'></div>
+<div class="text-center">
+<p class="text-deep-ocean dark:text-white text-lg font-bold">Lê Văn C</p>
+<p class="text-slate-blue dark:text-slate-400 text-sm uppercase tracking-wider font-semibold">Head of Design</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 group">
+<div class="w-full bg-slate-100 dark:bg-slate-800 aspect-[3/4] bg-center bg-no-repeat bg-cover rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all duration-500" data-alt="Chân dung AI Research Lead Phạm Thị D" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCI-aPGXooACoJ4FY9zW71yd_4SZ_JI7KSbOv0tQ3jc9HWbmqaqjwfFkRQbjIb3xmZq0mbm2kmBGum4dyimQ0M4RuTwMJzRVqY2Iiq7yOBXPguep-Bcc9EL2tkObLZnCdVM5Dpr8teF1asJuWLwDUROSlBEWz9J3AwSd766M7zRHZgxi20pUd1xZVQvQMk15ODhAhPfeZck9Upzl1Iu_loUjzhzxOHZ7MOwYztsCXnxONMgGyECbr1OdE77fq9uUbUWNPSR_-ovHXk");'></div>
+<div class="text-center">
+<p class="text-deep-ocean dark:text-white text-lg font-bold">Phạm Thị D</p>
+<p class="text-slate-blue dark:text-slate-400 text-sm uppercase tracking-wider font-semibold">AI Research Lead</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Culture Section -->
+<section class="py-12 bg-slate-50 dark:bg-slate-900/30 -mx-4 lg:-mx-10 px-4 lg:px-10 rounded-xl">
+<div class="text-left mb-12">
+<h2 class="text-deep-ocean dark:text-white text-3xl font-bold leading-tight tracking-tight mb-2">Văn hóa làm việc tại BusinessOS</h2>
+<p class="text-slate-blue dark:text-slate-400">Nơi tài năng được tỏa sáng và những ý tưởng không bị giới hạn.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col gap-6 rounded-xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-background-dark p-8 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">lightbulb</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-deep-ocean dark:text-white text-xl font-bold leading-tight">Sáng tạo không giới hạn</h3>
+<p class="text-slate-blue dark:text-slate-400 text-base leading-relaxed">Môi trường khuyến khích những ý tưởng đột phá và khác biệt. Chúng tôi tin rằng mỗi lỗi sai là một bài học để hoàn thiện hơn.</p>
+</div>
+</div>
+<div class="flex flex-col gap-6 rounded-xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-background-dark p-8 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">calendar_today</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-deep-ocean dark:text-white text-xl font-bold leading-tight">Linh hoạt tối đa</h3>
+<p class="text-slate-blue dark:text-slate-400 text-base leading-relaxed">Làm việc từ xa hoặc tại văn phòng, tập trung vào hiệu suất. Thời gian làm việc do bạn chủ động để đảm bảo cân bằng cuộc sống.</p>
+</div>
+</div>
+<div class="flex flex-col gap-6 rounded-xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-background-dark p-8 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">memory</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-deep-ocean dark:text-white text-xl font-bold leading-tight">Định hướng AI</h3>
+<p class="text-slate-blue dark:text-slate-400 text-base leading-relaxed">Tiên phong ứng dụng AI vào mọi quy trình vận hành. Bạn sẽ được tiếp cận với những công nghệ mới nhất thế giới.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Recruitment Section -->
+<section id="jobs">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<h2 class="text-deep-ocean dark:text-white text-3xl font-bold leading-tight tracking-tight mb-2">Gia nhập đội ngũ</h2>
+<p class="text-slate-blue dark:text-slate-400">Hãy cùng chúng tôi xây dựng nền tảng quản trị tương lai.</p>
+</div>
+<div class="flex gap-2">
+<span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 text-deep-ocean dark:text-white text-sm font-medium">Tất cả (8)</span>
+<span class="px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-blue text-sm font-medium cursor-pointer transition-colors">Công nghệ</span>
+<span class="px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-blue text-sm font-medium cursor-pointer transition-colors">Thiết kế</span>
+</div>
+</div>
+<div class="w-full overflow-x-auto rounded-xl border border-slate-100 dark:border-slate-800">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-900/50">
+<th class="px-6 py-4 text-deep-ocean dark:text-white font-bold text-sm">VỊ TRÍ</th>
+<th class="px-6 py-4 text-deep-ocean dark:text-white font-bold text-sm">PHÒNG BAN</th>
+<th class="px-6 py-4 text-deep-ocean dark:text-white font-bold text-sm">ĐỊA ĐIỂM</th>
+<th class="px-6 py-4 text-right"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50/50 dark:hover:bg-white/5 transition-colors group">
+<td class="px-6 py-6">
+<div class="text-deep-ocean dark:text-white font-bold text-lg">Senior Product Designer</div>
+<div class="text-slate-blue dark:text-slate-400 text-sm mt-1">Full-time, Senior Level</div>
+</td>
+<td class="px-6 py-6 text-slate-blue dark:text-slate-400 font-medium">Design &amp; UX</td>
+<td class="px-6 py-6 text-slate-blue dark:text-slate-400 font-medium">TP. Hồ Chí Minh</td>
+<td class="px-6 py-6 text-right">
+<button class="bg-primary hover:bg-blue-600 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all transform group-hover:scale-105">
+                                        Ứng tuyển
+                                    </button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-white/5 transition-colors group">
+<td class="px-6 py-6">
+<div class="text-deep-ocean dark:text-white font-bold text-lg">AI Machine Learning Engineer</div>
+<div class="text-slate-blue dark:text-slate-400 text-sm mt-1">Full-time, Mid-Senior</div>
+</td>
+<td class="px-6 py-6 text-slate-blue dark:text-slate-400 font-medium">Engineering</td>
+<td class="px-6 py-6 text-slate-blue dark:text-slate-400 font-medium">Remote (Vietnam)</td>
+<td class="px-6 py-6 text-right">
+<button class="bg-primary hover:bg-blue-600 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all transform group-hover:scale-105">
+                                        Ứng tuyển
+                                    </button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-white/5 transition-colors group">
+<td class="px-6 py-6">
+<div class="text-deep-ocean dark:text-white font-bold text-lg">Content Marketing Manager</div>
+<div class="text-slate-blue dark:text-slate-400 text-sm mt-1">Full-time</div>
+</td>
+<td class="px-6 py-6 text-slate-blue dark:text-slate-400 font-medium">Growth</td>
+<td class="px-6 py-6 text-slate-blue dark:text-slate-400 font-medium">Hà Nội</td>
+<td class="px-6 py-6 text-right">
+<button class="bg-primary hover:bg-blue-600 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all transform group-hover:scale-105">
+                                        Ứng tuyển
+                                    </button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-white/5 transition-colors group">
+<td class="px-6 py-6">
+<div class="text-deep-ocean dark:text-white font-bold text-lg">Backend Developer (Go/Node)</div>
+<div class="text-slate-blue dark:text-slate-400 text-sm mt-1">Full-time</div>
+</td>
+<td class="px-6 py-6 text-slate-blue dark:text-slate-400 font-medium">Engineering</td>
+<td class="px-6 py-6 text-slate-blue dark:text-slate-400 font-medium">TP. Hồ Chí Minh</td>
+<td class="px-6 py-6 text-right">
+<button class="bg-primary hover:bg-blue-600 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all transform group-hover:scale-105">
+                                        Ứng tuyển
+                                    </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-8 text-center">
+<p class="text-slate-blue dark:text-slate-400">Không tìm thấy vị trí phù hợp? <a class="text-primary font-bold hover:underline" href="#">Gửi hồ sơ tự do cho chúng tôi</a></p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 py-12 border-t border-slate-100 dark:border-slate-800">
+<div class="max-w-[1200px] mx-auto px-4 lg:px-10 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-3 text-deep-ocean dark:text-white mb-6">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.1288 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight">BusinessOS</h2>
+</div>
+<p class="text-slate-blue dark:text-slate-400 text-sm leading-relaxed">
+                        Hệ điều hành thế hệ mới dành cho doanh nghiệp B2B SaaS hiện đại.
+                    </p>
+</div>
+<div>
+<h4 class="text-deep-ocean dark:text-white font-bold mb-6">Sản phẩm</h4>
+<ul class="space-y-4 text-sm text-slate-blue dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Tính năng chính</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Bảng giá</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Tích hợp</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-deep-ocean dark:text-white font-bold mb-6">Công ty</h4>
+<ul class="space-y-4 text-sm text-slate-blue dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Về chúng tôi</a></li>
+<li><a class="hover:text-primary transition-colors font-bold text-primary" href="#">Tuyển dụng</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-deep-ocean dark:text-white font-bold mb-6">Kết nối</h4>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center text-slate-blue hover:text-primary shadow-sm cursor-pointer transition-colors">
+<span class="material-symbols-outlined">public</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center text-slate-blue hover:text-primary shadow-sm cursor-pointer transition-colors">
+<span class="material-symbols-outlined">alternate_email</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center text-slate-blue hover:text-primary shadow-sm cursor-pointer transition-colors">
+<span class="material-symbols-outlined">share</span>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto px-4 lg:px-10 mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between text-xs text-slate-blue dark:text-slate-500 gap-4">
+<p>© 2024 BusinessOS. Đã đăng ký bản quyền.</p>
+<div class="flex gap-6">
+<a class="hover:underline" href="#">Điều khoản</a>
+<a class="hover:underline" href="#">Bảo mật</a>
+<a class="hover:underline" href="#">Cookie</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,56 @@
+PHẦN 1: HỆ THỐNG & GIỚI THIỆU (S00 - S06)
+S00. Trang chủ BusinessOS: Giao diện giới thiệu Dual-View (Bản Trắng).
+S00-1. Bảng giá (Pricing): Các gói Starter, Business, Enterprise.
+S00-2. Đội ngũ & Tuyển dụng: Văn hóa công ty và vị trí trống.
+S01. Splash & Intro: Màn hình chờ thương hiệu tối giản.
+S02. Chọn Vai trò: Giao diện chọn Doanh nghiệp/Freelancer.
+S03. Đăng nhập/Đăng ký: Form hiện đại, tích hợp SSO Google/Facebook.
+S04. Xác thực OTP: Bảo mật 2 lớp khi đăng ký/rút tiền.
+S05. Onboarding Wizard: Thiết lập thông tin người dùng đa bước.
+S06. Tìm kiếm toàn cục: Lớp phủ tìm kiếm thông minh đa danh mục.
+🏢 PHẦN 2: DOANH NGHIỆP - CLASSIC MODE (C05 - C17)
+C05. Sàn dịch vụ (Marketplace): Danh mục các gói quy trình.
+C06. Chi tiết gói dịch vụ: Lộ trình triển khai và bảng giá chi tiết.
+C07. Đề bài thông minh (Smart Brief): Form nhập yêu cầu hỗ trợ bởi AI.
+C08. Thanh toán & Checkout: Tổng hợp đơn hàng và phương thức thanh toán.
+C09. Danh sách dự án: Quản lý tổng quan các dự án đang chạy.
+C10. Bảng Kanban: Quản lý tác vụ dự án kéo thả trực quan.
+C11. Chi tiết công việc: Modal trao đổi và phê duyệt kết quả.
+C12. Quản lý đội ngũ: Danh sách Freelancer và phân quyền dự án.
+C13. Ví tài chính: Theo dõi số dư doanh nghiệp và lịch sử chi tiêu.
+C14. Trung tâm hóa đơn: Quản lý và xuất hóa đơn VAT (Bản Trắng).
+C15. Hồ sơ doanh nghiệp: Thông tin pháp lý (Đã sửa lỗi hiển thị).
+C16. Báo cáo tài chính: Dashboard phân tích doanh thu & chi phí.
+C17. Đánh giá (Feedback): Hệ thống đánh giá 5 sao sau dự án.
+🤖 PHẦN 3: DOANH NGHIỆP - VIRTUAL MODE (C01 - C04)
+C01. Bảng chỉ huy CEO: Đèn giao thông sức khỏe doanh nghiệp.
+C02. Duyệt nhanh AI: Phê duyệt tác vụ kiểu vuốt Tinder (Bản Trắng).
+C03. Phòng hội chẩn AI: Chat chiến lược với các Agent ảo.
+C04. Ra lệnh giọng nói: Giao diện sóng âm nhận diện lệnh CEO.
+🧑‍💻 PHẦN 4: FREELANCER HUB (F01 - F12)
+F01. Trang chủ Freelancer: Tổng quan thu nhập và việc cần làm.
+F02. Chợ việc làm: Danh sách dự án mở thầu và bộ lọc kỹ năng.
+F03. Bàn làm việc (Workspace): Giao diện 3 cột tập trung cao độ.
+F04. Nộp sản phẩm: Giao diện upload file kết quả dự án.
+F05. Bảng chấm công: Timer và lịch sử giờ làm (Bản Trắng).
+F06. Ví thu nhập: Theo dõi dòng tiền cá nhân (Bản Trắng).
+F07. Yêu cầu rút tiền: Form rút tiền về ngân hàng liên kết.
+F08. Hồ sơ năng lực (Portfolio): (Đã sửa lỗi hiển thị tên - Final).
+F09. Trung tâm kỹ năng: Danh sách bài thi lấy chứng chỉ số.
+F10. Giao diện làm bài thi: (Bản Trắng đồng bộ).
+F10-1. Kết quả thi: Màn hình vinh danh và cấp chứng chỉ số.
+F11. Thư viện học tập: Khóa học E-learning (Bản Trắng).
+F12. Cài đặt ngân hàng: Quản lý tài khoản thụ hưởng cá nhân.
+🛠️ PHẦN 5: QUẢN TRỊ & TIỆN ÍCH (A01 - A11 + UI KIT)
+A01. Admin Dashboard: KPI toàn sàn (GMV, Active Users).
+A02. Quản lý người dùng: Danh sách User và duyệt KYC.
+A03. Xử lý tranh chấp: Trung tâm hòa giải (Bản Trắng).
+A04. Workflow Builder: Công cụ thiết kế quy trình mẫu.
+A10. Cài đặt hệ thống: Cấu hình cá nhân và quản trị.
+A11. Lỗi & Trạng thái rỗng: Màn hình 404 và Empty States.
+Hệ thống thiết kế đi kèm (UI Kit):
+
+Bảng màu & Kiểu chữ chuẩn.
+Trạng thái tương tác Nút & Ô nhập liệu.
+Nhãn (Badges) & Thông báo (Toasts).
+Dropdown, Modal & Bảng dữ liệu nâng cao.

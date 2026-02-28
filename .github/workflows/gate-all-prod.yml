@@ -1,0 +1,57 @@
+name: Gate All Prod
+
+on:
+  pull_request:
+    branches:
+      - 'release/**'
+      - main
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Build
+        run: npm run build
+
+      - name: Run Production Gate
+        run: npm run gate:prod
+
+      - name: Run Navigation Validate
+        run: npm run nav:validate
+
+      - name: Run UAT Packs (prod)
+        run: npm run uat:packs:prod
+
+      - name: Run E2E ERPNext Gate (prod)
+        run: npm run uat:e2e:prod
+        env:
+          # ERPNext keys are optional — tests skip/graceful-fail if missing
+          ERPNEXT_BASE_URL: ${{ secrets.ERPNEXT_BASE_URL }}
+          ERPNEXT_API_KEY: ${{ secrets.ERPNEXT_API_KEY }}
+          ERPNEXT_API_SECRET: ${{ secrets.ERPNEXT_API_SECRET }}
+
+      - name: Upload Evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gate-evidence
+          path: |
+            docs/*GATE*.md
+            docs/*REPORT*.md
+            docs/ERP_STATUS.md
+          retention-days: 30

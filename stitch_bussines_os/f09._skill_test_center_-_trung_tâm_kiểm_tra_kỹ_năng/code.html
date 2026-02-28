@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trung tâm kỹ năng - BusinessOS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "electric-blue": "#3B82F6",
+                        "border-light": "#E5E7EB",
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "custom": "8px"
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+        }
+        .card-shadow-soft {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="text-slate-900 min-h-screen">
+<div class="flex min-h-screen">
+<aside class="w-64 border-r border-border-light bg-white hidden lg:flex flex-col p-6 sticky top-0 h-screen">
+<div class="mb-10 px-2">
+<div class="text-electric-blue font-bold text-xl tracking-tight">BusinessOS</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-50 rounded-custom transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-sm font-medium">Tổng quan</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-blue-50 text-electric-blue rounded-custom transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+<span class="text-sm font-medium">Trung tâm kỹ năng</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-50 rounded-custom transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">person</span>
+<span class="text-sm font-medium">Hồ sơ cá nhân</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-50 rounded-custom transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm font-medium">Cài đặt</span>
+</a>
+</nav>
+</aside>
+<main class="flex-1 bg-white">
+<div class="max-w-[1200px] mx-auto py-8 px-6 lg:px-10">
+<div class="mb-8">
+<div class="flex items-center gap-2 text-xs text-slate-400 mb-4 font-medium uppercase tracking-wider">
+<span>Freelancer</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-slate-600">Trung tâm kỹ năng</span>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div>
+<h1 class="text-3xl font-bold text-slate-900">Trung tâm kỹ năng</h1>
+<p class="text-slate-500 mt-1">Đánh giá năng lực chuyên môn và nhận chứng chỉ số từ hệ thống.</p>
+</div>
+<div class="flex items-center gap-3 bg-white border border-border-light p-3 rounded-custom card-shadow-soft">
+<div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-electric-blue">
+<span class="material-symbols-outlined">military_tech</span>
+</div>
+<div>
+<div class="text-[10px] text-slate-400 font-bold uppercase tracking-tight">Đã hoàn thành</div>
+<div class="text-sm font-bold">03/12 Chứng chỉ</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex border-b border-border-light mb-8">
+<button class="px-6 py-4 text-sm font-semibold text-electric-blue border-b-2 border-electric-blue">
+                        Tất cả bài thi
+                    </button>
+<button class="px-6 py-4 text-sm font-semibold text-slate-400 hover:text-slate-600 border-b-2 border-transparent transition-colors">
+                        Chứng chỉ của tôi
+                    </button>
+</div>
+<div class="flex flex-col md:flex-row gap-4 mb-8">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-white border border-border-light rounded-custom focus:ring-1 focus:ring-electric-blue focus:border-electric-blue outline-none text-sm" placeholder="Tìm kiếm bài thi theo tên hoặc kỹ năng..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto no-scrollbar">
+<button class="px-4 py-2 bg-slate-900 text-white text-sm font-medium rounded-custom shrink-0">Tất cả</button>
+<button class="px-4 py-2 bg-white border border-border-light text-slate-600 hover:border-slate-300 text-sm font-medium rounded-custom shrink-0 transition-colors">Marketing</button>
+<button class="px-4 py-2 bg-white border border-border-light text-slate-600 hover:border-slate-300 text-sm font-medium rounded-custom shrink-0 transition-colors">Thiết kế</button>
+<button class="px-4 py-2 bg-white border border-border-light text-slate-600 hover:border-slate-300 text-sm font-medium rounded-custom shrink-0 transition-colors">Lập trình</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+<div class="bg-white border border-border-light rounded-custom p-6 card-shadow-soft flex flex-col hover:border-blue-200 transition-all group">
+<div class="flex justify-between items-start mb-6">
+<div class="w-10 h-10 rounded-custom bg-slate-50 flex items-center justify-center text-slate-600 border border-slate-100">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-2 py-1 bg-slate-50 rounded">Marketing</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 mb-2 leading-tight group-hover:text-electric-blue transition-colors">Kiến thức SEO nền tảng</h3>
+<p class="text-sm text-slate-500 mb-6 line-clamp-2">Kiểm tra kiến thức về tối ưu hóa công cụ tìm kiếm, nghiên cứu từ khóa và on-page SEO.</p>
+<div class="mt-auto">
+<div class="flex items-center gap-4 text-xs font-medium text-slate-500 mb-6 py-4 border-y border-slate-50">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">timer</span>
+<span>30 phút</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">format_list_bulleted</span>
+<span>20 câu</span>
+</div>
+</div>
+<button class="w-full bg-electric-blue hover:bg-blue-600 text-white font-semibold py-2.5 rounded-custom transition-colors flex items-center justify-center gap-2">
+<span>Bắt đầu làm bài</span>
+</button>
+</div>
+</div>
+<div class="bg-white border border-border-light rounded-custom p-6 card-shadow-soft flex flex-col hover:border-blue-200 transition-all group">
+<div class="flex justify-between items-start mb-6">
+<div class="w-10 h-10 rounded-custom bg-slate-50 flex items-center justify-center text-slate-600 border border-slate-100">
+<span class="material-symbols-outlined">javascript</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-2 py-1 bg-slate-50 rounded">Lập trình</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 mb-2 leading-tight group-hover:text-electric-blue transition-colors">ReactJS Nâng cao</h3>
+<p class="text-sm text-slate-500 mb-6 line-clamp-2">Đánh giá kỹ năng về Hooks, Context API và tối ưu hiệu năng ứng dụng React.</p>
+<div class="mt-auto">
+<div class="flex items-center gap-4 text-xs font-medium text-slate-500 mb-6 py-4 border-y border-slate-50">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">timer</span>
+<span>45 phút</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">format_list_bulleted</span>
+<span>30 câu</span>
+</div>
+</div>
+<button class="w-full bg-electric-blue hover:bg-blue-600 text-white font-semibold py-2.5 rounded-custom transition-colors flex items-center justify-center gap-2">
+<span>Bắt đầu làm bài</span>
+</button>
+</div>
+</div>
+<div class="bg-white border border-border-light rounded-custom p-6 card-shadow-soft flex flex-col hover:border-blue-200 transition-all group">
+<div class="flex justify-between items-start mb-6">
+<div class="w-10 h-10 rounded-custom bg-slate-50 flex items-center justify-center text-slate-600 border border-slate-100">
+<span class="material-symbols-outlined">draw</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-2 py-1 bg-slate-50 rounded">Thiết kế</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 mb-2 leading-tight group-hover:text-electric-blue transition-colors">Nguyên lý UI Design</h3>
+<p class="text-sm text-slate-500 mb-6 line-clamp-2">Nắm vững quy tắc bố cục, màu sắc và typography trong thiết kế giao diện hiện đại.</p>
+<div class="mt-auto">
+<div class="flex items-center gap-4 text-xs font-medium text-slate-500 mb-6 py-4 border-y border-slate-50">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">timer</span>
+<span>40 phút</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">format_list_bulleted</span>
+<span>25 câu</span>
+</div>
+</div>
+<button class="w-full bg-electric-blue hover:bg-blue-600 text-white font-semibold py-2.5 rounded-custom transition-colors flex items-center justify-center gap-2">
+<span>Bắt đầu làm bài</span>
+</button>
+</div>
+</div>
+<div class="bg-white border border-border-light rounded-custom p-6 card-shadow-soft flex flex-col hover:border-blue-200 transition-all group">
+<div class="flex justify-between items-start mb-6">
+<div class="w-10 h-10 rounded-custom bg-slate-50 flex items-center justify-center text-slate-600 border border-slate-100">
+<span class="material-symbols-outlined">data_exploration</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-2 py-1 bg-slate-50 rounded">Lập trình</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 mb-2 leading-tight group-hover:text-electric-blue transition-colors">Python for Data Science</h3>
+<p class="text-sm text-slate-500 mb-6 line-clamp-2">Kiểm tra kỹ năng phân tích dữ liệu với thư viện Pandas, NumPy và Matplotlib.</p>
+<div class="mt-auto">
+<div class="flex items-center gap-4 text-xs font-medium text-slate-500 mb-6 py-4 border-y border-slate-50">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">timer</span>
+<span>60 phút</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">format_list_bulleted</span>
+<span>40 câu</span>
+</div>
+</div>
+<button class="w-full bg-electric-blue hover:bg-blue-600 text-white font-semibold py-2.5 rounded-custom transition-colors flex items-center justify-center gap-2">
+<span>Bắt đầu làm bài</span>
+</button>
+</div>
+</div>
+<div class="bg-white border border-border-light rounded-custom p-6 card-shadow-soft flex flex-col hover:border-blue-200 transition-all group">
+<div class="flex justify-between items-start mb-6">
+<div class="w-10 h-10 rounded-custom bg-slate-50 flex items-center justify-center text-slate-600 border border-slate-100">
+<span class="material-symbols-outlined">edit_note</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-2 py-1 bg-slate-50 rounded">Marketing</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 mb-2 leading-tight group-hover:text-electric-blue transition-colors">Content Marketing</h3>
+<p class="text-sm text-slate-500 mb-6 line-clamp-2">Chiến lược xây dựng nội dung đa kênh và đo lường hiệu quả chuyển đổi.</p>
+<div class="mt-auto">
+<div class="flex items-center gap-4 text-xs font-medium text-slate-500 mb-6 py-4 border-y border-slate-50">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">timer</span>
+<span>35 phút</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">format_list_bulleted</span>
+<span>25 câu</span>
+</div>
+</div>
+<button class="w-full bg-electric-blue hover:bg-blue-600 text-white font-semibold py-2.5 rounded-custom transition-colors flex items-center justify-center gap-2">
+<span>Bắt đầu làm bài</span>
+</button>
+</div>
+</div>
+<div class="bg-white border border-border-light rounded-custom p-6 card-shadow-soft flex flex-col hover:border-blue-200 transition-all group">
+<div class="flex justify-between items-start mb-6">
+<div class="w-10 h-10 rounded-custom bg-slate-50 flex items-center justify-center text-slate-600 border border-slate-100">
+<span class="material-symbols-outlined">brush</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-2 py-1 bg-slate-50 rounded">Thiết kế</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 mb-2 leading-tight group-hover:text-electric-blue transition-colors">Adobe Photoshop Pro</h3>
+<p class="text-sm text-slate-500 mb-6 line-clamp-2">Kỹ thuật xử lý hình ảnh phức tạp, layer mask và retouching chuyên nghiệp.</p>
+<div class="mt-auto">
+<div class="flex items-center gap-4 text-xs font-medium text-slate-500 mb-6 py-4 border-y border-slate-50">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">timer</span>
+<span>50 phút</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">format_list_bulleted</span>
+<span>35 câu</span>
+</div>
+</div>
+<button class="w-full bg-electric-blue hover:bg-blue-600 text-white font-semibold py-2.5 rounded-custom transition-colors flex items-center justify-center gap-2">
+<span>Bắt đầu làm bài</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex justify-center">
+<button class="flex items-center gap-2 px-6 py-3 border border-border-light rounded-custom text-slate-500 font-medium hover:bg-slate-50 transition-colors text-sm">
+<span>Xem thêm bài thi</span>
+<span class="material-symbols-outlined">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

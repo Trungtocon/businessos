@@ -1,0 +1,3 @@
+{"timestamp":"2026-02-27T03:34:00.016Z","event":"action_created","packId":"test_evidence_1772163240002","actionId":"act_1772163240015_9k1si2","actor":"system","details":{"type":"CREATE_FOLLOWUP_TASKS_7D"}}
+{"timestamp":"2026-02-27T03:34:00.017Z","event":"action_created","packId":"test_evidence_1772163240002","actionId":"act_1772163240015_wz0xdu","actor":"system","details":{"type":"CREATE_NURTURE_SEQUENCE_DRAFT"}}
+{"timestamp":"2026-02-27T03:34:00.017Z","event":"action_created","packId":"test_evidence_1772163240002","actionId":"act_1772163240015_pqbsnw","actor":"system","details":{"type":"CREATE_PIPELINE_DRAFT"}}

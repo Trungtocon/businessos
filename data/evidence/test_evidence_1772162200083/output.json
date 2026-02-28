@@ -1,0 +1,152 @@
+{
+  "icp": {
+    "who": "Chủ doanh nghiệp SME ngành Spa & Beauty, có nhu cầu Premium Skincare",
+    "painPoints": [
+      "Khó khăn trong việc tìm kiếm khách hàng mới",
+      "Chi phí quảng cáo cao nhưng hiệu quả thấp",
+      "Không có quy trình bán hàng rõ ràng"
+    ],
+    "triggers": [
+      "Vừa ra mắt sản phẩm/dịch vụ mới",
+      "Doanh thu quý trước giảm",
+      "Đối thủ đang mở rộng thị phần"
+    ],
+    "exclusions": [
+      "Doanh nghiệp không có website",
+      "Ngân sách dưới 5 triệu/tháng"
+    ]
+  },
+  "persona": {
+    "name": "Anh Minh - CEO SME",
+    "context": "CEO công ty Spa & Beauty, 35-45 tuổi, quản lý 10-50 nhân viên. Muốn 50 new leads.",
+    "objections": [
+      "Tôi đã thử nhiều cách mà không hiệu quả",
+      "Chi phí quá cao",
+      "Không có thời gian để triển khai"
+    ],
+    "desiredOutcome": "Có hệ thống lead generation tự động, tăng doanh thu 30% trong 90 ngày"
+  },
+  "offerAngles": [
+    {
+      "angle": "Tiết kiệm chi phí",
+      "promise": "Giảm 50% chi phí tìm khách so với quảng cáo truyền thống",
+      "proof": "Case study: Công ty X tiết kiệm 200tr/quý",
+      "cta": "Nhận tư vấn miễn phí ngay"
+    },
+    {
+      "angle": "Tốc độ",
+      "promise": "Có lead đầu tiên trong 7 ngày",
+      "proof": "Đã triển khai cho 50+ doanh nghiệp",
+      "cta": "Đăng ký Sprint ngay"
+    },
+    {
+      "angle": "Tự động hóa",
+      "promise": "Hệ thống nurture tự động 24/7",
+      "proof": "Tỷ lệ chuyển đổi trung bình 12%",
+      "cta": "Xem demo hệ thống"
+    }
+  ],
+  "funnelPlan": [
+    {
+      "step": "Awareness",
+      "channel": "facebook",
+      "asset": "Video ngắn giới thiệu vấn đề",
+      "successMetric": "1000+ views"
+    },
+    {
+      "step": "Interest",
+      "channel": "facebook",
+      "asset": "Lead magnet: Checklist miễn phí",
+      "successMetric": "100+ downloads"
+    },
+    {
+      "step": "Consideration",
+      "channel": "email",
+      "asset": "Email sequence 5 ngày",
+      "successMetric": "30%+ open rate"
+    },
+    {
+      "step": "Conversion",
+      "channel": "zalo",
+      "asset": "Tư vấn 1-1 qua Zalo",
+      "successMetric": "20%+ booking rate"
+    }
+  ],
+  "crmPipelineStages": [
+    "Mới (New Lead)",
+    "Đã liên hệ (Contacted)",
+    "Đã demo (Demo Done)",
+    "Đề xuất (Proposal)",
+    "Đã chốt (Won)"
+  ],
+  "nurtureSequences": {
+    "sequence1": [
+      {
+        "day": 1,
+        "message": "Chào [Tên], cảm ơn bạn đã quan tâm đến Premium Skincare",
+        "channel": "email",
+        "cta": "Xem case study"
+      },
+      {
+        "day": 3,
+        "message": "3 sai lầm phổ biến khi tìm khách hàng mới",
+        "channel": "email",
+        "cta": "Đọc bài viết"
+      },
+      {
+        "day": 5,
+        "message": "Cách doanh nghiệp Spa & Beauty tăng 50% lead",
+        "channel": "email",
+        "cta": "Xem video hướng dẫn"
+      },
+      {
+        "day": 7,
+        "message": "Bạn có muốn nhận bản phân tích miễn phí?",
+        "channel": "zalo",
+        "cta": "Đặt lịch tư vấn"
+      },
+      {
+        "day": 10,
+        "message": "Ưu đãi đặc biệt: Giảm 30% cho Sprint đầu tiên",
+        "channel": "email",
+        "cta": "Đăng ký ngay"
+      }
+    ],
+    "sequence2": [
+      {
+        "day": 1,
+        "message": "Follow up sau demo - Tổng kết nội dung đã thảo luận",
+        "channel": "email",
+        "cta": "Xem proposal"
+      },
+      {
+        "day": 3,
+        "message": "Chia sẻ thêm case study ngành tương tự",
+        "channel": "zalo",
+        "cta": "Đặt câu hỏi"
+      },
+      {
+        "day": 7,
+        "message": "Deadline ưu đãi: Còn 48h để đăng ký Sprint",
+        "channel": "email",
+        "cta": "Đăng ký Sprint"
+      }
+    ]
+  },
+  "followUpChecklist7d": [
+    "Ngày 1: Gửi email chào mừng + lead magnet",
+    "Ngày 2: Gọi điện xác nhận + giới thiệu nhanh",
+    "Ngày 3: Gửi case study ngành tương tự",
+    "Ngày 4: Mời tham gia webinar/demo",
+    "Ngày 5: Follow up sau demo + gửi proposal",
+    "Ngày 6: Xử lý objections + negotiation",
+    "Ngày 7: Close deal hoặc schedule follow up tiếp"
+  ],
+  "nextActions": [
+    "Thiết lập CRM pipeline với 5 stages",
+    "Tạo lead magnet cho ngành Spa & Beauty",
+    "Setup email automation sequence 1",
+    "Chạy campaign quảng cáo trên facebook",
+    "Review và optimize sau 7 ngày"
+  ]
+}

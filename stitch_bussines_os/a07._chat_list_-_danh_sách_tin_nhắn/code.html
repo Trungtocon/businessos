@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A07. Danh sách tin nhắn - BusinessOS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0657f9",
+                        "deep-ocean": "#0F172A",
+                        "border-light": "#E5E7EB",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 5px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #E2E8F0;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="font-display text-slate-900 h-screen flex overflow-hidden bg-white">
+<aside class="w-20 bg-white flex flex-col items-center py-6 shrink-0 z-20 border-r border-border-light">
+<div class="mb-8 size-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary cursor-pointer hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-3xl">grid_view</span>
+</div>
+<nav class="flex flex-col gap-4 w-full items-center flex-1">
+<button class="group relative size-10 flex items-center justify-center text-slate-500 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">
+<span class="material-symbols-outlined">home</span>
+<span class="absolute left-14 bg-deep-ocean text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Tổng quan</span>
+</button>
+<button class="group relative size-10 flex items-center justify-center bg-primary text-white rounded-lg shadow-md shadow-primary/20 transition-colors">
+<span class="material-symbols-outlined font-variation-settings-'FILL'1">chat_bubble</span>
+<span class="absolute left-14 bg-deep-ocean text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Tin nhắn</span>
+</button>
+<button class="group relative size-10 flex items-center justify-center text-slate-500 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">
+<span class="material-symbols-outlined">work</span>
+<span class="absolute left-14 bg-deep-ocean text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Dự án</span>
+</button>
+<button class="group relative size-10 flex items-center justify-center text-slate-500 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">
+<span class="material-symbols-outlined">pie_chart</span>
+<span class="absolute left-14 bg-deep-ocean text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Báo cáo</span>
+</button>
+<div class="h-px w-8 bg-gray-200 my-2"></div>
+<button class="group relative size-10 flex items-center justify-center text-slate-500 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">
+<span class="material-symbols-outlined">settings</span>
+<span class="absolute left-14 bg-deep-ocean text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">Cài đặt</span>
+</button>
+</nav>
+<div class="mt-auto flex flex-col gap-4 items-center w-full">
+<div class="size-10 rounded-full bg-cover bg-center ring-2 ring-gray-100 cursor-pointer hover:ring-primary transition-all" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCTVF2_lBofXBeQ9FiH07iLLc4h8OHpupTpHH1YZBD3omZRMK_h0pyw1TP33R1nb6TM0vuLS54852owkpEzX7RS9_G-FqLxW4rddCBaSkYlq-kf9aKs2hsuwnCv3lflNB7pPRuvJRFTUfFpRkQTY4jSKUkZ0z5NlE0CP0sZ_Cryh-O3czZsv0PmeGDkf7b7EKD1I22aKH8ddXgG4dhX2fkFCFm7rrFDdApVXtvVIBZ6P1VPR5EIlBscnr3V3NwdjQQmbFt9lvVYiD0');"></div>
+</div>
+</aside>
+<div class="w-80 md:w-96 flex flex-col bg-white border-r border-border-light shrink-0 h-full">
+<div class="px-5 pt-6 pb-2 flex justify-between items-center">
+<h1 class="text-[22px] font-bold tracking-tight text-deep-ocean">Tin nhắn</h1>
+<button class="size-9 flex items-center justify-center bg-gray-50 text-slate-600 hover:bg-primary hover:text-white rounded-full transition-colors" title="Soạn tin mới">
+<span class="material-symbols-outlined text-[20px]">edit_square</span>
+</button>
+</div>
+<div class="px-5 py-4">
+<div class="flex w-full items-center rounded-lg bg-gray-50 border border-gray-100 h-10 px-3 transition-all focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary/50">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-sm ml-2 text-deep-ocean placeholder:text-slate-400" placeholder="Tìm kiếm liên hệ..."/>
+</div>
+</div>
+<div class="px-5 pb-0 flex gap-6 text-sm font-medium text-slate-500 border-b border-border-light">
+<button class="pb-3 border-b-2 border-primary text-primary font-semibold">Tất cả</button>
+<button class="pb-3 border-b-2 border-transparent hover:text-deep-ocean transition-colors">Chưa đọc</button>
+<button class="pb-3 border-b-2 border-transparent hover:text-deep-ocean transition-colors">Nhóm</button>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar">
+<div class="flex items-center gap-3 px-5 py-4 hover:bg-gray-50 cursor-pointer border-b border-gray-50 hover:border-gray-100 transition-colors group relative">
+<div class="relative shrink-0">
+<div class="size-12 rounded-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2sLTGglWtCknb_0vomkpyKFG3OjG3n42RWW13Hfn-v7rODaVJSoYuUgBdUWQX2FqFKZRnXwxuJmTYTlJR5GsXN9yP_3dXyOS0sTKcGNb1z1SM4S0shu_OiUaCTf4SEwyVVqfTMB3LdgpPdi9rq3MR8YBT_9c_PpuDlSTkwaSiNRWogBBSXxSpWsjt-d7-Uce2dXX3diHwHvrlKw4RAaMr4cWj1LtQlzKYko1lF-AiuAPV7A-SBm4K2s39l3F29HqfZTnB13WeKpM');"></div>
+<div class="absolute bottom-0 right-0 size-3 bg-green-500 border-2 border-white rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<p class="text-[15px] font-bold text-deep-ocean truncate">Nguyễn Thị Thu Hà</p>
+<p class="text-xs text-primary font-semibold">10:30</p>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-sm text-slate-600 font-medium truncate w-[180px]">Đã gửi file báo cáo Q3, sếp check giúp em nhé.</p>
+<span class="flex items-center justify-center h-5 min-w-[20px] px-1.5 bg-primary text-white text-[10px] font-bold rounded-full shadow-sm">2</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 px-5 py-4 hover:bg-gray-50 cursor-pointer border-b border-gray-50 hover:border-gray-100 transition-colors">
+<div class="relative shrink-0">
+<div class="size-12 rounded-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC874nxxKi4csQZMpkpKvoK0yVH7p84GYgup9sRxvtC9KfmdZDhXj2Fs2zoDkSR4Kxy5arrswe8I0o6_phc6EO8RZ8sM98CUbzCKw2xaSs7R0g_Lrz889LNfXnlw_spqNyXl6fRo1clO_FqnS6wc2fuHoC9g-_rO5bsFV73oeeuKw1oxvIx4vznnOorYXAuPKY7p74165U9tL9A1RNtqXPC60uPXR4fpLSvmWqYfS_5byL55eh8BPJQ630a75MP0xLUXka_Ht6zkSQ');"></div>
+<div class="absolute bottom-0 right-0 size-3 bg-gray-300 border-2 border-white rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<p class="text-[15px] font-bold text-deep-ocean truncate">Trần Văn Minh</p>
+<p class="text-xs text-slate-400">Hôm qua</p>
+</div>
+<p class="text-sm text-slate-500 truncate">Project X deadline là ngày mai nhé</p>
+</div>
+</div>
+<div class="flex items-center gap-3 px-5 py-4 hover:bg-gray-50 cursor-pointer border-b border-gray-50 hover:border-gray-100 transition-colors">
+<div class="relative shrink-0">
+<div class="size-12 rounded-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBsC7gB2qQPW6ZT7S2a3leeOv-7EdS3NyFkSE9wCwcGTeD6Jsvu6UeF-TgQpYaUn5f23i8g2RDcjjdUXJ4CNe_ORF2eTvyPbndo9EpGNFIrz0dZHDWMhCDVl1LPJ_j1LNcq4uBJHpFUjqjIfjHED8alo23Bs4sJsA5G7I8--3xqOqeE4YN6ixOXIGFemgX3PU8RonzHganfVnkRxKuM8SR5MSjXP-AzGrGu-MsW465bthsITI-TagnjQE0gJINBZhwqcluw_CWQ6Po');"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<p class="text-[15px] font-bold text-deep-ocean truncate">Design Team</p>
+<p class="text-xs text-slate-400">T.2</p>
+</div>
+<p class="text-sm text-slate-500 truncate"><span class="text-deep-ocean font-medium">Hồng:</span> Đã gửi ảnh chụp màn hình</p>
+</div>
+</div>
+<div class="flex items-center gap-3 px-5 py-4 hover:bg-gray-50 cursor-pointer border-b border-gray-50 hover:border-gray-100 transition-colors">
+<div class="relative shrink-0">
+<div class="size-12 flex items-center justify-center bg-purple-100 text-purple-600 rounded-full font-bold text-lg">
+                        L
+                    </div>
+<div class="absolute bottom-0 right-0 size-3 bg-green-500 border-2 border-white rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<p class="text-[15px] font-bold text-deep-ocean truncate">Lê Hoàng Nam</p>
+<p class="text-xs text-slate-400">T.3</p>
+</div>
+<p class="text-sm text-slate-500 truncate">Ok, chốt phương án này nhé.</p>
+</div>
+</div>
+<div class="flex items-center gap-3 px-5 py-4 hover:bg-gray-50 cursor-pointer border-b border-gray-50 hover:border-gray-100 transition-colors">
+<div class="relative shrink-0">
+<div class="size-12 rounded-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5iiw0eR02dNpmj2VDQNAkIK6iabaTsKfiC2Uzo5DAKJwWiAImwEMKFuSmJ28tgY8wdKSziGiR0WB4IN51Z3a7dzcLMIrMeXMyWx8YTvpbEaMjm2i2iMLz51_QU7z5Hdn0lpzvfNc0d2PHRWbKyEiln1hEITtMgaZ8wZNjbJMPeihdCnI9C8K1DnyBRdLjgiFzoSs_5brwI_IvcvKK2HO-taaI7zrgz-dzUKUot96JG-b0aep2BR-PtzVfmBBv8Wn1NvB01hXu8MM');"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<p class="text-[15px] font-bold text-deep-ocean truncate">Phạm Quốc Anh</p>
+<p class="text-xs text-slate-400">20/10</p>
+</div>
+<p class="text-sm text-slate-500 truncate">Cậu kiểm tra email chưa?</p>
+</div>
+</div>
+<div class="flex items-center gap-3 px-5 py-4 hover:bg-gray-50 cursor-pointer border-b border-gray-50 hover:border-gray-100 transition-colors">
+<div class="relative shrink-0">
+<div class="size-12 rounded-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtMOrmVGrd_LhjiW-EsuZG_ZD8rC57mTK9crA1NKEwovo2Ykp3oFdF6vZGudPcVNsGQ4Ul8GobvxuPIZ7FFGaV1wYE9S1RemYBwEi-eL9XvJIrQkHszrp1RhlpBm4Nnc_-mH8J0_XucQjANXlujbxD_tW1szqHMlNxfBZM936Q3M4NDEYqslp4zex4EaQY3wthHi-ggbV477yt5GAWPEwqldYFMj4ZJyQS0VWE7dhFqAEA94u2YVf9LVXwfO0mmYgRAwtwSWE3VGc');"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<p class="text-[15px] font-bold text-deep-ocean truncate">Marketing Dept</p>
+<p class="text-xs text-slate-400">18/10</p>
+</div>
+<p class="text-sm text-slate-500 truncate"><span class="text-deep-ocean font-medium">Hương:</span> Plan tháng tới cần duyệt...</p>
+</div>
+</div>
+<div class="flex items-center gap-3 px-5 py-4 hover:bg-gray-50 cursor-pointer border-b border-gray-50 hover:border-gray-100 transition-colors">
+<div class="relative shrink-0">
+<div class="size-12 rounded-full bg-cover bg-center grayscale opacity-70" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAI_FIUZ4NV0VqDLYQTm_RGZEjaovea2tF8YK-QVGImlkd4_eWeVe8uGiVAwUFuAXPwoRQZxCObMODjisAzVxoapVSrLmG9FfsAV50eyjg-qDYK-aXBIwb4npL7MGoqPs9hkjSDC1wFRyTRPzXsD96oCjf1SWDdHk8AYvXGb1BxSUhU9nYbYYgkEKl_pxcrD0kns7U4X0pqrV58EF5xgYPcKJ4LG55vy5xM9iIdsGPf61iiiKCLLaEFIBodxqd5wpxU1qo9kUExG08');"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<p class="text-[15px] font-bold text-slate-400 truncate">Support Bot</p>
+<p class="text-xs text-slate-400">01/10</p>
+</div>
+<p class="text-sm text-slate-400 truncate">Phiên hỗ trợ đã kết thúc.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col h-full bg-white relative">
+<div class="flex flex-col items-center justify-center h-full px-6 text-center">
+<div class="mb-6 size-24 bg-slate-50 rounded-full flex items-center justify-center border border-slate-100">
+<span class="material-symbols-outlined text-4xl text-slate-300">chat_bubble_outline</span>
+</div>
+<p class="text-lg text-slate-500 font-medium">
+                Chọn một cuộc trò chuyện để bắt đầu
+            </p>
+</div>
+</div>
+
+</body></html>

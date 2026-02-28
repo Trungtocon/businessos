@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>C10. Kanban Board - BusinessOS</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c83f6",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101722",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for better aesthetics in the columns */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #475569;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display h-screen flex overflow-hidden selection:bg-primary/30">
+<!-- Collapsed Sidebar (80px) -->
+<aside class="w-20 bg-white dark:bg-[#151e2e] flex flex-col items-center py-6 border-r border-slate-200 dark:border-slate-800 z-20 shadow-sm shrink-0">
+<!-- Logo Area -->
+<div class="mb-8">
+<div class="size-10 rounded-xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center text-white shadow-lg shadow-primary/30 cursor-pointer">
+<span class="material-symbols-outlined text-[24px]">grid_view</span>
+</div>
+</div>
+<!-- Nav Items -->
+<nav class="flex-1 flex flex-col gap-4 w-full px-2">
+<a class="group relative flex items-center justify-center size-12 rounded-xl text-slate-400 hover:text-primary hover:bg-primary/10 transition-colors" href="#" title="Dashboard">
+<span class="material-symbols-outlined">dashboard</span>
+</a>
+<a class="group relative flex items-center justify-center size-12 rounded-xl bg-primary/10 text-primary shadow-sm" href="#" title="Projects">
+<span class="material-symbols-outlined fill-1">view_kanban</span>
+</a>
+<a class="group relative flex items-center justify-center size-12 rounded-xl text-slate-400 hover:text-primary hover:bg-primary/10 transition-colors" href="#" title="Team">
+<span class="material-symbols-outlined">group</span>
+</a>
+<a class="group relative flex items-center justify-center size-12 rounded-xl text-slate-400 hover:text-primary hover:bg-primary/10 transition-colors" href="#" title="Documents">
+<span class="material-symbols-outlined">folder</span>
+</a>
+<a class="group relative flex items-center justify-center size-12 rounded-xl text-slate-400 hover:text-primary hover:bg-primary/10 transition-colors" href="#" title="Calendar">
+<span class="material-symbols-outlined">calendar_month</span>
+</a>
+</nav>
+<!-- Bottom Actions -->
+<div class="flex flex-col gap-4 w-full px-2 mt-auto">
+<a class="group relative flex items-center justify-center size-12 rounded-xl text-slate-400 hover:text-primary hover:bg-primary/10 transition-colors" href="#" title="Settings">
+<span class="material-symbols-outlined">settings</span>
+</a>
+<div class="h-px w-8 bg-slate-200 dark:bg-slate-700 mx-auto"></div>
+<button class="relative size-10 rounded-full overflow-hidden border-2 border-white dark:border-slate-700 shadow-sm mx-auto">
+<div class="w-full h-full bg-cover bg-center" data-alt="Current user profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCoKRTsrRZT28ubfeIg2vdrQKyLTnpc7jpLrKekaUheLzLqymTe58-MVH8dhbDppRYjFlddqWYQnDsdt5CpeR9UaaqAxtRXZpVXZjkfecygcbn6RMGdLrw034Edj2gf-X4r1uT5pwlbU1T75mAVMGMKtmorQSSDg1R1T5SgUh2jLYMTqfkiAS-ROwr6eYYZZeHSYWLvdcH-7ge2JRax855oyy4_SS72HF32t4sZt4Pl4Kj9ypG69tkZsRKijNtObpAwtByIrmnvGrk");'></div>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0 h-full">
+<!-- Header Section -->
+<header class="bg-white dark:bg-[#151e2e] border-b border-slate-200 dark:border-slate-800 px-8 py-5 flex flex-col gap-5 shrink-0 z-10">
+<!-- Breadcrumbs & Top Actions -->
+<div class="flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<nav class="flex items-center gap-2 text-sm text-slate-500 font-medium">
+<a class="hover:text-primary transition-colors" href="#">Projects</a>
+<span class="material-symbols-outlined text-[16px] text-slate-400">chevron_right</span>
+<span class="text-slate-900 dark:text-slate-200">Website E-commerce</span>
+</nav>
+<h1 class="text-2xl font-bold text-slate-900 dark:text-white leading-tight">Dự án Website E-commerce</h1>
+</div>
+<div class="flex items-center gap-4">
+<!-- Search Bar -->
+<div class="relative hidden lg:block">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined text-[20px]">search</span>
+<input class="h-10 pl-10 pr-4 rounded-lg bg-slate-100 dark:bg-slate-800 border-none text-sm text-slate-700 dark:text-slate-200 focus:ring-2 focus:ring-primary/50 w-64 placeholder:text-slate-400 transition-all" placeholder="Search tasks..." type="text"/>
+</div>
+<!-- Member Filter -->
+<div class="flex items-center -space-x-2 mr-2">
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-800 bg-gray-200 bg-cover bg-center" data-alt="Team member 1" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIkmvc1nv5yH0ch9WBnP2laWlbXD99vMkpoyx8UquaBjelyzx9KyMj38jYUwsGunKgcNbeFjYKMVcHo5Pw0NSCWVxthHPzugq4laSvRJpkKGeCk2Sa_glZrZgaaGBI-4_-QoqLESpWTUK7KNOYFkZwa9MpQz2Qa5xkgWgGWpzG5Ml-7TUUmHPyBYgzEeQQUW0tQwDEawhR6wOnmVrj_YSkFJYo0o1FIXzttlPnaQqpmlV2Rn3KApLmj-4RRC_AXC-lG-wnJ9AZpAc");'></div>
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-800 bg-gray-300 bg-cover bg-center" data-alt="Team member 2" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPeVidXokhSumncrPCktwCX1nSrDeyEIQBuT7GIRDTu6iPXdQNNWa0vq3NLwR3_zVprZgntgVZrFZ0GVQcNPwgTIPlvKxQvMHbBp1K_dqHFlhmePEcdM2V-MNa8dNa1wcY9fHxWVVNgCsVCr39LWQcpsPgf2lG58NQYz-Lk_Ulrfa0aBb7XEspoS9yEGwnu3uk9AL_8QkaAxoS6W80Hwr8ryt3_Yj0MZ2qLhGjIBoyC5N5yZPFE6A7imBIV-AkYXjb66R1YyiAyTA");'></div>
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-800 bg-gray-400 bg-cover bg-center" data-alt="Team member 3" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAbltJ2sAdDtI67rb3xtUxJeSnSLnFdqyzr7rt_jsah6jHHBSJlm5n9rjTj8CAvgJqpMf8pdzqNuebqSeMV7EujccYlWClUlUYYlBGlo35pER_wms7KAhTNFnQ75AGjUDueaNYMMoqsWiD42K261mE-XTHhhdPlPsobwSR03MR9Z_7DivFoxLL5U-IT0fGfCOVcC83fVvcBCjEHRfdR-_Tw_6KcsqT5JePVAZGYmiK1y9rqFmGA5o1Cc4RM5cX3IoZLLElzN7w2JU");'></div>
+<button class="size-8 rounded-full border-2 border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-xs font-medium text-slate-500 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">
+                            +4
+                         </button>
+</div>
+<!-- New Task Button -->
+<button class="flex items-center gap-2 bg-primary hover:bg-blue-600 text-white px-4 h-10 rounded-lg text-sm font-semibold shadow-md shadow-primary/20 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                        New Task
+                    </button>
+</div>
+</div>
+<!-- Progress & Meta -->
+<div class="flex items-center gap-6 border-t border-slate-100 dark:border-slate-700/50 pt-4">
+<div class="flex flex-col gap-2 w-full max-w-md">
+<div class="flex justify-between items-end text-sm">
+<span class="text-slate-500 font-medium">Tiến độ tổng thể</span>
+<span class="text-slate-900 dark:text-white font-bold">45%</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500 ease-out" style="width: 45%"></div>
+</div>
+</div>
+<div class="h-8 w-px bg-slate-200 dark:bg-slate-700 mx-2 hidden sm:block"></div>
+<div class="flex items-center gap-6 text-sm text-slate-500">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-slate-400">calendar_today</span>
+<span>Oct 1 - Dec 31</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-slate-400">folder_open</span>
+<span>24 Files</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Kanban Board Area -->
+<div class="flex-1 overflow-x-auto overflow-y-hidden custom-scrollbar bg-background-light dark:bg-background-dark p-6">
+<div class="flex h-full gap-6 min-w-max">
+<!-- Column 1: Cần làm -->
+<div class="flex flex-col w-[320px] shrink-0 h-full">
+<div class="flex items-center justify-between mb-4 px-1">
+<div class="flex items-center gap-2">
+<h3 class="font-bold text-slate-700 dark:text-slate-200">Cần làm</h3>
+<span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-bold px-2 py-0.5 rounded-full">3</span>
+</div>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<div class="flex-1 bg-slate-100/50 dark:bg-[#1a2436] rounded-xl p-3 flex flex-col gap-3 overflow-y-auto custom-scrollbar border border-slate-200/50 dark:border-slate-800">
+<!-- Task Card -->
+<div class="group bg-white dark:bg-[#202b3d] p-4 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-primary/50 dark:hover:border-primary/50 cursor-grab active:cursor-grabbing transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">Design</span>
+<button class="opacity-0 group-hover:opacity-100 text-slate-400 hover:text-primary transition-opacity">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<h4 class="text-slate-800 dark:text-white font-medium mb-3 leading-snug">Thiết kế Homepage v2</h4>
+<div class="flex items-center justify-between mt-4 pt-3 border-t border-slate-100 dark:border-slate-700/50">
+<div class="flex -space-x-1.5">
+<div class="size-6 rounded-full border border-white dark:border-slate-700 bg-cover bg-center" data-alt="Assignee avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKGFwKvT1Dt2D1UZGRogMsJoyNrYrZEmHxeuz1_mRNxXR8zbcmqBfWXuuJnXsMVQGjOKlvBGSoEIUSX8Wq-SP0GfJGIEQ_fgbPTDysEEjOsH92KnVU4a2V2Xpksh37I60DnRj7ZV-U4s8LOb2B2UQlC4x3JAS1m5s3Rumvtgv_9bB9kLP_kj1GAEo30cN26k-jkZou3ATXbT0jJbECHnhpCsAzzQ71I5HvYv5h0tUHNbYZqJbp_UqUxlm0K24H8_L5mgpjCTSv-GA");'></div>
+</div>
+<div class="flex items-center gap-3 text-xs text-slate-400 font-medium">
+<div class="flex items-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">attach_file</span>
+<span>2</span>
+</div>
+<div class="flex items-center gap-1 text-orange-500">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Oct 25</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Task Card -->
+<div class="group bg-white dark:bg-[#202b3d] p-4 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-primary/50 dark:hover:border-primary/50 cursor-grab active:cursor-grabbing transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">Backend</span>
+</div>
+<h4 class="text-slate-800 dark:text-white font-medium mb-3 leading-snug">Viết API đăng nhập OAuth 2.0</h4>
+<div class="flex items-center justify-between mt-4 pt-3 border-t border-slate-100 dark:border-slate-700/50">
+<div class="flex -space-x-1.5">
+<div class="size-6 rounded-full border border-white dark:border-slate-700 bg-cover bg-center" data-alt="Assignee avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBatDKmrvAbgAB-4FPz71VqMtmI3IAVyGI1ypW81OYgy057HoG4ad5iNhNkoO236LPbSR-1RdxgNm_3xoQrlCED7mv_VAmUUsITo7qJgqzLBJWc421Hdl13HCM1d-rbo1kxo_d6xE4GnphBcrMDhVFrTOF7SwHPZ_zYMk27Y7i48TSAwN1xFQqGGdSxTOI21cg7o0KaKBIB-CBE3xfTY3lmkHD6oKlfF6a4Ron99PK_cAb1zGn27VreIQHB_3fppCItUM3k9kBBIII");'></div>
+<div class="size-6 rounded-full border border-white dark:border-slate-700 bg-cover bg-center" data-alt="Assignee avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCk3oH54VfY0oLODre343LhbP55RobcM2BZGusQfyR9WzivmzpnYiyrP_uW3OzE8oF8-uHMcacLIY-TkEVgYtivgk94h805qwYVdqH4kBiLEVQZkRaXo73mEa6b1tmNhbeD0ZruGWL-HwTurIVHJqSLdC5apXdRczqzpc8nk__PG6HZn93K_YkNLvONX1KunDDljkv8hZBxgaSTXMq2MxZdKfh4_vTMrrUZPOTDoDBmoh3XijtnTjtN6eNXE0lCzhV2PDk3olUdFW4");'></div>
+</div>
+<div class="flex items-center gap-3 text-xs text-slate-400 font-medium">
+<div class="flex items-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">comment</span>
+<span>5</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Oct 28</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Task Card -->
+<div class="group bg-white dark:bg-[#202b3d] p-4 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-primary/50 dark:hover:border-primary/50 cursor-grab active:cursor-grabbing transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">Planning</span>
+</div>
+<h4 class="text-slate-800 dark:text-white font-medium mb-3 leading-snug">Họp kickoff phase 2</h4>
+<div class="flex items-center justify-between mt-4 pt-3 border-t border-slate-100 dark:border-slate-700/50">
+<div class="flex -space-x-1.5">
+<div class="size-6 rounded-full border border-white dark:border-slate-700 bg-cover bg-center" data-alt="Assignee avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA36B0SmOKPi9afQQrbRWJ5cmkPsHHbe7lbbF-dzhs74rhjQz4Za2O--xJwzg0rFJHPFmm0j3O-NJKA-fHC5UJXhUM0r5iREcob960nYz3h_A5ev5LUofF2aAm2hVlZf8H6_O80B7h4hwdI8D_Za_5u_pxX3Tvjm8P2qIYwpmzSi1hTAYQoPbRiWr6osm98jw-t3hyo28xCFvPAt_MvFxE6OWFvEA0IBW0j2Rs46vdfvFD3jMGBcFDggQXNt8xoo62hKk-DJR5wnaM");'></div>
+</div>
+<div class="flex items-center gap-3 text-xs text-slate-400 font-medium">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Nov 01</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Add Button -->
+<button class="w-full py-2 flex items-center justify-center gap-2 text-slate-500 hover:text-primary hover:bg-white dark:hover:bg-slate-800 rounded-lg transition-colors text-sm font-medium border border-transparent hover:border-slate-200 dark:hover:border-slate-700 border-dashed">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                            Add Task
+                        </button>
+</div>
+</div>
+<!-- Column 2: Đang làm -->
+<div class="flex flex-col w-[320px] shrink-0 h-full">
+<div class="flex items-center justify-between mb-4 px-1">
+<div class="flex items-center gap-2">
+<h3 class="font-bold text-slate-700 dark:text-slate-200">Đang làm</h3>
+<span class="bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 text-xs font-bold px-2 py-0.5 rounded-full">2</span>
+</div>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<div class="flex-1 bg-slate-100/50 dark:bg-[#1a2436] rounded-xl p-3 flex flex-col gap-3 overflow-y-auto custom-scrollbar border border-slate-200/50 dark:border-slate-800">
+<!-- Task Card (Active styling example) -->
+<div class="group bg-white dark:bg-[#202b3d] p-4 rounded-lg border-l-4 border-l-primary border-y border-r border-y-slate-200 border-r-slate-200 dark:border-y-slate-700 dark:border-r-slate-700 shadow-sm hover:shadow-md cursor-grab active:cursor-grabbing transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">local_fire_department</span> Urgent
+                                </span>
+</div>
+<h4 class="text-slate-800 dark:text-white font-medium mb-3 leading-snug">Cắt HTML/CSS Landing Page</h4>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full mb-3 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 75%"></div>
+</div>
+<div class="flex items-center justify-between mt-2 pt-3 border-t border-slate-100 dark:border-slate-700/50">
+<div class="flex -space-x-1.5">
+<div class="size-6 rounded-full border border-white dark:border-slate-700 bg-cover bg-center" data-alt="Assignee avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCvBa3K_GnmaZFmEpagv_nuPixFJ4n0YFqg413_lVPMKSdbBBCAYJPjxRGtWPFKS2v2VwLjv_iruLSkTE9Uj8R38-itnBGmxueJVje-HaGX2y51XGX7exSecE1t5s_QCZbNplKypkoPLcBjsYGz4l8APqGJPj-688-j0y5hsNWfGiK674uieKZdsnhohQ51ShpS3OdqS-Sh2LvJBxkwwpqclbUTgUd03ry4YqyTGZFCltbIWpYrWtsTrJDYhoGZgqR1t8O6zQ-ODEA");'></div>
+</div>
+<div class="flex items-center gap-3 text-xs text-slate-400 font-medium">
+<div class="flex items-center gap-1 text-red-500 font-semibold">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Today</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Task Card -->
+<div class="group bg-white dark:bg-[#202b3d] p-4 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-primary/50 dark:hover:border-primary/50 cursor-grab active:cursor-grabbing transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">Backend</span>
+</div>
+<h4 class="text-slate-800 dark:text-white font-medium mb-3 leading-snug">Tích hợp cổng thanh toán Stripe</h4>
+<div class="flex items-center justify-between mt-4 pt-3 border-t border-slate-100 dark:border-slate-700/50">
+<div class="flex -space-x-1.5">
+<div class="size-6 rounded-full border border-white dark:border-slate-700 bg-cover bg-center" data-alt="Assignee avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD8ZW5hgnfu6lPxauNkY0iMCaglXskUesAQSYzlYrP9VnQJ-JlnJ7heKJ2CaQnCrFQnqmfg72s_SkLklEx40g62S360-4OB6MXt3LeiOgaSuUhnYR0uBhIjZ27Wb3zJHgtZFxSV-wGhEC-9E-vm55UVx5HRUG_rj4EGbkXEe0iZ94t4JxpuLlsXMED8ITcD655yACCKZcpoRi17kp9vRs-pCgery80e4Fgw2uurc2lA_DlSWUuVRwWCHGwoHTobNCAAaEBf_-JxlnQ");'></div>
+</div>
+<div class="flex items-center gap-3 text-xs text-slate-400 font-medium">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Oct 27</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 3: Đang kiểm tra -->
+<div class="flex flex-col w-[320px] shrink-0 h-full">
+<div class="flex items-center justify-between mb-4 px-1">
+<div class="flex items-center gap-2">
+<h3 class="font-bold text-slate-700 dark:text-slate-200">Đang kiểm tra</h3>
+<span class="bg-yellow-100 dark:bg-yellow-900/40 text-yellow-700 dark:text-yellow-400 text-xs font-bold px-2 py-0.5 rounded-full">2</span>
+</div>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<div class="flex-1 bg-slate-100/50 dark:bg-[#1a2436] rounded-xl p-3 flex flex-col gap-3 overflow-y-auto custom-scrollbar border border-slate-200/50 dark:border-slate-800">
+<!-- Task Card -->
+<div class="group bg-white dark:bg-[#202b3d] p-4 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-primary/50 dark:hover:border-primary/50 cursor-grab active:cursor-grabbing transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">QA</span>
+</div>
+<h4 class="text-slate-800 dark:text-white font-medium mb-3 leading-snug">Test luồng đặt hàng (Checkout flow)</h4>
+<div class="flex items-center justify-between mt-4 pt-3 border-t border-slate-100 dark:border-slate-700/50">
+<div class="flex -space-x-1.5">
+<div class="size-6 rounded-full border border-white dark:border-slate-700 bg-cover bg-center" data-alt="Assignee avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAKQPSdCzhUAwD_vxa8XCByJBV9KsU0HXz1SBE9ovmVZSaKmaTfpFTRJAkJnPMMp39IEIyiY6NmmtNnS7_RO7nHlXGv90DyTBBgbXZNksei4M302Q_XXfKM_L5Me0M4g0oX4YQNraEzudZiVDO2AKZ0F_TIdR1kum-WJ60r4gAsSmSFwTjILRE1jJDQKvTbXo9-4l9Lxy5Cf82yBK3LC4kuxu-jnC4Al9D84RZXal7Wpu9DdTTzMvV87M13emyW6p8cmmIwTczHLXQ");'></div>
+</div>
+<div class="flex items-center gap-3 text-xs text-slate-400 font-medium">
+<div class="flex items-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">image</span>
+<span>4</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Oct 23</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Task Card -->
+<div class="group bg-white dark:bg-[#202b3d] p-4 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-primary/50 dark:hover:border-primary/50 cursor-grab active:cursor-grabbing transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">Security</span>
+</div>
+<h4 class="text-slate-800 dark:text-white font-medium mb-3 leading-snug">Audit bảo mật server</h4>
+<div class="flex items-center justify-between mt-4 pt-3 border-t border-slate-100 dark:border-slate-700/50">
+<div class="flex -space-x-1.5">
+<div class="size-6 rounded-full border border-white dark:border-slate-700 bg-cover bg-center" data-alt="Assignee avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDSEaxV3JFM8RBeNBHr9uWj5AXNkafxZ4nsxM_VU0J66raLX2qWxLaeqzMvnaxjjWNhxbIZ1smbnirqnozLpTvtE2KCY2xDdTLf3lRsPxEDEBO0R6Ac6Zv_HfdKEzu8yIM2F03RnrSTPpuQlKqTLpQc9cLTj25bkzoJ5he22mwI1Zfkv6kFj8FFbFbsI0pY4p2ckcEtWabDZL48ImCfaVj7kN_Fm8rw95n_8ACbJE62K8xr_C46b4F0iSRZJlBR4hMAHILXiE7eb1w");'></div>
+<div class="size-6 rounded-full border border-white dark:border-slate-700 bg-cover bg-center" data-alt="Assignee avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBi43WCOFGeCLHCKtpxqeO9u49BeUsKH-QlBnMBQr5Ier3N037er4WlXshsGbenKSRnVugEqWrdoZ0893MFH3rRJ9OWef9ll8Hpat8tsmSUBr54DBi7TrTDZ_PQPH7d3k3Qe5I-eY1yUU1XsW5JjUjFlytKMY-n9ZABaCKiE5LUBdByFsfvRH93hZlWtgTWs2Oirs6rxGYWJXIVJkUZdHQXBrgmiXPtLY5ZSDgVUjKQ9H4RYrJHYmUndFKcHm9h2-UV2cKo7zPWAzU");'></div>
+</div>
+<div class="flex items-center gap-3 text-xs text-slate-400 font-medium">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Oct 24</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 4: Hoàn thành -->
+<div class="flex flex-col w-[320px] shrink-0 h-full">
+<div class="flex items-center justify-between mb-4 px-1">
+<div class="flex items-center gap-2">
+<h3 class="font-bold text-slate-700 dark:text-slate-200">Hoàn thành</h3>
+<span class="bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 text-xs font-bold px-2 py-0.5 rounded-full">2</span>
+</div>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<div class="flex-1 bg-slate-100/50 dark:bg-[#1a2436] rounded-xl p-3 flex flex-col gap-3 overflow-y-auto custom-scrollbar border border-slate-200/50 dark:border-slate-800">
+<!-- Task Card (Completed visual) -->
+<div class="group bg-slate-50 dark:bg-[#1c2638] opacity-80 hover:opacity-100 p-4 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md cursor-grab active:cursor-grabbing transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-slate-200 dark:bg-slate-700 text-slate-500 dark:text-slate-400 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">DevOps</span>
+<span class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+</div>
+<h4 class="text-slate-600 dark:text-slate-300 font-medium mb-3 leading-snug line-through decoration-slate-400">Setup Server Production</h4>
+<div class="flex items-center justify-between mt-4 pt-3 border-t border-slate-200 dark:border-slate-700/50">
+<div class="flex -space-x-1.5">
+<div class="size-6 rounded-full border border-white dark:border-slate-700 bg-cover bg-center" data-alt="Assignee avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDLoDoswyeQ-oWShuXv4A3EJdC-2QcrE-FJocsg6W6mpdxw1VDUTYpm_WcO25ZGFzamTvb-9F71F2UAJ89TMeEEsWjHCGZes4hZ_7GAIMIPoWxk0brBbckZpbTsl2tJbMgkiTQjb-jdsSCy5KXsHRJJD0XDn3Gp9bXi6L-kgEA_0ujrUz3YDCI05gv3cOl6HiaFLjAXmedNY8XEO504Vv2q-cPMgZ5FQBjR7lSCPvTkDor7a3JZuMHkEQ3SrWGeNDg2DoC29kx7Img");'></div>
+</div>
+<div class="flex items-center gap-3 text-xs text-slate-400 font-medium">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Oct 15</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Task Card (Completed visual) -->
+<div class="group bg-slate-50 dark:bg-[#1c2638] opacity-80 hover:opacity-100 p-4 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md cursor-grab active:cursor-grabbing transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-slate-200 dark:bg-slate-700 text-slate-500 dark:text-slate-400 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">Admin</span>
+<span class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+</div>
+<h4 class="text-slate-600 dark:text-slate-300 font-medium mb-3 leading-snug line-through decoration-slate-400">Mua domain .com</h4>
+<div class="flex items-center justify-between mt-4 pt-3 border-t border-slate-200 dark:border-slate-700/50">
+<div class="flex -space-x-1.5">
+<div class="size-6 rounded-full border border-white dark:border-slate-700 bg-cover bg-center" data-alt="Assignee avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBqJK-PnFJh4NOIQFM8b-jjJ1MB2QSXYWrJSjB0NinrewwJYHsf5f7SnSwv1_PUiChYRVkieVKsnbMn6ofcnvB7ZNIOAVupof8eAgwu8mK4Eazep72PnAZ_6nvepM6lWNj1BtLfWC2x-rSitSmlNNlRSh0hcWavHykxVjPSNr6TEu9MMem2XnqU1zm-R7sI6SXp4dfwJ6VOzJWmROliNJ_98H--a2SqqbyNxVW32pgEgh2JCajs7Ra_qlLkb3BPGhWCDvwN9RLyWao");'></div>
+</div>
+<div class="flex items-center gap-3 text-xs text-slate-400 font-medium">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Oct 12</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

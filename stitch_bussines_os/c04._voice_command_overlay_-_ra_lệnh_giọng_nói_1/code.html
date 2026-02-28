@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voice Command Overlay - BusinessOS</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0de7f2",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#102122",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom utilities for visualizer static effects since animations are disabled */
+        .visualizer-bar {
+            background-color: #0de7f2;
+            width: 6px;
+            border-radius: 9999px;
+        }
+        .glow-effect {
+            box-shadow: 0 0 40px 10px rgba(13, 231, 242, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display overflow-hidden">
+<!-- Background Dashboard Simulation (To show the overlay effect) -->
+<!-- This section represents the underlying BusinessOS interface that gets blurred -->
+<div aria-hidden="true" class="relative h-screen w-full flex overflow-hidden opacity-40 blur-[2px] pointer-events-none select-none">
+<!-- Sidebar Placeholder -->
+<div class="w-64 flex flex-col border-r border-white/10 bg-[#0d1b1c] h-full p-4 gap-4 hidden md:flex">
+<div class="h-8 w-32 bg-white/10 rounded mb-6"></div>
+<div class="h-10 w-full bg-white/5 rounded"></div>
+<div class="h-10 w-full bg-white/5 rounded"></div>
+<div class="h-10 w-full bg-primary/20 rounded border-l-4 border-primary"></div>
+<div class="h-10 w-full bg-white/5 rounded"></div>
+</div>
+<!-- Main Content Placeholder -->
+<div class="flex-1 flex flex-col bg-background-dark p-8 gap-6">
+<div class="flex justify-between items-center mb-4">
+<div class="h-8 w-64 bg-white/10 rounded"></div>
+<div class="flex gap-3">
+<div class="h-10 w-10 rounded-full bg-white/10"></div>
+<div class="h-10 w-10 rounded-full bg-white/10"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="h-32 bg-white/5 rounded-xl border border-white/5 p-4"></div>
+<div class="h-32 bg-white/5 rounded-xl border border-white/5 p-4"></div>
+<div class="h-32 bg-white/5 rounded-xl border border-white/5 p-4"></div>
+</div>
+<div class="flex-1 bg-white/5 rounded-xl border border-white/5 p-6 grid grid-cols-4 gap-4">
+<div class="col-span-4 h-8 w-48 bg-white/10 rounded mb-4"></div>
+<div class="col-span-1 h-full bg-white/5 rounded"></div>
+<div class="col-span-3 h-full bg-white/5 rounded"></div>
+</div>
+</div>
+</div>
+<!-- C04 Voice Command Overlay -->
+<!-- Full screen backdrop with heavy blur and dark overlay -->
+<div class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#081213]/90 backdrop-blur-xl transition-all duration-300">
+<div class="flex flex-col items-center justify-center w-full max-w-[1200px] px-6 text-center">
+<!-- Component: Audio Visualizer (Custom Construction based on styling) -->
+<!-- Represents the "moving to rhythm" electric blue circle -->
+<div class="relative flex items-center justify-center mb-10 group">
+<!-- Outer glow rings (static simulation of pulse) -->
+<div class="absolute inset-0 rounded-full border border-primary/20 scale-[1.8]"></div>
+<div class="absolute inset-0 rounded-full border border-primary/10 scale-[2.4]"></div>
+<!-- Main Glow Container -->
+<div class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-primary/50 bg-primary/5 shadow-[0_0_80px_-10px_rgba(13,231,242,0.4)] flex items-center justify-center gap-1.5 overflow-hidden backdrop-blur-sm">
+<!-- Sound Wave Bars (Static representation) -->
+<div class="visualizer-bar h-8 opacity-40"></div>
+<div class="visualizer-bar h-12 opacity-60"></div>
+<div class="visualizer-bar h-16 opacity-80"></div>
+<div class="visualizer-bar h-24 bg-primary shadow-[0_0_15px_rgba(13,231,242,0.8)]"></div>
+<div class="visualizer-bar h-14 opacity-80"></div>
+<div class="visualizer-bar h-10 opacity-60"></div>
+<div class="visualizer-bar h-6 opacity-40"></div>
+<!-- Inner Icon fallback if bars don't render well or to add tech feel -->
+<div class="absolute inset-0 flex items-center justify-center opacity-0">
+<span class="material-symbols-outlined text-primary text-5xl">graphic_eq</span>
+</div>
+</div>
+</div>
+<!-- Component: MetaText (Status) -->
+<div class="flex items-center gap-2 mb-4">
+<span class="relative flex h-2.5 w-2.5">
+<span class="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+</span>
+<p class="text-primary text-sm font-semibold tracking-[0.2em] uppercase leading-normal">
+                    Đang nghe...
+                </p>
+</div>
+<!-- Component: HeadlineText (Transcript) -->
+<div class="mb-16 max-w-4xl relative">
+<!-- Gradient mask for text fade effect if needed, though simple text is requested -->
+<h1 class="text-white tracking-tight text-3xl md:text-5xl font-light leading-snug px-4 text-center">
+<span class="text-white/40">"</span>Báo cáo doanh thu tháng này của dự án Marketing...<span class="text-white/40">"</span>
+</h1>
+<!-- Cursor simulation -->
+<div class="inline-block w-[3px] h-8 md:h-12 bg-primary align-middle ml-1 opacity-80"></div>
+</div>
+<!-- Component: SingleButton (Cancel Action) -->
+<div class="flex justify-center">
+<button class="group flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all gap-3 pl-5 text-sm font-medium leading-normal tracking-[0.015em] backdrop-blur-md">
+<div class="text-white/70 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</div>
+<span class="truncate text-white/70 group-hover:text-white transition-colors">Nhấn Esc để hủy</span>
+</button>
+</div>
+</div>
+<!-- Decorative Elements for "Virtual Mode" -->
+<div class="absolute bottom-10 right-10 flex flex-col items-end gap-2 text-white/20 pointer-events-none">
+<div class="text-xs font-mono uppercase tracking-widest">BusinessOS v4.0</div>
+<div class="text-xs font-mono uppercase tracking-widest">Virtual Mode Active</div>
+</div>
+</div>
+</body></html>

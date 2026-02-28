@@ -1,0 +1,402 @@
+[
+    {
+        "screenId": "s00",
+        "screenName": "Trang chủ",
+        "expectedRoute": "/",
+        "actualRoute": "/",
+        "filePath": "src/app/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "s01",
+        "screenName": "Splash",
+        "expectedRoute": "/splash",
+        "actualRoute": "/splash",
+        "filePath": "src/app/(auth)/splash/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "s02",
+        "screenName": "Chọn vai trò",
+        "expectedRoute": "/role",
+        "actualRoute": "/role",
+        "filePath": "src/app/(auth)/role/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "s03",
+        "screenName": "Đăng nhập",
+        "expectedRoute": "/login",
+        "actualRoute": "/login",
+        "filePath": "src/app/(auth)/login/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "s04",
+        "screenName": "OTP",
+        "expectedRoute": "/otp",
+        "actualRoute": "/otp",
+        "filePath": "src/app/(auth)/otp/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "s05",
+        "screenName": "Onboarding",
+        "expectedRoute": "/onboarding",
+        "actualRoute": "/onboarding",
+        "filePath": "src/app/(auth)/onboarding/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "s06",
+        "screenName": "Tìm kiếm",
+        "expectedRoute": "/search",
+        "actualRoute": "/search",
+        "filePath": "src/app/(portal)/search/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "a01",
+        "screenName": "Dashboard",
+        "expectedRoute": "/dashboard",
+        "actualRoute": "/dashboard",
+        "filePath": "src/app/(admin)/dashboard/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "a02",
+        "screenName": "Users",
+        "expectedRoute": "/users",
+        "actualRoute": "/users",
+        "filePath": "src/app/(admin)/users/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "a03",
+        "screenName": "Disputes",
+        "expectedRoute": "/disputes",
+        "actualRoute": "/disputes",
+        "filePath": "src/app/(admin)/disputes/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "a04",
+        "screenName": "Workflow",
+        "expectedRoute": "/workflow",
+        "actualRoute": "/workflow",
+        "filePath": "src/app/(admin)/workflow/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "a05",
+        "screenName": "Finance (Admin)",
+        "expectedRoute": "/finance",
+        "actualRoute": "/finance",
+        "filePath": "src/app/(admin)/finance/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "a06",
+        "screenName": "Notifications",
+        "expectedRoute": "/notifications",
+        "actualRoute": "/notifications",
+        "filePath": "src/app/(admin)/notifications/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "a07",
+        "screenName": "Chat",
+        "expectedRoute": "/chat",
+        "actualRoute": "/chat",
+        "filePath": "src/app/(admin)/chat/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "a08",
+        "screenName": "Chat Detail",
+        "expectedRoute": "/chat/[id]",
+        "actualRoute": "/chat/[id]",
+        "filePath": "src/app/(admin)/chat/[id]/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "a10",
+        "screenName": "Settings",
+        "expectedRoute": "/settings",
+        "actualRoute": "/settings",
+        "filePath": "src/app/(admin)/settings/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "a11",
+        "screenName": "Error States",
+        "expectedRoute": "/error-states",
+        "actualRoute": "/error-states",
+        "filePath": "src/app/(admin)/error-states/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "c01",
+        "screenName": "Virtual Cockpit",
+        "expectedRoute": "/virtual",
+        "actualRoute": "/virtual",
+        "filePath": "src/app/(portal)/virtual/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "c02",
+        "screenName": "Swipe Approval",
+        "expectedRoute": "/virtual/approval",
+        "actualRoute": "/virtual/approval",
+        "filePath": "src/app/(portal)/virtual/approval/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "c03",
+        "screenName": "War Room",
+        "expectedRoute": "/virtual/war-room",
+        "actualRoute": "/virtual/war-room",
+        "filePath": "src/app/(portal)/virtual/war-room/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "c04a",
+        "screenName": "Voice Command",
+        "expectedRoute": "/virtual/voice",
+        "actualRoute": "/virtual/voice",
+        "filePath": "src/app/(portal)/virtual/voice/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "c05",
+        "screenName": "Marketplace",
+        "expectedRoute": "/classic/marketplace",
+        "actualRoute": "/classic/marketplace",
+        "filePath": "src/app/(portal)/classic/marketplace/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "c06",
+        "screenName": "Service Detail",
+        "expectedRoute": "/classic/marketplace/[id]",
+        "actualRoute": "/classic/marketplace/[id]",
+        "filePath": "src/app/(portal)/classic/marketplace/[id]/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "c07",
+        "screenName": "Smart Briefing",
+        "expectedRoute": "/classic/briefing",
+        "actualRoute": "/classic/briefing",
+        "filePath": "src/app/(portal)/classic/briefing/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "c08",
+        "screenName": "Checkout",
+        "expectedRoute": "/classic/checkout",
+        "actualRoute": "/classic/checkout",
+        "filePath": "src/app/(portal)/classic/checkout/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "c09",
+        "screenName": "Project List",
+        "expectedRoute": "/classic/projects",
+        "actualRoute": "/classic/projects",
+        "filePath": "src/app/(portal)/classic/projects/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "c10",
+        "screenName": "Kanban Board",
+        "expectedRoute": "/classic/projects/[id]/kanban",
+        "actualRoute": "/classic/projects/[id]/kanban",
+        "filePath": "src/app/(portal)/classic/projects/[id]/kanban/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "c11",
+        "screenName": "Task Detail",
+        "expectedRoute": "/classic/projects/[id]/task/[taskId]",
+        "actualRoute": "/classic/projects/[id]/task/[taskId]",
+        "filePath": "src/app/(portal)/classic/projects/[id]/task/[taskId]/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "c12",
+        "screenName": "Team",
+        "expectedRoute": "/classic/team",
+        "actualRoute": "/classic/team",
+        "filePath": "src/app/(portal)/classic/team/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "c13",
+        "screenName": "Finance",
+        "expectedRoute": "/classic/finance",
+        "actualRoute": "/classic/finance",
+        "filePath": "src/app/(portal)/classic/finance/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "c14",
+        "screenName": "Invoices",
+        "expectedRoute": "/classic/invoices",
+        "actualRoute": "/classic/invoices",
+        "filePath": "src/app/(portal)/classic/invoices/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "c15",
+        "screenName": "Profile",
+        "expectedRoute": "/classic/profile",
+        "actualRoute": "/classic/profile",
+        "filePath": "src/app/(portal)/classic/profile/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "c16",
+        "screenName": "Reports",
+        "expectedRoute": "/classic/reports",
+        "actualRoute": "/classic/reports",
+        "filePath": "src/app/(portal)/classic/reports/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "c17",
+        "screenName": "Feedback",
+        "expectedRoute": "/classic/feedback",
+        "actualRoute": "/classic/feedback",
+        "filePath": "src/app/(portal)/classic/feedback/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "f01",
+        "screenName": "Freelancer Home",
+        "expectedRoute": "/freelancer",
+        "actualRoute": "/freelancer",
+        "filePath": "src/app/(portal)/freelancer/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "f02",
+        "screenName": "Job Market",
+        "expectedRoute": "/freelancer/jobs",
+        "actualRoute": "/freelancer/jobs",
+        "filePath": "src/app/(portal)/freelancer/jobs/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "f03",
+        "screenName": "Workspace",
+        "expectedRoute": "/freelancer/workspace",
+        "actualRoute": "/freelancer/workspace",
+        "filePath": "src/app/(portal)/freelancer/workspace/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "f04",
+        "screenName": "Submit Work",
+        "expectedRoute": "/classic/projects/[id]/task/[taskId]/submit",
+        "actualRoute": "/classic/projects/[id]/task/[taskId]/submit",
+        "filePath": "src/app/(portal)/classic/projects/[id]/task/[taskId]/submit/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "f05",
+        "screenName": "Timesheet",
+        "expectedRoute": "/freelancer/timesheet",
+        "actualRoute": "/freelancer/timesheet",
+        "filePath": "src/app/(portal)/freelancer/timesheet/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "f06",
+        "screenName": "Wallet",
+        "expectedRoute": "/freelancer/wallet",
+        "actualRoute": "/freelancer/wallet",
+        "filePath": "src/app/(portal)/freelancer/wallet/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "f07",
+        "screenName": "Withdraw",
+        "expectedRoute": "/freelancer/withdraw",
+        "actualRoute": "/freelancer/withdraw",
+        "filePath": "src/app/(portal)/freelancer/withdraw/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "f08",
+        "screenName": "Profile",
+        "expectedRoute": "/freelancer/profile",
+        "actualRoute": "/freelancer/profile",
+        "filePath": "src/app/(portal)/freelancer/profile/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "f09",
+        "screenName": "Skills",
+        "expectedRoute": "/freelancer/skills",
+        "actualRoute": "/freelancer/skills",
+        "filePath": "src/app/(portal)/freelancer/skills/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "f10",
+        "screenName": "Test",
+        "expectedRoute": "/freelancer/test",
+        "actualRoute": "/freelancer/test",
+        "filePath": "src/app/(portal)/freelancer/test/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "f11",
+        "screenName": "Learning",
+        "expectedRoute": "/freelancer/learning",
+        "actualRoute": "/freelancer/learning",
+        "filePath": "src/app/(portal)/freelancer/learning/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "f12",
+        "screenName": "Bank",
+        "expectedRoute": "/freelancer/bank",
+        "actualRoute": "/freelancer/bank",
+        "filePath": "src/app/(portal)/freelancer/bank/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "pricing",
+        "screenName": "Pricing",
+        "expectedRoute": "/pricing",
+        "actualRoute": "/pricing",
+        "filePath": "src/app/pricing/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "team",
+        "screenName": "Team Landing",
+        "expectedRoute": "/team",
+        "actualRoute": "/team",
+        "filePath": "src/app/team/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "test_results",
+        "screenName": "Test Results",
+        "expectedRoute": "/freelancer/test/results",
+        "actualRoute": "/freelancer/test/results",
+        "filePath": "src/app/(portal)/freelancer/test/results/page.tsx",
+        "status": "OK"
+    },
+    {
+        "screenId": "f04_freelancer",
+        "screenName": "Freelancer Submit",
+        "expectedRoute": "/freelancer/submit",
+        "actualRoute": "/freelancer/submit",
+        "filePath": "src/app/(portal)/freelancer/submit/page.tsx",
+        "status": "OK"
+    }
+]

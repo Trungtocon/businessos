@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Workflow Builder - BusinessOS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0657f9",
+                        "background-light": "#f8f9fc",
+                        "background-dark": "#0f1623",
+                        "border-light": "#e6ebf4",
+                        "text-primary": "#0d121c",
+                        "text-secondary": "#47649e",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    boxShadow: {
+                        'node': '0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06)',
+                        'node-hover': '0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .canvas-bg {
+            background-color: #f5f6f8;
+            background-image: radial-gradient(#ced7e9 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        /* Custom scrollbar for panels */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #e6ebf4;
+            border-radius: 20px;
+        }
+        .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+        }
+        
+        /* Node connector styles */
+        .node-connector {
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border: 2px solid #94a3b8;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 10;
+        }
+        .node-connector:hover {
+            border-color: #0657f9;
+            transform: scale(1.2);
+            transition: all 0.2s;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-text-primary font-display h-screen flex flex-col overflow-hidden">
+<!-- Top Navigation -->
+<header class="flex h-16 shrink-0 items-center justify-between border-b border-border-light bg-white px-5 z-20">
+<div class="flex items-center gap-6">
+<a class="flex items-center justify-center p-2 text-text-secondary hover:text-text-primary rounded-lg hover:bg-background-light transition-colors" href="#">
+<span class="material-symbols-outlined">arrow_back</span>
+</a>
+<div class="flex flex-col">
+<div class="flex items-center gap-2 text-xs font-medium text-text-secondary">
+<span>Service Packages</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span>Workflow Editor</span>
+</div>
+<div class="flex items-center gap-2">
+<h1 class="text-base font-bold text-text-primary">HR Onboarding Process v1.2</h1>
+<span class="rounded-full bg-green-100 px-2 py-0.5 text-[10px] font-bold text-green-700 uppercase tracking-wide">Draft</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 rounded-lg bg-background-light p-1">
+<button class="flex size-8 items-center justify-center rounded text-text-secondary hover:bg-white hover:text-text-primary hover:shadow-sm transition-all" title="Undo">
+<span class="material-symbols-outlined text-[20px]">undo</span>
+</button>
+<button class="flex size-8 items-center justify-center rounded text-text-secondary hover:bg-white hover:text-text-primary hover:shadow-sm transition-all" title="Redo">
+<span class="material-symbols-outlined text-[20px]">redo</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs text-text-secondary hidden md:block">Last saved 2 mins ago</span>
+<div class="h-8 w-px bg-border-light mx-1"></div>
+<button class="flex h-9 items-center justify-center rounded-lg border border-border-light bg-white px-4 text-sm font-semibold text-text-primary hover:bg-background-light transition-colors">
+                Save Draft
+            </button>
+<button class="flex h-9 items-center justify-center gap-2 rounded-lg bg-primary px-4 text-sm font-semibold text-white hover:bg-blue-700 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">rocket_launch</span>
+<span>Publish</span>
+</button>
+</div>
+</header>
+<!-- Main Workspace -->
+<main class="flex flex-1 overflow-hidden relative">
+<!-- Left Sidebar: Tools Palette -->
+<aside class="flex w-64 flex-col border-r border-border-light bg-white z-10 shadow-sm">
+<div class="p-4 border-b border-border-light">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2.5 top-2.5 text-text-secondary text-[20px]">search</span>
+<input class="h-10 w-full rounded-lg border border-border-light bg-background-light pl-9 pr-4 text-sm font-medium focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search components" type="text"/>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-6">
+<!-- Group 1 -->
+<div class="flex flex-col gap-3">
+<h3 class="text-xs font-bold uppercase tracking-wider text-text-secondary px-1">Triggers</h3>
+<div class="grid grid-cols-2 gap-2">
+<div class="group flex cursor-grab flex-col items-center justify-center gap-2 rounded-lg border border-border-light bg-white p-3 hover:border-primary hover:shadow-md active:cursor-grabbing transition-all">
+<div class="flex size-8 items-center justify-center rounded-full bg-purple-50 text-purple-600">
+<span class="material-symbols-outlined">play_circle</span>
+</div>
+<span class="text-xs font-medium text-text-primary">Manual</span>
+</div>
+<div class="group flex cursor-grab flex-col items-center justify-center gap-2 rounded-lg border border-border-light bg-white p-3 hover:border-primary hover:shadow-md active:cursor-grabbing transition-all">
+<div class="flex size-8 items-center justify-center rounded-full bg-purple-50 text-purple-600">
+<span class="material-symbols-outlined">description</span>
+</div>
+<span class="text-xs font-medium text-text-primary">Form</span>
+</div>
+<div class="group flex cursor-grab flex-col items-center justify-center gap-2 rounded-lg border border-border-light bg-white p-3 hover:border-primary hover:shadow-md active:cursor-grabbing transition-all">
+<div class="flex size-8 items-center justify-center rounded-full bg-purple-50 text-purple-600">
+<span class="material-symbols-outlined">webhook</span>
+</div>
+<span class="text-xs font-medium text-text-primary">Webhook</span>
+</div>
+<div class="group flex cursor-grab flex-col items-center justify-center gap-2 rounded-lg border border-border-light bg-white p-3 hover:border-primary hover:shadow-md active:cursor-grabbing transition-all">
+<div class="flex size-8 items-center justify-center rounded-full bg-purple-50 text-purple-600">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<span class="text-xs font-medium text-text-primary">Schedule</span>
+</div>
+</div>
+</div>
+<!-- Group 2 -->
+<div class="flex flex-col gap-3">
+<h3 class="text-xs font-bold uppercase tracking-wider text-text-secondary px-1">Logic</h3>
+<div class="flex flex-col gap-2">
+<div class="flex cursor-grab items-center gap-3 rounded-lg border border-border-light bg-white p-2 hover:border-primary hover:shadow-md active:cursor-grabbing transition-all">
+<div class="flex size-8 shrink-0 items-center justify-center rounded-full bg-orange-50 text-orange-600">
+<span class="material-symbols-outlined text-[18px]">call_split</span>
+</div>
+<span class="text-sm font-medium text-text-primary">If / Else Branch</span>
+</div>
+<div class="flex cursor-grab items-center gap-3 rounded-lg border border-border-light bg-white p-2 hover:border-primary hover:shadow-md active:cursor-grabbing transition-all">
+<div class="flex size-8 shrink-0 items-center justify-center rounded-full bg-orange-50 text-orange-600">
+<span class="material-symbols-outlined text-[18px]">hourglass_empty</span>
+</div>
+<span class="text-sm font-medium text-text-primary">Wait / Delay</span>
+</div>
+<div class="flex cursor-grab items-center gap-3 rounded-lg border border-border-light bg-white p-2 hover:border-primary hover:shadow-md active:cursor-grabbing transition-all">
+<div class="flex size-8 shrink-0 items-center justify-center rounded-full bg-orange-50 text-orange-600">
+<span class="material-symbols-outlined text-[18px]">merge</span>
+</div>
+<span class="text-sm font-medium text-text-primary">Merge Branches</span>
+</div>
+</div>
+</div>
+<!-- Group 3 -->
+<div class="flex flex-col gap-3">
+<h3 class="text-xs font-bold uppercase tracking-wider text-text-secondary px-1">Actions</h3>
+<div class="flex flex-col gap-2">
+<div class="flex cursor-grab items-center gap-3 rounded-lg border border-border-light bg-white p-2 hover:border-primary hover:shadow-md active:cursor-grabbing transition-all">
+<div class="flex size-8 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</div>
+<span class="text-sm font-medium text-text-primary">Send Email</span>
+</div>
+<div class="flex cursor-grab items-center gap-3 rounded-lg border border-border-light bg-white p-2 hover:border-primary hover:shadow-md active:cursor-grabbing transition-all">
+<div class="flex size-8 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+<span class="material-symbols-outlined text-[18px]">task</span>
+</div>
+<span class="text-sm font-medium text-text-primary">Create Task</span>
+</div>
+<div class="flex cursor-grab items-center gap-3 rounded-lg border border-border-light bg-white p-2 hover:border-primary hover:shadow-md active:cursor-grabbing transition-all">
+<div class="flex size-8 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+<span class="material-symbols-outlined text-[18px]">fact_check</span>
+</div>
+<span class="text-sm font-medium text-text-primary">Approval Request</span>
+</div>
+<div class="flex cursor-grab items-center gap-3 rounded-lg border border-border-light bg-white p-2 hover:border-primary hover:shadow-md active:cursor-grabbing transition-all">
+<div class="flex size-8 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+<span class="material-symbols-outlined text-[18px]">api</span>
+</div>
+<span class="text-sm font-medium text-text-primary">HTTP Request</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Center: Canvas Area -->
+<div class="flex-1 relative overflow-hidden canvas-bg group cursor-grab active:cursor-grabbing">
+<!-- Connection Lines SVG Layer -->
+<svg class="absolute inset-0 size-full pointer-events-none z-0">
+<!-- Line 1: Start -> Logic -->
+<path d="M 400 150 C 400 200, 400 200, 400 240" fill="none" marker-end="url(#arrowhead)" stroke="#94a3b8" stroke-width="2"></path>
+<!-- Line 2: Logic -> Yes (Email) -->
+<path d="M 400 350 C 400 380, 250 380, 250 420" fill="none" marker-end="url(#arrowhead)" stroke="#94a3b8" stroke-width="2"></path>
+<!-- Line 3: Logic -> No (Task) -->
+<path d="M 400 350 C 400 380, 550 380, 550 420" fill="none" marker-end="url(#arrowhead)" stroke="#94a3b8" stroke-width="2"></path>
+<defs>
+<marker id="arrowhead" markerheight="7" markerwidth="10" orient="auto" refx="9" refy="3.5">
+<polygon fill="#94a3b8" points="0 0, 10 3.5, 0 7"></polygon>
+</marker>
+</defs>
+</svg>
+<!-- Node 1: Start -->
+<div class="absolute top-[80px] left-[280px] w-[240px] rounded-lg bg-white border-2 border-transparent shadow-node hover:shadow-node-hover hover:border-blue-200 transition-all z-10">
+<div class="flex items-center gap-3 p-3 border-b border-gray-100">
+<div class="flex size-8 items-center justify-center rounded bg-purple-100 text-purple-700">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-text-primary truncate">Onboarding Form</h4>
+<p class="text-[10px] text-text-secondary truncate">Trigger: Submission</p>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-[18px]">more_vert</span>
+</div>
+<!-- Output Point -->
+<div class="node-connector bottom-[-6px] left-1/2 -translate-x-1/2 cursor-crosshair"></div>
+</div>
+<!-- Node 2: Logic -->
+<div class="absolute top-[240px] left-[280px] w-[240px] rounded-lg bg-white border-2 border-transparent shadow-node hover:shadow-node-hover hover:border-orange-200 transition-all z-10">
+<!-- Input Point -->
+<div class="node-connector top-[-6px] left-1/2 -translate-x-1/2 cursor-crosshair"></div>
+<div class="flex items-center gap-3 p-3 border-b border-gray-100">
+<div class="flex size-8 items-center justify-center rounded bg-orange-100 text-orange-700">
+<span class="material-symbols-outlined text-[20px]">call_split</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-text-primary truncate">Check Department</h4>
+<p class="text-[10px] text-text-secondary truncate">Logic: If/Else</p>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-[18px]">more_vert</span>
+</div>
+<div class="p-2 bg-gray-50 rounded-b-lg flex justify-between text-[10px] font-medium text-text-secondary uppercase">
+<div class="pl-2">Engineering</div>
+<div class="pr-2">Other</div>
+</div>
+<!-- Output Points -->
+<div class="node-connector bottom-[-6px] left-1/4 -translate-x-1/2 cursor-crosshair" title="True"></div>
+<div class="node-connector bottom-[-6px] left-3/4 -translate-x-1/2 cursor-crosshair" title="False"></div>
+</div>
+<!-- Node 3: Action (Email) - Selected State -->
+<div class="absolute top-[420px] left-[130px] w-[240px] rounded-lg bg-white border-2 border-primary shadow-lg ring-2 ring-primary/10 transition-all z-20">
+<!-- Input Point -->
+<div class="node-connector top-[-6px] left-1/2 -translate-x-1/2 cursor-crosshair"></div>
+<div class="flex items-center gap-3 p-3 border-b border-gray-100">
+<div class="flex size-8 items-center justify-center rounded bg-blue-100 text-blue-700">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-text-primary truncate">Send Welcome Email</h4>
+<p class="text-[10px] text-text-secondary truncate">Action: Engineering</p>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-[18px]">more_vert</span>
+</div>
+<!-- Output Point -->
+<div class="node-connector bottom-[-6px] left-1/2 -translate-x-1/2 cursor-crosshair"></div>
+</div>
+<!-- Node 4: Action (Task) -->
+<div class="absolute top-[420px] left-[430px] w-[240px] rounded-lg bg-white border-2 border-transparent shadow-node hover:shadow-node-hover hover:border-blue-200 transition-all z-10">
+<!-- Input Point -->
+<div class="node-connector top-[-6px] left-1/2 -translate-x-1/2 cursor-crosshair"></div>
+<div class="flex items-center gap-3 p-3 border-b border-gray-100">
+<div class="flex size-8 items-center justify-center rounded bg-blue-100 text-blue-700">
+<span class="material-symbols-outlined text-[20px]">task</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-text-primary truncate">Create HR Task</h4>
+<p class="text-[10px] text-text-secondary truncate">Action: Manual Review</p>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-[18px]">more_vert</span>
+</div>
+<!-- Output Point -->
+<div class="node-connector bottom-[-6px] left-1/2 -translate-x-1/2 cursor-crosshair"></div>
+</div>
+<!-- Floating Controls -->
+<div class="absolute bottom-6 left-6 flex flex-col gap-2 z-20">
+<div class="flex flex-col rounded-lg bg-white shadow-md border border-border-light overflow-hidden">
+<button class="p-2 hover:bg-background-light text-text-secondary hover:text-text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+<div class="h-px bg-border-light w-full"></div>
+<button class="p-2 hover:bg-background-light text-text-secondary hover:text-text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+</div>
+<button class="p-2 rounded-lg bg-white shadow-md border border-border-light hover:bg-background-light text-text-secondary hover:text-text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">center_focus_strong</span>
+</button>
+</div>
+<div class="absolute bottom-6 right-8 bg-white/90 backdrop-blur rounded-full px-4 py-1 text-xs font-medium text-text-secondary border border-border-light shadow-sm">
+                x: 130, y: 420 (100%)
+            </div>
+</div>
+<!-- Right Sidebar: Properties Panel -->
+<aside class="flex w-80 flex-col border-l border-border-light bg-white z-10 shadow-sm">
+<div class="flex items-center justify-between border-b border-border-light p-4">
+<h2 class="text-sm font-bold text-text-primary">Properties</h2>
+<button class="text-text-secondary hover:text-text-primary">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar p-5 space-y-6">
+<!-- Selected Node Info -->
+<div class="flex items-start gap-3 rounded-lg bg-blue-50/50 p-3 border border-blue-100">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-white text-blue-600 shadow-sm border border-blue-100">
+<span class="material-symbols-outlined text-[24px]">mail</span>
+</div>
+<div>
+<h3 class="text-sm font-bold text-text-primary">Send Welcome Email</h3>
+<p class="text-xs text-text-secondary mt-0.5">ID: act_email_04</p>
+</div>
+</div>
+<!-- Form Fields -->
+<div class="space-y-4">
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-semibold text-text-primary">Step Label</label>
+<input class="h-9 w-full rounded-md border border-border-light bg-background-light px-3 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="Send Welcome Email"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-semibold text-text-primary">
+                            Recipient
+                            <span class="text-red-500">*</span>
+</label>
+<div class="relative">
+<select class="h-9 w-full appearance-none rounded-md border border-border-light bg-background-light px-3 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+<option>Candidate Email (from Form)</option>
+<option>Hiring Manager</option>
+<option>HR Admin</option>
+<option>Custom Email</option>
+</select>
+<span class="pointer-events-none absolute right-2.5 top-2.5 text-text-secondary">
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</span>
+</div>
+<p class="text-[10px] text-text-secondary">Variable: {{form.email}}</p>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-semibold text-text-primary">CC / BCC</label>
+<div class="flex items-center gap-2">
+<button class="text-xs font-medium text-primary hover:text-blue-700 hover:underline">Add CC</button>
+<span class="text-border-light">|</span>
+<button class="text-xs font-medium text-primary hover:text-blue-700 hover:underline">Add BCC</button>
+</div>
+</div>
+<div class="h-px w-full bg-border-light"></div>
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-semibold text-text-primary">
+                            Subject Line
+                             <span class="text-red-500">*</span>
+</label>
+<div class="relative">
+<input class="h-9 w-full rounded-md border border-border-light bg-background-light px-3 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary pr-8" type="text" value="Welcome to the Team, {{form.name}}!"/>
+<button class="absolute right-2 top-2 text-text-secondary hover:text-primary" title="Insert Variable">
+<span class="material-symbols-outlined text-[18px]">data_object</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="text-xs font-semibold text-text-primary">Email Body</label>
+<button class="text-[10px] font-medium text-primary hover:underline">Open Full Editor</button>
+</div>
+<div class="rounded-md border border-border-light bg-background-light">
+<div class="flex items-center gap-1 border-b border-border-light p-1 bg-gray-50 rounded-t-md">
+<button class="p-1 rounded hover:bg-gray-200 text-text-secondary"><span class="material-symbols-outlined text-[16px]">format_bold</span></button>
+<button class="p-1 rounded hover:bg-gray-200 text-text-secondary"><span class="material-symbols-outlined text-[16px]">format_italic</span></button>
+<button class="p-1 rounded hover:bg-gray-200 text-text-secondary"><span class="material-symbols-outlined text-[16px]">link</span></button>
+<div class="h-4 w-px bg-border-light mx-1"></div>
+<button class="p-1 rounded hover:bg-gray-200 text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">data_object</span>
+<span class="text-[10px]">Var</span>
+</button>
+</div>
+<textarea class="w-full bg-transparent p-3 text-sm focus:outline-none h-32 resize-none" placeholder="Type your email content here...">Hi {{form.name}},
+
+We are thrilled to offer you the position of {{form.role}} at our company. Please review the attached documents.
+
+Best,
+HR Team</textarea>
+</div>
+</div>
+<div class="flex items-center justify-between py-2">
+<label class="text-xs font-semibold text-text-primary">Track Opens</label>
+<button class="relative inline-flex h-5 w-9 items-center rounded-full bg-primary">
+<span class="inline-block h-3.5 w-3.5 transform rounded-full bg-white transition translate-x-5"></span>
+</button>
+</div>
+</div>
+</div>
+<div class="border-t border-border-light p-4 bg-gray-50 flex gap-3">
+<button class="flex-1 rounded-lg border border-border-light bg-white py-2 text-sm font-semibold text-text-primary hover:bg-gray-50 transition-colors">
+                    Delete
+                </button>
+<button class="flex-1 rounded-lg bg-primary py-2 text-sm font-semibold text-white hover:bg-blue-700 transition-colors shadow-sm">
+                    Apply Changes
+                </button>
+</div>
+</aside>
+</main>
+</body></html>

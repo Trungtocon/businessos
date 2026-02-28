@@ -1,0 +1,3593 @@
+[
+  {
+    "screenId": "s00",
+    "route": "/",
+    "pageFile": "src/app/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 165,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"px-8 py-4 bg-white/5 border border-white/10 rounded-2xl font-semibold text-lg hover:bg-white/10 trans"
+      },
+      {
+        "type": "dead-button",
+        "line": 386,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button"
+      },
+      {
+        "type": "dead-link",
+        "line": 415,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a href=\"#\" className=\"size-10 rounded-lg bg-white/5 flex items-center justify-center text-white/50 hover:bg-white/10 ho"
+      },
+      {
+        "type": "dead-link",
+        "line": 418,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a href=\"#\" className=\"size-10 rounded-lg bg-white/5 flex items-center justify-center text-white/50 hover:bg-white/10 ho"
+      },
+      {
+        "type": "dead-link",
+        "line": 444,
+        "label": "Điều khoản sử dụng",
+        "severity": "medium",
+        "snippet": "<li><a href=\"#\" className=\"hover:text-white transition-colors\">Điều khoản sử dụng</a></li>"
+      },
+      {
+        "type": "dead-link",
+        "line": 445,
+        "label": "Chính sách bảo mật",
+        "severity": "medium",
+        "snippet": "<li><a href=\"#\" className=\"hover:text-white transition-colors\">Chính sách bảo mật</a></li>"
+      },
+      {
+        "type": "dead-link",
+        "line": 446,
+        "label": "Cookie Policy",
+        "severity": "medium",
+        "snippet": "<li><a href=\"#\" className=\"hover:text-white transition-colors\">Cookie Policy</a></li>"
+      }
+    ]
+  },
+  {
+    "screenId": "s02",
+    "route": "/role",
+    "pageFile": "src/app/(auth)/role/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 64,
+        "label": "Hỗ trợ",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-500 hover:text-blue-500 text-sm font-medium transition-colors\" href=\"#\">Hỗ trợ</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 66,
+        "label": "Điều khoản sử dụng",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-500 hover:text-blue-500 text-sm font-medium transition-colors\" href=\"#\">Điều khoản sử dụng</a>"
+      }
+    ]
+  },
+  {
+    "screenId": "s03",
+    "route": "/login",
+    "pageFile": "src/app/(auth)/login/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 120,
+        "label": "Quên mật khẩu?",
+        "severity": "medium",
+        "snippet": "<a className=\"text-blue-500 text-sm font-semibold hover:underline\" href=\"#\">Quên mật khẩu?</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 183,
+        "label": "Đăng ký ngay",
+        "severity": "medium",
+        "snippet": "<a className=\"text-blue-500 text-sm font-bold hover:underline\" href=\"#\">Đăng ký ngay</a>"
+      }
+    ]
+  },
+  {
+    "screenId": "s04",
+    "route": "/otp",
+    "pageFile": "src/app/(auth)/otp/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 71,
+        "label": "Xác nhận",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"w-full h-12 font-bold shadow-md shadow-blue-500/20\">Xác nhận</Button>"
+      }
+    ]
+  },
+  {
+    "screenId": "s05",
+    "route": "/onboarding",
+    "pageFile": "src/app/(auth)/onboarding/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 49,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button key={i} className={`flex flex-col items-center gap-3 p-4 bg-white rounded-lg ${ind.selected ? \"ring-2 ring-blue-"
+      },
+      {
+        "type": "dead-button",
+        "line": 64,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button key={i} className={`flex items-center gap-4 p-4 bg-white rounded-lg ${s.selected ? \"ring-2 ring-blue-500\" : \"bor"
+      },
+      {
+        "type": "dead-button",
+        "line": 82,
+        "label": "Quay lại",
+        "severity": "high",
+        "snippet": "<Link href=\"/role\"><button className=\"px-6 py-2.5 text-slate-500 hover:bg-gray-100 rounded-lg\">Quay lại</button></Link>"
+      },
+      {
+        "type": "dead-button",
+        "line": 83,
+        "label": "Tiếp tục",
+        "severity": "high",
+        "snippet": "<Link href=\"/admin\"><Button variant=\"primary\" className=\"px-8 py-2.5\">Tiếp tục</Button></Link>"
+      }
+    ]
+  },
+  {
+    "screenId": "s06",
+    "route": "/search",
+    "pageFile": "src/app/(portal)/search/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 51,
+        "label": "{tab}",
+        "severity": "high",
+        "snippet": "<button key={i} className={`px-4 py-2 text-sm font-medium ${i === 0 ? \"text-blue-500 border-b-2 border-blue-500\" : \"text"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 60,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div key={i} className={`group flex items-center justify-between gap-3 p-3 rounded-lg ${r.active ? \"bg-blue-500/5 border"
+      }
+    ]
+  },
+  {
+    "screenId": "a01",
+    "route": "/dashboard",
+    "pageFile": "src/app/(admin)/dashboard/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 218,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button"
+      },
+      {
+        "type": "dead-link",
+        "line": 283,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a href=\"#\" className=\"flex items-center gap-3 px-4 py-3 rounded-xl text-purple-300/70 hover:bg-purple-500/10 hover:text"
+      },
+      {
+        "type": "dead-link",
+        "line": 287,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a href=\"#\" className=\"flex items-center gap-3 px-4 py-3 rounded-xl text-purple-300/70 hover:bg-purple-500/10 hover:text"
+      },
+      {
+        "type": "dead-button",
+        "line": 321,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"relative size-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-w"
+      },
+      {
+        "type": "dead-button",
+        "line": 386,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"bg-purple-600 hover:bg-purple-500 text-white border-none\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 390,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"bg-blue-600 hover:bg-blue-500 text-white border-none\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 394,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"bg-green-600 hover:bg-green-500 text-white border-none\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 398,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"bg-orange-600 hover:bg-orange-500 text-white border-none\">"
+      }
+    ]
+  },
+  {
+    "screenId": "a02",
+    "route": "/users",
+    "pageFile": "src/app/(admin)/users/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 13,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"px-4 py-2 bg-blue-500 text-white text-sm font-semibold rounded-lg hover:bg-blue-600 transition-colors"
+      }
+    ]
+  },
+  {
+    "screenId": "a03",
+    "route": "/disputes",
+    "pageFile": "src/app/(admin)/disputes/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 12,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"px-4 py-2 bg-red-500 text-white text-sm font-semibold rounded-lg hover:bg-red-600 transition-colors\">"
+      }
+    ]
+  },
+  {
+    "screenId": "a06",
+    "route": "/notifications",
+    "pageFile": "src/app/(admin)/notifications/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 29,
+        "label": "Dashboard",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-500 hover:text-primary text-sm font-medium leading-normal transition-colors\" href=\"#\">Dashboard"
+      },
+      {
+        "type": "dead-link",
+        "line": 30,
+        "label": "Projects",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-500 hover:text-primary text-sm font-medium leading-normal transition-colors\" href=\"#\">Projects<"
+      },
+      {
+        "type": "dead-link",
+        "line": 31,
+        "label": "Finance",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-500 hover:text-primary text-sm font-medium leading-normal transition-colors\" href=\"#\">Finance</"
+      },
+      {
+        "type": "dead-link",
+        "line": 32,
+        "label": "CRM",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-500 hover:text-primary text-sm font-medium leading-normal transition-colors\" href=\"#\">CRM</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 33,
+        "label": "HRM",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-500 hover:text-primary text-sm font-medium leading-normal transition-colors\" href=\"#\">HRM</a>"
+      },
+      {
+        "type": "dead-button",
+        "line": 36,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-10 bg-primary/10 text-primary relative\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 40,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-10\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 43,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"flex items-center justify-center overflow-hidden rounded-full size-10 bg-gray-200 ml-2\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 58,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 67,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-900 pl-3 pr-4 shadow-sm t"
+      },
+      {
+        "type": "dead-button",
+        "line": 72,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-slate-200 p"
+      },
+      {
+        "type": "dead-button",
+        "line": 77,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-slate-200 p"
+      },
+      {
+        "type": "dead-button",
+        "line": 82,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-slate-200 p"
+      },
+      {
+        "type": "dead-button",
+        "line": 87,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-slate-200 p"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 93,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<label className=\"flex items-center gap-2 cursor-pointer select-none\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 105,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"group/item relative flex gap-4 p-4 hover:bg-slate-50 transition-colors cursor-pointer bg-primary/[0.02]\""
+      },
+      {
+        "type": "dead-button",
+        "line": 124,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-8 rounded-full\" title=\"Đánh dấu đã đọc\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 127,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-8 rounded-full\" title=\"Xóa\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 134,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"group/item relative flex gap-4 p-4 hover:bg-slate-50 transition-colors cursor-pointer bg-primary/[0.02]\""
+      },
+      {
+        "type": "dead-button",
+        "line": 152,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-8 rounded-full\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 155,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-8 rounded-full\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 162,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"group/item relative flex gap-4 p-4 hover:bg-slate-50 transition-colors cursor-pointer bg-primary/[0.02]\""
+      },
+      {
+        "type": "dead-button",
+        "line": 180,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-8 rounded-full\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 183,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-8 rounded-full\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 190,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"group/item relative flex gap-4 p-4 hover:bg-slate-50 transition-colors cursor-pointer\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 206,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-8 rounded-full\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 209,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-8 rounded-full\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 216,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"group/item relative flex gap-4 p-4 hover:bg-slate-50 transition-colors cursor-pointer\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 232,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-8 rounded-full\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 235,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-8 rounded-full\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 242,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"group/item relative flex gap-4 p-4 hover:bg-slate-50 transition-colors cursor-pointer\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 258,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-8 rounded-full\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 261,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-8 rounded-full\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 270,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\">"
+      }
+    ]
+  },
+  {
+    "screenId": "a07",
+    "route": "/chat",
+    "pageFile": "src/app/(admin)/chat/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-cursor",
+        "line": 11,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"mb-8 size-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary cursor-pointer hover"
+      },
+      {
+        "type": "dead-button",
+        "line": 15,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"group relative size-10\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 19,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" size=\"icon\" className=\"group relative size-10 shadow-md shadow-primary/20\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 23,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"group relative size-10\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 27,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"group relative size-10\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 32,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"group relative size-10\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 38,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"size-10 rounded-full bg-cover bg-center ring-2 ring-gray-100 cursor-pointer hover:ring-primary transitio"
+      },
+      {
+        "type": "dead-button",
+        "line": 46,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-9 bg-gray-50 hover:bg-primary hover:text-white\" title=\"Soạn tin mới\""
+      },
+      {
+        "type": "dead-button",
+        "line": 57,
+        "label": "Tất cả",
+        "severity": "high",
+        "snippet": "<button className=\"pb-3 border-b-2 border-primary text-primary font-semibold\">Tất cả</button>"
+      },
+      {
+        "type": "dead-button",
+        "line": 58,
+        "label": "Chưa đọc",
+        "severity": "high",
+        "snippet": "<button className=\"pb-3 border-b-2 border-transparent hover:text-slate-900 transition-colors\">Chưa đọc</button>"
+      },
+      {
+        "type": "dead-button",
+        "line": 59,
+        "label": "Nhóm",
+        "severity": "high",
+        "snippet": "<button className=\"pb-3 border-b-2 border-transparent hover:text-slate-900 transition-colors\">Nhóm</button>"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 65,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex items-center gap-3 px-5 py-4 hover:bg-gray-50 cursor-pointer border-b border-gray-50 hover:border-g"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 83,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex items-center gap-3 px-5 py-4 hover:bg-gray-50 cursor-pointer border-b border-gray-50 hover:border-g"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 98,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex items-center gap-3 px-5 py-4 hover:bg-gray-50 cursor-pointer border-b border-gray-50 hover:border-g"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 112,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex items-center gap-3 px-5 py-4 hover:bg-gray-50 cursor-pointer border-b border-gray-50 hover:border-g"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 127,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex items-center gap-3 px-5 py-4 hover:bg-gray-50 cursor-pointer border-b border-gray-50 hover:border-g"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 141,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex items-center gap-3 px-5 py-4 hover:bg-gray-50 cursor-pointer border-b border-gray-50 hover:border-g"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 155,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex items-center gap-3 px-5 py-4 hover:bg-gray-50 cursor-pointer border-b border-gray-50 hover:border-g"
+      }
+    ]
+  },
+  {
+    "screenId": "a08",
+    "route": "/chat/[id]",
+    "pageFile": "src/app/(admin)/chat/[id]/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 32,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" size=\"icon\" className=\"size-10\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 35,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" size=\"icon\" className=\"size-10\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 39,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-white cursor-pointer\" sty"
+      },
+      {
+        "type": "dead-link",
+        "line": 47,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 group transition-colors\" href=\"#\">"
+      },
+      {
+        "type": "dead-link",
+        "line": 51,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 group transition-colors\" href=\"#\">"
+      },
+      {
+        "type": "dead-link",
+        "line": 55,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2 rounded-lg bg-slate-200 text-primary\" href=\"#\">"
+      },
+      {
+        "type": "dead-link",
+        "line": 59,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 group transition-colors\" href=\"#\">"
+      },
+      {
+        "type": "dead-link",
+        "line": 63,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 group transition-colors\" href=\"#\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 89,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex items-center gap-3 px-4 py-3 bg-slate-200 border-l-4 border-primary cursor-pointer hover:bg-slate-2"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 103,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex items-center gap-3 px-4 py-3 border-l-4 border-transparent hover:bg-slate-50 cursor-pointer transit"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 118,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex items-center gap-3 px-4 py-3 border-l-4 border-transparent hover:bg-slate-50 cursor-pointer transit"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 138,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"lg:hidden cursor-pointer mr-2\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 151,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"p-2 rounded-full\" title=\"Gọi thoại\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 154,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"p-2 rounded-full\" title=\"Gọi video\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 157,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"p-2 rounded-full\" title=\"Tìm kiếm trong tin nhắn\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 161,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" className=\"bg-primary/10 hover:bg-primary/20 text-primary ml-1\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 192,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex items-center gap-3 bg-white border border-slate-200 rounded-xl p-3 w-64 shadow-sm hover:shadow-md t"
+      },
+      {
+        "type": "dead-button",
+        "line": 211,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"size-8 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors\""
+      },
+      {
+        "type": "dead-button",
+        "line": 250,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"p-2 rounded-full\" title=\"Đính kèm file\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 253,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"p-2 rounded-full\" title=\"Gửi ảnh\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 256,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"p-2 rounded-full\" title=\"Ghi âm giọng nói\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 261,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" size=\"icon\" className=\"p-2.5 rounded-lg mb-0.5 mr-0.5\" title=\"Gửi\">"
+      }
+    ]
+  },
+  {
+    "screenId": "a10",
+    "route": "/settings",
+    "pageFile": "src/app/(admin)/settings/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 24,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors group\" "
+      },
+      {
+        "type": "dead-link",
+        "line": 28,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors group\" "
+      },
+      {
+        "type": "dead-link",
+        "line": 32,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors group\" "
+      },
+      {
+        "type": "dead-link",
+        "line": 36,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors group\" "
+      },
+      {
+        "type": "dead-link",
+        "line": 41,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary\" href=\"#\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 64,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"text-slate-500 hover:text-primary\">"
+      },
+      {
+        "type": "dead-link",
+        "line": 71,
+        "label": "Trang chủ",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-500 hover:text-primary transition-colors\" href=\"#\">Trang chủ</a>"
+      },
+      {
+        "type": "dead-button",
+        "line": 77,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-10 rounded-full relative\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 81,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-10 rounded-full\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 103,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"relative group cursor-pointer\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 115,
+        "label": "Thay đổi ảnh",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\">Thay đổi ảnh</Button>"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 155,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<select className=\"w-full h-10 pl-3 pr-10 rounded-lg border border-slate-300 bg-white text-slate-900 focus:outline-none "
+      },
+      {
+        "type": "dead-cursor",
+        "line": 173,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<label className=\"cursor-pointer group\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 186,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<label className=\"cursor-pointer group\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 220,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<label className=\"relative inline-flex items-center cursor-pointer\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 232,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 242,
+        "label": "Hủy bỏ",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\">Hủy bỏ</Button>"
+      },
+      {
+        "type": "dead-button",
+        "line": 243,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\">"
+      }
+    ]
+  },
+  {
+    "screenId": "a11",
+    "route": "/error-states",
+    "pageFile": "src/app/(admin)/error-states/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 27,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 rounded-lg px-3 py-2.5 bg-slate-50 text-primary transition-colors\" href=\"#\">"
+      },
+      {
+        "type": "dead-link",
+        "line": 31,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-600 hover:bg-gray-50 transition-colors\" href=\"#\""
+      },
+      {
+        "type": "dead-link",
+        "line": 35,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-600 hover:bg-gray-50 transition-colors\" href=\"#\""
+      },
+      {
+        "type": "dead-link",
+        "line": 39,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-600 hover:bg-gray-50 transition-colors\" href=\"#\""
+      },
+      {
+        "type": "dead-link",
+        "line": 43,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-600 hover:bg-gray-50 transition-colors\" href=\"#\""
+      },
+      {
+        "type": "dead-link",
+        "line": 47,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-600 hover:bg-gray-50 transition-colors\" href=\"#\""
+      },
+      {
+        "type": "dead-button",
+        "line": 78,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"relative p-2\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 82,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 101,
+        "label": "Tìm hiểu thêm",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\">Tìm hiểu thêm</Button>"
+      },
+      {
+        "type": "dead-button",
+        "line": 102,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\">"
+      },
+      {
+        "type": "dead-link",
+        "line": 124,
+        "label": "Trung tâm hỗ trợ",
+        "severity": "medium",
+        "snippet": "<a className=\"text-sm font-medium text-slate-500 hover:text-primary transition-colors\" href=\"#\">Trung tâm hỗ trợ</a>"
+      },
+      {
+        "type": "dead-button",
+        "line": 142,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"w-full sm:w-auto px-6 py-3 shadow-lg shadow-blue-100 hover:shadow-lg hover:shadow-b"
+      },
+      {
+        "type": "dead-button",
+        "line": 146,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"w-full sm:w-auto px-6 py-3\">"
+      }
+    ]
+  },
+  {
+    "screenId": "c01",
+    "route": "/virtual",
+    "pageFile": "src/app/(portal)/virtual/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-cursor",
+        "line": 31,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<label className=\"cursor-pointer px-5 py-2.5 rounded-xl text-slate-500 hover:text-slate-700 transition-colors\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 35,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<label className=\"cursor-pointer px-5 py-2.5 rounded-xl bg-white text-blue-600 shadow-md shadow-slate-200/50 transition-"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 69,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex flex-col items-center gap-6 group cursor-pointer hover:-translate-y-1 transition-transform duration"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 88,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex flex-col items-center gap-6 group cursor-pointer hover:-translate-y-1 transition-transform duration"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 107,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex flex-col items-center gap-6 group cursor-pointer hover:-translate-y-1 transition-transform duration"
+      },
+      {
+        "type": "dead-button",
+        "line": 131,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" size=\"icon\" className=\"group relative size-16 rounded-full shadow-[0_12px_36px_-6px_rgba(37,99"
+      }
+    ]
+  },
+  {
+    "screenId": "c02",
+    "route": "/virtual/approval",
+    "pageFile": "src/app/(portal)/virtual/approval/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 206,
+        "label": "Thoát chế độ",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\"><span className=\"truncate\">Thoát chế độ</span></Button>"
+      },
+      {
+        "type": "dead-button",
+        "line": 207,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-10 border border-slate-200\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 309,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"flex items-center justify-center w-12 h-12 rounded-full bg-white border border-slate-200 shadow-md ho"
+      },
+      {
+        "type": "dead-button",
+        "line": 436,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"text-slate-400 hover:text-blue-500 transition-colors\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 448,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex items-center gap-3 mt-4 cursor-pointer hover:bg-slate-50 p-2 -mx-2 rounded-lg transition-colors gro"
+      }
+    ]
+  },
+  {
+    "screenId": "c03",
+    "route": "/virtual/war-room",
+    "pageFile": "src/app/(portal)/virtual/war-room/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 247,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-10 rounded-lg bg-white shadow-[4px_4px_10px_#e2e8f0,-4px_-4px_10px_#"
+      },
+      {
+        "type": "dead-button",
+        "line": 447,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"p-4 text-slate-400 hover:text-blue-600 transition-colors\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 460,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button"
+      }
+    ]
+  },
+  {
+    "screenId": "c04a",
+    "route": "/virtual/voice",
+    "pageFile": "src/app/(portal)/virtual/voice/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-cursor",
+        "line": 170,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "? \"border-cyan-400/50 bg-cyan-400/5 shadow-[0_0_40px_-10px_rgba(13,231,242,0.3)] hover:shadow-[0_0_80px_-10px_rgba(13,23"
+      }
+    ]
+  },
+  {
+    "screenId": "c04b",
+    "route": "/virtual/voice",
+    "pageFile": "src/app/(portal)/virtual/voice/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-cursor",
+        "line": 170,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "? \"border-cyan-400/50 bg-cyan-400/5 shadow-[0_0_40px_-10px_rgba(13,231,242,0.3)] hover:shadow-[0_0_80px_-10px_rgba(13,23"
+      }
+    ]
+  },
+  {
+    "screenId": "c05",
+    "route": "/classic/marketplace",
+    "pageFile": "src/app/(portal)/classic/marketplace/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 25,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 transition-colors group\" h"
+      },
+      {
+        "type": "dead-link",
+        "line": 29,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg bg-blue-500/10 text-blue-500\" href=\"#\">"
+      },
+      {
+        "type": "dead-link",
+        "line": 33,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 transition-colors group\" h"
+      },
+      {
+        "type": "dead-link",
+        "line": 37,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 transition-colors group\" h"
+      },
+      {
+        "type": "dead-link",
+        "line": 41,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 transition-colors group\" h"
+      },
+      {
+        "type": "dead-button",
+        "line": 64,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"md:hidden text-slate-500 hover:text-slate-700\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 75,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"relative p-2 rounded-lg\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 79,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"p-2 rounded-lg\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 83,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"flex items-center gap-2 text-sm font-medium text-blue-500 bg-blue-500/10 px-3 py-"
+      },
+      {
+        "type": "dead-button",
+        "line": 101,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"w-fit shadow-lg shadow-blue-900/20 flex items-center gap-2\">"
+      },
+      {
+        "type": "dead-link",
+        "line": 112,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"text-sm font-medium text-blue-500 hover:text-blue-600 flex items-center gap-1\" href=\"#\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 118,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button className=\"flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white rounded-full text-sm font-medium whitespa"
+      },
+      {
+        "type": "dead-button",
+        "line": 122,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium whitespace-n"
+      },
+      {
+        "type": "dead-button",
+        "line": 126,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium whitespace-n"
+      },
+      {
+        "type": "dead-button",
+        "line": 130,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium whitespace-n"
+      },
+      {
+        "type": "dead-button",
+        "line": 134,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium whitespace-n"
+      },
+      {
+        "type": "dead-button",
+        "line": 163,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-9 rounded-lg bg-blue-500/10 text-blue-500 hover:bg-blue-500 hover:te"
+      },
+      {
+        "type": "dead-button",
+        "line": 190,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-9 rounded-lg bg-blue-500/10 text-blue-500 hover:bg-blue-500 hover:te"
+      },
+      {
+        "type": "dead-button",
+        "line": 217,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-9 rounded-lg bg-blue-500/10 text-blue-500 hover:bg-blue-500 hover:te"
+      },
+      {
+        "type": "dead-button",
+        "line": 244,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-9 rounded-lg bg-blue-500/10 text-blue-500 hover:bg-blue-500 hover:te"
+      },
+      {
+        "type": "dead-button",
+        "line": 254,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"px-6 py-2 border border-slate-300 rounded-lg\">"
+      }
+    ]
+  },
+  {
+    "screenId": "c06",
+    "route": "/classic/marketplace/[id]",
+    "pageFile": "src/app/(portal)/classic/marketplace/[id]/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 26,
+        "label": "Dashboard",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-900 text-sm font-medium hover:text-blue-500 transition-colors\" href=\"#\">Dashboard</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 27,
+        "label": "Services",
+        "severity": "medium",
+        "snippet": "<a className=\"text-blue-500 text-sm font-medium\" href=\"#\">Services</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 28,
+        "label": "Reports",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-900 text-sm font-medium hover:text-blue-500 transition-colors\" href=\"#\">Reports</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 38,
+        "label": "Home",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-500 font-medium hover:underline\" href=\"#\">Home</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 40,
+        "label": "Services",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-500 font-medium hover:underline\" href=\"#\">Services</a>"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 72,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex items-center gap-1 text-blue-500 cursor-pointer hover:underline\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 155,
+        "label": "Cơ bản",
+        "severity": "high",
+        "snippet": "<button className=\"flex-1 px-3 py-2 text-sm font-medium rounded-md text-slate-600 hover:text-slate-900 transition-all wh"
+      },
+      {
+        "type": "dead-button",
+        "line": 156,
+        "label": "Nâng cao",
+        "severity": "high",
+        "snippet": "<button className=\"flex-1 px-3 py-2 text-sm font-medium rounded-md bg-white text-blue-500 shadow-sm whitespace-nowrap\">N"
+      },
+      {
+        "type": "dead-button",
+        "line": 157,
+        "label": "Chuyên nghiệp",
+        "severity": "high",
+        "snippet": "<button className=\"flex-1 px-3 py-2 text-sm font-medium rounded-md text-slate-600 hover:text-slate-900 transition-all wh"
+      },
+      {
+        "type": "dead-button",
+        "line": 178,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"w-full py-3.5 shadow-md flex items-center justify-center gap-2\">"
+      }
+    ]
+  },
+  {
+    "screenId": "c07",
+    "route": "/classic/briefing",
+    "pageFile": "src/app/(portal)/classic/briefing/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 19,
+        "label": "Dashboard",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-900 text-sm font-medium leading-normal hover:text-blue-500 transition-colors\" href=\"#\">Dashboar"
+      },
+      {
+        "type": "dead-link",
+        "line": 20,
+        "label": "Dự án",
+        "severity": "medium",
+        "snippet": "<a className=\"text-blue-500 text-sm font-medium leading-normal\" href=\"#\">Dự án</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 21,
+        "label": "Báo cáo",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-900 text-sm font-medium leading-normal hover:text-blue-500 transition-colors\" href=\"#\">Báo cáo<"
+      },
+      {
+        "type": "dead-link",
+        "line": 22,
+        "label": "Cài đặt",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-900 text-sm font-medium leading-normal hover:text-blue-500 transition-colors\" href=\"#\">Cài đặt<"
+      },
+      {
+        "type": "dead-button",
+        "line": 35,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"ghost\" size=\"icon\" className=\"size-10 rounded-full hover:bg-gray-100 text-slate-400\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 38,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-white shadow-sm curso"
+      },
+      {
+        "type": "dead-link",
+        "line": 47,
+        "label": "BusinessOS",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-400 text-sm font-medium leading-normal hover:underline\" href=\"#\">BusinessOS</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 49,
+        "label": "Dự án",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-400 text-sm font-medium leading-normal hover:underline\" href=\"#\">Dự án</a>"
+      },
+      {
+        "type": "dead-button",
+        "line": 61,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"flex items-center justify-center rounded-lg h-10 px-4 border border-slate-200 tex"
+      },
+      {
+        "type": "dead-button",
+        "line": 78,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"group flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 78,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<Button variant=\"primary\" className=\"group flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-"
+      },
+      {
+        "type": "dead-button",
+        "line": 156,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"text-blue-500 text-xs font-medium hover:underline flex items-center gap-1\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 172,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<label key={i} className=\"cursor-pointer relative\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 196,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<label className=\"flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-slate-300 rounded-"
+      },
+      {
+        "type": "dead-button",
+        "line": 216,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"text-slate-400 hover:text-red-500 transition-colors\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 227,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"px-6 py-2.5 rounded-lg border border-slate-300 bg-white text-slate-900 text-sm fo"
+      },
+      {
+        "type": "dead-button",
+        "line": 230,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"px-8 py-2.5 rounded-lg shadow-lg shadow-blue-500/30 text-sm font-bold flex items-ce"
+      }
+    ]
+  },
+  {
+    "screenId": "c08",
+    "route": "/classic/checkout",
+    "pageFile": "src/app/(portal)/classic/checkout/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 20,
+        "label": "Tổng quan",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-600 hover:text-blue-500 text-sm font-medium transition-colors\" href=\"#\">Tổng quan</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 21,
+        "label": "Báo cáo",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-600 hover:text-blue-500 text-sm font-medium transition-colors\" href=\"#\">Báo cáo</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 22,
+        "label": "Quản lý gói",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-600 hover:text-blue-500 text-sm font-medium transition-colors\" href=\"#\">Quản lý gói</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 41,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"inline-flex items-center text-slate-500 hover:text-blue-500\" href=\"#\">"
+      },
+      {
+        "type": "dead-link",
+        "line": 49,
+        "label": "Nâng cấp gói",
+        "severity": "medium",
+        "snippet": "<a className=\"ml-1 text-slate-500 hover:text-blue-500 md:ml-2\" href=\"#\">Nâng cấp gói</a>"
+      },
+      {
+        "type": "dead-form",
+        "line": 142,
+        "label": "(form without onSubmit)",
+        "severity": "critical",
+        "snippet": "<form className=\"space-y-3\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 144,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<label className=\"relative block group cursor-pointer\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 163,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<label className=\"relative block group cursor-pointer\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 179,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<label className=\"relative block group cursor-pointer\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 192,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"w-full py-3.5 shadow-lg shadow-blue-500/20 flex items-center justify-center gap-2 g"
+      },
+      {
+        "type": "dead-link",
+        "line": 219,
+        "label": "Điều khoản dịch vụ",
+        "severity": "medium",
+        "snippet": "<a className=\"text-xs text-slate-400 hover:text-blue-500\" href=\"#\">Điều khoản dịch vụ</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 220,
+        "label": "Chính sách bảo mật",
+        "severity": "medium",
+        "snippet": "<a className=\"text-xs text-slate-400 hover:text-blue-500\" href=\"#\">Chính sách bảo mật</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 221,
+        "label": "Hỗ trợ",
+        "severity": "medium",
+        "snippet": "<a className=\"text-xs text-slate-400 hover:text-blue-500\" href=\"#\">Hỗ trợ</a>"
+      }
+    ]
+  },
+  {
+    "screenId": "c09",
+    "route": "/classic/projects",
+    "pageFile": "src/app/(portal)/classic/projects/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 52,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a key={item.label} className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${item.active ? \"bg-blu"
+      },
+      {
+        "type": "dead-link",
+        "line": 60,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white\" href=\"#\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 75,
+        "label": "notifications",
+        "severity": "high",
+        "snippet": "<button className=\"relative text-slate-500\"><span className=\"material-symbols-outlined\">notifications</span><span classN"
+      },
+      {
+        "type": "dead-link",
+        "line": 83,
+        "label": "Dashboard",
+        "severity": "medium",
+        "snippet": "<nav className=\"text-sm text-slate-500\"><a className=\"hover:text-blue-500\" href=\"#\">Dashboard</a> / <span className=\"tex"
+      },
+      {
+        "type": "dead-button",
+        "line": 124,
+        "label": "add",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"flex items-center gap-2 px-5 py-2.5\"><span className=\"material-symbols-outlined tex"
+      },
+      {
+        "type": "dead-link",
+        "line": 143,
+        "label": "{p.name}",
+        "severity": "medium",
+        "snippet": "<a className=\"font-semibold text-slate-900 hover:text-blue-500\" href=\"#\">{p.name}</a>"
+      },
+      {
+        "type": "dead-button",
+        "line": 165,
+        "label": "more_vert",
+        "severity": "high",
+        "snippet": "<td className=\"px-6 py-4 text-right\"><button className=\"text-slate-400 opacity-0 group-hover:opacity-100\"><span classNam"
+      },
+      {
+        "type": "dead-button",
+        "line": 171,
+        "label": "Previous",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\">Previous</Button>"
+      },
+      {
+        "type": "dead-button",
+        "line": 173,
+        "label": "1",
+        "severity": "high",
+        "snippet": "<button className=\"px-3 py-1 text-sm font-medium text-white bg-blue-500 rounded-md\">1</button>"
+      },
+      {
+        "type": "dead-button",
+        "line": 174,
+        "label": "2",
+        "severity": "high",
+        "snippet": "<button className=\"px-3 py-1 text-sm text-slate-600 hover:bg-gray-200 rounded-md\">2</button>"
+      },
+      {
+        "type": "dead-button",
+        "line": 176,
+        "label": "Next",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\">Next</Button>"
+      }
+    ]
+  },
+  {
+    "screenId": "c10",
+    "route": "/classic/projects/[id]/kanban",
+    "pageFile": "src/app/(portal)/classic/projects/[id]/kanban/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 89,
+        "label": "more_horiz",
+        "severity": "high",
+        "snippet": "<button className=\"text-slate-400 hover:text-blue-500\"><span className=\"material-symbols-outlined text-[20px]\">more_hori"
+      },
+      {
+        "type": "dead-button",
+        "line": 94,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"w-full py-2 flex items-center justify-center gap-2 text-slate-500 hover:text-blue-500 hover:bg-white "
+      },
+      {
+        "type": "dead-link",
+        "line": 114,
+        "label": "(no label)",
+        "severity": "medium",
+        "snippet": "<a key={i} className={`flex items-center justify-center size-12 rounded-xl ${item.active ? 'bg-blue-500/10 text-blue-500"
+      },
+      {
+        "type": "dead-link",
+        "line": 120,
+        "label": "settings",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center justify-center size-12 rounded-xl text-slate-400 hover:text-blue-500 hover:bg-blue-500/1"
+      },
+      {
+        "type": "dead-link",
+        "line": 131,
+        "label": "Projects",
+        "severity": "medium",
+        "snippet": "<nav className=\"flex items-center gap-2 text-sm text-slate-500\"><a className=\"hover:text-blue-500\" href=\"#\">Projects</a>"
+      },
+      {
+        "type": "dead-button",
+        "line": 141,
+        "label": "+4",
+        "severity": "high",
+        "snippet": "<button className=\"size-8 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center text-xs font-"
+      },
+      {
+        "type": "dead-button",
+        "line": 143,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"flex items-center gap-2 px-4 h-10 shadow-md\">"
+      }
+    ]
+  },
+  {
+    "screenId": "c11",
+    "route": "/classic/projects/[id]/task/[taskId]",
+    "pageFile": "src/app/(portal)/classic/projects/[id]/task/[taskId]/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 73,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"hidden sm:flex items-center justify-center h-9 px-4 rounded-lg bg-amber-500 hover:bg-amber-600 text-w"
+      },
+      {
+        "type": "dead-button",
+        "line": 77,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"hidden sm:flex items-center justify-center h-9 px-4 rounded-lg bg-emerald-500 hover:bg-emerald-600 te"
+      },
+      {
+        "type": "dead-button",
+        "line": 82,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"flex items-center justify-center h-9 w-9 rounded-lg hover:bg-slate-100 text-slate-500 transition-colo"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 123,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex items-center gap-3 mt-2 p-2 bg-slate-50 rounded-lg border border-slate-200 cursor-pointer hover:bg-"
+      },
+      {
+        "type": "dead-button",
+        "line": 144,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"p-2 text-slate-400 hover:text-blue-500 transition-colors rounded-full hover:bg-slate-100\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 153,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"p-2 text-blue-500 hover:text-blue-600 transition-colors rounded-full hover:bg-blue-50\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 218,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<label key={item.id} className=\"flex items-start gap-3 p-2 hover:bg-slate-100 rounded-md cursor-pointer group transition"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 241,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div key={i} className=\"flex items-center p-3 bg-white border border-slate-200 rounded-lg hover:shadow-md transition-sha"
+      },
+      {
+        "type": "dead-button",
+        "line": 249,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"text-slate-400 hover:text-blue-500\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 264,
+        "label": "Yêu cầu sửa",
+        "severity": "high",
+        "snippet": "<button className=\"flex-1 flex items-center justify-center h-10 rounded-lg bg-amber-500 text-white text-sm font-bold\">Yê"
+      },
+      {
+        "type": "dead-button",
+        "line": 265,
+        "label": "Duyệt",
+        "severity": "high",
+        "snippet": "<button className=\"flex-1 flex items-center justify-center h-10 rounded-lg bg-emerald-500 text-white text-sm font-bold\">"
+      }
+    ]
+  },
+  {
+    "screenId": "c12",
+    "route": "/classic/team",
+    "pageFile": "src/app/(portal)/classic/team/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 27,
+        "label": "more_vert",
+        "severity": "high",
+        "snippet": "<button className=\"text-slate-400 hover:text-slate-600\"><span className=\"material-symbols-outlined\">more_vert</span></bu"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 43,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<select className={`appearance-none ${member.permission === \"editor\" ? \"bg-blue-50 hover:bg-blue-100 text-blue-600\" : \"b"
+      },
+      {
+        "type": "dead-link",
+        "line": 57,
+        "label": "Trang chủ",
+        "severity": "medium",
+        "snippet": "<a className=\"hover:text-blue-500 transition-colors\" href=\"#\">Trang chủ</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 59,
+        "label": "Đội ngũ",
+        "severity": "medium",
+        "snippet": "<a className=\"hover:text-blue-500 transition-colors\" href=\"#\">Đội ngũ</a>"
+      },
+      {
+        "type": "dead-button",
+        "line": 69,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"flex items-center justify-center gap-2 px-5 py-2.5 shadow-lg shadow-blue-500/20\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 80,
+        "label": "filter_list",
+        "severity": "high",
+        "snippet": "<button className=\"p-2.5 border border-gray-200 rounded-lg hover:bg-slate-50 text-slate-600\"><span className=\"material-s"
+      },
+      {
+        "type": "dead-button",
+        "line": 81,
+        "label": "sort",
+        "severity": "high",
+        "snippet": "<button className=\"p-2.5 border border-gray-200 rounded-lg hover:bg-slate-50 text-slate-600\"><span className=\"material-s"
+      },
+      {
+        "type": "dead-button",
+        "line": 85,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button key={tag} className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap tra"
+      },
+      {
+        "type": "dead-button",
+        "line": 95,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"group flex flex-col items-center justify-center bg-slate-50 border-2 border-dashed border-gray-200 ro"
+      },
+      {
+        "type": "dead-button",
+        "line": 105,
+        "label": "chevron_left",
+        "severity": "high",
+        "snippet": "<button className=\"w-9 h-9 flex items-center justify-center rounded-lg border border-gray-200 text-slate-500 hover:bg-sl"
+      },
+      {
+        "type": "dead-button",
+        "line": 106,
+        "label": "1",
+        "severity": "high",
+        "snippet": "<button className=\"w-9 h-9 flex items-center justify-center rounded-lg bg-blue-500 text-white font-medium shadow-md shad"
+      },
+      {
+        "type": "dead-button",
+        "line": 107,
+        "label": "2",
+        "severity": "high",
+        "snippet": "<button className=\"w-9 h-9 flex items-center justify-center rounded-lg border border-gray-200 text-slate-600 hover:bg-sl"
+      },
+      {
+        "type": "dead-button",
+        "line": 108,
+        "label": "3",
+        "severity": "high",
+        "snippet": "<button className=\"w-9 h-9 flex items-center justify-center rounded-lg border border-gray-200 text-slate-600 hover:bg-sl"
+      },
+      {
+        "type": "dead-button",
+        "line": 110,
+        "label": "chevron_right",
+        "severity": "high",
+        "snippet": "<button className=\"w-9 h-9 flex items-center justify-center rounded-lg border border-gray-200 text-slate-500 hover:bg-sl"
+      }
+    ]
+  },
+  {
+    "screenId": "c13",
+    "route": "/classic/finance",
+    "pageFile": "src/app/(portal)/classic/finance/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 28,
+        "label": "dashboard",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100\" href=\"#\"><span className"
+      },
+      {
+        "type": "dead-link",
+        "line": 29,
+        "label": "account_balance_wallet",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg bg-blue-500/10 text-blue-600\" href=\"#\"><span className=\"mat"
+      },
+      {
+        "type": "dead-link",
+        "line": 30,
+        "label": "group",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100\" href=\"#\"><span className"
+      },
+      {
+        "type": "dead-link",
+        "line": 31,
+        "label": "folder_open",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100\" href=\"#\"><span className"
+      },
+      {
+        "type": "dead-link",
+        "line": 32,
+        "label": "bar_chart",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100\" href=\"#\"><span className"
+      },
+      {
+        "type": "dead-link",
+        "line": 48,
+        "label": "Trang chủ",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-500 hover:text-blue-600\" href=\"#\">Trang chủ</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 50,
+        "label": "Tài chính",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-500 hover:text-blue-600\" href=\"#\">Tài chính</a>"
+      },
+      {
+        "type": "dead-button",
+        "line": 81,
+        "label": "add",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"flex-1 sm:flex-none px-6 py-3 shadow-sm min-w-[140px]\"><span className=\"material-sy"
+      },
+      {
+        "type": "dead-button",
+        "line": 82,
+        "label": "history",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"flex-1 sm:flex-none px-6 py-3 min-w-[160px]\"><span className=\"material-symbols-ou"
+      },
+      {
+        "type": "dead-button",
+        "line": 114,
+        "label": "filter_list",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"px-3 py-2\"><span className=\"material-symbols-outlined text-[20px] mr-1\">filter_li"
+      },
+      {
+        "type": "dead-button",
+        "line": 137,
+        "label": "more_vert",
+        "severity": "high",
+        "snippet": "<td className=\"px-6 py-4 whitespace-nowrap text-right text-sm font-medium\"><button className=\"text-slate-400 hover:text-"
+      }
+    ]
+  },
+  {
+    "screenId": "c14",
+    "route": "/classic/invoices",
+    "pageFile": "src/app/(portal)/classic/invoices/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 29,
+        "label": "home",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50\" href=\"#\"><span className="
+      },
+      {
+        "type": "dead-link",
+        "line": 30,
+        "label": "receipt_long",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg bg-blue-50/50 text-blue-600\" href=\"#\"><span className=\"mate"
+      },
+      {
+        "type": "dead-link",
+        "line": 31,
+        "label": "work",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50\" href=\"#\"><span className="
+      },
+      {
+        "type": "dead-link",
+        "line": 32,
+        "label": "group",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50\" href=\"#\"><span className="
+      },
+      {
+        "type": "dead-cursor",
+        "line": 37,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex items-center gap-3 p-2 rounded-xl cursor-pointer hover:border-slate-100 border border-transparent\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 57,
+        "label": "notifications",
+        "severity": "high",
+        "snippet": "<button className=\"p-2 text-slate-500 hover:bg-slate-50 rounded-full relative\"><span className=\"material-symbols-outline"
+      },
+      {
+        "type": "dead-button",
+        "line": 59,
+        "label": "Hỗ trợ",
+        "severity": "high",
+        "snippet": "<button className=\"flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-blue-600 px-2 py-1\"><span>Hỗ tr"
+      },
+      {
+        "type": "dead-link",
+        "line": 66,
+        "label": "Trang chủ",
+        "severity": "medium",
+        "snippet": "<a className=\"hover:text-blue-600\" href=\"#\">Trang chủ</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 68,
+        "label": "Tài chính",
+        "severity": "medium",
+        "snippet": "<a className=\"hover:text-blue-600\" href=\"#\">Tài chính</a>"
+      },
+      {
+        "type": "dead-button",
+        "line": 77,
+        "label": "add",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"flex items-center justify-center gap-2 px-6 py-2.5 shadow-lg shadow-blue-100\"><span"
+      },
+      {
+        "type": "dead-button",
+        "line": 119,
+        "label": "file_download",
+        "severity": "high",
+        "snippet": "<button className={`p-2 ${inv.status === \"issued\" ? \"text-blue-600 hover:bg-blue-50\" : \"text-slate-300 cursor-not-allowe"
+      },
+      {
+        "type": "dead-button",
+        "line": 120,
+        "label": "mail",
+        "severity": "high",
+        "snippet": "<button className=\"p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-all\" title=\"Gửi Email\"><span className=\"mate"
+      },
+      {
+        "type": "dead-button",
+        "line": 133,
+        "label": "2",
+        "severity": "high",
+        "snippet": "<button className=\"w-8 h-8 flex items-center justify-center rounded-lg text-slate-500 hover:bg-slate-50 text-xs font-bol"
+      },
+      {
+        "type": "dead-button",
+        "line": 134,
+        "label": "3",
+        "severity": "high",
+        "snippet": "<button className=\"w-8 h-8 flex items-center justify-center rounded-lg text-slate-500 hover:bg-slate-50 text-xs font-bol"
+      },
+      {
+        "type": "dead-button",
+        "line": 136,
+        "label": "12",
+        "severity": "high",
+        "snippet": "<button className=\"w-8 h-8 flex items-center justify-center rounded-lg text-slate-500 hover:bg-slate-50 text-xs font-bol"
+      },
+      {
+        "type": "dead-button",
+        "line": 137,
+        "label": "chevron_right",
+        "severity": "high",
+        "snippet": "<button className=\"p-2 text-slate-500 hover:text-slate-900\"><span className=\"material-symbols-outlined text-[18px]\">chev"
+      },
+      {
+        "type": "dead-link",
+        "line": 144,
+        "label": "Điều khoản",
+        "severity": "medium",
+        "snippet": "<div className=\"flex gap-6\"><a className=\"hover:text-blue-600\" href=\"#\">Điều khoản</a><a className=\"hover:text-blue-600\""
+      },
+      {
+        "type": "dead-link",
+        "line": 144,
+        "label": "Điều khoản",
+        "severity": "medium",
+        "snippet": "<div className=\"flex gap-6\"><a className=\"hover:text-blue-600\" href=\"#\">Điều khoản</a><a className=\"hover:text-blue-600\""
+      },
+      {
+        "type": "dead-link",
+        "line": 144,
+        "label": "Điều khoản",
+        "severity": "medium",
+        "snippet": "<div className=\"flex gap-6\"><a className=\"hover:text-blue-600\" href=\"#\">Điều khoản</a><a className=\"hover:text-blue-600\""
+      }
+    ]
+  },
+  {
+    "screenId": "c15",
+    "route": "/classic/profile",
+    "pageFile": "src/app/(portal)/classic/profile/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 25,
+        "label": "Tổng quan",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-500 hover:text-blue-500 text-sm font-medium\" href=\"#\">Tổng quan</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 26,
+        "label": "Hồ sơ",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-900 text-sm font-semibold\" href=\"#\">Hồ sơ</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 27,
+        "label": "Thiết lập",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-500 hover:text-blue-500 text-sm font-medium\" href=\"#\">Thiết lập</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 28,
+        "label": "Báo cáo",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-500 hover:text-blue-500 text-sm font-medium\" href=\"#\">Báo cáo</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 37,
+        "label": "Trang chủ",
+        "severity": "medium",
+        "snippet": "<a className=\"hover:text-blue-500\" href=\"#\">Trang chủ</a>"
+      },
+      {
+        "type": "dead-button",
+        "line": 45,
+        "label": "photo_camera",
+        "severity": "high",
+        "snippet": "<button className=\"absolute top-4 right-4 bg-white/20 backdrop-blur-md hover:bg-white/30 text-white p-2 rounded-lg\"><spa"
+      },
+      {
+        "type": "dead-button",
+        "line": 55,
+        "label": "edit",
+        "severity": "high",
+        "snippet": "<button className=\"absolute bottom-2 right-2 size-8 bg-blue-500 text-white rounded-full flex items-center justify-center"
+      },
+      {
+        "type": "dead-button",
+        "line": 68,
+        "label": "receipt_long",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"flex-1 md:flex-none h-10 px-5\"><span className=\"material-symbols-outlined text-[1"
+      },
+      {
+        "type": "dead-button",
+        "line": 69,
+        "label": "edit",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"flex-1 md:flex-none h-10 px-5 shadow-md shadow-blue-500/20\"><span className=\"materi"
+      },
+      {
+        "type": "dead-button",
+        "line": 106,
+        "label": "Hủy",
+        "severity": "high",
+        "snippet": "<button className=\"px-4 h-9 rounded-lg text-sm font-semibold text-slate-500 hover:bg-gray-100\">Hủy</button>"
+      },
+      {
+        "type": "dead-button",
+        "line": 107,
+        "label": "Lưu thay đổi",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"px-6 h-9 shadow-sm shadow-blue-500/10\">Lưu thay đổi</Button>"
+      }
+    ]
+  },
+  {
+    "screenId": "c16",
+    "route": "/classic/reports",
+    "pageFile": "src/app/(portal)/classic/reports/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 31,
+        "label": "dashboard",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-500 hover:bg-gray-50\" href=\"#\"><span className=\""
+      },
+      {
+        "type": "dead-link",
+        "line": 32,
+        "label": "attach_money",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-500 hover:bg-gray-50\" href=\"#\"><span className=\""
+      },
+      {
+        "type": "dead-link",
+        "line": 34,
+        "label": "analytics",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 rounded-lg bg-blue-500/10 px-3 py-2.5 text-blue-500\" href=\"#\"><span className=\"mat"
+      },
+      {
+        "type": "dead-link",
+        "line": 35,
+        "label": "pie_chart",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-500 hover:bg-gray-50\" href=\"#\"><span className=\""
+      },
+      {
+        "type": "dead-cursor",
+        "line": 38,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex items-center gap-3 rounded-lg p-2 hover:bg-gray-50 cursor-pointer\">"
+      },
+      {
+        "type": "dead-link",
+        "line": 48,
+        "label": "Home",
+        "severity": "medium",
+        "snippet": "<nav className=\"flex mb-6\"><ol className=\"flex items-center space-x-2 text-sm\"><li><a className=\"text-slate-500 hover:te"
+      },
+      {
+        "type": "dead-link",
+        "line": 48,
+        "label": "Home",
+        "severity": "medium",
+        "snippet": "<nav className=\"flex mb-6\"><ol className=\"flex items-center space-x-2 text-sm\"><li><a className=\"text-slate-500 hover:te"
+      },
+      {
+        "type": "dead-button",
+        "line": 53,
+        "label": "print",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"flex items-center gap-2 px-4 py-2 shadow-sm\"><span className=\"material-symbols-ou"
+      },
+      {
+        "type": "dead-button",
+        "line": 54,
+        "label": "download",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"flex items-center gap-2 px-4 py-2 shadow-sm shadow-blue-500/30\"><span className=\"ma"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 62,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<label key={label} className=\"cursor-pointer\"><input className=\"peer sr-only\" name=\"time_filter\" type=\"radio\" defaultChe"
+      },
+      {
+        "type": "dead-button",
+        "line": 89,
+        "label": "more_horiz",
+        "severity": "high",
+        "snippet": "<button className=\"text-slate-500 hover:text-blue-500\"><span className=\"material-symbols-outlined\">more_horiz</span></bu"
+      },
+      {
+        "type": "dead-button",
+        "line": 105,
+        "label": "filter_list",
+        "severity": "high",
+        "snippet": "<button className=\"text-slate-500 hover:text-blue-500\"><span className=\"material-symbols-outlined\">filter_list</span></b"
+      },
+      {
+        "type": "dead-link",
+        "line": 127,
+        "label": "Xem tất cả",
+        "severity": "medium",
+        "snippet": "<a className=\"text-sm text-blue-500 font-medium hover:underline\" href=\"#\">Xem tất cả</a>"
+      }
+    ]
+  },
+  {
+    "screenId": "c17",
+    "route": "/classic/feedback",
+    "pageFile": "src/app/(portal)/classic/feedback/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 50,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"absolute right-4 top-4 rounded-full p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 74,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button key={i} className=\"group transition-transform hover:scale-110\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 78,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"group transition-transform hover:scale-110\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 95,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"inline-flex w-full items-center justify-center rounded-lg px-4 py-2.5 sm:w-auto s"
+      },
+      {
+        "type": "dead-button",
+        "line": 98,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"inline-flex w-full items-center justify-center rounded-lg px-4 py-2.5 sm:w-auto sm:"
+      }
+    ]
+  },
+  {
+    "screenId": "f01",
+    "route": "/freelancer",
+    "pageFile": "src/app/(portal)/freelancer/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 26,
+        "label": "dashboard",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg bg-blue-500 text-white\" href=\"#\"><span className=\"material-"
+      },
+      {
+        "type": "dead-link",
+        "line": 27,
+        "label": "work",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5\" href=\"#\">"
+      },
+      {
+        "type": "dead-link",
+        "line": 28,
+        "label": "payments",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5\" href=\"#\">"
+      },
+      {
+        "type": "dead-link",
+        "line": 29,
+        "label": "bar_chart",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5\" href=\"#\">"
+      },
+      {
+        "type": "dead-link",
+        "line": 30,
+        "label": "settings",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5\" href=\"#\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 48,
+        "label": "add",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"hidden md:flex h-9 px-4 items-center gap-2 text-sm shadow-sm shadow-blue-200\"><span"
+      },
+      {
+        "type": "dead-button",
+        "line": 49,
+        "label": "notifications",
+        "severity": "high",
+        "snippet": "<button className=\"relative w-9 h-9 flex items-center justify-center rounded-lg hover:bg-slate-100 text-slate-600\"><span"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 50,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"w-9 h-9 rounded-full bg-slate-200 ring-2 ring-slate-100 cursor-pointer\"></div>"
+      },
+      {
+        "type": "dead-link",
+        "line": 77,
+        "label": "Việc cần làm hôm nay",
+        "severity": "medium",
+        "snippet": "<div className=\"flex items-center justify-between\"><h2 className=\"text-slate-900 text-xl font-bold\">Việc cần làm hôm nay"
+      },
+      {
+        "type": "dead-button",
+        "line": 96,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant={task.urgent ? \"primary\" : \"secondary\"} className={`px-4 py-2 text-sm font-bold ${task.urgent ? \"bg-blue"
+      },
+      {
+        "type": "dead-button",
+        "line": 111,
+        "label": "chevron_left",
+        "severity": "high",
+        "snippet": "<div className=\"flex gap-1\"><button className=\"p-1 hover:bg-slate-100 rounded text-slate-500\"><span className=\"material-"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 116,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "{[1, 2, 3].map((d) => <span key={d} className=\"aspect-square flex items-center justify-center text-slate-700 hover:bg-sl"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 118,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "{[5, 6, 7].map((d) => <span key={d} className=\"aspect-square flex items-center justify-center text-slate-700 hover:bg-sl"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 119,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<span className=\"aspect-square flex items-center justify-center text-slate-700 hover:bg-slate-50 rounded-full cursor-poi"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 120,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "{[9, 10, 11, 12].map((d) => <span key={d} className=\"aspect-square flex items-center justify-center text-slate-700 hover"
+      }
+    ]
+  },
+  {
+    "screenId": "f02",
+    "route": "/freelancer/jobs",
+    "pageFile": "src/app/(portal)/freelancer/jobs/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 43,
+        "label": "dashboard",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800\" href=\"#"
+      },
+      {
+        "type": "dead-link",
+        "line": 44,
+        "label": "work",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg bg-blue-500 text-white shadow-md shadow-blue-900/20\" href=\""
+      },
+      {
+        "type": "dead-link",
+        "line": 45,
+        "label": "folder_open",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800\" href=\"#"
+      },
+      {
+        "type": "dead-link",
+        "line": 46,
+        "label": "attach_money",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800\" href=\"#"
+      },
+      {
+        "type": "dead-link",
+        "line": 47,
+        "label": "chat_bubble",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800\" href=\"#"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 50,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex items-center gap-3 p-2 rounded-lg hover:bg-slate-800 cursor-pointer\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 67,
+        "label": "notifications",
+        "severity": "high",
+        "snippet": "<button className=\"size-10 flex items-center justify-center rounded-full bg-slate-50 text-slate-500 hover:bg-slate-100 r"
+      },
+      {
+        "type": "dead-button",
+        "line": 68,
+        "label": "settings",
+        "severity": "high",
+        "snippet": "<button className=\"size-10 flex items-center justify-center rounded-full bg-slate-50 text-slate-500 hover:bg-slate-100\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 76,
+        "label": "tune",
+        "severity": "high",
+        "snippet": "<div className=\"flex items-center justify-between\"><h3 className=\"text-slate-900 font-semibold flex items-center gap-2\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 79,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<summary className=\"flex cursor-pointer items-center justify-between px-4 py-3 select-none\"><span className=\"text-sm fon"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 82,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<label key={skill} className=\"flex items-center gap-3 cursor-pointer\"><input type=\"checkbox\" className=\"size-4 rounded b"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 87,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<summary className=\"flex cursor-pointer items-center justify-between px-4 py-3 select-none\"><span className=\"text-sm fon"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 94,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<summary className=\"flex cursor-pointer items-center justify-between px-4 py-3 select-none\"><span className=\"text-sm fon"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 97,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<label key={status} className=\"flex items-center gap-3 cursor-pointer\"><input type=\"radio\" name=\"status\" className=\"size"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 108,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex items-center gap-2\"><span className=\"text-sm text-slate-500\">Sắp xếp:</span><select className=\"text"
+      },
+      {
+        "type": "dead-button",
+        "line": 124,
+        "label": "bookmark_border",
+        "severity": "high",
+        "snippet": "<button className=\"text-slate-400 hover:text-blue-500 transition-colors\"><span className=\"material-symbols-outlined text"
+      },
+      {
+        "type": "dead-button",
+        "line": 135,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"px-5 py-2.5 text-sm font-bold shadow-sm shadow-blue-500/30\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 142,
+        "label": "Xem thêm dự án",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"px-6 py-2 text-sm font-medium\">Xem thêm dự án</Button>"
+      }
+    ]
+  },
+  {
+    "screenId": "f03",
+    "route": "/freelancer/workspace",
+    "pageFile": "src/app/(portal)/freelancer/workspace/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 31,
+        "label": "stop_circle",
+        "severity": "high",
+        "snippet": "<button className=\"ml-2 size-6 flex items-center justify-center rounded-full hover:bg-slate-200 text-slate-400 hover:tex"
+      },
+      {
+        "type": "dead-button",
+        "line": 35,
+        "label": "notifications",
+        "severity": "high",
+        "snippet": "<button className=\"relative p-2 text-slate-500 hover:text-slate-700\"><span className=\"material-symbols-outlined\">notific"
+      },
+      {
+        "type": "dead-button",
+        "line": 37,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"flex items-center gap-2 pl-1 pr-3 py-1 rounded-full hover:bg-slate-50 border border-transparent hover"
+      },
+      {
+        "type": "dead-link",
+        "line": 81,
+        "label": "folder_zip",
+        "severity": "medium",
+        "snippet": "<a className=\"flex flex-col items-center justify-center p-3 rounded border border-slate-200 hover:border-blue-500 hover:"
+      },
+      {
+        "type": "dead-link",
+        "line": 82,
+        "label": "image",
+        "severity": "medium",
+        "snippet": "<a className=\"flex flex-col items-center justify-center p-3 rounded border border-slate-200 hover:border-blue-500 hover:"
+      },
+      {
+        "type": "dead-button",
+        "line": 92,
+        "label": "edit_document",
+        "severity": "high",
+        "snippet": "<button className=\"relative py-4 text-sm font-medium text-blue-500 border-b-2 border-blue-500\"><span className=\"flex ite"
+      },
+      {
+        "type": "dead-button",
+        "line": 93,
+        "label": "folder_open",
+        "severity": "high",
+        "snippet": "<button className=\"relative py-4 text-sm font-medium text-slate-500 hover:text-slate-700\"><span className=\"flex items-ce"
+      },
+      {
+        "type": "dead-button",
+        "line": 94,
+        "label": "visibility",
+        "severity": "high",
+        "snippet": "<button className=\"relative py-4 text-sm font-medium text-slate-500 hover:text-slate-700\"><span className=\"flex items-ce"
+      },
+      {
+        "type": "dead-button",
+        "line": 96,
+        "label": "Last saved 2m ago",
+        "severity": "high",
+        "snippet": "<div className=\"flex items-center gap-2\"><span className=\"text-xs text-slate-400\">Last saved 2m ago</span><button classN"
+      },
+      {
+        "type": "dead-button",
+        "line": 100,
+        "label": "format_bold",
+        "severity": "high",
+        "snippet": "<button className=\"p-2 rounded hover:bg-slate-100 text-slate-600\"><span className=\"material-symbols-outlined text-[20px]"
+      },
+      {
+        "type": "dead-button",
+        "line": 101,
+        "label": "format_italic",
+        "severity": "high",
+        "snippet": "<button className=\"p-2 rounded hover:bg-slate-100 text-slate-600\"><span className=\"material-symbols-outlined text-[20px]"
+      },
+      {
+        "type": "dead-button",
+        "line": 103,
+        "label": "link",
+        "severity": "high",
+        "snippet": "<button className=\"p-2 rounded hover:bg-slate-100 text-slate-600\"><span className=\"material-symbols-outlined text-[20px]"
+      },
+      {
+        "type": "dead-button",
+        "line": 104,
+        "label": "add_photo_alternate",
+        "severity": "high",
+        "snippet": "<button className=\"p-2 rounded hover:bg-slate-100 text-slate-600\"><span className=\"material-symbols-outlined text-[20px]"
+      },
+      {
+        "type": "dead-button",
+        "line": 106,
+        "label": "Figma Integration",
+        "severity": "high",
+        "snippet": "<button className=\"px-3 py-1.5 rounded bg-slate-100 text-xs font-medium text-slate-600 flex items-center gap-1\">Figma In"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 108,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"flex-1 flex flex-col items-center justify-center mt-12 border-2 border-dashed border-slate-300 rounded-x"
+      },
+      {
+        "type": "dead-button",
+        "line": 118,
+        "label": "close",
+        "severity": "high",
+        "snippet": "<button className=\"p-1 hover:text-red-500 text-slate-400\"><span className=\"material-symbols-outlined\">close</span></butt"
+      },
+      {
+        "type": "dead-button",
+        "line": 125,
+        "label": "Save Draft",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"flex-1 sm:flex-none px-4 py-2.5 text-sm font-semibold\">Save Draft</Button>"
+      },
+      {
+        "type": "dead-button",
+        "line": 126,
+        "label": "send",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"flex-1 sm:flex-none px-6 py-2.5 text-sm font-bold shadow-md shadow-blue-500/20\"><sp"
+      },
+      {
+        "type": "dead-button",
+        "line": 135,
+        "label": "more_horiz",
+        "severity": "high",
+        "snippet": "<button className=\"text-slate-400 hover:text-slate-600\"><span className=\"material-symbols-outlined\">more_horiz</span></b"
+      },
+      {
+        "type": "dead-button",
+        "line": 138,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"w-full flex items-center justify-between px-3 py-2 bg-slate-100 rounded-lg text-sm font-medium text-s"
+      },
+      {
+        "type": "dead-button",
+        "line": 160,
+        "label": "Generate Structure",
+        "severity": "high",
+        "snippet": "<button className=\"whitespace-nowrap px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-medium border bord"
+      },
+      {
+        "type": "dead-button",
+        "line": 161,
+        "label": "Summarize Brief",
+        "severity": "high",
+        "snippet": "<button className=\"whitespace-nowrap px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-medium border borde"
+      },
+      {
+        "type": "dead-button",
+        "line": 165,
+        "label": "send",
+        "severity": "high",
+        "snippet": "<button className=\"absolute right-2 top-1.5 p-1.5 bg-blue-500 text-white rounded-lg hover:bg-blue-600 shadow-sm\"><span c"
+      }
+    ]
+  },
+  {
+    "screenId": "f04",
+    "route": "/classic/projects/[id]/task/[taskId]/submit",
+    "pageFile": "src/app/(portal)/classic/projects/[id]/task/[taskId]/submit/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 101,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"flex items-center justify-center w-8 h-8 rounded-full hover:bg-slate-100 transition-colors text-slate"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 115,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "className={`group flex flex-col items-center justify-center gap-4 rounded-xl border-2 border-dashed transition-all px-6 "
+      },
+      {
+        "type": "dead-button",
+        "line": 134,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"mt-2 flex items-center justify-center rounded-lg h-9 px-4 bg-slate-100 hover:bg-slate-200 text-slate-"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 139,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "className=\"absolute inset-0 w-full h-full opacity-0 cursor-pointer\""
+      },
+      {
+        "type": "dead-button",
+        "line": 286,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"flex min-w-[84px] items-center justify-center rounded-lg h-11 px-5 bg-white border border-slate-300 t"
+      }
+    ]
+  },
+  {
+    "screenId": "f04_freelancer",
+    "route": "/freelancer/submit",
+    "pageFile": "src/app/(portal)/freelancer/submit/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 29,
+        "label": "close",
+        "severity": "high",
+        "snippet": "<button className=\"flex items-center justify-center w-8 h-8 rounded-full hover:bg-slate-100 text-slate-500\"><span classN"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 37,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"group flex flex-col items-center justify-center gap-4 rounded-xl border-2 border-dashed border-slate-300"
+      },
+      {
+        "type": "dead-button",
+        "line": 45,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"mt-2 flex items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-slate-100 hover:bg-slate"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 48,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<input className=\"absolute inset-0 w-full h-full opacity-0 cursor-pointer\" type=\"file\" />"
+      },
+      {
+        "type": "dead-button",
+        "line": 84,
+        "label": "Hủy bỏ",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"min-w-[84px] h-11 px-5 border border-slate-300 text-slate-700 text-sm font-semibo"
+      },
+      {
+        "type": "dead-button",
+        "line": 85,
+        "label": "Xác nhận nộp bài",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"min-w-[84px] h-11 px-6 text-sm font-bold shadow-sm\">Xác nhận nộp bài</Button>"
+      }
+    ]
+  },
+  {
+    "screenId": "f05",
+    "route": "/freelancer/timesheet",
+    "pageFile": "src/app/(portal)/freelancer/timesheet/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-cursor",
+        "line": 255,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<span className=\"hover:text-blue-500 cursor-pointer\">Freelancer</span>"
+      },
+      {
+        "type": "dead-button",
+        "line": 265,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"text-gray-400 hover:text-slate-900\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 268,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"text-gray-400 hover:text-slate-900\">"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 335,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "className=\"w-full h-11 pl-4 pr-10 bg-gray-50 border-none rounded-lg text-sm text-slate-900 focus:ring-1 focus:ring-blue-"
+      },
+      {
+        "type": "dead-button",
+        "line": 359,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button"
+      },
+      {
+        "type": "dead-button",
+        "line": 374,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<Button"
+      }
+    ]
+  },
+  {
+    "screenId": "f06",
+    "route": "/freelancer/wallet",
+    "pageFile": "src/app/(portal)/freelancer/wallet/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 35,
+        "label": "logout",
+        "severity": "high",
+        "snippet": "<button className=\"flex w-full items-center gap-3 px-3 py-3 rounded-lg text-slate-400 hover:text-red-500 hover:bg-red-50"
+      },
+      {
+        "type": "dead-button",
+        "line": 45,
+        "label": "payments",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"flex items-center gap-2 px-6 py-3 font-bold text-sm shadow-lg shadow-blue-500/20\"><"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 72,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<select className=\"bg-white border border-gray-200 text-slate-700 text-sm rounded-lg focus:ring-1 focus:ring-blue-500 fo"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 77,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div key={i} className=\"flex flex-col items-center gap-3 flex-1 group cursor-pointer h-full justify-end\">"
+      },
+      {
+        "type": "dead-button",
+        "line": 120,
+        "label": "Xem thêm lịch sử giao dịch",
+        "severity": "high",
+        "snippet": "<button className=\"text-slate-500 hover:text-blue-500 text-xs font-bold flex items-center gap-1\">Xem thêm lịch sử giao d"
+      }
+    ]
+  },
+  {
+    "screenId": "f07",
+    "route": "/freelancer/withdraw",
+    "pageFile": "src/app/(portal)/freelancer/withdraw/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 22,
+        "label": "notifications",
+        "severity": "high",
+        "snippet": "<button className=\"text-slate-500 hover:text-blue-500\"><span className=\"material-symbols-outlined\">notifications</span><"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 23,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"size-9 rounded-full bg-slate-200 ring-2 ring-white cursor-pointer\"></div>"
+      },
+      {
+        "type": "dead-button",
+        "line": 39,
+        "label": "logout",
+        "severity": "high",
+        "snippet": "<button className=\"flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-red-500\"><span className=\"material-symbol"
+      },
+      {
+        "type": "dead-button",
+        "line": 65,
+        "label": "VND",
+        "severity": "high",
+        "snippet": "<div className=\"absolute right-3 flex items-center gap-2\"><span className=\"text-sm font-medium text-slate-500\">VND</span"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 73,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<select className=\"w-full pl-11 pr-10 py-3.5 rounded-lg border-gray-200 bg-gray-50/50 text-slate-900 appearance-none cur"
+      },
+      {
+        "type": "dead-button",
+        "line": 103,
+        "label": "Gửi yêu cầu",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"w-full py-3.5 font-semibold flex justify-center items-center gap-2\"><span>Gửi yêu c"
+      },
+      {
+        "type": "dead-button",
+        "line": 104,
+        "label": "Hủy bỏ",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"w-full py-3.5 border border-gray-200 text-slate-500 font-semibold\">Hủy bỏ</Button"
+      }
+    ]
+  },
+  {
+    "screenId": "f08",
+    "route": "/freelancer/profile",
+    "pageFile": "src/app/(portal)/freelancer/profile/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 22,
+        "label": "Tổng quan",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-500 hover:text-blue-500 text-sm font-medium\" href=\"#\">Tổng quan</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 23,
+        "label": "Công việc",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-500 hover:text-blue-500 text-sm font-medium\" href=\"#\">Công việc</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 24,
+        "label": "Hồ sơ",
+        "severity": "medium",
+        "snippet": "<a className=\"text-blue-500 text-sm font-bold\" href=\"#\">Hồ sơ</a>"
+      },
+      {
+        "type": "dead-link",
+        "line": 25,
+        "label": "Cài đặt",
+        "severity": "medium",
+        "snippet": "<a className=\"text-slate-500 hover:text-blue-500 text-sm font-medium\" href=\"#\">Cài đặt</a>"
+      },
+      {
+        "type": "dead-button",
+        "line": 28,
+        "label": "notifications",
+        "severity": "high",
+        "snippet": "<button className=\"text-slate-500 hover:text-blue-500\"><span className=\"material-symbols-outlined\">notifications</span><"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 29,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div className=\"size-9 rounded-full bg-slate-200 ring-2 ring-white cursor-pointer\"></div>"
+      },
+      {
+        "type": "dead-button",
+        "line": 37,
+        "label": "edit",
+        "severity": "high",
+        "snippet": "<button className=\"absolute bottom-4 right-6 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white text-xs font-semi"
+      },
+      {
+        "type": "dead-button",
+        "line": 47,
+        "label": "camera_alt",
+        "severity": "high",
+        "snippet": "<button className=\"absolute bottom-1 right-1 size-8 bg-blue-500 rounded-full flex items-center justify-center text-white"
+      },
+      {
+        "type": "dead-button",
+        "line": 66,
+        "label": "edit",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"flex items-center gap-2 px-5 py-2.5 font-semibold\"><span className=\"material-symbol"
+      },
+      {
+        "type": "dead-link",
+        "line": 92,
+        "label": "language",
+        "severity": "medium",
+        "snippet": "<div className=\"flex items-center gap-3\"><span className=\"material-symbols-outlined text-slate-400 text-[20px]\">language"
+      },
+      {
+        "type": "dead-link",
+        "line": 93,
+        "label": "link",
+        "severity": "medium",
+        "snippet": "<div className=\"flex items-center gap-3\"><span className=\"material-symbols-outlined text-slate-400 text-[20px]\">link</sp"
+      },
+      {
+        "type": "dead-link",
+        "line": 104,
+        "label": "Xem tất cả",
+        "severity": "medium",
+        "snippet": "<a className=\"text-blue-500 text-sm font-medium hover:underline\" href=\"#\">Xem tất cả</a>"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 108,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<div key={i} className=\"group cursor-pointer\">"
+      }
+    ]
+  },
+  {
+    "screenId": "f09",
+    "route": "/freelancer/skills",
+    "pageFile": "src/app/(portal)/freelancer/skills/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 22,
+        "label": "dashboard",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2 text-slate-500 rounded-lg hover:bg-gray-50 text-sm font-medium\" href=\"#\""
+      },
+      {
+        "type": "dead-link",
+        "line": 23,
+        "label": "workspace_premium",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2 bg-blue-50 text-blue-500 rounded-lg text-sm font-medium\" href=\"#\"><span "
+      },
+      {
+        "type": "dead-link",
+        "line": 24,
+        "label": "person",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2 text-slate-500 rounded-lg hover:bg-gray-50 text-sm font-medium\" href=\"#\""
+      },
+      {
+        "type": "dead-link",
+        "line": 25,
+        "label": "settings",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2 text-slate-500 rounded-lg hover:bg-gray-50 text-sm font-medium\" href=\"#\""
+      },
+      {
+        "type": "dead-button",
+        "line": 51,
+        "label": "Tất cả bài thi",
+        "severity": "high",
+        "snippet": "<button className=\"px-6 py-4 text-sm font-semibold text-blue-500 border-b-2 border-blue-500\">Tất cả bài thi</button>"
+      },
+      {
+        "type": "dead-button",
+        "line": 52,
+        "label": "Chứng chỉ của tôi",
+        "severity": "high",
+        "snippet": "<button className=\"px-6 py-4 text-sm font-semibold text-slate-400 hover:text-slate-600 border-b-2 border-transparent\">Ch"
+      },
+      {
+        "type": "dead-button",
+        "line": 62,
+        "label": "Tất cả",
+        "severity": "high",
+        "snippet": "<button className=\"px-4 py-2 bg-slate-900 text-white text-sm font-medium rounded-lg shrink-0\">Tất cả</button>"
+      },
+      {
+        "type": "dead-button",
+        "line": 63,
+        "label": "Marketing",
+        "severity": "high",
+        "snippet": "<button className=\"px-4 py-2 bg-white border border-gray-200 text-slate-600 hover:border-slate-300 text-sm font-medium r"
+      },
+      {
+        "type": "dead-button",
+        "line": 64,
+        "label": "Thiết kế",
+        "severity": "high",
+        "snippet": "<button className=\"px-4 py-2 bg-white border border-gray-200 text-slate-600 hover:border-slate-300 text-sm font-medium r"
+      },
+      {
+        "type": "dead-button",
+        "line": 65,
+        "label": "Lập trình",
+        "severity": "high",
+        "snippet": "<button className=\"px-4 py-2 bg-white border border-gray-200 text-slate-600 hover:border-slate-300 text-sm font-medium r"
+      },
+      {
+        "type": "dead-button",
+        "line": 84,
+        "label": "Bắt đầu làm bài",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"w-full py-2.5 font-semibold flex items-center justify-center gap-2\"><span>Bắt đầu l"
+      },
+      {
+        "type": "dead-button",
+        "line": 92,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className=\"flex items-center gap-2 px-6 py-3 border border-gray-200 rounded-lg text-slate-500 font-medium hover:"
+      }
+    ]
+  },
+  {
+    "screenId": "f10",
+    "route": "/freelancer/test",
+    "pageFile": "src/app/(portal)/freelancer/test/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 24,
+        "label": "logout",
+        "severity": "high",
+        "snippet": "<button className=\"flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900 bg-gray-5"
+      },
+      {
+        "type": "dead-button",
+        "line": 36,
+        "label": "flag",
+        "severity": "high",
+        "snippet": "<button className=\"flex items-center gap-1.5 text-slate-400 hover:text-slate-600 text-sm font-medium\"><span className=\"m"
+      },
+      {
+        "type": "dead-cursor",
+        "line": 46,
+        "label": "(cursor-pointer without handler)",
+        "severity": "low",
+        "snippet": "<label key={i} className={`group relative flex items-center gap-4 rounded-lg border ${i === 1 ? \"border-blue-500 bg-blue"
+      },
+      {
+        "type": "dead-button",
+        "line": 58,
+        "label": "arrow_back",
+        "severity": "high",
+        "snippet": "<Button variant=\"secondary\" className=\"flex items-center gap-2 px-6 py-3 border border-gray-200\"><span className=\"materi"
+      },
+      {
+        "type": "dead-button",
+        "line": 59,
+        "label": "Câu tiếp theo",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"flex items-center gap-2 px-8 py-3 shadow-md shadow-blue-200\">Câu tiếp theo<span cla"
+      },
+      {
+        "type": "dead-button",
+        "line": 83,
+        "label": "{n}",
+        "severity": "high",
+        "snippet": "<button className={`h-10 w-10 flex items-center justify-center rounded-lg text-sm font-semibold transition-colors ${curr"
+      },
+      {
+        "type": "dead-button",
+        "line": 91,
+        "label": "check_circle",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"w-full py-4 font-bold shadow-lg shadow-blue-200 flex items-center justify-center ga"
+      }
+    ]
+  },
+  {
+    "screenId": "f11",
+    "route": "/freelancer/learning",
+    "pageFile": "src/app/(portal)/freelancer/learning/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 27,
+        "label": "home",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-100 text-slate-600\" href=\"#\"><span className="
+      },
+      {
+        "type": "dead-link",
+        "line": 28,
+        "label": "work",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-100 text-slate-600\" href=\"#\"><span className="
+      },
+      {
+        "type": "dead-link",
+        "line": 29,
+        "label": "payments",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-100 text-slate-600\" href=\"#\"><span className="
+      },
+      {
+        "type": "dead-link",
+        "line": 30,
+        "label": "school",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg bg-blue-500/10 text-blue-500\" href=\"#\"><span className=\"mat"
+      },
+      {
+        "type": "dead-link",
+        "line": 31,
+        "label": "settings",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-100 text-slate-600\" href=\"#\"><span className="
+      },
+      {
+        "type": "dead-link",
+        "line": 46,
+        "label": "Trang chủ",
+        "severity": "medium",
+        "snippet": "<div className=\"flex items-center gap-2 text-sm\"><a className=\"text-slate-500 hover:text-blue-500\" href=\"#\">Trang chủ</a"
+      },
+      {
+        "type": "dead-link",
+        "line": 46,
+        "label": "Trang chủ",
+        "severity": "medium",
+        "snippet": "<div className=\"flex items-center gap-2 text-sm\"><a className=\"text-slate-500 hover:text-blue-500\" href=\"#\">Trang chủ</a"
+      },
+      {
+        "type": "dead-button",
+        "line": 53,
+        "label": "notifications",
+        "severity": "high",
+        "snippet": "<button className=\"size-10 flex items-center justify-center rounded-full hover:bg-gray-100 text-slate-500 relative\"><spa"
+      },
+      {
+        "type": "dead-button",
+        "line": 66,
+        "label": "history",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"flex items-center gap-2 px-4 py-2 shadow-lg shadow-blue-500/20\"><span className=\"ma"
+      },
+      {
+        "type": "dead-button",
+        "line": 88,
+        "label": "Tất cả",
+        "severity": "high",
+        "snippet": "<button className=\"px-4 py-2 rounded-full bg-blue-500 text-white text-sm font-medium whitespace-nowrap shadow-md shadow-"
+      },
+      {
+        "type": "dead-button",
+        "line": 89,
+        "label": "Onboarding",
+        "severity": "high",
+        "snippet": "<button className=\"px-4 py-2 rounded-full bg-white border border-gray-200 text-slate-600 hover:bg-gray-50 text-sm font-m"
+      },
+      {
+        "type": "dead-button",
+        "line": 90,
+        "label": "Chuyên môn",
+        "severity": "high",
+        "snippet": "<button className=\"px-4 py-2 rounded-full bg-white border border-gray-200 text-slate-600 hover:bg-gray-50 text-sm font-m"
+      },
+      {
+        "type": "dead-button",
+        "line": 91,
+        "label": "Kỹ năng mềm",
+        "severity": "high",
+        "snippet": "<button className=\"px-4 py-2 rounded-full bg-white border border-gray-200 text-slate-600 hover:bg-gray-50 text-sm font-m"
+      },
+      {
+        "type": "dead-button",
+        "line": 125,
+        "label": "notifications_active",
+        "severity": "high",
+        "snippet": "<button className=\"w-full py-1.5 text-sm font-medium text-slate-500 hover:text-blue-500 flex items-center justify-center"
+      },
+      {
+        "type": "dead-button",
+        "line": 135,
+        "label": "chevron_left",
+        "severity": "high",
+        "snippet": "<button className=\"size-10 flex items-center justify-center rounded-lg border border-gray-200 text-slate-500 hover:bg-gr"
+      },
+      {
+        "type": "dead-button",
+        "line": 136,
+        "label": "1",
+        "severity": "high",
+        "snippet": "<button className=\"size-10 flex items-center justify-center rounded-lg bg-blue-500 text-white font-medium shadow-lg shad"
+      },
+      {
+        "type": "dead-button",
+        "line": 137,
+        "label": "2",
+        "severity": "high",
+        "snippet": "<button className=\"size-10 flex items-center justify-center rounded-lg border border-gray-200 text-slate-500 hover:bg-gr"
+      },
+      {
+        "type": "dead-button",
+        "line": 138,
+        "label": "3",
+        "severity": "high",
+        "snippet": "<button className=\"size-10 flex items-center justify-center rounded-lg border border-gray-200 text-slate-500 hover:bg-gr"
+      },
+      {
+        "type": "dead-button",
+        "line": 140,
+        "label": "chevron_right",
+        "severity": "high",
+        "snippet": "<button className=\"size-10 flex items-center justify-center rounded-lg border border-gray-200 text-slate-500 hover:bg-gr"
+      }
+    ]
+  },
+  {
+    "screenId": "f12",
+    "route": "/freelancer/bank",
+    "pageFile": "src/app/(portal)/freelancer/bank/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-link",
+        "line": 13,
+        "label": "dashboard",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-600 rounded-lg hover:bg-gray-50\" href=\"#\""
+      },
+      {
+        "type": "dead-link",
+        "line": 14,
+        "label": "account_balance",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2 text-sm font-medium text-blue-500 bg-blue-50/50 rounded-lg\" href=\"#\"><sp"
+      },
+      {
+        "type": "dead-link",
+        "line": 15,
+        "label": "person",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-600 rounded-lg hover:bg-gray-50\" href=\"#\""
+      },
+      {
+        "type": "dead-link",
+        "line": 16,
+        "label": "payments",
+        "severity": "medium",
+        "snippet": "<a className=\"flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-600 rounded-lg hover:bg-gray-50\" href=\"#\""
+      },
+      {
+        "type": "dead-button",
+        "line": 34,
+        "label": "add",
+        "severity": "high",
+        "snippet": "<Button variant=\"primary\" className=\"flex items-center gap-2 px-5 py-2.5 font-semibold shadow-lg shadow-blue-500/20\"><sp"
+      },
+      {
+        "type": "dead-button",
+        "line": 61,
+        "label": "edit",
+        "severity": "high",
+        "snippet": "<button className=\"p-2 hover:bg-gray-50 rounded-full text-slate-600\"><span className=\"material-symbols-outlined text-[20"
+      },
+      {
+        "type": "dead-button",
+        "line": 62,
+        "label": "delete",
+        "severity": "high",
+        "snippet": "<button className=\"p-2 hover:bg-red-50 rounded-full text-red-500\"><span className=\"material-symbols-outlined text-[20px]"
+      },
+      {
+        "type": "dead-button",
+        "line": 85,
+        "label": "edit",
+        "severity": "high",
+        "snippet": "<button className=\"p-2 hover:bg-gray-50 rounded-full text-slate-600\"><span className=\"material-symbols-outlined text-[20"
+      },
+      {
+        "type": "dead-button",
+        "line": 86,
+        "label": "delete",
+        "severity": "high",
+        "snippet": "<button className=\"p-2 hover:bg-red-50 rounded-full text-red-500\"><span className=\"material-symbols-outlined text-[20px]"
+      },
+      {
+        "type": "dead-form",
+        "line": 102,
+        "label": "(form without onSubmit)",
+        "severity": "critical",
+        "snippet": "<form className=\"space-y-4\">"
+      }
+    ]
+  },
+  {
+    "screenId": "pricing",
+    "route": "/pricing",
+    "pageFile": "src/app/pricing/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 88,
+        "label": "Dùng thử miễn phí",
+        "severity": "high",
+        "snippet": "<button className=\"px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium\">Dùng thử miễn phí</button>"
+      },
+      {
+        "type": "dead-button",
+        "line": 89,
+        "label": "Đăng nhập",
+        "severity": "high",
+        "snippet": "<button className=\"px-4 py-2 border rounded-lg text-sm\">Đăng nhập</button>"
+      },
+      {
+        "type": "dead-button",
+        "line": 116,
+        "label": "(button)",
+        "severity": "high",
+        "snippet": "<button className={`w-full py-3 rounded-lg font-medium mb-6 ${plan.popular ? \"bg-primary text-white\" : \"border hover:bg-"
+      }
+    ]
+  },
+  {
+    "screenId": "team_recruit",
+    "route": "/team",
+    "pageFile": "src/app/team/page.tsx",
+    "gaps": [
+      {
+        "type": "dead-button",
+        "line": 56,
+        "label": "Dùng thử miễn phí",
+        "severity": "high",
+        "snippet": "<button className=\"px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium\">Dùng thử miễn phí</button>"
+      },
+      {
+        "type": "dead-button",
+        "line": 108,
+        "label": "Tất cả (8)",
+        "severity": "high",
+        "snippet": "<button className=\"px-4 py-2 bg-slate-100 rounded-lg font-medium\">Tất cả (8)</button>"
+      },
+      {
+        "type": "dead-button",
+        "line": 109,
+        "label": "Công nghệ",
+        "severity": "high",
+        "snippet": "<button className=\"px-4 py-2 hover:bg-slate-100 rounded-lg\">Công nghệ</button>"
+      },
+      {
+        "type": "dead-button",
+        "line": 110,
+        "label": "Thiết kế",
+        "severity": "high",
+        "snippet": "<button className=\"px-4 py-2 hover:bg-slate-100 rounded-lg\">Thiết kế</button>"
+      },
+      {
+        "type": "dead-button",
+        "line": 133,
+        "label": "Ứng tuyển",
+        "severity": "high",
+        "snippet": "<button className=\"px-4 py-2 bg-primary text-white rounded-lg text-sm\">Ứng tuyển</button>"
+      }
+    ]
+  }
+]

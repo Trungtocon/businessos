@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UI Kit - Hệ thống thiết kế BusinessOS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c83f6",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101722",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d131c] dark:text-white min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e7ecf4] dark:border-gray-800 bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#0d131c] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">BusinessOS UI Kit</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-[#0d131c] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#colors">Màu sắc</a>
+<a class="text-[#0d131c] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#typography">Typography</a>
+<a class="text-[#0d131c] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#components">Thành phần</a>
+<a class="text-[#0d131c] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#icons">Biểu tượng</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<label class="flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-[#e7ecf4] dark:bg-gray-800">
+<div class="text-[#49699c] flex items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:outline-0 focus:ring-0 h-full placeholder:text-[#49699c] px-4 pl-2 text-base font-normal" placeholder="Tìm kiếm tài liệu..."/>
+</div>
+</label>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-gray-200" data-alt="Ảnh đại diện người dùng quản trị viên" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDG4YxogtOpGGueE8_gNa8rQ3dNiUDgjPy_vhpdlEuSeW6C7siXwl4l6xmNC9nhZ07ii2lbwoS4tcHAMGI0ATnHu873ogUTid7abhPCIQZMiS4blaG4L79dbP5BXj61ISwIDa4iuUY7gBMEpplyDsIKLZMJoJigfadnmisbGFFmd69pRojxxWgPoB_ALAg4wGFQv3XktLXU5Xy7Lev1xoA57KNQlo7U21xY5Kivcs3cyVHKyhTZIE9AbSQSbsX1n5OEhptq6LUOvCk");'></div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-10 px-4 md:px-40">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-between items-end gap-3 p-4 mb-8">
+<div class="flex min-w-72 flex-col gap-3">
+<p class="text-[#0d131c] dark:text-white text-5xl font-black leading-tight tracking-[-0.033em]">Quy chuẩn thiết kế BusinessOS</p>
+<p class="text-[#49699c] dark:text-gray-400 text-lg font-normal leading-normal">Hướng dẫn hệ thống thiết kế đồng nhất, tối giản và tối ưu trải nghiệm trên lưới 8px.</p>
+</div>
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="truncate">Tải xuống UI Kit (v1.2)</span>
+</button>
+</div>
+<!-- Bảng màu Section -->
+<div class="mb-16" id="colors">
+<h2 class="text-[#0d131c] dark:text-white text-[28px] font-bold leading-tight tracking-[-0.015em] px-4 pb-6 pt-5 border-b border-gray-100 dark:border-gray-800">Bảng màu (Color Palette)</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
+<div class="flex flex-col gap-3">
+<div class="w-full aspect-video rounded-xl bg-primary shadow-sm flex items-end p-4">
+<span class="text-white font-bold">Primary</span>
+</div>
+<div>
+<p class="text-[#0d131c] dark:text-white text-base font-semibold">Màu thương hiệu (Brand)</p>
+<p class="text-[#49699c] dark:text-gray-400 text-sm font-mono uppercase">#3C83F6</p>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<div class="w-full aspect-video rounded-xl bg-[#10b981] shadow-sm flex items-end p-4">
+<span class="text-white font-bold">Success</span>
+</div>
+<div>
+<p class="text-[#0d131c] dark:text-white text-base font-semibold">Thành công (Success)</p>
+<p class="text-[#49699c] dark:text-gray-400 text-sm font-mono uppercase">#10B981</p>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<div class="w-full aspect-video rounded-xl bg-[#ef4444] shadow-sm flex items-end p-4">
+<span class="text-white font-bold">Danger</span>
+</div>
+<div>
+<p class="text-[#0d131c] dark:text-white text-base font-semibold">Cảnh báo (Error)</p>
+<p class="text-[#49699c] dark:text-gray-400 text-sm font-mono uppercase">#EF4444</p>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<div class="w-full aspect-video rounded-xl bg-[#1e293b] shadow-sm flex items-end p-4">
+<span class="text-white font-bold">Neutral</span>
+</div>
+<div>
+<p class="text-[#0d131c] dark:text-white text-base font-semibold">Màu trung tính (Neutrals)</p>
+<p class="text-[#49699c] dark:text-gray-400 text-sm font-mono uppercase">#1E293B</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Typography Section -->
+<div class="mb-16" id="typography">
+<h2 class="text-[#0d131c] dark:text-white text-[28px] font-bold leading-tight tracking-[-0.015em] px-4 pb-6 pt-5 border-b border-gray-100 dark:border-gray-800">Hệ thống Typography (Inter Font)</h2>
+<div class="p-4 space-y-8 bg-white dark:bg-gray-900 rounded-xl mt-4 border border-gray-100 dark:border-gray-800">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-baseline">
+<span class="text-sm text-[#49699c] font-medium">H1 - Heading Black</span>
+<span class="col-span-2 text-4xl font-black">Nâng tầm quản trị doanh nghiệp</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-baseline">
+<span class="text-sm text-[#49699c] font-medium">H2 - Bold Title</span>
+<span class="col-span-2 text-2xl font-bold">Báo cáo tài chính quý 4/2023</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-baseline">
+<span class="text-sm text-[#49699c] font-medium">Body Large - Normal</span>
+<span class="col-span-2 text-lg font-normal">BusinessOS cung cấp bộ công cụ toàn diện giúp doanh nghiệp tối ưu hóa quy trình vận hành và nhân sự.</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-baseline">
+<span class="text-sm text-[#49699c] font-medium">Small Caption</span>
+<span class="col-span-2 text-xs text-[#49699c] uppercase tracking-wider font-semibold">Cập nhật lần cuối: 24/05/2024</span>
+</div>
+</div>
+</div>
+<!-- UI Components Section -->
+<div class="mb-16" id="components">
+<h2 class="text-[#0d131c] dark:text-white text-[28px] font-bold leading-tight tracking-[-0.015em] px-4 pb-6 pt-5 border-b border-gray-100 dark:border-gray-800">Thành phần UI tiêu chuẩn</h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-4">
+<!-- Buttons -->
+<div class="flex flex-col gap-6">
+<p class="text-sm font-bold text-[#49699c] uppercase tracking-widest">Nút bấm (Buttons - 8px radius)</p>
+<div class="flex flex-wrap gap-4 items-center">
+<button class="bg-primary text-white font-bold py-2.5 px-6 rounded-lg shadow-sm hover:shadow-md transition-all active:scale-95">Primary Button</button>
+<button class="bg-primary/10 text-primary font-bold py-2.5 px-6 rounded-lg hover:bg-primary/20 transition-all">Secondary</button>
+<button class="border-2 border-[#e7ecf4] dark:border-gray-700 text-[#0d131c] dark:text-white font-bold py-2 px-6 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all">Outline</button>
+</div>
+</div>
+<!-- Inputs -->
+<div class="flex flex-col gap-6">
+<p class="text-sm font-bold text-[#49699c] uppercase tracking-widest">Ô nhập liệu (Inputs)</p>
+<div class="space-y-4">
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-medium text-gray-700 dark:text-gray-300">Email công ty</label>
+<input class="w-full border border-[#e7ecf4] dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg px-4 py-2.5 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="name@business.os" type="email"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-medium text-[#ef4444]">Mật khẩu</label>
+<input class="w-full border border-[#ef4444] bg-white dark:bg-gray-800 rounded-lg px-4 py-2.5 outline-none" type="password" value="password"/>
+<p class="text-xs text-[#ef4444]">Mật khẩu phải chứa ít nhất 8 ký tự.</p>
+</div>
+</div>
+</div>
+<!-- Cards -->
+<div class="flex flex-col gap-6 lg:col-span-2">
+<p class="text-sm font-bold text-[#49699c] uppercase tracking-widest">Thẻ thông tin (Cards)</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-gray-100 dark:border-gray-800">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<h4 class="text-lg font-bold mb-2">Doanh thu</h4>
+<p class="text-[#49699c] text-sm">Quản lý và theo dõi dòng tiền thời gian thực.</p>
+</div>
+<div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-gray-100 dark:border-gray-800">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined">group</span>
+</div>
+<h4 class="text-lg font-bold mb-2">Nhân sự</h4>
+<p class="text-[#49699c] text-sm">Hệ thống quản lý thông tin và KPI nhân viên.</p>
+</div>
+<div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-gray-100 dark:border-gray-800">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<h4 class="text-lg font-bold mb-2">Phân tích</h4>
+<p class="text-[#49699c] text-sm">Biểu đồ trực quan và báo cáo thông minh.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Icons Section -->
+<div class="mb-16" id="icons">
+<h2 class="text-[#0d131c] dark:text-white text-[28px] font-bold leading-tight tracking-[-0.015em] px-4 pb-6 pt-5 border-b border-gray-100 dark:border-gray-800">Hệ thống biểu tượng (Minimal Icons)</h2>
+<div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 gap-4 p-4">
+<div class="flex flex-col items-center gap-2 p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-help">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">home</span>
+<span class="text-[10px] text-[#49699c]">Home</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-help">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">settings</span>
+<span class="text-[10px] text-[#49699c]">Settings</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-help">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">notifications</span>
+<span class="text-[10px] text-[#49699c]">Alerts</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-help">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">calendar_today</span>
+<span class="text-[10px] text-[#49699c]">Calendar</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-help">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">mail</span>
+<span class="text-[10px] text-[#49699c]">Mail</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-help">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">folder</span>
+<span class="text-[10px] text-[#49699c]">Files</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-help">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">edit</span>
+<span class="text-[10px] text-[#49699c]">Edit</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-help">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">delete</span>
+<span class="text-[10px] text-[#49699c]">Delete</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-help">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">person</span>
+<span class="text-[10px] text-[#49699c]">User</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-help">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">share</span>
+<span class="text-[10px] text-[#49699c]">Share</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-help">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">logout</span>
+<span class="text-[10px] text-[#49699c]">Logout</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-help">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">search</span>
+<span class="text-[10px] text-[#49699c]">Search</span>
+</div>
+</div>
+</div>
+<!-- Footer / Guide Meta -->
+<footer class="mt-12 p-8 border-t border-gray-200 dark:border-gray-800 text-center">
+<p class="text-[#49699c] text-sm">© 2024 BusinessOS Design Team. Tuân thủ lưới 8px và nguyên tắc Minimalist.</p>
+</footer>
+</div>
+</main>
+</div>
+</div>
+</body></html>

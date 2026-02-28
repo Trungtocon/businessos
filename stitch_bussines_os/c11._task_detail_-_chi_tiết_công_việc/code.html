@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Task Detail - BusinessOS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#3c83f6",
+              "background-light": "#f8f9fc",
+              "background-dark": "#101722",
+              "surface-light": "#ffffff",
+              "surface-dark": "#1e293b",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .body-bg {
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .dark .body-bg {
+            background-image: radial-gradient(#1f2937 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="relative flex h-screen w-full flex-col bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 overflow-hidden body-bg">
+<!-- Modal Overlay Backdrop -->
+<div class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-40 flex items-center justify-center p-4">
+<!-- Modal Container (80% width, 90% height) -->
+<div class="relative w-[95%] lg:w-[85%] xl:w-[80%] h-[90vh] bg-surface-light dark:bg-surface-dark rounded-xl shadow-2xl flex flex-col overflow-hidden border border-slate-200 dark:border-slate-700 animate-fade-in-up">
+<!-- Header Section -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-5 border-b border-slate-200 dark:border-slate-700 bg-white dark:bg-surface-dark z-10 shrink-0 gap-4 sm:gap-0">
+<!-- Task Title & Meta -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-3">
+<h2 class="text-xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white">Design Homepage V2</h2>
+<span class="inline-flex items-center rounded-md bg-blue-50 dark:bg-blue-900/30 px-2 py-1 text-xs font-medium text-blue-700 dark:text-blue-300 ring-1 ring-inset ring-blue-700/10">In Progress</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[16px]">tag</span>
+<span>Task ID: #C11-024</span>
+<span class="mx-1">•</span>
+<span>Created Oct 20, 2023</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+<button class="hidden sm:flex items-center justify-center h-9 px-4 rounded-lg bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold shadow-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600">
+<span class="material-symbols-outlined text-[18px] mr-2">edit_note</span>
+                        Yêu cầu sửa
+                    </button>
+<button class="hidden sm:flex items-center justify-center h-9 px-4 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold shadow-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600">
+<span class="material-symbols-outlined text-[18px] mr-2">check_circle</span>
+                        Duyệt
+                    </button>
+<!-- Mobile Actions Menu Button (hidden on desktop) -->
+<button class="sm:hidden flex items-center justify-center h-9 w-9 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+<div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1 hidden sm:block"></div>
+<button class="flex items-center justify-center h-9 w-9 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+<!-- Main Body Split View -->
+<div class="flex flex-1 flex-col md:flex-row overflow-hidden">
+<!-- Left Panel: Chat Stream -->
+<div class="flex flex-col w-full md:w-[380px] lg:w-[420px] bg-slate-50/50 dark:bg-[#161f2e] border-r border-slate-200 dark:border-slate-700 shrink-0 h-full">
+<!-- Chat Header/Tabs (Optional visual separator) -->
+<div class="px-4 py-3 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between bg-white/50 dark:bg-transparent">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Discussion</span>
+<div class="flex -space-x-2 overflow-hidden">
+<img alt="Avatar 1" class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-cover" data-alt="User avatar small" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZQkvwGi2jy2UbCs0aeiIsQpdoyTlNGJ6BFPmO3PjI1c2YJAIeYOR5iZCczYcc6PVS1o4s0iNfsVNBq7gSkxR97mDJIMJjmSRkSdBSEq6XT1KVJYos-F6V_Tjup25FaZm_0HYueS0LIfUu4JBLO4WNypRx6rfwQ6wSDJTlRgMgrk0FWvdr2HWLHkO0XqlR339sUNNla2cOEPUFYbaM8FC8kizXfXbXaeNAFxn5frA8O4zTvDzt1VE6pwJGdjYBKpWaJECsfzvHx7E"/>
+<img alt="Avatar 2" class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-cover" data-alt="User avatar small" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXbGau_vl6TjVgX1AHQZLFLt97QVNamY24btbiyd3ZuexHzB6-Xo8PrtPKcQlIDI2riO4L0XXt40hi6uMQxxjlHSJeUnlZznjoayLbFjKL6rJrvbSyDy8pRpERy_mz-rpPnYd_2W2PQzfCo7lKPDh_DS53-706q-KmXuPTeIzont1wh1FyJlNXN_J5dluoca_csoSswU2WJ0yjPPgBRUJC4LDREDc3PEAeSOzvgF-OBTk-8M4XVm0f6kRwwbp85AXWtSlTwMFzlw4"/>
+<img alt="Avatar 3" class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-cover" data-alt="User avatar small" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJdEmhgew1pEVg85K5TAxaOoGJu_PKvwqtOagmsRAMcHpSFr5k_2C3K9dkf-xRs9QiPinY2OvsOFnkcD32BI0GAoIk4e5mWiZHy-zuHUPptCqFckfoCTfRaltQr0NzzKhjmT69od87Lk1xkuYt_ApY4M-HnKj-ChXnLux6AD5-y7BEdtPTo-30R0GCbH0F9XrSp-TGXvlzgRqpBmVIh2a2_uquCgdVg0KwzdUD6oqrh-3H9R179enL0CbOG_CnM5Uj0p-86551rZY"/>
+</div>
+</div>
+<!-- Messages Area -->
+<div class="flex-1 overflow-y-auto p-4 space-y-5">
+<!-- System Message -->
+<div class="flex justify-center my-2">
+<span class="text-[11px] font-medium text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full">Today, Oct 24</span>
+</div>
+<!-- Message: Them -->
+<div class="flex items-end gap-3 group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-8 h-8 shrink-0 shadow-sm" data-alt="Avatar of Nguyen Van A" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDnNLUxtpPypRgqVRfK_ttej5WCHBVFPeDy1Py3HtBeCdIOs_YDSZNH9urBQ2eqMUHnSsNsxY9DVn8ZGdTX4gQXhyTCegdfFOYf_4zpYgdVB83h5A3ePQHh-J-LMsox1mmuyYAtPKMac2Pb08PNF76EieFVhfqvgwowcmyR7_mWmNL0rS7uS3Vd_TmY-ij4sJiXfuB4RO-ozJH_kV1YcDwq0ElQ2YFHUS3JQUUnRhmdRN4pRCLrz3yl-M6LXnEIjupQJzj8tzl4goM");'></div>
+<div class="flex flex-col gap-1 items-start max-w-[85%]">
+<div class="flex items-baseline gap-2">
+<p class="text-slate-500 dark:text-slate-400 text-[12px] font-medium">Nguyen Van A</p>
+<span class="text-slate-400 text-[10px]">09:15 AM</span>
+</div>
+<div class="p-3 bg-white dark:bg-slate-700 border border-slate-100 dark:border-slate-600 rounded-2xl rounded-bl-none shadow-sm text-sm text-slate-800 dark:text-slate-200">
+                                    Em đã cập nhật wireframe mới rồi ạ, anh xem giúp em nhé.
+                                </div>
+</div>
+</div>
+<!-- Message: Me -->
+<div class="flex items-end gap-3 justify-end group">
+<div class="flex flex-col gap-1 items-end max-w-[85%]">
+<div class="flex items-baseline gap-2 flex-row-reverse">
+<p class="text-slate-500 dark:text-slate-400 text-[12px] font-medium">You</p>
+<span class="text-slate-400 text-[10px]">09:42 AM</span>
+</div>
+<div class="p-3 bg-primary text-white rounded-2xl rounded-br-none shadow-md text-sm">
+                                    Ok em, để anh check bản mobile view xem sao.
+                                </div>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-8 h-8 shrink-0 shadow-sm" data-alt="My Avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCdVaVwW3NKmd7YZDzkysCn5Yw1-G080f3SF5ho3oVfyoxRd42byGrm9P0gOGtyMhtLmw7V-PAZpu_e6BpDFi8AezLzaAv1cbfQj2Do2U8OZiM_Uulf5rAX1W0gNRZOr03tG9urxlU3ajN_i_2t7B-XAxBQllbz4zsb2n5OTpsvzgIcT-ZBpB8bRw4i5LNOlaKlNr6C_WGEcKUzoAOqpWpBSu9f8wra5-xwGoGsc-vy3S9swtu7nrD2cIj6_BO9HKNagOOwBkDAj8g");'></div>
+</div>
+<!-- Message: Them (with file) -->
+<div class="flex items-end gap-3 group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-8 h-8 shrink-0 shadow-sm" data-alt="Avatar of Nguyen Van A" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBHIR-AZg_1ItrOMXaYJYpXmX4kg9PiDRwHxwFpyKvF1CVP1vL5Ev38bdAO7NfIy8GgHyqWAYHdBtEmFOvLv5tsGmx0A5rSaLxQyiWXTxdYxTnrPnMsIDCp4pY6sSs3z3ZLAES197gUUku7r51TIBaGV5BtZyCz1Vl0DcrqYNvX2UVKrCZqHgjO8inYt0UR1OiEbYqOiXA1ZB6Y8zV3w_IKNXiKrvSpDywXPcddpdkqYogHk_PZ32VZ7jqNJ3Z-6c7I8M3Eb7WLXHM");'></div>
+<div class="flex flex-col gap-1 items-start max-w-[85%]">
+<div class="flex items-baseline gap-2">
+<p class="text-slate-500 dark:text-slate-400 text-[12px] font-medium">Nguyen Van A</p>
+<span class="text-slate-400 text-[10px]">10:05 AM</span>
+</div>
+<div class="p-3 bg-white dark:bg-slate-700 border border-slate-100 dark:border-slate-600 rounded-2xl rounded-bl-none shadow-sm text-sm text-slate-800 dark:text-slate-200">
+<p class="mb-2">Em gửi file chi tiết ạ:</p>
+<div class="flex items-center gap-3 p-2 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+<div class="w-8 h-8 bg-red-100 rounded flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-red-500 text-lg">picture_as_pdf</span>
+</div>
+<div class="overflow-hidden">
+<p class="text-xs font-medium truncate text-slate-700 dark:text-slate-200">Specs_V2.pdf</p>
+<p class="text-[10px] text-slate-400">2.4 MB</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Chat Input -->
+<div class="p-4 bg-white dark:bg-surface-dark border-t border-slate-200 dark:border-slate-700">
+<div class="relative flex items-center gap-2">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+<input class="flex-1 bg-slate-100 dark:bg-slate-800 border-none rounded-lg py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary text-slate-900 dark:text-white placeholder-slate-400" placeholder="Type a message..." type="text"/>
+<button class="p-2 text-primary hover:text-blue-600 transition-colors rounded-full hover:bg-blue-50 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Panel: Details -->
+<div class="flex-1 overflow-y-auto bg-white dark:bg-surface-light p-6 md:p-8">
+<div class="max-w-3xl mx-auto space-y-8">
+<!-- Meta Info Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pb-6 border-b border-slate-100 dark:border-slate-800">
+<!-- Assignee -->
+<div class="flex flex-col gap-1">
+<p class="text-xs font-medium text-slate-500 uppercase tracking-wide">Assignee</p>
+<div class="flex items-center gap-2 mt-1">
+<img alt="Assignee" class="w-6 h-6 rounded-full object-cover" data-alt="Assignee avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_pWJaw5VZ0TlBllzw6cEBjq-5ph8WWygCP0rWBw4XUqq9ry8rn6Mh-KgMktvTgnXDdwa9s8F5JoIpAyS7h2qAm-8ZyiFKVvMH23GWnk7jZXcXePe2KtUIJTH1nehoXsFRTheQPnTodmewJoaIWk3JHCnW_jhQd2X382b-MPK3kVTEsgXxE7VWOYxj6fDMhbiYSST5mX8PJKEmJQLMeJtWYDOHpJlntJZmbgO-mOxzMMEygYDfx8r-3347MH8r1PQXAkfbBB4iN_w"/>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-800">Nguyen Van A</span>
+</div>
+</div>
+<!-- Due Date -->
+<div class="flex flex-col gap-1">
+<p class="text-xs font-medium text-slate-500 uppercase tracking-wide">Due Date</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-slate-400 text-[18px]">calendar_today</span>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-800">Oct 30, 2023</span>
+</div>
+</div>
+<!-- Priority -->
+<div class="flex flex-col gap-1">
+<p class="text-xs font-medium text-slate-500 uppercase tracking-wide">Priority</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-800">High</span>
+</div>
+</div>
+</div>
+<!-- Description -->
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">description</span>
+<h3 class="text-base font-bold text-slate-900 dark:text-slate-800">Description</h3>
+</div>
+<div class="text-sm leading-relaxed text-slate-600 dark:text-slate-700 space-y-2 pl-7">
+<p>Cần thiết kế lại trang chủ phiên bản V2 dựa trên brand guidelines mới. Mục tiêu là tăng tỉ lệ chuyển đổi (CTR) cho nút CTA chính và làm mới giao diện người dùng để hiện đại hơn.</p>
+<p>Các yêu cầu cụ thể:</p>
+<ul class="list-disc list-inside space-y-1 ml-2">
+<li>Thay đổi layout Hero Section.</li>
+<li>Cập nhật màu sắc theo palette mới (Xanh dương đậm chủ đạo).</li>
+<li>Tối ưu hiển thị trên mobile.</li>
+</ul>
+</div>
+</div>
+<!-- Checklist -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">check_box</span>
+<h3 class="text-base font-bold text-slate-900 dark:text-slate-800">Checklist</h3>
+</div>
+<span class="text-xs font-medium text-slate-500 bg-slate-100 dark:bg-slate-200 px-2 py-1 rounded">1/3 Completed</span>
+</div>
+<div class="bg-slate-50 dark:bg-slate-100 rounded-lg p-1 space-y-1 pl-7 sm:pl-1">
+<!-- Checked Item -->
+<label class="flex items-start gap-3 p-2 hover:bg-slate-100 dark:hover:bg-slate-200 rounded-md cursor-pointer group transition-colors">
+<input checked="" class="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm text-slate-500 line-through decoration-slate-400 group-hover:text-slate-600">Nghiên cứu đối thủ cạnh tranh</span>
+</label>
+<!-- Unchecked Item -->
+<label class="flex items-start gap-3 p-2 hover:bg-slate-100 dark:hover:bg-slate-200 rounded-md cursor-pointer group transition-colors">
+<input class="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm text-slate-700 dark:text-slate-800 font-medium group-hover:text-primary">Draft Wireframe Low-fi</span>
+</label>
+<!-- Unchecked Item -->
+<label class="flex items-start gap-3 p-2 hover:bg-slate-100 dark:hover:bg-slate-200 rounded-md cursor-pointer group transition-colors">
+<input class="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm text-slate-700 dark:text-slate-800 font-medium group-hover:text-primary">Design High-fi Mockup</span>
+</label>
+</div>
+</div>
+<!-- Attachments -->
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">attach_file</span>
+<h3 class="text-base font-bold text-slate-900 dark:text-slate-800">Attachments</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pl-7">
+<!-- File 1 -->
+<div class="flex items-center p-3 bg-white dark:bg-white border border-slate-200 dark:border-slate-300 rounded-lg hover:shadow-md transition-shadow cursor-pointer group">
+<div class="w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center shrink-0 mr-3">
+<span class="material-symbols-outlined text-indigo-500">image</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium text-slate-800 truncate group-hover:text-primary">Wireframe_V1.png</p>
+<p class="text-xs text-slate-500">2.4 MB • 20 Oct</p>
+</div>
+<button class="text-slate-400 hover:text-primary">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+<!-- File 2 -->
+<div class="flex items-center p-3 bg-white dark:bg-white border border-slate-200 dark:border-slate-300 rounded-lg hover:shadow-md transition-shadow cursor-pointer group">
+<div class="w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center shrink-0 mr-3">
+<span class="material-symbols-outlined text-orange-500">folder_zip</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium text-slate-800 truncate group-hover:text-primary">Assets_Export.zip</p>
+<p class="text-xs text-slate-500">156 MB • 21 Oct</p>
+</div>
+<button class="text-slate-400 hover:text-primary">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Mobile Sticky Footer (Only visible on small screens for Actions) -->
+<div class="sm:hidden border-t border-slate-200 dark:border-slate-700 p-3 flex gap-2 bg-white dark:bg-surface-dark shrink-0">
+<button class="flex-1 flex items-center justify-center h-10 rounded-lg bg-amber-500 text-white text-sm font-bold">
+                    Yêu cầu sửa
+                </button>
+<button class="flex-1 flex items-center justify-center h-10 rounded-lg bg-emerald-500 text-white text-sm font-bold">
+                    Duyệt
+                </button>
+</div>
+</div>
+</div>
+<script>
+        // Simple logic to toggle checkbox strikethrough state visually without React
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const textSpan = this.nextElementSibling;
+                if(this.checked) {
+                    textSpan.classList.add('line-through', 'text-slate-500', 'decoration-slate-400');
+                    textSpan.classList.remove('text-slate-700', 'dark:text-slate-800', 'font-medium');
+                } else {
+                    textSpan.classList.remove('line-through', 'text-slate-500', 'decoration-slate-400');
+                    textSpan.classList.add('text-slate-700', 'dark:text-slate-800', 'font-medium');
+                }
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hệ thống Nhãn &amp; Thông báo - BusinessOS UI Kit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c83f6",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101722",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0d131c] dark:text-white transition-colors duration-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- TopNavBar -->
+<div class="flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col w-full max-w-[1200px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e7ecf4] dark:border-slate-800 px-10 py-3">
+<div class="flex items-center gap-4 text-[#0d131c] dark:text-white">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined text-3xl">token</span>
+</div>
+<h2 class="text-[#0d131c] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">BusinessOS</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-[#0d131c] dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-[#0d131c] dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Badges</a>
+<a class="text-[#0d131c] dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Toasts</a>
+<a class="text-[#0d131c] dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Components</a>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="truncate">Download UI Kit</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-slate-200" data-alt="User avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZwGJSqtzASrG42Eo8uS2j67Fq6TNUDAXvja7pCd6Gcc5STNGZWHa_PKCCD8hFb6hWc0xg-j8xbnMjZpb6v9kSW6y4k5r7PACVXCtSiiXPIeIsk2r_zMoQF2AcY-hl-90iNZ1EjFetBGoCDSd0yP7RMWgJ-82x6izNOs45KxRZ7nK1XuGV6QqmZ5Uu-9DKjdbUWsoeV3EtsOgEcAxiHpF1DjYHL-6Gyil4IS5BjC4h0cOLHvpKiYHe6GRLQbIRXhhfTEm95XD4Hhw");'></div>
+</div>
+</header>
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-between gap-3 p-10">
+<div class="flex min-w-72 flex-col gap-3">
+<p class="text-[#0d131c] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Hệ thống Nhãn &amp; Thông báo</p>
+<p class="text-[#49699c] dark:text-slate-400 text-base font-normal leading-normal max-w-2xl">Thư viện thiết kế Nhãn (Badges) và Thông báo nổi (Toasts) cho BusinessOS. Các thành phần được thiết kế chuẩn lưới 8px, hỗ trợ đa trạng thái và phản hồi người dùng.</p>
+</div>
+</div>
+<!-- Section Badges -->
+<h2 class="text-[#0d131c] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-10 pb-3 pt-5">1. Nhãn trạng thái (Badges)</h2>
+<div class="px-10 py-3 @container">
+<div class="flex overflow-hidden rounded-lg border border-[#ced8e8] dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+<table class="flex-1 w-full text-left">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50">
+<th class="px-6 py-4 text-[#0d131c] dark:text-white text-sm font-bold uppercase tracking-wider">Trạng thái</th>
+<th class="px-6 py-4 text-[#0d131c] dark:text-white text-sm font-bold uppercase tracking-wider text-center">Phiên bản Màu nhạt (Subtle)</th>
+<th class="px-6 py-4 text-[#0d131c] dark:text-white text-sm font-bold uppercase tracking-wider text-center">Phiên bản Màu đậm (Solid)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#ced8e8] dark:divide-slate-800">
+<!-- Success -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-5 text-[#0d131c] dark:text-slate-300 text-sm font-semibold flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span> Thành công
+                                        </td>
+<td class="px-6 py-5 text-center">
+<span class="inline-flex items-center justify-center rounded-lg h-8 px-4 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-xs font-bold leading-normal min-w-[100px]">
+                                                Thành công
+                                            </span>
+</td>
+<td class="px-6 py-5 text-center">
+<span class="inline-flex items-center justify-center rounded-lg h-8 px-4 bg-emerald-500 text-white text-xs font-bold leading-normal min-w-[100px]">
+                                                Thành công
+                                            </span>
+</td>
+</tr>
+<!-- Warning -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-5 text-[#0d131c] dark:text-slate-300 text-sm font-semibold flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span> Cảnh báo
+                                        </td>
+<td class="px-6 py-5 text-center">
+<span class="inline-flex items-center justify-center rounded-lg h-8 px-4 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-xs font-bold leading-normal min-w-[100px]">
+                                                Cảnh báo
+                                            </span>
+</td>
+<td class="px-6 py-5 text-center">
+<span class="inline-flex items-center justify-center rounded-lg h-8 px-4 bg-amber-500 text-white text-xs font-bold leading-normal min-w-[100px]">
+                                                Cảnh báo
+                                            </span>
+</td>
+</tr>
+<!-- Danger -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-5 text-[#0d131c] dark:text-slate-300 text-sm font-semibold flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-rose-500"></span> Nguy hiểm
+                                        </td>
+<td class="px-6 py-5 text-center">
+<span class="inline-flex items-center justify-center rounded-lg h-8 px-4 bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 text-xs font-bold leading-normal min-w-[100px]">
+                                                Nguy hiểm
+                                            </span>
+</td>
+<td class="px-6 py-5 text-center">
+<span class="inline-flex items-center justify-center rounded-lg h-8 px-4 bg-rose-500 text-white text-xs font-bold leading-normal min-w-[100px]">
+                                                Nguy hiểm
+                                            </span>
+</td>
+</tr>
+<!-- Information -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-5 text-[#0d131c] dark:text-slate-300 text-sm font-semibold flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Thông tin
+                                        </td>
+<td class="px-6 py-5 text-center">
+<span class="inline-flex items-center justify-center rounded-lg h-8 px-4 bg-blue-100 dark:bg-blue-900/30 text-primary dark:text-blue-400 text-xs font-bold leading-normal min-w-[100px]">
+                                                Thông tin
+                                            </span>
+</td>
+<td class="px-6 py-5 text-center">
+<span class="inline-flex items-center justify-center rounded-lg h-8 px-4 bg-primary text-white text-xs font-bold leading-normal min-w-[100px]">
+                                                Thông tin
+                                            </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Section Toasts -->
+<h2 class="text-[#0d131c] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-10 pb-3 pt-12">2. Thông báo nổi (Toasts)</h2>
+<div class="px-10 py-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Toast Success -->
+<div class="flex items-center p-4 bg-white dark:bg-slate-800 rounded-lg shadow-[0_10px_40px_-15px_rgba(0,0,0,0.15)] border-l-4 border-emerald-500 max-w-md">
+<div class="flex-shrink-0 bg-emerald-100 dark:bg-emerald-900/30 p-2 rounded-lg text-emerald-600 dark:text-emerald-400">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div class="ml-4 flex-1">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white">Thành công</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Dự án "BusinessOS Mobile" đã được lưu vào thư mục đám mây.</p>
+</div>
+<button class="ml-4 text-slate-400 hover:text-slate-600 dark:hover:text-white">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+<!-- Toast Error -->
+<div class="flex items-center p-4 bg-white dark:bg-slate-800 rounded-lg shadow-[0_10px_40px_-15px_rgba(0,0,0,0.15)] border-l-4 border-rose-500 max-w-md">
+<div class="flex-shrink-0 bg-rose-100 dark:bg-rose-900/30 p-2 rounded-lg text-rose-600 dark:text-rose-400">
+<span class="material-symbols-outlined">error</span>
+</div>
+<div class="ml-4 flex-1">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white">Lỗi kết nối</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Kết nối mạng không ổn định. Vui lòng kiểm tra lại đường truyền.</p>
+</div>
+<button class="ml-4 text-slate-400 hover:text-slate-600 dark:hover:text-white">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+<!-- Toast Warning -->
+<div class="flex items-center p-4 bg-white dark:bg-slate-800 rounded-lg shadow-[0_10px_40px_-15px_rgba(0,0,0,0.15)] border-l-4 border-amber-500 max-w-md">
+<div class="flex-shrink-0 bg-amber-100 dark:bg-amber-900/30 p-2 rounded-lg text-amber-600 dark:text-amber-400">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div class="ml-4 flex-1">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white">Cảnh báo bảo mật</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Tài khoản của bạn đang đăng nhập trên một thiết bị lạ.</p>
+</div>
+<button class="ml-4 text-slate-400 hover:text-slate-600 dark:hover:text-white">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+<!-- Toast Info -->
+<div class="flex items-center p-4 bg-white dark:bg-slate-800 rounded-lg shadow-[0_10px_40px_-15px_rgba(0,0,0,0.15)] border-l-4 border-primary max-w-md">
+<div class="flex-shrink-0 bg-blue-100 dark:bg-blue-900/30 p-2 rounded-lg text-primary dark:text-blue-400">
+<span class="material-symbols-outlined">info</span>
+</div>
+<div class="ml-4 flex-1">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white">Thông tin hệ thống</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Phiên bản BusinessOS 2.4.0 đã sẵn sàng để cập nhật.</p>
+</div>
+<button class="ml-4 text-slate-400 hover:text-slate-600 dark:hover:text-white">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+</div>
+<footer class="mt-20 border-t border-slate-200 dark:border-slate-800 p-10 text-center">
+<p class="text-sm text-slate-400">© 2024 BusinessOS Design System. Built with Tailwind CSS &amp; Inter Font.</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>

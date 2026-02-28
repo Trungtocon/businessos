@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>C16. Báo cáo tài chính - BusinessOS</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2563EB", // Electric Blue
+                        "deep-ocean": "#0F172A", // Deep Ocean text
+                        "status-green": "#10B981",
+                        "status-yellow": "#F59E0B",
+                        "status-red": "#EF4444",
+                        "border-light": "#F1F5F9",
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                    boxShadow: {
+                        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02)',
+                    },
+                    borderRadius: {
+                        'card': '8px',
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            @apply bg-white text-deep-ocean font-sans antialiased;
+        }
+        .chart-card {
+            @apply bg-white border border-border-light rounded-card shadow-soft p-6;
+        }::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E2E8F0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="overflow-hidden">
+<div class="flex h-screen w-full bg-white">
+<aside class="hidden w-64 flex-col border-r border-border-light bg-white lg:flex">
+<div class="flex h-16 items-center px-6 border-b border-border-light">
+<div class="flex items-center gap-2 text-primary font-bold text-xl">
+<span class="material-symbols-outlined text-3xl">grid_view</span>
+<span class="tracking-tight">BusinessOS</span>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 py-6 space-y-1">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-500 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Tổng quan</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-500 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined">attach_money</span>
+<span class="font-medium">Kế toán</span>
+</a>
+<div class="pt-4 pb-2">
+<p class="px-3 text-[10px] font-bold uppercase tracking-widest text-slate-400">Phân tích</p>
+</div>
+<a class="flex items-center gap-3 rounded-lg bg-blue-50/50 px-3 py-2.5 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">analytics</span>
+<span class="font-semibold">Báo cáo tài chính</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-500 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined">pie_chart</span>
+<span class="font-medium">Ngân sách</span>
+</a>
+<div class="pt-4 pb-2">
+<p class="px-3 text-[10px] font-bold uppercase tracking-widest text-slate-400">Hệ thống</p>
+</div>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-500 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium">Cài đặt</span>
+</a>
+</nav>
+<div class="border-t border-border-light p-4">
+<div class="flex items-center gap-3 rounded-lg p-2 hover:bg-slate-50 cursor-pointer">
+<div class="h-9 w-9 overflow-hidden rounded-full bg-slate-100">
+<img alt="User Profile" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZDdura3wxmtFkxoeq5tKm-YDGj9HUS-Gx4slLxYleRtKQAS3kw9RkFJ_8vi3v-E74-MEepZNjj89uPL5wlWzEYT4_0JhMMDGGuwrstx0Q32Tqu6nctT8L-rS6dW6wTPrgTGvBhsBGHTm9Y-UYdsWM9_RahuEPG4CCsKvu6DIMtEUfFX8qXWMScY5bZAODNo3XxDbDKpY1jZPNwV1sdywc9U6SmzrDYrMiHUaZY0ZrQYa3cIQYZbVOnWzZEX_0D_DH3e42dBdUY7w"/>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-deep-ocean">Quản trị viên</span>
+<span class="text-[10px] text-slate-400">Gói Doanh nghiệp</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex h-full flex-1 flex-col overflow-y-auto">
+<header class="sticky top-0 z-10 flex h-16 items-center justify-between border-b border-border-light bg-white px-8">
+<div class="flex items-center gap-2 text-sm text-slate-400">
+<span class="font-medium text-slate-400">Trang chủ</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="font-medium text-slate-400">Phân tích</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="font-medium text-deep-ocean">Báo cáo tài chính</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 px-3 py-1.5 border border-border-light rounded-md text-xs font-medium text-slate-600 bg-white shadow-sm">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<span>01/01/2024 - 31/12/2024</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+<button class="flex items-center gap-2 px-4 py-1.5 rounded-md border border-primary text-primary bg-white text-xs font-semibold hover:bg-blue-50 transition-all">
+<span class="material-symbols-outlined text-sm">upload_file</span>
+<span>Xuất báo cáo</span>
+</button>
+</div>
+</header>
+<div class="flex-1 px-8 py-8 max-w-[1440px] w-full mx-auto">
+<div class="mb-8">
+<h1 class="text-2xl font-bold tracking-tight text-deep-ocean">Báo cáo tổng quan</h1>
+<p class="text-slate-400 text-sm mt-1">Theo dõi hiệu suất tài chính và các chỉ số kinh doanh chính.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="chart-card !p-5">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Tổng Doanh thu</span>
+<div class="p-1.5 rounded bg-blue-50 text-primary">
+<span class="material-symbols-outlined text-lg">trending_up</span>
+</div>
+</div>
+<div class="flex items-end justify-between">
+<h3 class="text-2xl font-bold">1.250.000.000 ₫</h3>
+<span class="text-xs font-bold text-status-green">+12.5%</span>
+</div>
+</div>
+<div class="chart-card !p-5">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Tổng Chi phí</span>
+<div class="p-1.5 rounded bg-red-50 text-status-red">
+<span class="material-symbols-outlined text-lg">payments</span>
+</div>
+</div>
+<div class="flex items-end justify-between">
+<h3 class="text-2xl font-bold">450.000.000 ₫</h3>
+<span class="text-xs font-bold text-status-green">-5.2%</span>
+</div>
+</div>
+<div class="chart-card !p-5">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Lợi nhuận ròng</span>
+<div class="p-1.5 rounded bg-emerald-50 text-status-green">
+<span class="material-symbols-outlined text-lg">account_balance</span>
+</div>
+</div>
+<div class="flex items-end justify-between">
+<h3 class="text-2xl font-bold">800.000.000 ₫</h3>
+<span class="text-xs font-bold text-status-green">+15.0%</span>
+</div>
+</div>
+<div class="chart-card !p-5 border-l-4 border-l-primary">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Tăng trưởng</span>
+<div class="p-1.5 rounded bg-amber-50 text-status-yellow">
+<span class="material-symbols-outlined text-lg">insights</span>
+</div>
+</div>
+<div class="flex items-end justify-between">
+<h3 class="text-2xl font-bold">24.8%</h3>
+<span class="text-xs font-bold text-status-green">+2.1%</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+<div class="lg:col-span-2 chart-card">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h3 class="font-bold text-deep-ocean">Tăng trưởng doanh thu</h3>
+<p class="text-xs text-slate-400">Dữ liệu so sánh theo từng tháng</p>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 text-xs font-medium bg-slate-50 rounded border border-border-light">Tháng</button>
+<button class="px-3 py-1 text-xs font-medium text-slate-400">Quý</button>
+</div>
+</div>
+<div class="relative h-[280px] w-full flex items-end">
+<div class="absolute left-0 top-0 bottom-6 flex flex-col justify-between text-[10px] text-slate-400 font-medium h-[240px]">
+<span>1.5B</span>
+<span>1.0B</span>
+<span>500M</span>
+<span>0</span>
+</div>
+<div class="ml-10 flex-1 h-[240px] relative">
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+<div class="w-full h-px bg-slate-100 border-dashed border-t"></div>
+<div class="w-full h-px bg-slate-100 border-dashed border-t"></div>
+<div class="w-full h-px bg-slate-100 border-dashed border-t"></div>
+<div class="w-full h-px bg-slate-200"></div>
+</div>
+<svg class="absolute inset-0 w-full h-full overflow-visible" preserveAspectRatio="none">
+<defs>
+<linearGradient id="lineGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#2563EB" stop-opacity="0.15"></stop>
+<stop offset="100%" stop-color="#2563EB" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+<path d="M0,180 L100,160 L200,190 L300,120 L400,140 L500,80 L600,100 L700,40 L800,70 L900,20 L1000,20 L1000,240 L0,240 Z" fill="url(#lineGrad)" vector-effect="non-scaling-stroke"></path>
+<polyline fill="none" points="0,180 100,160 200,190 300,120 400,140 500,80 600,100 700,40 800,70 900,20" stroke="#2563EB" stroke-width="2.5" vector-effect="non-scaling-stroke"></polyline>
+<circle cx="500" cy="80" fill="white" r="4" stroke="#2563EB" stroke-width="2"></circle>
+<circle cx="900" cy="20" fill="white" r="4" stroke="#2563EB" stroke-width="2"></circle>
+</svg>
+<div class="absolute left-[50%] top-[40px] -translate-x-1/2 bg-deep-ocean text-white text-[10px] py-1 px-2 rounded shadow-lg pointer-events-none">
+<span class="block opacity-70">Tháng 6</span>
+<span class="font-bold">1.050.000.000 ₫</span>
+</div>
+</div>
+</div>
+<div class="ml-10 mt-2 flex justify-between text-[10px] text-slate-400 font-medium">
+<span>T1</span><span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>T8</span><span>T9</span><span>T10</span>
+</div>
+</div>
+<div class="chart-card">
+<h3 class="font-bold text-deep-ocean mb-1">Phân bổ chi phí</h3>
+<p class="text-xs text-slate-400 mb-8">Cơ cấu danh mục đầu tư</p>
+<div class="flex flex-col items-center">
+<div class="relative w-44 h-44 rounded-full" style="background: conic-gradient(
+                            #2563EB 0% 45%, 
+                            #10B981 45% 70%, 
+                            #F59E0B 70% 85%, 
+                            #EF4444 85% 100%
+                        );">
+<div class="absolute inset-8 rounded-full bg-white flex flex-col items-center justify-center">
+<span class="text-[10px] text-slate-400 font-bold uppercase">Tổng</span>
+<span class="text-sm font-bold">450M</span>
+</div>
+</div>
+<div class="mt-8 w-full space-y-3">
+<div class="flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-sm bg-primary"></div>
+<span class="text-slate-600">Nhân sự</span>
+</div>
+<span class="font-bold text-deep-ocean">45%</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-sm bg-status-green"></div>
+<span class="text-slate-600">Vận hành</span>
+</div>
+<span class="font-bold text-deep-ocean">25%</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-sm bg-status-yellow"></div>
+<span class="text-slate-600">Marketing</span>
+</div>
+<span class="font-bold text-deep-ocean">15%</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-sm bg-status-red"></div>
+<span class="text-slate-600">Khác</span>
+</div>
+<span class="font-bold text-deep-ocean">15%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="chart-card !p-0 overflow-hidden">
+<div class="px-6 py-4 border-b border-border-light flex items-center justify-between">
+<h3 class="font-bold text-deep-ocean">Chi tiết giao dịch gần đây</h3>
+<button class="text-xs font-bold text-primary hover:underline">Xem tất cả</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50/50 text-slate-400 text-[10px] font-bold uppercase tracking-wider">
+<tr>
+<th class="px-6 py-3.5">Mã Giao dịch</th>
+<th class="px-6 py-3.5">Ngày</th>
+<th class="px-6 py-3.5">Diễn giải</th>
+<th class="px-6 py-3.5">Danh mục</th>
+<th class="px-6 py-3.5 text-right">Số tiền</th>
+<th class="px-6 py-3.5 text-center">Trạng thái</th>
+</tr>
+</thead>
+<tbody class="text-sm divide-y divide-slate-50">
+<tr class="hover:bg-slate-50/30 transition-colors">
+<td class="px-6 py-4 font-semibold text-primary">#GD-2024-001</td>
+<td class="px-6 py-4 text-slate-500">20/10/2024</td>
+<td class="px-6 py-4 font-medium text-deep-ocean">Chi phí thuê văn phòng T10</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-bold text-slate-500">Vận hành</span>
+</td>
+<td class="px-6 py-4 text-right font-bold text-status-red">- 45.000.000</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-50 text-status-green">
+<span class="w-1 h-1 rounded-full bg-status-green"></span>
+                                        Thành công
+                                    </span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/30 transition-colors">
+<td class="px-6 py-4 font-semibold text-primary">#GD-2024-002</td>
+<td class="px-6 py-4 text-slate-500">19/10/2024</td>
+<td class="px-6 py-4 font-medium text-deep-ocean">Doanh thu dự án Enterprise A</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded bg-blue-50 text-[10px] font-bold text-primary">Doanh thu</span>
+</td>
+<td class="px-6 py-4 text-right font-bold text-status-green">+ 120.000.000</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-50 text-status-green">
+<span class="w-1 h-1 rounded-full bg-status-green"></span>
+                                        Thành công
+                                    </span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/30 transition-colors">
+<td class="px-6 py-4 font-semibold text-primary">#GD-2024-003</td>
+<td class="px-6 py-4 text-slate-500">18/10/2024</td>
+<td class="px-6 py-4 font-medium text-deep-ocean">Mua thiết bị máy tính đồ họa</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-bold text-slate-500">Vật tư</span>
+</td>
+<td class="px-6 py-4 text-right font-bold text-status-red">- 32.500.000</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-50 text-status-yellow">
+<span class="w-1 h-1 rounded-full bg-status-yellow"></span>
+                                        Chờ duyệt
+                                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

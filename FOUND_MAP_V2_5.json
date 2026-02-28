@@ -1,0 +1,512 @@
+[
+    {
+        "screenId": "s00",
+        "stitchFolder": "s00._trang_chủ_giới_thiệu_businessos",
+        "route": "/",
+        "pageFile": "src/app/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Landing page"
+    },
+    {
+        "screenId": "s01",
+        "stitchFolder": "s01._splash_&_intro_-_màn_hình_chờ",
+        "route": "/splash",
+        "pageFile": "src/app/(auth)/splash/page.tsx",
+        "confidence": "high",
+        "aiEntry": false,
+        "exists": true,
+        "notes": "Splash/intro, no AI needed"
+    },
+    {
+        "screenId": "s02",
+        "stitchFolder": "s02._role_selection_-_chọn_vai_trò",
+        "route": "/role",
+        "pageFile": "src/app/(auth)/role/page.tsx",
+        "confidence": "high",
+        "aiEntry": false,
+        "exists": true,
+        "notes": "Role selection"
+    },
+    {
+        "screenId": "s03",
+        "stitchFolder": "s03._sign_in_-_đăng_nhập",
+        "route": "/login",
+        "pageFile": "src/app/(auth)/login/page.tsx",
+        "confidence": "high",
+        "aiEntry": false,
+        "exists": true,
+        "notes": "Sign in"
+    },
+    {
+        "screenId": "s04",
+        "stitchFolder": "s04._otp_verification_-_xác_thực_otp",
+        "route": "/otp",
+        "pageFile": "src/app/(auth)/otp/page.tsx",
+        "confidence": "high",
+        "aiEntry": false,
+        "exists": true,
+        "notes": "OTP verification"
+    },
+    {
+        "screenId": "s05",
+        "stitchFolder": "s05._onboarding_wizard_-_thiết_lập_ban_đầu",
+        "route": "/onboarding",
+        "pageFile": "src/app/(auth)/onboarding/page.tsx",
+        "confidence": "high",
+        "aiEntry": false,
+        "exists": true,
+        "notes": "Onboarding wizard"
+    },
+    {
+        "screenId": "s06",
+        "stitchFolder": "s06._global_search_-_tìm_kiếm_toàn_cục",
+        "route": "/search",
+        "pageFile": "src/app/(portal)/search/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Global search"
+    },
+    {
+        "screenId": "a01",
+        "stitchFolder": "a01._super_admin_dash_-_tổng_quan_sàn",
+        "route": "/dashboard",
+        "pageFile": "src/app/(admin)/dashboard/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Admin dashboard"
+    },
+    {
+        "screenId": "a02",
+        "stitchFolder": "a02._user_management_-_quản_lý_người_dùng",
+        "route": "/admin/users",
+        "pageFile": "src/app/(admin)/users/page.tsx",
+        "confidence": "medium",
+        "aiEntry": true,
+        "exists": false,
+        "notes": "NEW — user management"
+    },
+    {
+        "screenId": "a03",
+        "stitchFolder": "a03._dispute_center_-_xử_lý_tranh_chấp",
+        "route": "/admin/disputes",
+        "pageFile": "src/app/(admin)/disputes/page.tsx",
+        "confidence": "medium",
+        "aiEntry": true,
+        "exists": false,
+        "notes": "NEW — dispute center"
+    },
+    {
+        "screenId": "a04",
+        "stitchFolder": "a04._workflow_builder_-_tạo_quy_trình_mẫu",
+        "route": "/workflow",
+        "pageFile": "src/app/(admin)/workflow/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Workflow builder"
+    },
+    {
+        "screenId": "a05",
+        "stitchFolder": "a05._finance_control_-_kiểm_soát_tài_chính_sàn",
+        "route": "/admin/finance",
+        "pageFile": "src/app/(admin)/finance/page.tsx",
+        "confidence": "medium",
+        "aiEntry": true,
+        "exists": false,
+        "notes": "NEW — platform finance"
+    },
+    {
+        "screenId": "a06",
+        "stitchFolder": "a06._notification_center_-_thông_báo_toàn_cầu",
+        "route": "/notifications",
+        "pageFile": "src/app/(admin)/notifications/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Notification center"
+    },
+    {
+        "screenId": "a07",
+        "stitchFolder": "a07._chat_list_-_danh_sách_tin_nhắn",
+        "route": "/chat",
+        "pageFile": "src/app/(admin)/chat/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Chat list"
+    },
+    {
+        "screenId": "a08",
+        "stitchFolder": "a08._chat_detail_-_khung_chat_chi_tiết",
+        "route": "/chat/[id]",
+        "pageFile": "src/app/(admin)/chat/[id]/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Chat detail"
+    },
+    {
+        "screenId": "a10",
+        "stitchFolder": "a10._settings_-_cài_đặt_chung",
+        "route": "/settings",
+        "pageFile": "src/app/(admin)/settings/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Settings"
+    },
+    {
+        "screenId": "a11",
+        "stitchFolder": "a11._trạng_thái_lỗi_&_rỗng",
+        "route": "/error-states",
+        "pageFile": "src/app/(admin)/error-states/page.tsx",
+        "confidence": "high",
+        "aiEntry": false,
+        "exists": true,
+        "notes": "Error states reference"
+    },
+    {
+        "screenId": "c01",
+        "stitchFolder": "c01._cockpit_dashboard_-_virtual_mode",
+        "route": "/virtual",
+        "pageFile": "src/app/(portal)/virtual/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Virtual cockpit"
+    },
+    {
+        "screenId": "c02",
+        "stitchFolder": "c02._swipe_approval_-_duyệt_nhanh_kiểu_tinder",
+        "route": "/virtual/approval",
+        "pageFile": "src/app/(portal)/virtual/approval/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Swipe approval"
+    },
+    {
+        "screenId": "c03",
+        "stitchFolder": "c03._the_war_room_-_phòng_họp_ai",
+        "route": "/virtual/war-room",
+        "pageFile": "src/app/(portal)/virtual/war-room/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "AI war room"
+    },
+    {
+        "screenId": "c04a",
+        "stitchFolder": "c04._voice_command_overlay_-_ra_lệnh_giọng_nói_1",
+        "route": "/virtual/voice",
+        "pageFile": "src/app/(portal)/virtual/voice/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Voice command v1"
+    },
+    {
+        "screenId": "c04b",
+        "stitchFolder": "c04._voice_command_overlay_-_ra_lệnh_giọng_nói_2",
+        "route": "/virtual/voice",
+        "pageFile": "src/app/(portal)/virtual/voice/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Voice command v2 — same route"
+    },
+    {
+        "screenId": "c05",
+        "stitchFolder": "c05._marketplace_home_-_sàn_quy_trình",
+        "route": "/classic/marketplace",
+        "pageFile": "src/app/(portal)/classic/marketplace/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Marketplace home"
+    },
+    {
+        "screenId": "c06",
+        "stitchFolder": "c06._service_detail_-_chi_tiết_gói_dịch_vụ",
+        "route": "/classic/marketplace/[id]",
+        "pageFile": "src/app/(portal)/classic/marketplace/[id]/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Service detail"
+    },
+    {
+        "screenId": "c07",
+        "stitchFolder": "c07._smart_briefing_-_đề_bài_thông_minh",
+        "route": "/classic/briefing",
+        "pageFile": "src/app/(portal)/classic/briefing/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Smart briefing"
+    },
+    {
+        "screenId": "c08",
+        "stitchFolder": "c08._checkout_&_payment_-_thanh_toán",
+        "route": "/classic/checkout",
+        "pageFile": "src/app/(portal)/classic/checkout/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Checkout"
+    },
+    {
+        "screenId": "c09",
+        "stitchFolder": "c09._project_list_-_classic_mode",
+        "route": "/classic/projects",
+        "pageFile": "src/app/(portal)/classic/projects/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Project list"
+    },
+    {
+        "screenId": "c10",
+        "stitchFolder": "c10._kanban_board_-_quản_lý_tác_vụ",
+        "route": "/classic/projects/[id]/kanban",
+        "pageFile": "src/app/(portal)/classic/projects/[id]/kanban/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Kanban board"
+    },
+    {
+        "screenId": "c11",
+        "stitchFolder": "c11._task_detail_-_chi_tiết_công_việc",
+        "route": "/classic/projects/[id]/task/[taskId]",
+        "pageFile": "src/app/(portal)/classic/projects/[id]/task/[taskId]/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Task detail (AI wired V2.4)"
+    },
+    {
+        "screenId": "c12",
+        "stitchFolder": "c12._my_team_-_quản_lý_đội_ngũ_1",
+        "route": "/classic/team",
+        "pageFile": "src/app/(portal)/classic/team/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Team management"
+    },
+    {
+        "screenId": "c13",
+        "stitchFolder": "c13._finance_wallet_-_ví_tài_chính_doanh_nghiệp",
+        "route": "/classic/finance",
+        "pageFile": "src/app/(portal)/classic/finance/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Business finance"
+    },
+    {
+        "screenId": "c14",
+        "stitchFolder": "c14._invoice_center_-_trung_tâm_hóa_đơn",
+        "route": "/classic/invoices",
+        "pageFile": "src/app/(portal)/classic/invoices/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Invoice center"
+    },
+    {
+        "screenId": "c15",
+        "stitchFolder": "c15._client_profile_-_hồ_sơ_doanh_nghiệp_1",
+        "route": "/classic/profile",
+        "pageFile": "src/app/(portal)/classic/profile/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Client profile"
+    },
+    {
+        "screenId": "c16",
+        "stitchFolder": "c16._report_view_-_báo_cáo_&_thống_kê_1",
+        "route": "/classic/reports",
+        "pageFile": "src/app/(portal)/classic/reports/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Reports"
+    },
+    {
+        "screenId": "c17",
+        "stitchFolder": "c17._feedback_popup_-_đánh_giá_dự_án",
+        "route": "/classic/feedback",
+        "pageFile": "src/app/(portal)/classic/feedback/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Feedback"
+    },
+    {
+        "screenId": "f01",
+        "stitchFolder": "f01._job_dashboard_-_trang_chủ_freelancer",
+        "route": "/freelancer",
+        "pageFile": "src/app/(portal)/freelancer/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Freelancer dashboard"
+    },
+    {
+        "screenId": "f02",
+        "stitchFolder": "f02._job_market_-_chợ_việc_làm",
+        "route": "/freelancer/jobs",
+        "pageFile": "src/app/(portal)/freelancer/jobs/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Job market"
+    },
+    {
+        "screenId": "f03",
+        "stitchFolder": "f03._workspace_-_bàn_làm_việc_freelancer",
+        "route": "/freelancer/workspace",
+        "pageFile": "src/app/(portal)/freelancer/workspace/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Workspace (AI wired V2.4)"
+    },
+    {
+        "screenId": "f04",
+        "stitchFolder": "f04._submit_work_-_nộp_sản_phẩm_công_việc",
+        "route": "/classic/projects/[id]/task/[taskId]/submit",
+        "pageFile": "src/app/(portal)/classic/projects/[id]/task/[taskId]/submit/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Submit work (AI+QA wired V2.4)"
+    },
+    {
+        "screenId": "f05",
+        "stitchFolder": "f05._timesheet_log_-_chấm_công_thời_gian_thực",
+        "route": "/freelancer/timesheet",
+        "pageFile": "src/app/(portal)/freelancer/timesheet/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Timesheet"
+    },
+    {
+        "screenId": "f06",
+        "stitchFolder": "f06._income_&_wallet_-_thu_nhập_&_ví_cá_nhân",
+        "route": "/freelancer/wallet",
+        "pageFile": "src/app/(portal)/freelancer/wallet/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Wallet"
+    },
+    {
+        "screenId": "f07",
+        "stitchFolder": "f07._withdraw_request_-_yêu_cầu_rút_tiền",
+        "route": "/freelancer/withdraw",
+        "pageFile": "src/app/(portal)/freelancer/withdraw/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Withdraw"
+    },
+    {
+        "screenId": "f08",
+        "stitchFolder": "f08._my_profile_-_hồ_sơ_năng_lực_freelancer",
+        "route": "/freelancer/profile",
+        "pageFile": "src/app/(portal)/freelancer/profile/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Freelancer profile"
+    },
+    {
+        "screenId": "f09",
+        "stitchFolder": "f09._skill_test_center_-_trung_tâm_kiểm_tra_kỹ_năng",
+        "route": "/freelancer/skills",
+        "pageFile": "src/app/(portal)/freelancer/skills/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Skill test center"
+    },
+    {
+        "screenId": "f10",
+        "stitchFolder": "f10._taking_test_ui_-_giao_diện_làm_bài_thi",
+        "route": "/freelancer/test",
+        "pageFile": "src/app/(portal)/freelancer/test/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Test-taking UI"
+    },
+    {
+        "screenId": "f11",
+        "stitchFolder": "f11._e-learning_lib_-_thư_viện_học_tập_1",
+        "route": "/freelancer/learning",
+        "pageFile": "src/app/(portal)/freelancer/learning/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "E-learning library"
+    },
+    {
+        "screenId": "f12",
+        "stitchFolder": "f12._bank_settings_-_cài_đặt_ngân_hàng",
+        "route": "/freelancer/bank",
+        "pageFile": "src/app/(portal)/freelancer/bank/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Bank settings"
+    },
+    {
+        "screenId": "pricing",
+        "stitchFolder": "trang_bảng_giá_-_phong_cách_trắng_đồng_bộ",
+        "route": "/pricing",
+        "pageFile": "src/app/pricing/page.tsx",
+        "confidence": "high",
+        "aiEntry": false,
+        "exists": true,
+        "notes": "Pricing page"
+    },
+    {
+        "screenId": "team_recruit",
+        "stitchFolder": "đội_ngũ_&_tuyển_dụng_-_phong_cách_trắng_đồng_bộ",
+        "route": "/team",
+        "pageFile": "src/app/team/page.tsx",
+        "confidence": "high",
+        "aiEntry": false,
+        "exists": true,
+        "notes": "Team & recruitment landing"
+    },
+    {
+        "screenId": "test_results",
+        "stitchFolder": "kết_quả_bài_thi_&_chứng_chỉ_số_-_phong_cách_trắng",
+        "route": "/freelancer/test/results",
+        "pageFile": "src/app/(portal)/freelancer/test/results/page.tsx",
+        "confidence": "medium",
+        "aiEntry": true,
+        "exists": false,
+        "notes": "NEW — test results & digital certs"
+    },
+    {
+        "screenId": "f04_freelancer",
+        "stitchFolder": "f04._submit_work_-_nộp_sản_phẩm_công_việc",
+        "route": "/freelancer/submit",
+        "pageFile": "src/app/(portal)/freelancer/submit/page.tsx",
+        "confidence": "high",
+        "aiEntry": true,
+        "exists": true,
+        "notes": "Freelancer submit (separate route)"
+    }
+]

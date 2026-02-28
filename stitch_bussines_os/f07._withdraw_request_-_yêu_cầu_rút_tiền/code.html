@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Withdraw Request - BusinessOS</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0657f9",
+                        "primary-hover": "#0448d1",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0f1623",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2436",
+                        "text-main": "#0d121c",
+                        "text-secondary": "#47649e",
+                        "border-light": "#e6ebf4",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Noto Sans", "sans-serif"],
+                        "body": ["Inter", "Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main antialiased min-h-screen flex flex-col overflow-hidden">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light bg-surface-light dark:bg-surface-dark px-6 py-3 shrink-0 z-20">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-text-main dark:text-white">
+<div class="size-8 flex items-center justify-center bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined text-xl">dataset</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">BusinessOS</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-text-secondary hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Dashboard</a>
+<a class="text-text-secondary hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Jobs</a>
+<a class="text-primary text-sm font-bold leading-normal transition-colors" href="#">Wallet</a>
+<a class="text-text-secondary hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Settings</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="hidden sm:flex flex-col min-w-40 h-10 max-w-64 relative group">
+<div class="flex w-full flex-1 items-center rounded-lg h-full bg-[#f0f2f5] dark:bg-gray-800 border border-transparent focus-within:border-primary/50 transition-all overflow-hidden">
+<div class="text-text-secondary flex items-center justify-center pl-3">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none bg-transparent border-none focus:ring-0 text-text-main dark:text-white h-full placeholder:text-text-secondary px-3 text-sm font-normal leading-normal" placeholder="Search..."/>
+</div>
+</label>
+<button class="text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-9 ring-2 ring-white dark:ring-gray-700 cursor-pointer" data-alt="User profile avatar showing a smiling person" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZticFQtouBHCKtQDat-Z7mrW5FaqEEdneUDP-szcg-C2Q46-_30RxuXps0btRW8MzMy6tvHGaTZYvwlZw-p2WxFQHRWKNve5wTHCRbx4XjJ16C1rNnJa32spgM6upTE-mSj_-yIar83KWCy_qu_OqPg5_PcsfUI_cDn5YGOkXCxMN2KRDcoC50NGN1sTp56gYdTp8FE1TYfHdFQ_cGViqqXnVAM2oMrLWHtepTBmF8ogVjBH-ddGtX30lHJAh9TCxGUmVcAB1YFI");'></div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- Side Navigation -->
+<aside class="hidden lg:flex w-[280px] flex-col border-r border-border-light bg-surface-light dark:bg-surface-dark shrink-0 overflow-y-auto">
+<div class="flex h-full flex-col justify-between p-4">
+<div class="flex flex-col gap-6">
+<div class="flex flex-col px-2">
+<h1 class="text-text-main dark:text-white text-base font-semibold leading-normal">Freelancer Portal</h1>
+<p class="text-text-secondary text-xs font-normal leading-normal mt-1">Manage your work &amp; earnings</p>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-secondary hover:bg-background-light dark:hover:bg-gray-800 hover:text-text-main transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">dashboard</span>
+<p class="text-sm font-medium leading-normal">Tổng quan</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-secondary hover:bg-background-light dark:hover:bg-gray-800 hover:text-text-main transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">work</span>
+<p class="text-sm font-medium leading-normal">Công việc</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary transition-colors" href="#">
+<span class="material-symbols-outlined fill text-[22px]">account_balance_wallet</span>
+<p class="text-sm font-medium leading-normal">Ví tiền</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-secondary hover:bg-background-light dark:hover:bg-gray-800 hover:text-text-main transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">settings</span>
+<p class="text-sm font-medium leading-normal">Cài đặt</p>
+</a>
+</div>
+<div class="w-full h-px bg-border-light dark:bg-gray-700 my-2"></div>
+<div class="px-3">
+<p class="text-xs font-semibold text-text-secondary uppercase tracking-wider mb-3">Tài khoản</p>
+<div class="flex items-center gap-3 mb-3">
+<div class="size-2 rounded-full bg-emerald-500"></div>
+<span class="text-sm text-text-main dark:text-white font-medium">Đã xác thực</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-text-secondary hover:text-red-500 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<p class="text-sm font-medium">Đăng xuất</p>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col bg-background-light dark:bg-background-dark overflow-y-auto relative">
+<div class="layout-container flex flex-col w-full max-w-[1000px] mx-auto px-4 sm:px-8 py-8 md:py-12">
+<!-- Page Heading -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<a class="text-text-secondary text-sm hover:underline" href="#">Ví tiền</a>
+<span class="text-text-secondary text-sm">/</span>
+<span class="text-primary text-sm font-medium">Rút tiền</span>
+</div>
+<h1 class="text-text-main dark:text-white tracking-tight text-3xl font-bold leading-tight">Yêu cầu rút tiền</h1>
+<p class="text-text-secondary text-sm font-normal mt-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+                            Số dư khả dụng: <span class="font-semibold text-text-main dark:text-white">15,000,000 VND</span>
+</p>
+</div>
+<!-- Quick action (Optional) -->
+<div class="hidden md:block">
+<button class="text-primary text-sm font-medium hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">history</span>
+                            Lịch sử giao dịch
+                        </button>
+</div>
+</div>
+<!-- Main Form Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-gray-800 p-6 md:p-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+<!-- Left Column: Inputs -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<!-- Amount Input -->
+<div>
+<label class="block text-text-main dark:text-white text-sm font-semibold mb-2" for="amount">Số tiền muốn rút</label>
+<div class="relative flex items-center">
+<div class="absolute left-4 text-text-secondary pointer-events-none flex items-center">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+<input class="form-input block w-full pl-11 pr-20 py-3.5 rounded-lg border-border-light dark:border-gray-700 bg-background-light/50 dark:bg-gray-800 text-text-main dark:text-white placeholder:text-text-secondary/60 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-base font-medium" id="amount" placeholder="Nhập số tiền (VD: 5,000,000)" type="text" value="5,000,000"/>
+<div class="absolute right-3 flex items-center gap-2">
+<span class="text-sm font-medium text-text-secondary">VND</span>
+<button class="text-xs font-bold text-primary bg-primary/10 hover:bg-primary/20 px-2 py-1 rounded transition-colors">TỐI ĐA</button>
+</div>
+</div>
+<p class="text-xs text-text-secondary mt-2 pl-1">Hạn mức rút tối thiểu: 200,000 VND</p>
+</div>
+<!-- Bank Account Select -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="block text-text-main dark:text-white text-sm font-semibold" for="bank">Tài khoản nhận tiền</label>
+<a class="text-xs text-primary font-medium hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[14px]">add</span> Thêm tài khoản
+                                    </a>
+</div>
+<div class="relative">
+<div class="absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary pointer-events-none flex items-center">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<select class="form-select block w-full pl-11 pr-10 py-3.5 rounded-lg border-border-light dark:border-gray-700 bg-background-light/50 dark:bg-gray-800 text-text-main dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-base appearance-none cursor-pointer" id="bank">
+<option value="vcb">Vietcombank - **** 4829 (Mặc định)</option>
+<option value="tcb">Techcombank - **** 9921</option>
+<option value="acb">ACB - **** 1123</option>
+</select>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-text-secondary">
+<span class="material-symbols-outlined text-[24px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Note Input (Optional) -->
+<div>
+<label class="block text-text-main dark:text-white text-sm font-semibold mb-2" for="note">Ghi chú <span class="text-text-secondary font-normal">(Tuỳ chọn)</span></label>
+<textarea class="form-textarea block w-full px-4 py-3 rounded-lg border-border-light dark:border-gray-700 bg-background-light/50 dark:bg-gray-800 text-text-main dark:text-white placeholder:text-text-secondary/60 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm resize-none" id="note" placeholder="Ví dụ: Rút tiền dự án Website ABC..." rows="2"></textarea>
+</div>
+</div>
+<!-- Right Column: Summary Card -->
+<div class="lg:col-span-5">
+<div class="bg-[#f8f9fc] dark:bg-[#131b2c] border border-border-light dark:border-gray-700 rounded-xl p-6 h-full flex flex-col justify-between">
+<div>
+<h3 class="text-text-main dark:text-white text-lg font-bold mb-4">Chi tiết giao dịch</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center text-sm">
+<span class="text-text-secondary">Số tiền rút</span>
+<span class="text-text-main dark:text-white font-medium font-mono">5,000,000 VND</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<div class="flex items-center gap-1 text-text-secondary group cursor-help relative">
+<span>Phí giao dịch</span>
+<span class="material-symbols-outlined text-[16px] text-text-secondary/70">info</span>
+<!-- Tooltip logic would go here -->
+</div>
+<span class="text-text-main dark:text-white font-medium font-mono">11,000 VND</span>
+</div>
+<div class="w-full border-t border-dashed border-border-light dark:border-gray-700 my-4"></div>
+<div class="flex justify-between items-end">
+<span class="text-text-main dark:text-white font-semibold text-base">Thực nhận</span>
+<span class="text-primary text-xl font-bold font-mono">4,989,000 VND</span>
+</div>
+<div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-3 mt-2 flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">verified_user</span>
+<p class="text-xs text-text-secondary dark:text-blue-200 leading-relaxed">
+                                                Giao dịch được bảo vệ và mã hóa. Thời gian xử lý dự kiến: <span class="font-semibold text-text-main dark:text-blue-100">Trong vòng 24h</span> làm việc.
+                                            </p>
+</div>
+</div>
+</div>
+<div class="mt-8 flex flex-col gap-3">
+<button class="w-full bg-primary hover:bg-primary-hover text-white font-semibold py-3.5 px-6 rounded-lg transition-all shadow-sm shadow-blue-500/20 active:scale-[0.99] flex justify-center items-center gap-2">
+<span>Gửi yêu cầu</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<button class="w-full bg-white dark:bg-transparent border border-border-light dark:border-gray-600 text-text-secondary hover:text-text-main dark:hover:text-white hover:bg-background-light dark:hover:bg-gray-800 font-semibold py-3.5 px-6 rounded-lg transition-all active:scale-[0.99]">
+                                        Hủy bỏ
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer / Help -->
+<div class="mt-8 text-center">
+<p class="text-sm text-text-secondary">
+                        Cần hỗ trợ? Liên hệ <a class="text-primary hover:underline font-medium" href="#">Trung tâm trợ giúp</a> hoặc gọi <span class="font-medium text-text-main dark:text-white">1900-1234</span>
+</p>
+</div>
+</div>
+</main>
+</div>
+</body></html>

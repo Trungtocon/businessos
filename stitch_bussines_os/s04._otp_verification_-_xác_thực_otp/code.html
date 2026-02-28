@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>S04. OTP Verification - BusinessOS</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c83f6",
+                        "background-light": "#f8f9fc",
+                        "background-dark": "#101722",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<!-- Main Container -->
+<div class="relative flex min-h-screen w-full flex-col overflow-hidden bg-background-light dark:bg-background-dark transition-colors duration-300">
+<!-- Decoration Pattern Background -->
+<div class="absolute inset-0 z-0 opacity-40 dark:opacity-20 pointer-events-none">
+<div class="absolute -top-[20%] -left-[10%] h-[500px] w-[500px] rounded-full bg-primary/20 blur-[120px]"></div>
+<div class="absolute top-[40%] -right-[10%] h-[600px] w-[600px] rounded-full bg-purple-400/20 blur-[120px]"></div>
+</div>
+<div class="relative z-10 flex h-full grow flex-col items-center justify-center p-4">
+<!-- Card Container -->
+<div class="w-full max-w-[480px] flex flex-col gap-6 rounded-2xl bg-white dark:bg-slate-800 p-8 shadow-xl dark:shadow-slate-900/50 border border-slate-100 dark:border-slate-700">
+<!-- Logo & Back Button Header -->
+<div class="flex items-center justify-between mb-2">
+<button class="group flex items-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+<span>Quay lại</span>
+</button>
+<!-- Brand Logo Placeholder -->
+<div class="flex items-center gap-2">
+<div class="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">business_center</span>
+</div>
+<span class="font-bold text-lg tracking-tight text-slate-900 dark:text-white">BusinessOS</span>
+</div>
+</div>
+<!-- Page Heading -->
+<div class="flex flex-col gap-2 text-center mt-2">
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Xác thực bảo mật</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-relaxed px-4">
+                        Vui lòng nhập mã OTP 6 số được gửi tới email <span class="font-medium text-slate-700 dark:text-slate-300">user@company.com</span> của bạn.
+                    </p>
+</div>
+<!-- OTP Inputs -->
+<div class="flex justify-center py-4">
+<fieldset class="flex gap-3 sm:gap-4">
+<!-- Input 1 -->
+<input autocomplete="one-time-code" autofocus="" class="flex h-12 w-10 sm:h-14 sm:w-12 rounded-lg text-center bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-xl font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all [appearance:textfield] [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none placeholder:text-slate-300" inputmode="numeric" maxlength="1" pattern="[0-9]*" type="text"/>
+<!-- Input 2 -->
+<input class="flex h-12 w-10 sm:h-14 sm:w-12 rounded-lg text-center bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-xl font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all [appearance:textfield] [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none placeholder:text-slate-300" inputmode="numeric" maxlength="1" pattern="[0-9]*" type="text"/>
+<!-- Input 3 -->
+<input class="flex h-12 w-10 sm:h-14 sm:w-12 rounded-lg text-center bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-xl font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all [appearance:textfield] [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none placeholder:text-slate-300" inputmode="numeric" maxlength="1" pattern="[0-9]*" type="text"/>
+<!-- Input 4 -->
+<input class="flex h-12 w-10 sm:h-14 sm:w-12 rounded-lg text-center bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-xl font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all [appearance:textfield] [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none placeholder:text-slate-300" inputmode="numeric" maxlength="1" pattern="[0-9]*" type="text"/>
+<!-- Input 5 -->
+<input class="flex h-12 w-10 sm:h-14 sm:w-12 rounded-lg text-center bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-xl font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all [appearance:textfield] [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none placeholder:text-slate-300" inputmode="numeric" maxlength="1" pattern="[0-9]*" type="text"/>
+<!-- Input 6 -->
+<input class="flex h-12 w-10 sm:h-14 sm:w-12 rounded-lg text-center bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-xl font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all [appearance:textfield] [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none placeholder:text-slate-300" inputmode="numeric" maxlength="1" pattern="[0-9]*" type="text"/>
+</fieldset>
+</div>
+<!-- Timer / Resend -->
+<div class="flex justify-center">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal flex items-center gap-1 bg-slate-50 dark:bg-slate-900 px-4 py-2 rounded-full border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                        Gửi lại mã sau <span class="text-primary font-bold w-[24px] text-center">59s</span>
+</p>
+</div>
+<!-- Action Button -->
+<div class="flex flex-col gap-4 mt-2">
+<button class="flex w-full cursor-pointer items-center justify-center rounded-lg h-12 px-5 bg-primary hover:bg-blue-600 active:bg-blue-700 text-white text-base font-bold leading-normal tracking-[0.015em] transition-all shadow-md shadow-blue-500/20 hover:shadow-blue-500/40">
+<span class="truncate">Xác nhận</span>
+</button>
+<a class="text-center text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors underline decoration-slate-300 dark:decoration-slate-600 underline-offset-4 hover:decoration-primary" href="#">
+                        Quay lại Đăng nhập
+                    </a>
+</div>
+</div>
+<!-- Footer Branding -->
+<div class="mt-8 text-center">
+<p class="text-xs text-slate-400 dark:text-slate-500">
+                    © 2024 BusinessOS Platform. All rights reserved.
+                </p>
+</div>
+</div>
+</div>
+<!-- Simple Script for Input Focus Handling (Enhancement for UX) -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            
+            inputs.forEach((input, index) => {
+                input.addEventListener('input', (e) => {
+                    const value = e.target.value;
+                    
+                    // Allow only numbers
+                    if (!/^\d*$/.test(value)) {
+                        e.target.value = value.replace(/[^\d]/g, '');
+                        return;
+                    }
+
+                    // Move to next input if value is entered
+                    if (value.length === 1 && index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                });
+
+                input.addEventListener('keydown', (e) => {
+                    // Move to previous input on Backspace if empty
+                    if (e.key === 'Backspace' && !e.target.value && index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                });
+                
+                // Handle Paste
+                input.addEventListener('paste', (e) => {
+                    e.preventDefault();
+                    const text = (e.clipboardData || window.clipboardData).getData('text');
+                    if (!/^\d+$/.test(text)) return; // Only numbers
+                    
+                    const digits = text.split('').slice(0, inputs.length);
+                    digits.forEach((digit, i) => {
+                        if (index + i < inputs.length) {
+                            inputs[index + i].value = digit;
+                            // Focus the last filled input or the next one if available
+                            if (i === digits.length - 1 && index + i < inputs.length) {
+                                inputs[Math.min(index + i + 1, inputs.length - 1)].focus();
+                            } else {
+                                inputs[Math.min(index + i, inputs.length - 1)].focus();
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body></html>

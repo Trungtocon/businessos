@@ -1,0 +1,321 @@
+{
+  "date": "2026-02-27T01:09:51.363Z",
+  "total": 39,
+  "ok": 39,
+  "dynamic": 0,
+  "missing": 0,
+  "results": [
+    {
+      "id": "admin-dashboard",
+      "screenId": "a01",
+      "route": "/dashboard",
+      "label": "Tổng quan",
+      "status": "OK",
+      "filePath": "src\\app\\(admin)\\dashboard\\page.tsx"
+    },
+    {
+      "id": "admin-users",
+      "screenId": "a02",
+      "route": "/users",
+      "label": "Người dùng",
+      "status": "OK",
+      "filePath": "src\\app\\(admin)\\users\\page.tsx"
+    },
+    {
+      "id": "admin-disputes",
+      "screenId": "a03",
+      "route": "/disputes",
+      "label": "Tranh chấp",
+      "status": "OK",
+      "filePath": "src\\app\\(admin)\\disputes\\page.tsx"
+    },
+    {
+      "id": "admin-workflow",
+      "screenId": "a04",
+      "route": "/workflow",
+      "label": "Quy trình",
+      "status": "OK",
+      "filePath": "src\\app\\(admin)\\workflow\\page.tsx"
+    },
+    {
+      "id": "admin-finance",
+      "screenId": "a05",
+      "route": "/finance",
+      "label": "Tài chính sàn",
+      "status": "OK",
+      "filePath": "src\\app\\(admin)\\finance\\page.tsx"
+    },
+    {
+      "id": "admin-notifications",
+      "screenId": "a06",
+      "route": "/notifications",
+      "label": "Thông báo",
+      "status": "OK",
+      "filePath": "src\\app\\(admin)\\notifications\\page.tsx"
+    },
+    {
+      "id": "admin-chat",
+      "screenId": "a07",
+      "route": "/chat",
+      "label": "Tin nhắn",
+      "status": "OK",
+      "filePath": "src\\app\\(admin)\\chat\\page.tsx"
+    },
+    {
+      "id": "admin-settings",
+      "screenId": "a10",
+      "route": "/settings",
+      "label": "Cài đặt",
+      "status": "OK",
+      "filePath": "src\\app\\(admin)\\settings\\page.tsx"
+    },
+    {
+      "id": "virtual-cockpit",
+      "screenId": "c01",
+      "route": "/virtual",
+      "label": "Cockpit",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\virtual\\page.tsx"
+    },
+    {
+      "id": "virtual-approval",
+      "screenId": "c02",
+      "route": "/virtual/approval",
+      "label": "Duyệt nhanh",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\virtual\\approval\\page.tsx"
+    },
+    {
+      "id": "virtual-warroom",
+      "screenId": "c03",
+      "route": "/virtual/war-room",
+      "label": "War Room",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\virtual\\war-room\\page.tsx"
+    },
+    {
+      "id": "virtual-voice",
+      "screenId": "c04a",
+      "route": "/virtual/voice",
+      "label": "Ra lệnh giọng nói",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\virtual\\voice\\page.tsx"
+    },
+    {
+      "id": "virtual-finance",
+      "screenId": "c13",
+      "route": "/classic/finance",
+      "label": "Tài chính",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\classic\\finance\\page.tsx"
+    },
+    {
+      "id": "virtual-projects",
+      "screenId": "c09",
+      "route": "/classic/projects",
+      "label": "Vận hành",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\classic\\projects\\page.tsx"
+    },
+    {
+      "id": "virtual-reports",
+      "screenId": "c16",
+      "route": "/classic/reports",
+      "label": "Tăng trưởng",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\classic\\reports\\page.tsx"
+    },
+    {
+      "id": "virtual-marketplace",
+      "screenId": "c05",
+      "route": "/classic/marketplace",
+      "label": "Marketplace",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\classic\\marketplace\\page.tsx"
+    },
+    {
+      "id": "virtual-team",
+      "screenId": "c12",
+      "route": "/classic/team",
+      "label": "Đội ngũ",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\classic\\team\\page.tsx"
+    },
+    {
+      "id": "biz-marketplace",
+      "screenId": "c05",
+      "route": "/classic/marketplace",
+      "label": "Marketplace",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\classic\\marketplace\\page.tsx"
+    },
+    {
+      "id": "biz-briefing",
+      "screenId": "c07",
+      "route": "/classic/briefing",
+      "label": "Đề bài",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\classic\\briefing\\page.tsx"
+    },
+    {
+      "id": "biz-projects",
+      "screenId": "c09",
+      "route": "/classic/projects",
+      "label": "Dự án",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\classic\\projects\\page.tsx"
+    },
+    {
+      "id": "biz-team",
+      "screenId": "c12",
+      "route": "/classic/team",
+      "label": "Nhân sự",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\classic\\team\\page.tsx"
+    },
+    {
+      "id": "biz-finance",
+      "screenId": "c13",
+      "route": "/classic/finance",
+      "label": "Tài chính",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\classic\\finance\\page.tsx"
+    },
+    {
+      "id": "biz-invoices",
+      "screenId": "c14",
+      "route": "/classic/invoices",
+      "label": "Hóa đơn",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\classic\\invoices\\page.tsx"
+    },
+    {
+      "id": "biz-reports",
+      "screenId": "c16",
+      "route": "/classic/reports",
+      "label": "Báo cáo",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\classic\\reports\\page.tsx"
+    },
+    {
+      "id": "biz-profile",
+      "screenId": "c15",
+      "route": "/classic/profile",
+      "label": "Hồ sơ",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\classic\\profile\\page.tsx"
+    },
+    {
+      "id": "fl-dashboard",
+      "screenId": "f01",
+      "route": "/freelancer",
+      "label": "Trang chủ",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\freelancer\\page.tsx"
+    },
+    {
+      "id": "fl-jobs",
+      "screenId": "f02",
+      "route": "/freelancer/jobs",
+      "label": "Chợ việc",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\freelancer\\jobs\\page.tsx"
+    },
+    {
+      "id": "fl-workspace",
+      "screenId": "f03",
+      "route": "/freelancer/workspace",
+      "label": "Bàn làm việc",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\freelancer\\workspace\\page.tsx"
+    },
+    {
+      "id": "fl-timesheet",
+      "screenId": "f05",
+      "route": "/freelancer/timesheet",
+      "label": "Chấm công",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\freelancer\\timesheet\\page.tsx"
+    },
+    {
+      "id": "fl-wallet",
+      "screenId": "f06",
+      "route": "/freelancer/wallet",
+      "label": "Thu nhập",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\freelancer\\wallet\\page.tsx"
+    },
+    {
+      "id": "fl-profile",
+      "screenId": "f08",
+      "route": "/freelancer/profile",
+      "label": "Hồ sơ",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\freelancer\\profile\\page.tsx"
+    },
+    {
+      "id": "fl-skills",
+      "screenId": "f09",
+      "route": "/freelancer/skills",
+      "label": "Kỹ năng",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\freelancer\\skills\\page.tsx"
+    },
+    {
+      "id": "fl-learning",
+      "screenId": "f11",
+      "route": "/freelancer/learning",
+      "label": "Học tập",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\freelancer\\learning\\page.tsx"
+    },
+    {
+      "id": "fl-bank",
+      "screenId": "f12",
+      "route": "/freelancer/bank",
+      "label": "Ngân hàng",
+      "status": "OK",
+      "filePath": "src\\app\\(portal)\\freelancer\\bank\\page.tsx"
+    },
+    {
+      "id": "auth-splash",
+      "screenId": "s01",
+      "route": "/splash",
+      "label": "Splash",
+      "status": "OK",
+      "filePath": "src\\app\\(auth)\\splash\\page.tsx"
+    },
+    {
+      "id": "auth-role",
+      "screenId": "s02",
+      "route": "/role",
+      "label": "Chọn vai trò",
+      "status": "OK",
+      "filePath": "src\\app\\(auth)\\role\\page.tsx"
+    },
+    {
+      "id": "auth-login",
+      "screenId": "s03",
+      "route": "/login",
+      "label": "Đăng nhập",
+      "status": "OK",
+      "filePath": "src\\app\\(auth)\\login\\page.tsx"
+    },
+    {
+      "id": "auth-otp",
+      "screenId": "s04",
+      "route": "/otp",
+      "label": "OTP",
+      "status": "OK",
+      "filePath": "src\\app\\(auth)\\otp\\page.tsx"
+    },
+    {
+      "id": "auth-onboarding",
+      "screenId": "s05",
+      "route": "/onboarding",
+      "label": "Thiết lập",
+      "status": "OK",
+      "filePath": "src\\app\\(auth)\\onboarding\\page.tsx"
+    }
+  ]
+}

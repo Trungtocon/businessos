@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BusinessOS - Freelancer Dashboard</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0657f9",
+                        "deep-ocean": "#0f172a",
+                        "electric-blue": "#0657f9",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0f1623",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined.fill { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d121c] flex h-screen overflow-hidden">
+<!-- Sidebar: Deep Ocean Theme -->
+<aside class="w-64 bg-deep-ocean flex flex-col h-full shrink-0 transition-all duration-300">
+<!-- Logo Area -->
+<div class="h-16 flex items-center px-6 border-b border-white/10">
+<div class="flex flex-col">
+<h1 class="text-white text-lg font-bold leading-none tracking-tight">BusinessOS</h1>
+<p class="text-blue-300 text-xs font-normal mt-1">Freelancer Workspace</p>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex-1 flex flex-col gap-2 p-4 overflow-y-auto">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary text-white group" href="#">
+<span class="material-symbols-outlined fill text-[20px]">dashboard</span>
+<span class="text-sm font-medium">Tổng quan</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px]">work</span>
+<span class="text-sm font-medium">Dự án</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+<span class="text-sm font-medium">Tài chính</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px]">bar_chart</span>
+<span class="text-sm font-medium">Báo cáo</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm font-medium">Cài đặt</span>
+</a>
+</nav>
+<!-- User Profile Minimal (Bottom Sidebar) -->
+<div class="p-4 border-t border-white/10">
+<div class="flex items-center gap-3 px-2 py-2">
+<div class="w-8 h-8 rounded-full bg-cover bg-center" data-alt="User avatar placeholder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQWOBYfkDElHciHluXD-sBr6tZ5O2P2nUvJ7wDg4bwLPaGr-mIOI8Cel5VJdv2w6MOW5PgnyM21OOBeM0a0l687ll0n3aqgA2TMMSHTSD_2Fmds1hfb9GBjDjAJYVfHU3zdeKhL-BItAa3q9krmmK1d-gPg4H7cdCiPlqyF8NiS-GzVZ20fPQt4CQCR2SaX2f2KIA0A9ncrfalKz1eCqrBX8Hmk5rCovQj-V0euzdtKLYe4-qgHRWXLick1rab5kX8g78d9rM1d2Y');"></div>
+<div class="flex flex-col">
+<span class="text-white text-sm font-medium">Nguyễn Văn A</span>
+<span class="text-slate-400 text-xs">Pro Member</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="flex flex-col flex-1 h-full min-w-0 bg-[#f8f9fc]">
+<!-- Header: White -->
+<header class="h-16 bg-white border-b border-[#e6ebf4] flex items-center justify-between px-6 shrink-0 z-10">
+<!-- Search -->
+<div class="flex-1 max-w-lg">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-[#f1f5f9] border-none rounded-lg h-10 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all placeholder:text-slate-400 text-slate-700" placeholder="Tìm kiếm dự án, nhiệm vụ..." type="text"/>
+</div>
+</div>
+<!-- Right Actions -->
+<div class="flex items-center gap-4 ml-6">
+<button class="hidden md:flex bg-primary hover:bg-blue-700 text-white h-9 px-4 rounded-lg items-center gap-2 text-sm font-medium transition-colors shadow-sm shadow-blue-200">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Tạo nhiệm vụ</span>
+</button>
+<button class="relative w-9 h-9 flex items-center justify-center rounded-lg hover:bg-slate-100 text-slate-600 transition-colors">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-2 right-2.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+</button>
+<div class="w-9 h-9 rounded-full bg-cover bg-center ring-2 ring-slate-100 cursor-pointer" data-alt="User profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAnhjuvvUz4ABzjzrZXp5DBcgraEh-Jx9ml82Th5ei2PbDZSgK_La2M_NGH-cdrzanYDFiqabg7Mdx4BO_LmwOi5tTpSOzw0GIewle_sWuA5YeL8oSaHuKs-ShwuOfW6X1FCRHTaATAWTcqICQDPXQiH06QUFnohotYQkJrsg13UDOW8TGDsVr83MlAJwJPeUhIVqIm33ELxeWrimgO5DCh29cRRQDrCctxmiRrLYUWc-SAktvewrjf8yuZXSWfPsUe7xofIs3MvJ0');"></div>
+</div>
+</header>
+<!-- Scrollable Content -->
+<main class="flex-1 overflow-y-auto p-6 lg:p-10 scroll-smooth">
+<div class="max-w-7xl mx-auto space-y-8">
+<!-- Section 1: Income Stats -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Stat Card 1 -->
+<div class="bg-white rounded-xl p-6 border border-slate-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<p class="text-slate-500 text-sm font-medium">Thu nhập chờ về</p>
+<h2 class="text-electric-blue text-3xl font-bold tracking-tight">15.000.000 đ</h2>
+</div>
+<div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">pending</span>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<span class="flex items-center text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded text-xs font-semibold">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_up</span>
+                                +5%
+                            </span>
+<span class="text-slate-400 text-xs">so với tháng trước</span>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-white rounded-xl p-6 border border-slate-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<p class="text-slate-500 text-sm font-medium">Thu nhập tháng này</p>
+<h2 class="text-electric-blue text-3xl font-bold tracking-tight">32.500.000 đ</h2>
+</div>
+<div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<span class="flex items-center text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded text-xs font-semibold">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_up</span>
+                                +12%
+                            </span>
+<span class="text-slate-400 text-xs">so với tháng trước</span>
+</div>
+</div>
+</div>
+<!-- Main Layout Grid: Tasks & Calendar -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Tasks (2/3 width) -->
+<div class="lg:col-span-2 flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<h2 class="text-[#0d121c] text-xl font-bold leading-tight">Việc cần làm hôm nay</h2>
+<a class="text-primary text-sm font-medium hover:underline" href="#">Xem tất cả</a>
+</div>
+<!-- Task Card 1 (Urgent) -->
+<div class="group bg-white rounded-xl p-5 border-l-4 border-l-red-500 border-y border-r border-slate-100 shadow-[0_2px_4px_rgba(0,0,0,0.02)] hover:border-primary/30 transition-all">
+<div class="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-2 py-1 rounded bg-red-50 text-red-600 text-xs font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                                            Gấp
+                                        </span>
+<span class="px-2 py-1 rounded bg-slate-100 text-slate-600 text-xs font-medium">BusinessOS SaaS</span>
+</div>
+<h3 class="text-[#0d121c] text-base font-bold mb-1 group-hover:text-primary transition-colors">Thiết kế UI màn hình Dashboard</h3>
+<div class="flex items-center gap-4 text-slate-500 text-sm">
+<div class="flex items-center gap-1 text-red-500 font-medium">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                                            17:00 Hôm nay
+                                        </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">attach_file</span>
+                                            3 files
+                                        </div>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-2">
+<div class="w-8 h-8 rounded-full border border-dashed border-slate-300 flex items-center justify-center text-slate-400 text-xs">+</div>
+<button class="bg-primary/10 hover:bg-primary hover:text-white text-primary px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+                                        Bắt đầu
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Task Card 2 (Normal) -->
+<div class="group bg-white rounded-xl p-5 border border-slate-200 shadow-[0_2px_4px_rgba(0,0,0,0.02)] hover:border-primary/30 transition-all">
+<div class="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-2 py-1 rounded bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider">Ưu tiên cao</span>
+<span class="px-2 py-1 rounded bg-slate-100 text-slate-600 text-xs font-medium">E-commerce App</span>
+</div>
+<h3 class="text-[#0d121c] text-base font-bold mb-1 group-hover:text-primary transition-colors">Fix bug API đăng nhập</h3>
+<div class="flex items-center gap-4 text-slate-500 text-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                                            14:00 Ngày mai
+                                        </div>
+</div>
+</div>
+<div class="shrink-0">
+<button class="bg-white border border-slate-200 hover:border-primary hover:text-primary text-slate-700 px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-1.5">
+                                        Chi tiết
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Task Card 3 (Normal) -->
+<div class="group bg-white rounded-xl p-5 border border-slate-200 shadow-[0_2px_4px_rgba(0,0,0,0.02)] hover:border-primary/30 transition-all">
+<div class="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-2 py-1 rounded bg-slate-100 text-slate-600 text-xs font-medium">Website Landing</span>
+</div>
+<h3 class="text-[#0d121c] text-base font-bold mb-1 group-hover:text-primary transition-colors">Họp tiến độ với Client</h3>
+<div class="flex items-center gap-4 text-slate-500 text-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                            09:00 Thứ 6
+                                        </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">videocam</span>
+                                            Google Meet
+                                        </div>
+</div>
+</div>
+<div class="shrink-0">
+<button class="bg-white border border-slate-200 hover:border-primary hover:text-primary text-slate-700 px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-1.5">
+                                        Tham gia
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Calendar & Widgets (1/3 width) -->
+<div class="lg:col-span-1 flex flex-col gap-6">
+<!-- Calendar Widget -->
+<div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-slate-800">Tháng 10, 2023</h3>
+<div class="flex gap-1">
+<button class="p-1 hover:bg-slate-100 rounded text-slate-500"><span class="material-symbols-outlined text-[20px]">chevron_left</span></button>
+<button class="p-1 hover:bg-slate-100 rounded text-slate-500"><span class="material-symbols-outlined text-[20px]">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center mb-2">
+<span class="text-xs font-medium text-slate-400">T2</span>
+<span class="text-xs font-medium text-slate-400">T3</span>
+<span class="text-xs font-medium text-slate-400">T4</span>
+<span class="text-xs font-medium text-slate-400">T5</span>
+<span class="text-xs font-medium text-slate-400">T6</span>
+<span class="text-xs font-medium text-slate-400">T7</span>
+<span class="text-xs font-medium text-slate-400">CN</span>
+</div>
+<div class="grid grid-cols-7 gap-1 text-sm">
+<!-- Previous Month -->
+<span class="aspect-square flex items-center justify-center text-slate-300">25</span>
+<span class="aspect-square flex items-center justify-center text-slate-300">26</span>
+<span class="aspect-square flex items-center justify-center text-slate-300">27</span>
+<span class="aspect-square flex items-center justify-center text-slate-300">28</span>
+<span class="aspect-square flex items-center justify-center text-slate-300">29</span>
+<span class="aspect-square flex items-center justify-center text-slate-300">30</span>
+<!-- Current Month -->
+<span class="aspect-square flex items-center justify-center text-slate-700 hover:bg-slate-50 rounded-full cursor-pointer">1</span>
+<span class="aspect-square flex items-center justify-center text-slate-700 hover:bg-slate-50 rounded-full cursor-pointer">2</span>
+<span class="aspect-square flex items-center justify-center text-slate-700 hover:bg-slate-50 rounded-full cursor-pointer">3</span>
+<span class="aspect-square flex items-center justify-center bg-primary text-white rounded-full font-bold shadow-md shadow-blue-200">4</span>
+<span class="aspect-square flex items-center justify-center text-slate-700 hover:bg-slate-50 rounded-full cursor-pointer">5</span>
+<span class="aspect-square flex items-center justify-center text-slate-700 hover:bg-slate-50 rounded-full cursor-pointer">6</span>
+<span class="aspect-square flex items-center justify-center text-slate-700 hover:bg-slate-50 rounded-full cursor-pointer">7</span>
+<span class="aspect-square flex items-center justify-center text-slate-700 hover:bg-slate-50 rounded-full cursor-pointer relative">
+                                    8
+                                    <span class="absolute bottom-1 w-1 h-1 bg-red-500 rounded-full"></span>
+</span>
+<span class="aspect-square flex items-center justify-center text-slate-700 hover:bg-slate-50 rounded-full cursor-pointer">9</span>
+<span class="aspect-square flex items-center justify-center text-slate-700 hover:bg-slate-50 rounded-full cursor-pointer">10</span>
+<span class="aspect-square flex items-center justify-center text-slate-700 hover:bg-slate-50 rounded-full cursor-pointer">11</span>
+<span class="aspect-square flex items-center justify-center text-slate-700 hover:bg-slate-50 rounded-full cursor-pointer">12</span>
+</div>
+</div>
+<!-- Upcoming Events -->
+<div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+<h3 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wide">Sắp diễn ra</h3>
+<div class="space-y-4">
+<div class="flex gap-3">
+<div class="flex flex-col items-center bg-blue-50 rounded-lg p-2 min-w-[50px]">
+<span class="text-xs text-blue-600 font-bold uppercase">T6</span>
+<span class="text-lg font-bold text-blue-800">06</span>
+</div>
+<div class="flex flex-col">
+<p class="text-sm font-bold text-slate-800 line-clamp-1">Deadline dự án X</p>
+<p class="text-xs text-slate-500 mt-1">17:00 PM</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="flex flex-col items-center bg-slate-50 rounded-lg p-2 min-w-[50px]">
+<span class="text-xs text-slate-500 font-bold uppercase">T2</span>
+<span class="text-lg font-bold text-slate-700">09</span>
+</div>
+<div class="flex flex-col">
+<p class="text-sm font-bold text-slate-800 line-clamp-1">Họp team tuần mới</p>
+<p class="text-xs text-slate-500 mt-1">09:30 AM</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
